@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" href="$classyoubot_1_1_wheeled_base_kinematic.html" title="abstract class of a wheeled based / platform kinematic" alt="" coords="51,83,211,112"/>
+<area shape="rect" href="$classyoubot_1_1_base_kinematic.html" title="abstract class of a base / platform kinematic" alt="" coords="76,5,185,35"/>
+</map>

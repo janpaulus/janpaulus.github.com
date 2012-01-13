@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" href="$_you_bot_gripper_parameter_8hpp.html" title="youbot/YouBotGripperParameter.hpp" alt="" coords="683,83,915,112"/>
+<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="553,160,684,189"/>
+<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="647,392,769,421"/>
+<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="739,160,859,189"/>
+<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="944,160,1101,189"/>
+<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="96,237,304,267"/>
+<area shape="rect" href="$_gripper_parameter_8hpp.html" title="generic&#45;gripper/GripperParameter.hpp" alt="" coords="5,160,240,189"/>
+<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1176,160,1373,189"/>
+<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1656,160,1845,189"/>
+<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="1397,160,1632,189"/>
+<area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="113,315,289,344"/>
+</map>

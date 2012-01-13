@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$classyoubot_1_1_you_bot_joint_parameter.html" title="abstract youBot joint parameter" alt="" coords="81,277,231,307"/>
+<area shape="rect" href="$classyoubot_1_1_you_bot_joint_parameter_read_only.html" title="abstract youBot joint parameter which can be read only" alt="" coords="161,181,369,211"/>
+<area shape="rect" href="$classyoubot_1_1_joint_parameter.html" title="abstract joint parameter" alt="" coords="212,85,319,115"/>
+<area shape="rect" href="$classyoubot_1_1_parameter.html" title="abstract parameter" alt="" coords="225,5,305,35"/>
+<area shape="rect" title="STL class." alt="" coords="79,85,132,115"/>
+<area shape="rect" title="STL class." alt="" coords="36,5,175,35"/>
+</map>

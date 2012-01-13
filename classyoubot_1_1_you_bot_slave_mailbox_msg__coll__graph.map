@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" title="STL class." alt="" coords="48,85,101,115"/>
+<area shape="rect" title="STL class." alt="" coords="5,5,144,35"/>
+<area shape="rect" href="$structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_output_buffer.html" title="Output part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="128,85,267,115"/>
+<area shape="rect" href="$structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_input_buffer.html" title="Input part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="291,85,421,115"/>
+</map>

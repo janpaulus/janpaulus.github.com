@@ -1,0 +1,22 @@
+<map id="G" name="G">
+<area shape="rect" href="$classyoubot_1_1_four_swedish_wheel_omni_base_kinematic.html" title="Implementation of a base kinematic with four swedish wheels." alt="" coords="2927,532,3177,561"/>
+<area shape="rect" href="$classyoubot_1_1_wheeled_base_kinematic.html" title="abstract class of a wheeled based / platform kinematic" alt="" coords="2521,409,2681,439"/>
+<area shape="rect" href="$classyoubot_1_1_base_kinematic.html" title="abstract class of a base / platform kinematic" alt="" coords="2179,365,2288,395"/>
+<area shape="rect" href="$classyoubot_1_1_four_swedish_wheel_omni_base_kinematic_configuration.html" title="Configuration for the base kinematic with four swedish wheels." alt="" coords="2437,505,2765,535"/>
+<area shape="rect" href="$classyoubot_1_1_ethercat_master.html" title="The Ethercat Master is managing the whole ethercat communication It have to be a..." alt="" coords="2179,461,2288,491"/>
+<area shape="rect" href="$classyoubot_1_1_you_bot_joint.html" title="youBot joint for the base and the manipulator." alt="" coords="2556,1005,2647,1035"/>
+<area shape="rect" href="$classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="481,105,647,135"/>
+<area shape="rect" title="STL class." alt="" coords="241,768,295,797"/>
+<area shape="rect" href="$classyoubot_1_1_config_file.html" title="ConfigFile" alt="" coords="1792,879,1872,908"/>
+<area shape="rect" href="$classyoubot_1_1_sort_tree_vector.html" title="SortTreeVector" alt="" coords="852,781,959,811"/>
+<area shape="rect" title="STL class." alt="" coords="7,768,145,797"/>
+<area shape="rect" href="$structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_output_buffer.html" title="Output part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="199,36,337,65"/>
+<area shape="rect" href="$structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_input_buffer.html" title="Input part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="203,104,333,133"/>
+<area shape="rect" href="$classyoubot_1_1_motor_protection.html" title="Implements the i2t motor protection." alt="" coords="1337,303,1449,332"/>
+<area shape="rect" href="$structyoubot_1_1_current_with_time_slice.html" title="struct to represent current over time" alt="" coords="491,303,637,332"/>
+<area shape="rect" href="$structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="837,449,973,479"/>
+<area shape="rect" href="$classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves." alt="" coords="1333,579,1453,608"/>
+<area shape="rect" href="$structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="832,521,979,551"/>
+<area shape="rect" href="$classyoubot_1_1_joint.html" title="/ abstract joint" alt="" coords="2209,1057,2257,1087"/>
+<area shape="rect" href="$classyoubot_1_1_you_bot_joint_storage.html" title="Stores YouBotJoint informations which are needed in the driver." alt="" coords="2165,1111,2301,1140"/>
+</map>

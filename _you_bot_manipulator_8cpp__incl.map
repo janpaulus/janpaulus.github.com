@@ -1,0 +1,28 @@
+<map id="G" name="G">
+<area shape="rect" href="$_you_bot_manipulator_8hpp.html" title="youbot/YouBotManipulator.hpp" alt="" coords="1987,83,2184,112"/>
+<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="2123,469,2253,499"/>
+<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="3456,701,3579,731"/>
+<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="3309,469,3429,499"/>
+<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="677,392,827,421"/>
+<area shape="rect" href="$_exceptions_8hpp.html" title="Exceptions.hpp" alt="" coords="1381,469,1493,499"/>
+<area shape="rect" href="$_you_bot_gripper_8hpp.html" title="youbot/YouBotGripper.hpp" alt="" coords="1999,160,2172,189"/>
+<area shape="rect" href="$_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="1811,315,1989,344"/>
+<area shape="rect" href="$_you_bot_joint_8hpp.html" title="youbot/YouBotJoint.hpp" alt="" coords="3696,237,3856,267"/>
+<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="4051,469,4248,499"/>
+<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="2601,469,2791,499"/>
+<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="3051,469,3285,499"/>
+<area shape="rect" href="$_gripper_8hpp.html" title="generic&#45;gripper/Gripper.hpp" alt="" coords="1053,392,1229,421"/>
+<area shape="rect" href="$_gripper_data_8hpp.html" title="generic&#45;gripper/GripperData.hpp" alt="" coords="248,469,451,499"/>
+<area shape="rect" href="$_gripper_parameter_8hpp.html" title="generic&#45;gripper/GripperParameter.hpp" alt="" coords="3792,469,4027,499"/>
+<area shape="rect" href="$_one_d_o_f_gripper_8hpp.html" title="one&#45;dof&#45;gripper/OneDOFGripper.hpp" alt="" coords="1053,315,1280,344"/>
+<area shape="rect" href="$_one_d_o_f_gripper_data_8hpp.html" title="one&#45;dof&#45;gripper/OneDOFGripperData.hpp" alt="" coords="93,392,349,421"/>
+<area shape="rect" href="$_you_bot_gripper_parameter_8hpp.html" title="youbot/YouBotGripperParameter.hpp" alt="" coords="2885,392,3117,421"/>
+<area shape="rect" href="$_you_bot_gripper_bar_8hpp.html" title="youbot/YouBotGripperBar.hpp" alt="" coords="1627,237,1819,267"/>
+<area shape="rect" href="$_motor_protection_8hpp.html" title="youbot/MotorProtection.hpp" alt="" coords="2376,392,2557,421"/>
+<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="4323,547,4531,576"/>
+<area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="4824,624,5000,653"/>
+<area shape="rect" href="$_joint_8hpp.html" title="generic&#45;joint/Joint.hpp" alt="" coords="4803,469,4949,499"/>
+<area shape="rect" href="$_you_bot_joint_storage_8hpp.html" title="youbot/YouBotJointStorage.hpp" alt="" coords="4323,469,4525,499"/>
+<area shape="rect" href="$_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="3749,392,3968,421"/>
+<area shape="rect" href="$_you_bot_joint_parameter_password_protected_8hpp.html" title="youbot/YouBotJointParameterPasswordProtected.hpp" alt="" coords="3699,315,4029,344"/>
+</map>

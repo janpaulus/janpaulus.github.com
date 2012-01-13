@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" href="$classyoubot_1_1_four_swedish_wheel_omni_base_kinematic.html" title="Implementation of a base kinematic with four swedish wheels." alt="" coords="5,160,256,189"/>
+<area shape="rect" href="$classyoubot_1_1_base_kinematic.html" title="abstract class of a base / platform kinematic" alt="" coords="76,5,185,35"/>
+</map>
