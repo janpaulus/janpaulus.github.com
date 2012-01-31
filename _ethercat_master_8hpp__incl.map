@@ -1,11 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="1320,160,1451,189"/>
-<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2205,160,2328,189"/>
-<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="1747,160,1867,189"/>
-<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="413,160,571,189"/>
-<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="277,83,427,112"/>
-<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1005,160,1195,189"/>
-<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="747,160,981,189"/>
-<area shape="rect" href="$_motor_protection_8hpp.html" title="youbot/MotorProtection.hpp" alt="" coords="1440,83,1621,112"/>
-<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1475,160,1672,189"/>
+<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="625,83,756,112"/>
+<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="1816,83,1939,112"/>
+<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="975,83,1095,112"/>
+<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="191,160,348,189"/>
+<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="361,83,511,112"/>
+<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1963,83,2160,112"/>
+<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1220,83,1409,112"/>
+<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="1433,83,1668,112"/>
 </map>

@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_c188f3569ca341e23a607146381c217c.html">youbot</a>
+  <div class="navpath"><a class="el" href="dir_b20df63dec99a6d1c83aff53bd0137ad.html">youbot</a>
   </div>
 </div>
 <div class="contents">
@@ -109,7 +109,7 @@
 <a name="l00079"></a>00079 
 <a name="l00080"></a>00080     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html#aa2c3a7992da3c3b8d250d3f68105ccd3">toString</a>(std::string&amp; value) = 0;
 <a name="l00081"></a>00081 
-<a name="l00082"></a>00082     <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">virtual ::ParameterType</a> <a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html#a20d2b2f4249433c8f37213475d901421">getType</a>() <span class="keyword">const</span> = 0;
+<a name="l00082"></a>00082     <span class="keyword">virtual</span> ParameterType <a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html#acdf85290d9d3d5e7cb1d3ce080a3ac66">getType</a>() <span class="keyword">const</span> = 0;
 <a name="l00083"></a>00083 
 <a name="l00084"></a>00084     <span class="keyword">virtual</span> std::string <a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html#aa64d851b233285f68b743639618a0810">getName</a>() <span class="keyword">const</span> = 0;
 <a name="l00085"></a>00085 
@@ -122,8 +122,8 @@
 <a name="l00092"></a><a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html#a9b45b3e13bd9167aab02e17e08916231">00092</a>     std::string <a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html#a9b45b3e13bd9167aab02e17e08916231">name</a>;
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095   <span class="keyword">private</span>:<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00096"></a>00096 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00095"></a>00095   <span class="keyword">private</span>:
+<a name="l00096"></a>00096     ParameterType parameterType;
 <a name="l00097"></a>00097 
 <a name="l00098"></a>00098 };<span class="comment"></span>
 <a name="l00099"></a>00099 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -149,17 +149,17 @@
 <a name="l00119"></a>00119 
 <a name="l00120"></a>00120     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00121"></a>00121 
-<a name="l00122"></a>00122     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00123"></a>00123 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00124"></a>00124 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00122"></a>00122     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00125"></a>00125 
 <a name="l00126"></a>00126     <span class="keywordtype">int</span> controllerType;
 <a name="l00127"></a>00127 
 <a name="l00128"></a>00128     <span class="keywordtype">double</span> firmwareVersion;
 <a name="l00129"></a>00129 
-<a name="l00130"></a>00130     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00131"></a>00131 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00132"></a>00132 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00130"></a>00130     std::string name;
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132     ParameterType parameterType;
 <a name="l00133"></a>00133 
 <a name="l00134"></a>00134 };<span class="comment"></span>
 <a name="l00135"></a>00135 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -183,17 +183,17 @@
 <a name="l00153"></a>00153   <span class="keyword">private</span>:
 <a name="l00154"></a>00154     <span class="keyword">virtual</span> <span class="keywordtype">void</span> getYouBotMailboxMsg(<a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message) <span class="keyword">const</span>;
 <a name="l00155"></a>00155 
-<a name="l00156"></a>00156     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00157"></a>00157 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00158"></a>00158 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00156"></a>00156     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00159"></a>00159 
 <a name="l00160"></a>00160     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
 <a name="l00161"></a>00161 
 <a name="l00162"></a>00162     <span class="keywordtype">bool</span> value;
 <a name="l00163"></a>00163 
-<a name="l00164"></a>00164     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00165"></a>00165 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00166"></a>00166 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00164"></a>00164     std::string name;
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166     ParameterType parameterType;
 <a name="l00167"></a>00167 
 <a name="l00168"></a>00168 };<span class="comment"></span>
 <a name="l00169"></a>00169 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -217,17 +217,17 @@
 <a name="l00187"></a>00187   <span class="keyword">private</span>:
 <a name="l00188"></a>00188     <span class="keyword">virtual</span> <span class="keywordtype">void</span> getYouBotMailboxMsg(<a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message) <span class="keyword">const</span>;
 <a name="l00189"></a>00189 
-<a name="l00190"></a>00190     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00191"></a>00191 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00192"></a>00192 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00190"></a>00190     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00193"></a>00193 
 <a name="l00194"></a>00194     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
 <a name="l00195"></a>00195 
 <a name="l00196"></a>00196     quantity&lt;si::length&gt; value;
 <a name="l00197"></a>00197 
-<a name="l00198"></a>00198     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00199"></a>00199 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00200"></a>00200 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00198"></a>00198     std::string name;
+<a name="l00199"></a>00199 
+<a name="l00200"></a>00200     ParameterType parameterType;
 <a name="l00201"></a>00201 
 <a name="l00202"></a>00202 };<span class="comment"></span>
 <a name="l00203"></a>00203 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -251,17 +251,17 @@
 <a name="l00221"></a>00221   <span class="keyword">private</span>:
 <a name="l00222"></a>00222     <span class="keyword">virtual</span> <span class="keywordtype">void</span> getYouBotMailboxMsg(<a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message) <span class="keyword">const</span>;
 <a name="l00223"></a>00223 
-<a name="l00224"></a>00224     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00225"></a>00225 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00226"></a>00226 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00224"></a>00224     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
+<a name="l00225"></a>00225 
+<a name="l00226"></a>00226     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00227"></a>00227 
 <a name="l00228"></a>00228     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
 <a name="l00229"></a>00229 
 <a name="l00230"></a>00230     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00231"></a>00231 
-<a name="l00232"></a>00232     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00233"></a>00233 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00234"></a>00234 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00232"></a>00232     std::string name;
+<a name="l00233"></a>00233 
+<a name="l00234"></a>00234     ParameterType parameterType;
 <a name="l00235"></a>00235 
 <a name="l00236"></a>00236 };<span class="comment"></span>
 <a name="l00237"></a>00237 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -285,17 +285,17 @@
 <a name="l00255"></a>00255   <span class="keyword">private</span>:
 <a name="l00256"></a>00256     <span class="keyword">virtual</span> <span class="keywordtype">void</span> getYouBotMailboxMsg(<a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message) <span class="keyword">const</span>;
 <a name="l00257"></a>00257 
-<a name="l00258"></a>00258     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00259"></a>00259 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00260"></a>00260 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00258"></a>00258     <span class="keyword">virtual</span> <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
+<a name="l00259"></a>00259 
+<a name="l00260"></a>00260     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00261"></a>00261 
 <a name="l00262"></a>00262     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
 <a name="l00263"></a>00263 
 <a name="l00264"></a>00264     quantity&lt;si::length&gt; value;
 <a name="l00265"></a>00265 
-<a name="l00266"></a>00266     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00267"></a>00267 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00268"></a>00268 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00266"></a>00266     std::string name;
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268     ParameterType parameterType;
 <a name="l00269"></a>00269 
 <a name="l00270"></a>00270 };<span class="comment"></span>
 <a name="l00271"></a>00271 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -321,9 +321,9 @@
 <a name="l00291"></a>00291 
 <a name="l00292"></a>00292     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00293"></a>00293 
-<a name="l00294"></a>00294     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00295"></a>00295 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00296"></a>00296 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00294"></a>00294     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00297"></a>00297 
 <a name="l00298"></a>00298     <span class="keywordtype">int</span> upperLimit;
 <a name="l00299"></a>00299 
@@ -331,9 +331,9 @@
 <a name="l00301"></a>00301 
 <a name="l00302"></a>00302     <span class="keywordtype">int</span> value;
 <a name="l00303"></a>00303 
-<a name="l00304"></a>00304     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00305"></a>00305 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00306"></a>00306 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00304"></a>00304     std::string name;
+<a name="l00305"></a>00305 
+<a name="l00306"></a>00306     ParameterType parameterType;
 <a name="l00307"></a>00307 
 <a name="l00308"></a>00308 };<span class="comment"></span>
 <a name="l00309"></a>00309 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -359,9 +359,9 @@
 <a name="l00329"></a>00329 
 <a name="l00330"></a>00330     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00331"></a>00331 
-<a name="l00332"></a>00332     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00333"></a>00333 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00334"></a>00334 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00332"></a>00332     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00333"></a>00333 
+<a name="l00334"></a>00334     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00335"></a>00335 
 <a name="l00336"></a>00336     <span class="keywordtype">int</span> upperLimit;
 <a name="l00337"></a>00337 
@@ -369,9 +369,9 @@
 <a name="l00339"></a>00339 
 <a name="l00340"></a>00340     <span class="keywordtype">int</span> value;
 <a name="l00341"></a>00341 
-<a name="l00342"></a>00342     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00343"></a>00343 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00344"></a>00344 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00342"></a>00342     std::string name;
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344     ParameterType parameterType;
 <a name="l00345"></a>00345 
 <a name="l00346"></a>00346 };<span class="comment"></span>
 <a name="l00347"></a>00347 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -397,9 +397,9 @@
 <a name="l00367"></a>00367 
 <a name="l00368"></a>00368     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00369"></a>00369 
-<a name="l00370"></a>00370     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00371"></a>00371 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00372"></a>00372 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00370"></a>00370     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00371"></a>00371 
+<a name="l00372"></a>00372     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00373"></a>00373 
 <a name="l00374"></a>00374     <span class="keywordtype">int</span> upperLimit;
 <a name="l00375"></a>00375 
@@ -407,9 +407,9 @@
 <a name="l00377"></a>00377 
 <a name="l00378"></a>00378     <span class="keywordtype">int</span> value;
 <a name="l00379"></a>00379 
-<a name="l00380"></a>00380     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00381"></a>00381 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00382"></a>00382 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00380"></a>00380     std::string name;
+<a name="l00381"></a>00381 
+<a name="l00382"></a>00382     ParameterType parameterType;
 <a name="l00383"></a>00383 
 <a name="l00384"></a>00384 };<span class="comment"></span>
 <a name="l00385"></a>00385 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -435,9 +435,9 @@
 <a name="l00405"></a>00405 
 <a name="l00406"></a>00406     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00407"></a>00407 
-<a name="l00408"></a>00408     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00409"></a>00409 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00410"></a>00410 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00408"></a>00408     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00409"></a>00409 
+<a name="l00410"></a>00410     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00411"></a>00411 
 <a name="l00412"></a>00412     <span class="keywordtype">int</span> upperLimit;
 <a name="l00413"></a>00413 
@@ -445,9 +445,9 @@
 <a name="l00415"></a>00415 
 <a name="l00416"></a>00416     <span class="keywordtype">int</span> value;
 <a name="l00417"></a>00417 
-<a name="l00418"></a>00418     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00419"></a>00419 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00420"></a>00420 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00418"></a>00418     std::string name;
+<a name="l00419"></a>00419 
+<a name="l00420"></a>00420     ParameterType parameterType;
 <a name="l00421"></a>00421 
 <a name="l00422"></a>00422 };<span class="comment"></span>
 <a name="l00423"></a>00423 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -475,9 +475,9 @@
 <a name="l00445"></a>00445 
 <a name="l00446"></a>00446     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00447"></a>00447 
-<a name="l00448"></a>00448     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00449"></a>00449 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00450"></a>00450 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00448"></a>00448     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00449"></a>00449 
+<a name="l00450"></a>00450     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00451"></a>00451 
 <a name="l00452"></a>00452     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00453"></a>00453 
@@ -485,9 +485,9 @@
 <a name="l00455"></a>00455 
 <a name="l00456"></a>00456     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00457"></a>00457 
-<a name="l00458"></a>00458     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00459"></a>00459 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00460"></a>00460 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00458"></a>00458     std::string name;
+<a name="l00459"></a>00459 
+<a name="l00460"></a>00460     ParameterType parameterType;
 <a name="l00461"></a>00461 
 <a name="l00462"></a>00462 };<span class="comment"></span>
 <a name="l00463"></a>00463 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -514,9 +514,9 @@
 <a name="l00484"></a>00484 
 <a name="l00485"></a>00485     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00486"></a>00486 
-<a name="l00487"></a>00487     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00488"></a>00488 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00489"></a>00489 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00487"></a>00487     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00488"></a>00488 
+<a name="l00489"></a>00489     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00490"></a>00490 
 <a name="l00491"></a>00491     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00492"></a>00492 
@@ -524,9 +524,9 @@
 <a name="l00494"></a>00494 
 <a name="l00495"></a>00495     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00496"></a>00496 
-<a name="l00497"></a>00497     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00498"></a>00498 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00499"></a>00499 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00497"></a>00497     std::string name;
+<a name="l00498"></a>00498 
+<a name="l00499"></a>00499     ParameterType parameterType;
 <a name="l00500"></a>00500 
 <a name="l00501"></a>00501 };<span class="comment"></span>
 <a name="l00502"></a>00502 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -555,9 +555,9 @@
 <a name="l00525"></a>00525 
 <a name="l00526"></a>00526     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00527"></a>00527 
-<a name="l00528"></a>00528     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00529"></a>00529 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00530"></a>00530 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00528"></a>00528     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00529"></a>00529 
+<a name="l00530"></a>00530     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00531"></a>00531 
 <a name="l00532"></a>00532     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00533"></a>00533 
@@ -565,9 +565,9 @@
 <a name="l00535"></a>00535 
 <a name="l00536"></a>00536     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00537"></a>00537 
-<a name="l00538"></a>00538     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00539"></a>00539 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00540"></a>00540 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00538"></a>00538     std::string name;
+<a name="l00539"></a>00539 
+<a name="l00540"></a>00540     ParameterType parameterType;
 <a name="l00541"></a>00541 
 <a name="l00542"></a>00542 };<span class="comment"></span>
 <a name="l00543"></a>00543 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -596,9 +596,9 @@
 <a name="l00566"></a>00566 
 <a name="l00567"></a>00567     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00568"></a>00568 
-<a name="l00569"></a>00569     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00570"></a>00570 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00571"></a>00571 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00569"></a>00569     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00570"></a>00570 
+<a name="l00571"></a>00571     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00572"></a>00572 
 <a name="l00573"></a>00573     <span class="keywordtype">int</span> upperLimit;
 <a name="l00574"></a>00574 
@@ -606,9 +606,9 @@
 <a name="l00576"></a>00576 
 <a name="l00577"></a>00577     <span class="keywordtype">int</span> value;
 <a name="l00578"></a>00578 
-<a name="l00579"></a>00579     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00580"></a>00580 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00581"></a>00581 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00579"></a>00579     std::string name;
+<a name="l00580"></a>00580 
+<a name="l00581"></a>00581     ParameterType parameterType;
 <a name="l00582"></a>00582 
 <a name="l00583"></a>00583 };<span class="comment"></span>
 <a name="l00584"></a>00584 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -637,15 +637,15 @@
 <a name="l00607"></a>00607 
 <a name="l00608"></a>00608     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00609"></a>00609 
-<a name="l00610"></a>00610     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00611"></a>00611 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00612"></a>00612 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00610"></a>00610     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00611"></a>00611 
+<a name="l00612"></a>00612     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00613"></a>00613 
 <a name="l00614"></a>00614     <span class="keywordtype">bool</span> value;
 <a name="l00615"></a>00615 
-<a name="l00616"></a>00616     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00617"></a>00617 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00618"></a>00618 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00616"></a>00616     std::string name;
+<a name="l00617"></a>00617 
+<a name="l00618"></a>00618     ParameterType parameterType;
 <a name="l00619"></a>00619 
 <a name="l00620"></a>00620 };<span class="comment"></span>
 <a name="l00621"></a>00621 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -675,9 +675,9 @@
 <a name="l00645"></a>00645 
 <a name="l00646"></a>00646     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00647"></a>00647 
-<a name="l00648"></a>00648     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00649"></a>00649 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00650"></a>00650 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00648"></a>00648     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00649"></a>00649 
+<a name="l00650"></a>00650     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00651"></a>00651 
 <a name="l00652"></a>00652     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00653"></a>00653 
@@ -685,9 +685,9 @@
 <a name="l00655"></a>00655 
 <a name="l00656"></a>00656     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00657"></a>00657 
-<a name="l00658"></a>00658     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00659"></a>00659 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00660"></a>00660 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00658"></a>00658     std::string name;
+<a name="l00659"></a>00659 
+<a name="l00660"></a>00660     ParameterType parameterType;
 <a name="l00661"></a>00661 
 <a name="l00662"></a>00662 };<span class="comment"></span>
 <a name="l00663"></a>00663 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -718,15 +718,15 @@
 <a name="l00688"></a>00688 
 <a name="l00689"></a>00689     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00690"></a>00690 
-<a name="l00691"></a>00691     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00692"></a>00692 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00693"></a>00693 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00691"></a>00691     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00692"></a>00692 
+<a name="l00693"></a>00693     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00694"></a>00694 
 <a name="l00695"></a>00695     <span class="keywordtype">bool</span> value;
 <a name="l00696"></a>00696 
-<a name="l00697"></a>00697     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00698"></a>00698 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00699"></a>00699 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00697"></a>00697     std::string name;
+<a name="l00698"></a>00698 
+<a name="l00699"></a>00699     ParameterType parameterType;
 <a name="l00700"></a>00700 
 <a name="l00701"></a>00701 };<span class="comment"></span>
 <a name="l00702"></a>00702 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -767,9 +767,9 @@
 <a name="l00737"></a>00737 
 <a name="l00738"></a>00738     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00739"></a>00739 
-<a name="l00740"></a>00740     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00741"></a>00741 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00742"></a>00742 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00740"></a>00740     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00741"></a>00741 
+<a name="l00742"></a>00742     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00743"></a>00743 
 <a name="l00744"></a>00744     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00745"></a>00745 
@@ -777,9 +777,9 @@
 <a name="l00747"></a>00747 
 <a name="l00748"></a>00748     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00749"></a>00749 
-<a name="l00750"></a>00750     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00751"></a>00751 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00752"></a>00752 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00750"></a>00750     std::string name;
+<a name="l00751"></a>00751 
+<a name="l00752"></a>00752     ParameterType parameterType;
 <a name="l00753"></a>00753 
 <a name="l00754"></a>00754 };<span class="comment"></span>
 <a name="l00755"></a>00755 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -810,9 +810,9 @@
 <a name="l00780"></a>00780 
 <a name="l00781"></a>00781     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00782"></a>00782 
-<a name="l00783"></a>00783     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00784"></a>00784 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00785"></a>00785 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00783"></a>00783     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00784"></a>00784 
+<a name="l00785"></a>00785     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00786"></a>00786 
 <a name="l00787"></a>00787     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00788"></a>00788 
@@ -820,9 +820,9 @@
 <a name="l00790"></a>00790 
 <a name="l00791"></a>00791     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00792"></a>00792 
-<a name="l00793"></a>00793     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00794"></a>00794 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00795"></a>00795 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00793"></a>00793     std::string name;
+<a name="l00794"></a>00794 
+<a name="l00795"></a>00795     ParameterType parameterType;
 <a name="l00796"></a>00796 
 <a name="l00797"></a>00797 };<span class="comment"></span>
 <a name="l00798"></a>00798 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -848,9 +848,9 @@
 <a name="l00818"></a>00818 
 <a name="l00819"></a>00819     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00820"></a>00820 
-<a name="l00821"></a>00821     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00822"></a>00822 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00823"></a>00823 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00821"></a>00821     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00822"></a>00822 
+<a name="l00823"></a>00823     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00824"></a>00824 
 <a name="l00825"></a>00825     <span class="keywordtype">int</span> upperLimit;
 <a name="l00826"></a>00826 
@@ -858,9 +858,9 @@
 <a name="l00828"></a>00828 
 <a name="l00829"></a>00829     <span class="keywordtype">int</span> value;
 <a name="l00830"></a>00830 
-<a name="l00831"></a>00831     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00832"></a>00832 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00833"></a>00833 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00831"></a>00831     std::string name;
+<a name="l00832"></a>00832 
+<a name="l00833"></a>00833     ParameterType parameterType;
 <a name="l00834"></a>00834 
 <a name="l00835"></a>00835 };<span class="comment"></span>
 <a name="l00836"></a>00836 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -887,9 +887,9 @@
 <a name="l00857"></a>00857 
 <a name="l00858"></a>00858     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00859"></a>00859 
-<a name="l00860"></a>00860     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00861"></a>00861 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00862"></a>00862 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00860"></a>00860     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00861"></a>00861 
+<a name="l00862"></a>00862     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00863"></a>00863 
 <a name="l00864"></a>00864     <span class="keywordtype">int</span> upperLimit;
 <a name="l00865"></a>00865 
@@ -897,9 +897,9 @@
 <a name="l00867"></a>00867 
 <a name="l00868"></a>00868     <span class="keywordtype">int</span> value;
 <a name="l00869"></a>00869 
-<a name="l00870"></a>00870     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00871"></a>00871 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00872"></a>00872 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00870"></a>00870     std::string name;
+<a name="l00871"></a>00871 
+<a name="l00872"></a>00872     ParameterType parameterType;
 <a name="l00873"></a>00873 
 <a name="l00874"></a>00874 };<span class="comment"></span>
 <a name="l00875"></a>00875 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -925,9 +925,9 @@
 <a name="l00895"></a>00895 
 <a name="l00896"></a>00896     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00897"></a>00897 
-<a name="l00898"></a>00898     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00899"></a>00899 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00900"></a>00900 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00898"></a>00898     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00899"></a>00899 
+<a name="l00900"></a>00900     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00901"></a>00901 
 <a name="l00902"></a>00902     <span class="keywordtype">int</span> upperLimit;
 <a name="l00903"></a>00903 
@@ -935,9 +935,9 @@
 <a name="l00905"></a>00905 
 <a name="l00906"></a>00906     <span class="keywordtype">int</span> value;
 <a name="l00907"></a>00907 
-<a name="l00908"></a>00908     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00909"></a>00909 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00910"></a>00910 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00908"></a>00908     std::string name;
+<a name="l00909"></a>00909 
+<a name="l00910"></a>00910     ParameterType parameterType;
 <a name="l00911"></a>00911 
 <a name="l00912"></a>00912 };<span class="comment"></span>
 <a name="l00913"></a>00913 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -972,9 +972,9 @@
 <a name="l00942"></a>00942 
 <a name="l00943"></a>00943     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00944"></a>00944 
-<a name="l00945"></a>00945     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00946"></a>00946 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00947"></a>00947 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00945"></a>00945     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00946"></a>00946 
+<a name="l00947"></a>00947     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00948"></a>00948 
 <a name="l00949"></a>00949     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00950"></a>00950 
@@ -982,9 +982,9 @@
 <a name="l00952"></a>00952 
 <a name="l00953"></a>00953     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00954"></a>00954 
-<a name="l00955"></a>00955     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00956"></a>00956 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00957"></a>00957 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00955"></a>00955     std::string name;
+<a name="l00956"></a>00956 
+<a name="l00957"></a>00957     ParameterType parameterType;
 <a name="l00958"></a>00958 
 <a name="l00959"></a>00959 };<span class="comment"></span>
 <a name="l00960"></a>00960 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1010,9 +1010,9 @@
 <a name="l00980"></a>00980 
 <a name="l00981"></a>00981     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l00982"></a>00982 
-<a name="l00983"></a>00983     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00984"></a>00984 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00985"></a>00985 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l00983"></a>00983     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l00984"></a>00984 
+<a name="l00985"></a>00985     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l00986"></a>00986 
 <a name="l00987"></a>00987     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l00988"></a>00988 
@@ -1020,9 +1020,9 @@
 <a name="l00990"></a>00990 
 <a name="l00991"></a>00991     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l00992"></a>00992 
-<a name="l00993"></a>00993     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00994"></a>00994 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l00995"></a>00995 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l00993"></a>00993     std::string name;
+<a name="l00994"></a>00994 
+<a name="l00995"></a>00995     ParameterType parameterType;
 <a name="l00996"></a>00996 
 <a name="l00997"></a>00997 };<span class="comment"></span>
 <a name="l00998"></a>00998 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1050,9 +1050,9 @@
 <a name="l01020"></a>01020 
 <a name="l01021"></a>01021     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01022"></a>01022 
-<a name="l01023"></a>01023     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01024"></a>01024 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01025"></a>01025 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01023"></a>01023     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01024"></a>01024 
+<a name="l01025"></a>01025     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01026"></a>01026 
 <a name="l01027"></a>01027     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01028"></a>01028 
@@ -1060,9 +1060,9 @@
 <a name="l01030"></a>01030 
 <a name="l01031"></a>01031     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01032"></a>01032 
-<a name="l01033"></a>01033     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01034"></a>01034 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01035"></a>01035 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01033"></a>01033     std::string name;
+<a name="l01034"></a>01034 
+<a name="l01035"></a>01035     ParameterType parameterType;
 <a name="l01036"></a>01036 
 <a name="l01037"></a>01037 };<span class="comment"></span>
 <a name="l01038"></a>01038 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1089,9 +1089,9 @@
 <a name="l01059"></a>01059 
 <a name="l01060"></a>01060     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01061"></a>01061 
-<a name="l01062"></a>01062     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01063"></a>01063 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01064"></a>01064 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01062"></a>01062     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01063"></a>01063 
+<a name="l01064"></a>01064     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01065"></a>01065 
 <a name="l01066"></a>01066     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01067"></a>01067 
@@ -1099,9 +1099,9 @@
 <a name="l01069"></a>01069 
 <a name="l01070"></a>01070     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01071"></a>01071 
-<a name="l01072"></a>01072     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01073"></a>01073 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01074"></a>01074 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01072"></a>01072     std::string name;
+<a name="l01073"></a>01073 
+<a name="l01074"></a>01074     ParameterType parameterType;
 <a name="l01075"></a>01075 
 <a name="l01076"></a>01076 };<span class="comment"></span>
 <a name="l01077"></a>01077 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1130,9 +1130,9 @@
 <a name="l01100"></a>01100 
 <a name="l01101"></a>01101     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01102"></a>01102 
-<a name="l01103"></a>01103     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01104"></a>01104 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01105"></a>01105 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01103"></a>01103     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01104"></a>01104 
+<a name="l01105"></a>01105     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01106"></a>01106 
 <a name="l01107"></a>01107     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01108"></a>01108 
@@ -1140,9 +1140,9 @@
 <a name="l01110"></a>01110 
 <a name="l01111"></a>01111     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01112"></a>01112 
-<a name="l01113"></a>01113     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01114"></a>01114 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01115"></a>01115 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01113"></a>01113     std::string name;
+<a name="l01114"></a>01114 
+<a name="l01115"></a>01115     ParameterType parameterType;
 <a name="l01116"></a>01116 
 <a name="l01117"></a>01117 };<span class="comment"></span>
 <a name="l01118"></a>01118 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1174,9 +1174,9 @@
 <a name="l01144"></a>01144 
 <a name="l01145"></a>01145     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01146"></a>01146 
-<a name="l01147"></a>01147     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01148"></a>01148 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01149"></a>01149 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01147"></a>01147     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01148"></a>01148 
+<a name="l01149"></a>01149     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01150"></a>01150 
 <a name="l01151"></a>01151     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01152"></a>01152 
@@ -1184,9 +1184,9 @@
 <a name="l01154"></a>01154 
 <a name="l01155"></a>01155     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01156"></a>01156 
-<a name="l01157"></a>01157     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01158"></a>01158 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01159"></a>01159 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01157"></a>01157     std::string name;
+<a name="l01158"></a>01158 
+<a name="l01159"></a>01159     ParameterType parameterType;
 <a name="l01160"></a>01160 
 <a name="l01161"></a>01161 };<span class="comment"></span>
 <a name="l01162"></a>01162 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1215,15 +1215,15 @@
 <a name="l01185"></a>01185 
 <a name="l01186"></a>01186     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01187"></a>01187 
-<a name="l01188"></a>01188     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01189"></a>01189 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01190"></a>01190 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01188"></a>01188     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01189"></a>01189 
+<a name="l01190"></a>01190     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01191"></a>01191 
 <a name="l01192"></a>01192     <span class="keywordtype">bool</span> value;
 <a name="l01193"></a>01193 
-<a name="l01194"></a>01194     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01195"></a>01195 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01196"></a>01196 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01194"></a>01194     std::string name;
+<a name="l01195"></a>01195 
+<a name="l01196"></a>01196     ParameterType parameterType;
 <a name="l01197"></a>01197 
 <a name="l01198"></a>01198 };<span class="comment"></span>
 <a name="l01199"></a>01199 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1252,9 +1252,9 @@
 <a name="l01222"></a>01222 
 <a name="l01223"></a>01223     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01224"></a>01224 
-<a name="l01225"></a>01225     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01226"></a>01226 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01227"></a>01227 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01225"></a>01225     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01226"></a>01226 
+<a name="l01227"></a>01227     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01228"></a>01228 
 <a name="l01229"></a>01229     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01230"></a>01230 
@@ -1262,9 +1262,9 @@
 <a name="l01232"></a>01232 
 <a name="l01233"></a>01233     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01234"></a>01234 
-<a name="l01235"></a>01235     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01236"></a>01236 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01237"></a>01237 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01235"></a>01235     std::string name;
+<a name="l01236"></a>01236 
+<a name="l01237"></a>01237     ParameterType parameterType;
 <a name="l01238"></a>01238 
 <a name="l01239"></a>01239 };<span class="comment"></span>
 <a name="l01240"></a>01240 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1291,9 +1291,9 @@
 <a name="l01261"></a>01261 
 <a name="l01262"></a>01262     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01263"></a>01263 
-<a name="l01264"></a>01264     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01265"></a>01265 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01266"></a>01266 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01264"></a>01264     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01265"></a>01265 
+<a name="l01266"></a>01266     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01267"></a>01267 
 <a name="l01268"></a>01268     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01269"></a>01269 
@@ -1301,9 +1301,9 @@
 <a name="l01271"></a>01271 
 <a name="l01272"></a>01272     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01273"></a>01273 
-<a name="l01274"></a>01274     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01275"></a>01275 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01276"></a>01276 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01274"></a>01274     std::string name;
+<a name="l01275"></a>01275 
+<a name="l01276"></a>01276     ParameterType parameterType;
 <a name="l01277"></a>01277 
 <a name="l01278"></a>01278 };<span class="comment"></span>
 <a name="l01279"></a>01279 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1333,9 +1333,9 @@
 <a name="l01303"></a>01303 
 <a name="l01304"></a>01304     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01305"></a>01305 
-<a name="l01306"></a>01306     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01307"></a>01307 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01308"></a>01308 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01306"></a>01306     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01307"></a>01307 
+<a name="l01308"></a>01308     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01309"></a>01309 
 <a name="l01310"></a>01310     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01311"></a>01311 
@@ -1343,9 +1343,9 @@
 <a name="l01313"></a>01313 
 <a name="l01314"></a>01314     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01315"></a>01315 
-<a name="l01316"></a>01316     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01317"></a>01317 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01318"></a>01318 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01316"></a>01316     std::string name;
+<a name="l01317"></a>01317 
+<a name="l01318"></a>01318     ParameterType parameterType;
 <a name="l01319"></a>01319 
 <a name="l01320"></a>01320 };<span class="comment"></span>
 <a name="l01321"></a>01321 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1375,9 +1375,9 @@
 <a name="l01345"></a>01345 
 <a name="l01346"></a>01346     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01347"></a>01347 
-<a name="l01348"></a>01348     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01349"></a>01349 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01350"></a>01350 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01348"></a>01348     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01349"></a>01349 
+<a name="l01350"></a>01350     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01351"></a>01351 
 <a name="l01352"></a>01352     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01353"></a>01353 
@@ -1385,9 +1385,9 @@
 <a name="l01355"></a>01355 
 <a name="l01356"></a>01356     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01357"></a>01357 
-<a name="l01358"></a>01358     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01359"></a>01359 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01360"></a>01360 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01358"></a>01358     std::string name;
+<a name="l01359"></a>01359 
+<a name="l01360"></a>01360     ParameterType parameterType;
 <a name="l01361"></a>01361 
 <a name="l01362"></a>01362 };<span class="comment"></span>
 <a name="l01363"></a>01363 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1416,9 +1416,9 @@
 <a name="l01386"></a>01386 
 <a name="l01387"></a>01387     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01388"></a>01388 
-<a name="l01389"></a>01389     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01390"></a>01390 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01391"></a>01391 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01389"></a>01389     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01390"></a>01390 
+<a name="l01391"></a>01391     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01392"></a>01392 
 <a name="l01393"></a>01393     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01394"></a>01394 
@@ -1426,9 +1426,9 @@
 <a name="l01396"></a>01396 
 <a name="l01397"></a>01397     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01398"></a>01398 
-<a name="l01399"></a>01399     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01400"></a>01400 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01401"></a>01401 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01399"></a>01399     std::string name;
+<a name="l01400"></a>01400 
+<a name="l01401"></a>01401     ParameterType parameterType;
 <a name="l01402"></a>01402 
 <a name="l01403"></a>01403 };<span class="comment"></span>
 <a name="l01404"></a>01404 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1458,9 +1458,9 @@
 <a name="l01428"></a>01428 
 <a name="l01429"></a>01429     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01430"></a>01430 
-<a name="l01431"></a>01431     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01432"></a>01432 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01433"></a>01433 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01431"></a>01431     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01432"></a>01432 
+<a name="l01433"></a>01433     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01434"></a>01434 
 <a name="l01435"></a>01435     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01436"></a>01436 
@@ -1468,9 +1468,9 @@
 <a name="l01438"></a>01438 
 <a name="l01439"></a>01439     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01440"></a>01440 
-<a name="l01441"></a>01441     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01442"></a>01442 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01443"></a>01443 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01441"></a>01441     std::string name;
+<a name="l01442"></a>01442 
+<a name="l01443"></a>01443     ParameterType parameterType;
 <a name="l01444"></a>01444 
 <a name="l01445"></a>01445 };<span class="comment"></span>
 <a name="l01446"></a>01446 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1498,9 +1498,9 @@
 <a name="l01468"></a>01468 
 <a name="l01469"></a>01469     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01470"></a>01470 
-<a name="l01471"></a>01471     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01472"></a>01472 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01473"></a>01473 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01471"></a>01471     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01472"></a>01472 
+<a name="l01473"></a>01473     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01474"></a>01474 
 <a name="l01475"></a>01475     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01476"></a>01476 
@@ -1508,9 +1508,9 @@
 <a name="l01478"></a>01478 
 <a name="l01479"></a>01479     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01480"></a>01480 
-<a name="l01481"></a>01481     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01482"></a>01482 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01483"></a>01483 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01481"></a>01481     std::string name;
+<a name="l01482"></a>01482 
+<a name="l01483"></a>01483     ParameterType parameterType;
 <a name="l01484"></a>01484 
 <a name="l01485"></a>01485 };<span class="comment"></span>
 <a name="l01486"></a>01486 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1537,9 +1537,9 @@
 <a name="l01507"></a>01507 
 <a name="l01508"></a>01508     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01509"></a>01509 
-<a name="l01510"></a>01510     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01511"></a>01511 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01512"></a>01512 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01510"></a>01510     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01511"></a>01511 
+<a name="l01512"></a>01512     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01513"></a>01513 
 <a name="l01514"></a>01514     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01515"></a>01515 
@@ -1547,9 +1547,9 @@
 <a name="l01517"></a>01517 
 <a name="l01518"></a>01518     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01519"></a>01519 
-<a name="l01520"></a>01520     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01521"></a>01521 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01522"></a>01522 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01520"></a>01520     std::string name;
+<a name="l01521"></a>01521 
+<a name="l01522"></a>01522     ParameterType parameterType;
 <a name="l01523"></a>01523 
 <a name="l01524"></a>01524 };<span class="comment"></span>
 <a name="l01525"></a>01525 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1576,9 +1576,9 @@
 <a name="l01546"></a>01546 
 <a name="l01547"></a>01547     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01548"></a>01548 
-<a name="l01549"></a>01549     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01550"></a>01550 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01551"></a>01551 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01549"></a>01549     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01550"></a>01550 
+<a name="l01551"></a>01551     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01552"></a>01552 
 <a name="l01553"></a>01553     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01554"></a>01554 
@@ -1586,9 +1586,9 @@
 <a name="l01556"></a>01556 
 <a name="l01557"></a>01557     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01558"></a>01558 
-<a name="l01559"></a>01559     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01560"></a>01560 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01561"></a>01561 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01559"></a>01559     std::string name;
+<a name="l01560"></a>01560 
+<a name="l01561"></a>01561     ParameterType parameterType;
 <a name="l01562"></a>01562 
 <a name="l01563"></a>01563 };<span class="comment"></span>
 <a name="l01564"></a>01564 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1615,9 +1615,9 @@
 <a name="l01585"></a>01585 
 <a name="l01586"></a>01586     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01587"></a>01587 
-<a name="l01588"></a>01588     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01589"></a>01589 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01590"></a>01590 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01588"></a>01588     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01589"></a>01589 
+<a name="l01590"></a>01590     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01591"></a>01591 
 <a name="l01592"></a>01592     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01593"></a>01593 
@@ -1625,9 +1625,9 @@
 <a name="l01595"></a>01595 
 <a name="l01596"></a>01596     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01597"></a>01597 
-<a name="l01598"></a>01598     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01599"></a>01599 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01600"></a>01600 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01598"></a>01598     std::string name;
+<a name="l01599"></a>01599 
+<a name="l01600"></a>01600     ParameterType parameterType;
 <a name="l01601"></a>01601 
 <a name="l01602"></a>01602 };<span class="comment"></span>
 <a name="l01603"></a>01603 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1655,15 +1655,15 @@
 <a name="l01625"></a>01625 
 <a name="l01626"></a>01626     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01627"></a>01627 
-<a name="l01628"></a>01628     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01629"></a>01629 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01630"></a>01630 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01628"></a>01628     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01629"></a>01629 
+<a name="l01630"></a>01630     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01631"></a>01631 
 <a name="l01632"></a>01632     <span class="keywordtype">bool</span> value;
 <a name="l01633"></a>01633 
-<a name="l01634"></a>01634     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01635"></a>01635 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01636"></a>01636 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01634"></a>01634     std::string name;
+<a name="l01635"></a>01635 
+<a name="l01636"></a>01636     ParameterType parameterType;
 <a name="l01637"></a>01637 
 <a name="l01638"></a>01638 };<span class="comment"></span>
 <a name="l01639"></a>01639 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1692,9 +1692,9 @@
 <a name="l01662"></a>01662 
 <a name="l01663"></a>01663     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01664"></a>01664 
-<a name="l01665"></a>01665     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01666"></a>01666 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01667"></a>01667 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01665"></a>01665     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01666"></a>01666 
+<a name="l01667"></a>01667     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01668"></a>01668 
 <a name="l01669"></a>01669     <span class="keywordtype">int</span> upperLimit;
 <a name="l01670"></a>01670 
@@ -1702,9 +1702,9 @@
 <a name="l01672"></a>01672 
 <a name="l01673"></a>01673     <span class="keywordtype">int</span> value;
 <a name="l01674"></a>01674 
-<a name="l01675"></a>01675     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01676"></a>01676 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01677"></a>01677 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01675"></a>01675     std::string name;
+<a name="l01676"></a>01676 
+<a name="l01677"></a>01677     ParameterType parameterType;
 <a name="l01678"></a>01678 
 <a name="l01679"></a>01679 };<span class="comment"></span>
 <a name="l01680"></a>01680 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1732,9 +1732,9 @@
 <a name="l01702"></a>01702 
 <a name="l01703"></a>01703     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01704"></a>01704 
-<a name="l01705"></a>01705     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01706"></a>01706 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01707"></a>01707 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01705"></a>01705     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01706"></a>01706 
+<a name="l01707"></a>01707     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01708"></a>01708 
 <a name="l01709"></a>01709     <span class="keywordtype">int</span> upperLimit;
 <a name="l01710"></a>01710 
@@ -1742,9 +1742,9 @@
 <a name="l01712"></a>01712 
 <a name="l01713"></a>01713     <span class="keywordtype">int</span> value;
 <a name="l01714"></a>01714 
-<a name="l01715"></a>01715     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01716"></a>01716 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01717"></a>01717 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01715"></a>01715     std::string name;
+<a name="l01716"></a>01716 
+<a name="l01717"></a>01717     ParameterType parameterType;
 <a name="l01718"></a>01718 
 <a name="l01719"></a>01719 };<span class="comment"></span>
 <a name="l01720"></a>01720 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1775,15 +1775,15 @@
 <a name="l01745"></a>01745 
 <a name="l01746"></a>01746     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01747"></a>01747 
-<a name="l01748"></a>01748     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01749"></a>01749 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01750"></a>01750 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01748"></a>01748     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01749"></a>01749 
+<a name="l01750"></a>01750     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01751"></a>01751 
 <a name="l01752"></a>01752     <span class="keywordtype">bool</span> value;
 <a name="l01753"></a>01753 
-<a name="l01754"></a>01754     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01755"></a>01755 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01756"></a>01756 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01754"></a>01754     std::string name;
+<a name="l01755"></a>01755 
+<a name="l01756"></a>01756     ParameterType parameterType;
 <a name="l01757"></a>01757 
 <a name="l01758"></a>01758 };<span class="comment"></span>
 <a name="l01759"></a>01759 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1809,15 +1809,15 @@
 <a name="l01779"></a>01779 
 <a name="l01780"></a>01780     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01781"></a>01781 
-<a name="l01782"></a>01782     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01783"></a>01783 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01784"></a>01784 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01782"></a>01782     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01783"></a>01783 
+<a name="l01784"></a>01784     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01785"></a>01785 
 <a name="l01786"></a>01786     <span class="keywordtype">bool</span> value;
 <a name="l01787"></a>01787 
-<a name="l01788"></a>01788     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01789"></a>01789 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01790"></a>01790 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01788"></a>01788     std::string name;
+<a name="l01789"></a>01789 
+<a name="l01790"></a>01790     ParameterType parameterType;
 <a name="l01791"></a>01791 
 <a name="l01792"></a>01792 };<span class="comment"></span>
 <a name="l01793"></a>01793 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
@@ -1848,9 +1848,9 @@
 <a name="l01818"></a>01818 
 <a name="l01819"></a>01819     <span class="keywordtype">void</span> setYouBotMailboxMsg(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
 <a name="l01820"></a>01820 
-<a name="l01821"></a>01821     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01822"></a>01822 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01823"></a>01823 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
+<a name="l01821"></a>01821     std::string getName()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;name;};
+<a name="l01822"></a>01822 
+<a name="l01823"></a>01823     ParameterType getType()<span class="keyword"> const </span>{<span class="keywordflow">return</span> this-&gt;parameterType;};
 <a name="l01824"></a>01824 
 <a name="l01825"></a>01825     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> upperLimit;
 <a name="l01826"></a>01826 
@@ -1858,9 +1858,9 @@
 <a name="l01828"></a>01828 
 <a name="l01829"></a>01829     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value;
 <a name="l01830"></a>01830 
-<a name="l01831"></a>01831     std::string name;<a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01832"></a>01832 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0"></a>
-<a name="l01833"></a>01833 <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">    ::ParameterType</a> parameterType;
+<a name="l01831"></a>01831     std::string name;
+<a name="l01832"></a>01832 
+<a name="l01833"></a>01833     ParameterType parameterType;
 <a name="l01834"></a>01834 
 <a name="l01835"></a>01835 };
 <a name="l01836"></a>01836 

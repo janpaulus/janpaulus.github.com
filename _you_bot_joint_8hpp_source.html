@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_c188f3569ca341e23a607146381c217c.html">youbot</a>
+  <div class="navpath"><a class="el" href="dir_b20df63dec99a6d1c83aff53bd0137ad.html">youbot</a>
   </div>
 </div>
 <div class="contents">
@@ -251,11 +251,11 @@
 <a name="l00221"></a>00221 <span class="comment">    ///commands a torque to one joint</span>
 <a name="l00222"></a>00222 <span class="comment">    ///@param data the to command torque</span>
 <a name="l00223"></a>00223 <span class="comment">    ///@param communicationMode at the moment only non blocking communication is implemented</span>
-<a name="l00224"></a>00224 <span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_joint_torque_setpoint.html" title="Set-point torque of the joint.">JointTorqueSetpoint</a>&amp; data, SyncMode communicationMode = NON_BLOCKING);
+<a name="l00224"></a>00224 <span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_joint_torque_setpoint.html" title="The torque set-point of the joint will be set by setting the computed current set-point...">JointTorqueSetpoint</a>&amp; data, SyncMode communicationMode = NON_BLOCKING);
 <a name="l00225"></a>00225 <span class="comment"></span>
 <a name="l00226"></a>00226 <span class="comment">    ///gets the motor torque of one joint which have been calculated from the current</span>
 <a name="l00227"></a>00227 <span class="comment">    ///@param data returns the actual motor torque by reference</span>
-<a name="l00228"></a>00228 <span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">getData</a>(<a class="code" href="classyoubot_1_1_joint_sensed_torque.html" title="Sensed torque of the joint.">JointSensedTorque</a>&amp; data);
+<a name="l00228"></a>00228 <span class="comment"></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">getData</a>(<a class="code" href="classyoubot_1_1_joint_sensed_torque.html" title="This torque of the joint is computed from the actual current.">JointSensedTorque</a>&amp; data);
 <a name="l00229"></a>00229 
 <a name="l00230"></a>00230     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_joint.html#ae6bb64697e202afe37bfd7285cb7e3db">getUserVariable</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <span class="keywordtype">int</span>&amp; data);
 <a name="l00231"></a>00231 

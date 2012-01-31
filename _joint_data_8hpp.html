@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_de3b65e3ad33f41eb08b535c86e45892.html">generic-joint</a>
+  <div class="navpath"><a class="el" href="dir_34771b1897afd154e4c93f65bfdc0c44.html">generic-joint</a>
   </div>
 </div>
 <div class="contents">
@@ -51,6 +51,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">abstract data class for joints  <a href="classyoubot_1_1_joint_data.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_sensed_data.html">JointSensedData</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">abstract data class for sensed / measured joint data  <a href="classyoubot_1_1_joint_sensed_data.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_computed_data.html">JointComputedData</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_sensed_p_w_m.html">JointSensedPWM</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">actual pwm value of the joint  <a href="classyoubot_1_1_joint_sensed_p_w_m.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_sensed_angle.html">JointSensedAngle</a></td></tr>
@@ -64,9 +65,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_sensed_current.html">JointSensedCurrent</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sensed electric current of the joint.  <a href="classyoubot_1_1_joint_sensed_current.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_sensed_torque.html">JointSensedTorque</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sensed torque of the joint.  <a href="classyoubot_1_1_joint_sensed_torque.html#_details">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">This torque of the joint is computed from the actual current.  <a href="classyoubot_1_1_joint_sensed_torque.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_data_setpoint.html">JointDataSetpoint</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">abstract data class for commanded joint data  <a href="classyoubot_1_1_joint_data_setpoint.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_computed_setpoint.html">JointComputedSetpoint</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_angle_setpoint.html">JointAngleSetpoint</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set-point angle / position of the joint.  <a href="classyoubot_1_1_joint_angle_setpoint.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_velocity_setpoint.html">JointVelocitySetpoint</a></td></tr>
@@ -76,7 +78,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_current_setpoint.html">JointCurrentSetpoint</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set-point current of the joint.  <a href="classyoubot_1_1_joint_current_setpoint.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_torque_setpoint.html">JointTorqueSetpoint</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Set-point torque of the joint.  <a href="classyoubot_1_1_joint_torque_setpoint.html#_details">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The torque set-point of the joint will be set by setting the computed current set-point.  <a href="classyoubot_1_1_joint_torque_setpoint.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_p_w_m_setpoint.html">JointPWMSetpoint</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pulse-width modulation set-point of the joint.  <a href="classyoubot_1_1_joint_p_w_m_setpoint.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_joint_encoder_setpoint.html">JointEncoderSetpoint</a></td></tr>

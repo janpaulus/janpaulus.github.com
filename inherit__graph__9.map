@@ -1,4 +1,21 @@
 <map id="G" name="G">
-<area shape="rect" href="$classyoubot_1_1_joint.html" title="/ abstract joint" alt="" coords="7,5,55,35"/>
-<area shape="rect" href="$classyoubot_1_1_you_bot_joint.html" title="youBot joint for the base and the manipulator." alt="" coords="105,5,196,35"/>
+<area shape="rect" href="$classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="7,339,81,368"/>
+<area shape="rect" href="$classyoubot_1_1_joint_data_setpoint.html" title="abstract data class for commanded joint data" alt="" coords="132,192,255,221"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_data.html" title="abstract data class for sensed / measured joint data" alt="" coords="133,512,253,541"/>
+<area shape="rect" href="$classyoubot_1_1_joint_angle_setpoint.html" title="Set&#45;point angle / position of the joint." alt="" coords="339,5,469,35"/>
+<area shape="rect" href="$classyoubot_1_1_joint_computed_setpoint.html" title="JointComputedSetpoint" alt="" coords="327,59,481,88"/>
+<area shape="rect" href="$classyoubot_1_1_joint_current_setpoint.html" title="Set&#45;point current of the joint." alt="" coords="335,112,473,141"/>
+<area shape="rect" href="$classyoubot_1_1_joint_encoder_setpoint.html" title="encoder ticks setpoint of the joint" alt="" coords="332,165,476,195"/>
+<area shape="rect" href="$classyoubot_1_1_joint_p_w_m_setpoint.html" title="Pulse&#45;width modulation set&#45;point of the joint." alt="" coords="340,219,468,248"/>
+<area shape="rect" href="$classyoubot_1_1_joint_rounds_per_minute_setpoint.html" title="Rounds per minute set&#45;point of the joint." alt="" coords="304,272,504,301"/>
+<area shape="rect" href="$classyoubot_1_1_joint_velocity_setpoint.html" title="Set&#45;point velocity of the joint." alt="" coords="332,325,476,355"/>
+<area shape="rect" href="$classyoubot_1_1_joint_torque_setpoint.html" title="The torque set&#45;point of the joint will be set by setting the computed current set&#45;point..." alt="" coords="552,59,688,88"/>
+<area shape="rect" href="$classyoubot_1_1_joint_computed_data.html" title="JointComputedData" alt="" coords="336,379,472,408"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_angle.html" title="Sensed position / angle of the joint." alt="" coords="341,432,467,461"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_current.html" title="Sensed electric current of the joint." alt="" coords="336,485,472,515"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_encoder_ticks.html" title="Sensed encoder ticks of the joint." alt="" coords="319,539,489,568"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_p_w_m.html" title="actual pwm value of the joint" alt="" coords="343,592,465,621"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_rounds_per_minute.html" title="Sensed rounds per minute (rpm) of the joint." alt="" coords="307,645,501,675"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_velocity.html" title="Sensed velocity of the joint." alt="" coords="335,699,473,728"/>
+<area shape="rect" href="$classyoubot_1_1_joint_sensed_torque.html" title="This torque of the joint is computed from the actual current." alt="" coords="555,379,685,408"/>
 </map>
