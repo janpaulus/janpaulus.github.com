@@ -1,12 +1,13 @@
 <map id="G" name="G">
-<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="553,83,684,112"/>
-<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="647,315,769,344"/>
-<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="739,83,859,112"/>
-<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="944,83,1101,112"/>
-<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="96,160,304,189"/>
-<area shape="rect" href="$_gripper_parameter_8hpp.html" title="generic&#45;gripper/GripperParameter.hpp" alt="" coords="5,83,240,112"/>
-<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1176,83,1373,112"/>
-<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1656,83,1845,112"/>
-<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="1397,83,1632,112"/>
-<area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="113,237,289,267"/>
+<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="597,83,728,112"/>
+<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="568,315,691,344"/>
+<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="752,83,872,112"/>
+<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="896,83,1053,112"/>
+<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="1263,160,1471,189"/>
+<area shape="rect" href="$_gripper_parameter_8hpp.html" title="generic&#45;gripper/GripperParameter.hpp" alt="" coords="1077,83,1312,112"/>
+<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1387,83,1584,112"/>
+<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1867,83,2056,112"/>
+<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="1608,83,1843,112"/>
+<area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="867,237,1043,267"/>
+<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="1791,160,1895,189"/>
 </map>

@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" href="$classyoubot_1_1_you_bot_manipulator.html" title="It groups the manipulator joints and the gripper together." alt="" coords="5,5,136,35"/>
+<area shape="rect" href="$classyoubot_1_1_gripper_data.html" title="abstract class of gripper data" alt="" coords="5,5,96,35"/>
+<area shape="rect" href="$classyoubot_1_1_one_d_o_f_gripper_data.html" title="abstract class of data for gripper with one degree of freedom" alt="" coords="144,5,285,35"/>
+<area shape="rect" href="$classyoubot_1_1_gripper_bar_spacing_set_point.html" title="Setpoint length of the bar spacing for a one DOF gripper." alt="" coords="335,5,513,35"/>
 </map>

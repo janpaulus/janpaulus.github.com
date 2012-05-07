@@ -1,12 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" href="$_gripper_8hpp.html" title="Gripper.hpp" alt="" coords="24,83,112,112"/>
-<area shape="rect" href="$_one_d_o_f_gripper_8hpp.html" title="OneDOFGripper.hpp" alt="" coords="105,160,244,189"/>
-<area shape="rect" href="$_you_bot_gripper_8hpp.html" title="YouBotGripper.hpp" alt="" coords="109,315,240,344"/>
-<area shape="rect" href="$_you_bot_gripper_bar_8hpp.html" title="YouBotGripperBar.hpp" alt="" coords="289,237,439,267"/>
-<area shape="rect" href="$_one_d_o_f_gripper_data_8hpp.html" title="OneDOFGripperData.hpp" alt="" coords="187,83,352,112"/>
-<area shape="rect" href="$_you_bot_gripper_8cpp.html" title="YouBotGripper.cpp" alt="" coords="27,392,157,421"/>
-<area shape="rect" href="$_you_bot_manipulator_8hpp.html" title="YouBotManipulator.hpp" alt="" coords="181,392,336,421"/>
-<area shape="rect" href="$create___data_trace_8cpp.html" title="create_DataTrace.cpp" alt="" coords="97,469,244,499"/>
-<area shape="rect" href="$_you_bot_manipulator_8cpp.html" title="YouBotManipulator.cpp" alt="" coords="268,469,423,499"/>
-<area shape="rect" href="$_you_bot_gripper_bar_8cpp.html" title="YouBotGripperBar.cpp" alt="" coords="289,315,439,344"/>
+<area shape="rect" href="$_gripper_8hpp.html" title="Gripper.hpp" alt="" coords="5,83,93,112"/>
+<area shape="rect" href="$_one_d_o_f_gripper_8hpp.html" title="OneDOFGripper.hpp" alt="" coords="81,160,220,189"/>
+<area shape="rect" href="$_you_bot_gripper_8hpp.html" title="YouBotGripper.hpp" alt="" coords="139,237,269,267"/>
+<area shape="rect" href="$_one_d_o_f_gripper_data_8hpp.html" title="OneDOFGripperData.hpp" alt="" coords="168,83,333,112"/>
+<area shape="rect" href="$_you_bot_gripper_8cpp.html" title="YouBotGripper.cpp" alt="" coords="56,315,187,344"/>
+<area shape="rect" href="$_you_bot_manipulator_8hpp.html" title="YouBotManipulator.hpp" alt="" coords="211,315,365,344"/>
+<area shape="rect" href="$create___data_trace_8cpp.html" title="create_DataTrace.cpp" alt="" coords="127,392,273,421"/>
+<area shape="rect" href="$_you_bot_manipulator_8cpp.html" title="YouBotManipulator.cpp" alt="" coords="297,392,452,421"/>
 </map>

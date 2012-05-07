@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_b20df63dec99a6d1c83aff53bd0137ad.html">youbot</a>
+  <div class="navpath"><a class="el" href="dir_7bebd886d1f7529b900faa14b8b5e01b.html">youbot</a>
   </div>
 </div>
 <div class="contents">
@@ -82,7 +82,7 @@
 <a name="l00052"></a>00052 <span class="preprocessor">#ifndef _YOUBOT_SLAVE_MESSAGE_H</span>
 <a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#define _YOUBOT_SLAVE_MESSAGE_H</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span>
-<a name="l00055"></a>00055 <span class="preprocessor">#include &lt;ethercattype.h&gt;</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#include &lt;<a class="code" href="ethercattype_8h.html" title="General typedefs and defines for EtherCAT.">ethercattype.h</a>&gt;</span>
 <a name="l00056"></a>00056 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00057"></a>00057 <span class="preprocessor">#include &lt;time.h&gt;</span>
 <a name="l00058"></a>00058 
@@ -91,20 +91,20 @@
 <a name="l00061"></a>00061 <span class="comment">  /// Output part from the EtherCat message of the youBot EtherCat slaves</span>
 <a name="l00062"></a>00062 <span class="comment"></span>
 <a name="l00063"></a><a class="code" href="structyoubot_1_1_slave_message_output.html">00063</a>   <span class="keyword">struct </span><a class="code" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a> {
-<a name="l00064"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">00064</a>     int32 <a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a>;
-<a name="l00065"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">00065</a>     uint8 <a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a>;
-<a name="l00066"></a>00066   } __attribute__((__packed__));
+<a name="l00064"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">00064</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a>;
+<a name="l00065"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">00065</a>     <a class="code" href="ethercattype_8h.html#adde6aaee8457bee49c2a92621fe22b79">uint8</a> <a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a>;
+<a name="l00066"></a>00066   } <a class="code" href="ethercatmain_8h.html#a55d8b81c25ea933b4ac90e13c16a0138" title="max.">__attribute__</a>((__packed__));
 <a name="l00067"></a>00067 
 <a name="l00068"></a>00068 <span class="comment"></span>
 <a name="l00069"></a>00069 <span class="comment">  /// Input part from the EtherCat message of the youBot EtherCat slaves</span>
 <a name="l00070"></a>00070 <span class="comment"></span>
 <a name="l00071"></a><a class="code" href="structyoubot_1_1_slave_message_input.html">00071</a>   <span class="keyword">struct </span><a class="code" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a> {
-<a name="l00072"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">00072</a>     int32 <a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>;   <span class="comment">// encoder ticks</span>
-<a name="l00073"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">00073</a>     int32 <a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">actualCurrent</a>;    <span class="comment">// mA</span>
-<a name="l00074"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">00074</a>     int32 <a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a>;   <span class="comment">// rpm motor axis</span>
-<a name="l00075"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">00075</a>     uint32 <a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a>;
-<a name="l00076"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">00076</a>     int32 <a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">actualPWM</a>;
-<a name="l00077"></a>00077   } __attribute__((__packed__));
+<a name="l00072"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">00072</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>;   <span class="comment">// encoder ticks</span>
+<a name="l00073"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">00073</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">actualCurrent</a>;    <span class="comment">// mA</span>
+<a name="l00074"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">00074</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a>;   <span class="comment">// rpm motor axis</span>
+<a name="l00075"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">00075</a>     <a class="code" href="ethercattype_8h.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a>;
+<a name="l00076"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">00076</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">actualPWM</a>;
+<a name="l00077"></a>00077   } <a class="code" href="ethercatmain_8h.html#a55d8b81c25ea933b4ac90e13c16a0138" title="max.">__attribute__</a>((__packed__));
 <a name="l00078"></a>00078 <span class="comment"></span>
 <a name="l00079"></a>00079 <span class="comment">  ///////////////////////////////////////////////////////////////////////////////</span>
 <a name="l00080"></a>00080 <span class="comment">  /// EtherCat message of the youBot EtherCat slaves</span>

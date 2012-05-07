@@ -1,11 +1,20 @@
 <map id="G" name="G">
-<area shape="rect" href="$_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="919,83,1097,112"/>
-<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="1192,160,1323,189"/>
-<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2211,160,2333,189"/>
-<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="1477,160,1597,189"/>
-<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="779,237,936,267"/>
-<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="783,160,932,189"/>
-<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1621,160,1819,189"/>
-<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="199,160,388,189"/>
-<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="412,160,647,189"/>
+<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="11,315,115,344"/>
+<area shape="rect" href="$nicdrv_8h.html" title="Headerfile for nicdrv.c." alt="" coords="912,83,979,112"/>
+<area shape="rect" href="$ethercatbase_8h.html" title="Headerfile for ethercatbase.c." alt="" coords="1003,83,1109,112"/>
+<area shape="rect" href="$ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="36,160,143,189"/>
+<area shape="rect" href="$ethercatconfig_8h.html" title="Headerfile for ethercatconfig.c." alt="" coords="1133,83,1248,112"/>
+<area shape="rect" href="$ethercatcoe_8h.html" title="Headerfile for ethercatcoe.c." alt="" coords="1272,83,1371,112"/>
+<area shape="rect" href="$ethercatdc_8h.html" title="Headerfile for ethercatdc.c." alt="" coords="1395,83,1488,112"/>
+<area shape="rect" href="$ethercatprint_8h.html" title="Headerfile for ethercatprint.c." alt="" coords="1512,83,1616,112"/>
+<area shape="rect" href="$_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="709,83,888,112"/>
+<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="1383,237,1513,267"/>
+<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2216,237,2339,267"/>
+<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="1809,237,1929,267"/>
+<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="831,237,988,267"/>
+<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="836,160,985,189"/>
+<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="87,237,276,267"/>
+<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="300,237,535,267"/>
+<area shape="rect" href="$_motor_protection_8hpp.html" title="youbot/MotorProtection.hpp" alt="" coords="1408,160,1589,189"/>
+<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1588,237,1785,267"/>
 </map>

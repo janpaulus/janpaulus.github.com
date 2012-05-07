@@ -1,23 +1,26 @@
 <map id="G" name="G">
-<area shape="rect" href="$_you_bot_base_8hpp.html" title="youbot/YouBotBase.hpp" alt="" coords="1325,83,1485,112"/>
-<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="1579,469,1709,499"/>
-<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2813,624,2936,653"/>
-<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="2616,469,2736,499"/>
-<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="1117,392,1267,421"/>
-<area shape="rect" href="$_exceptions_8hpp.html" title="Exceptions.hpp" alt="" coords="869,469,981,499"/>
-<area shape="rect" href="$_you_bot_joint_8hpp.html" title="youbot/YouBotJoint.hpp" alt="" coords="3664,160,3824,189"/>
-<area shape="rect" href="$_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="3212,315,3431,344"/>
-<area shape="rect" href="$_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="1957,315,2136,344"/>
-<area shape="rect" href="$_four_swedish_wheel_omni_base_kinematic_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematic.hpp" alt="" coords="292,315,660,344"/>
-<area shape="rect" href="$_four_swedish_wheel_omni_base_kinematic_configuration_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematicConfiguration.hpp" alt="" coords="245,392,688,421"/>
-<area shape="rect" href="$_joint_8hpp.html" title="generic&#45;joint/Joint.hpp" alt="" coords="4317,392,4464,421"/>
-<area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="4317,547,4493,576"/>
-<area shape="rect" href="$_you_bot_joint_storage_8hpp.html" title="youbot/YouBotJointStorage.hpp" alt="" coords="3347,469,3549,499"/>
-<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="2912,469,3109,499"/>
-<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="3133,469,3323,499"/>
-<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="3573,469,3808,499"/>
-<area shape="rect" href="$_you_bot_joint_parameter_password_protected_8hpp.html" title="youbot/YouBotJointParameterPasswordProtected.hpp" alt="" coords="3477,237,3808,267"/>
-<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="3883,469,4091,499"/>
-<area shape="rect" href="$_you_bot_joint_parameter_read_only_8hpp.html" title="youbot/YouBotJointParameterReadOnly.hpp" alt="" coords="2869,392,3144,421"/>
-<area shape="rect" href="$_wheeled_base_kinematic_8hpp.html" title="base&#45;kinematic/WheeledBaseKinematic.hpp" alt="" coords="195,469,469,499"/>
+<area shape="rect" href="$_you_bot_base_8hpp.html" title="youbot/YouBotBase.hpp" alt="" coords="1300,83,1460,112"/>
+<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="1517,469,1648,499"/>
+<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2720,624,2843,653"/>
+<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="2625,469,2745,499"/>
+<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="1143,392,1292,421"/>
+<area shape="rect" href="$_exceptions_8hpp.html" title="Exceptions.hpp" alt="" coords="843,469,955,499"/>
+<area shape="rect" href="$_you_bot_joint_8hpp.html" title="youbot/YouBotJoint.hpp" alt="" coords="3852,160,4012,189"/>
+<area shape="rect" href="$_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="3328,315,3547,344"/>
+<area shape="rect" href="$_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="1755,315,1933,344"/>
+<area shape="rect" href="$_four_swedish_wheel_omni_base_kinematic_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematic.hpp" alt="" coords="264,315,632,344"/>
+<area shape="rect" href="$_four_swedish_wheel_omni_base_kinematic_configuration_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematicConfiguration.hpp" alt="" coords="321,392,764,421"/>
+<area shape="rect" href="$_joint_8hpp.html" title="generic&#45;joint/Joint.hpp" alt="" coords="4497,392,4644,421"/>
+<area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="4548,547,4724,576"/>
+<area shape="rect" href="$_you_bot_joint_storage_8hpp.html" title="youbot/YouBotJointStorage.hpp" alt="" coords="3684,469,3887,499"/>
+<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="3276,469,3473,499"/>
+<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1913,469,2103,499"/>
+<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="2769,469,3004,499"/>
+<area shape="rect" href="$_you_bot_joint_parameter_password_protected_8hpp.html" title="youbot/YouBotJointParameterPasswordProtected.hpp" alt="" coords="3629,237,3960,267"/>
+<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="4012,469,4220,499"/>
+<area shape="rect" href="$_you_bot_joint_parameter_read_only_8hpp.html" title="youbot/YouBotJointParameterReadOnly.hpp" alt="" coords="2999,392,3273,421"/>
+<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="2263,547,2367,576"/>
+<area shape="rect" href="$_motor_protection_8hpp.html" title="youbot/MotorProtection.hpp" alt="" coords="2084,392,2265,421"/>
+<area shape="rect" href="$ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="1620,392,1727,421"/>
+<area shape="rect" href="$_wheeled_base_kinematic_8hpp.html" title="base&#45;kinematic/WheeledBaseKinematic.hpp" alt="" coords="439,469,713,499"/>
 </map>

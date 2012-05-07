@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_b20df63dec99a6d1c83aff53bd0137ad.html">youbot</a>
+  <div class="navpath"><a class="el" href="dir_7bebd886d1f7529b900faa14b8b5e01b.html">youbot</a>
   </div>
 </div>
 <div class="contents">
@@ -103,81 +103,94 @@
 <a name="l00073"></a>00073 <span class="preprocessor">#include &quot;<a class="code" href="_one_d_o_f_gripper_8hpp.html">one-dof-gripper/OneDOFGripper.hpp</a>&quot;</span>
 <a name="l00074"></a>00074 <span class="preprocessor">#include &quot;<a class="code" href="_one_d_o_f_gripper_data_8hpp.html">one-dof-gripper/OneDOFGripperData.hpp</a>&quot;</span>
 <a name="l00075"></a>00075 <span class="preprocessor">#include &quot;<a class="code" href="_you_bot_gripper_parameter_8hpp.html">youbot/YouBotGripperParameter.hpp</a>&quot;</span>
-<a name="l00076"></a>00076 <span class="preprocessor">#include &quot;<a class="code" href="_you_bot_gripper_bar_8hpp.html">youbot/YouBotGripperBar.hpp</a>&quot;</span>
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 <span class="keyword">namespace </span>youbot {
-<a name="l00079"></a>00079 <span class="comment"></span>
-<a name="l00080"></a>00080 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00081"></a>00081 <span class="comment">/// The youBot gripper with one degree of freedom</span>
-<a name="l00082"></a>00082 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00083"></a><a class="code" href="classyoubot_1_1_you_bot_gripper.html">00083</a> <span class="comment"></span><span class="keyword">class </span><a class="code" href="classyoubot_1_1_you_bot_gripper.html" title="The youBot gripper with one degree of freedom.">YouBotGripper</a> : <span class="keyword">public</span> <a class="code" href="classyoubot_1_1_one_d_o_f_gripper.html" title="abstract gripper with one degree of freedom">OneDOFGripper</a> {
-<a name="l00084"></a>00084   <span class="keyword">public</span>:
-<a name="l00085"></a>00085     <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5bfde228e46274d0a26899e3a46061d0">YouBotGripper</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jointNo, <span class="keyword">const</span> std::string&amp; configFilePath = <span class="stringliteral">&quot;../config/&quot;</span>);
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087     <span class="keyword">virtual</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a6daead8ac73b1efc2a50c6f9762f290a">~YouBotGripper</a>();
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="keyword">namespace </span>youbot {
+<a name="l00078"></a>00078 <span class="comment"></span>
+<a name="l00079"></a>00079 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00080"></a>00080 <span class="comment">/// The youBot gripper with one degree of freedom</span>
+<a name="l00081"></a>00081 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00082"></a><a class="code" href="classyoubot_1_1_you_bot_gripper.html">00082</a> <span class="comment"></span><span class="keyword">class </span><a class="code" href="classyoubot_1_1_you_bot_gripper.html" title="The youBot gripper with one degree of freedom.">YouBotGripper</a> : <span class="keyword">public</span> <a class="code" href="classyoubot_1_1_one_d_o_f_gripper.html" title="abstract gripper with one degree of freedom">OneDOFGripper</a> {
+<a name="l00083"></a>00083   <span class="keyword">public</span>:
+<a name="l00084"></a>00084     <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5bfde228e46274d0a26899e3a46061d0">YouBotGripper</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jointNo, <span class="keyword">const</span> std::string&amp; configFilePath = <span class="stringliteral">&quot;../config/&quot;</span>);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086     <span class="keyword">virtual</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a6daead8ac73b1efc2a50c6f9762f290a">~YouBotGripper</a>();
+<a name="l00087"></a>00087 
 <a name="l00088"></a>00088 
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090   <span class="keyword">protected</span>:
-<a name="l00091"></a>00091     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_gripper_parameter.html" title="abstract gripper parameter">GripperParameter</a>&amp; parameter);
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_parameter.html" title="abstract gripper parameter">GripperParameter</a>&amp; parameter);
+<a name="l00089"></a>00089   <span class="keyword">protected</span>:
+<a name="l00090"></a>00090     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_gripper_parameter.html" title="abstract gripper parameter">GripperParameter</a>&amp; parameter);
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_parameter.html" title="abstract gripper parameter">GripperParameter</a>&amp; parameter);
+<a name="l00093"></a>00093 
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096   <span class="keyword">public</span>:
-<a name="l00097"></a>00097     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_gripper_firmware_version.html" title="the firmware version of the gripper">GripperFirmwareVersion</a>&amp; parameter);
-<a name="l00098"></a>00098 
-<a name="l00099"></a>00099     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_calibrate_gripper.html" title="Calibrate the gripper.">CalibrateGripper</a>&amp; parameter);
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; parameter);
-<a name="l00102"></a>00102 
+<a name="l00095"></a>00095   <span class="keyword">public</span>:
+<a name="l00096"></a>00096     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_gripper_firmware_version.html" title="the firmware version of the gripper">GripperFirmwareVersion</a>&amp; parameter);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html" title="abstract youBot gripper parameter">YouBotGripperParameter</a>&amp; parameter, <span class="keyword">const</span> <a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81">BarNumber</a>&amp; barNumber);
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_gripper_parameter.html" title="abstract youBot gripper parameter">YouBotGripperParameter</a>&amp; parameter, <span class="keyword">const</span> <a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81">BarNumber</a>&amp; barNumber);
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_calibrate_gripper.html" title="Calibrate the gripper.">CalibrateGripper</a>&amp; parameter);
 <a name="l00103"></a>00103 
-<a name="l00104"></a>00104   <span class="keyword">protected</span>:
-<a name="l00105"></a>00105     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a40de7055f442d5cfab57408eb52c80e1">getData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_data.html" title="abstract class of gripper data">GripperData</a>&amp; data);
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a9a3c84c7c451499348463e9c04f9bb13">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_data.html" title="abstract class of gripper data">GripperData</a>&amp; data);
-<a name="l00108"></a>00108 
-<a name="l00109"></a>00109     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a40de7055f442d5cfab57408eb52c80e1">getData</a>(<a class="code" href="classyoubot_1_1_one_d_o_f_gripper_data.html" title="abstract class of data for gripper with one degree of freedom">OneDOFGripperData</a>&amp; data);
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a9a3c84c7c451499348463e9c04f9bb13">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_one_d_o_f_gripper_data.html" title="abstract class of data for gripper with one degree of freedom">OneDOFGripperData</a>&amp; data);
-<a name="l00112"></a>00112 
+<a name="l00104"></a>00104     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_bar_spacing_offset.html" title="Represents a bar spacing offset.">BarSpacingOffset</a>&amp; parameter);
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_bar_spacing_offset.html" title="Represents a bar spacing offset.">BarSpacingOffset</a>&amp; parameter);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_max_travel_distance.html" title="The maximum bar spacing distance of the gripper.">MaxTravelDistance</a>&amp; parameter);
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_max_travel_distance.html" title="The maximum bar spacing distance of the gripper.">MaxTravelDistance</a>&amp; parameter);
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a78eac07725eba161a066725650f2f598">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_max_encoder_value.html" title="The encoder value when the gripper has reached it&amp;#39;s maximum bar spacing position...">MaxEncoderValue</a>&amp; parameter);
 <a name="l00113"></a>00113 
-<a name="l00114"></a>00114   <span class="keyword">public</span>:
-<a name="l00115"></a>00115     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a9a3c84c7c451499348463e9c04f9bb13">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_bar_spacing_set_point.html" title="Setpoint length of the bar spacing for a one DOF gripper.">GripperBarSpacingSetPoint</a>&amp; barSpacing);
+<a name="l00114"></a>00114     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">getConfigurationParameter</a>(<a class="code" href="classyoubot_1_1_max_encoder_value.html" title="The encoder value when the gripper has reached it&amp;#39;s maximum bar spacing position...">MaxEncoderValue</a>&amp; parameter);
+<a name="l00115"></a>00115 
 <a name="l00116"></a>00116 
-<a name="l00117"></a>00117     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a40de7055f442d5cfab57408eb52c80e1">getData</a>(<a class="code" href="classyoubot_1_1_gripper_sensed_bar_spacing.html" title="The sensed bar spacing for a one DOF gripper.">GripperSensedBarSpacing</a>&amp; barSpacing);
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a9e8555112049fc2b4945120b3c45f8ab">open</a>();
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a31beb09cb03a571b38fbd1229e770447">closeUntilMaxForce</a>();
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123     <a class="code" href="classyoubot_1_1_you_bot_gripper_bar.html" title="One bar of the youBot gripper.">YouBotGripperBar</a>&amp; <a class="code" href="classyoubot_1_1_you_bot_gripper.html#adc82317bf22262881bf8d45c8596af9d">getGripperBar1</a>();
-<a name="l00124"></a>00124 
-<a name="l00125"></a>00125     <a class="code" href="classyoubot_1_1_you_bot_gripper_bar.html" title="One bar of the youBot gripper.">YouBotGripperBar</a>&amp; <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a413a735a67b017f88640dbd9cf39921d">getGripperBar2</a>();
+<a name="l00117"></a>00117   <span class="keyword">protected</span>:
+<a name="l00118"></a>00118     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a40de7055f442d5cfab57408eb52c80e1">getData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_data.html" title="abstract class of gripper data">GripperData</a>&amp; data);
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a9a3c84c7c451499348463e9c04f9bb13">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_data.html" title="abstract class of gripper data">GripperData</a>&amp; data);
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a40de7055f442d5cfab57408eb52c80e1">getData</a>(<a class="code" href="classyoubot_1_1_one_d_o_f_gripper_data.html" title="abstract class of data for gripper with one degree of freedom">OneDOFGripperData</a>&amp; data);
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a9a3c84c7c451499348463e9c04f9bb13">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_one_d_o_f_gripper_data.html" title="abstract class of data for gripper with one degree of freedom">OneDOFGripperData</a>&amp; data);
+<a name="l00125"></a>00125 
 <a name="l00126"></a>00126 
-<a name="l00127"></a>00127 
-<a name="l00128"></a>00128   <span class="keyword">private</span>:
-<a name="l00129"></a>00129     <span class="keywordtype">void</span> parseMailboxStatusFlags(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; mailboxMsg);
-<a name="l00130"></a>00130 
-<a name="l00131"></a>00131     <span class="keywordtype">bool</span> setValueToMotorContoller(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; mailboxMsg);
+<a name="l00127"></a>00127   <span class="keyword">public</span>:
+<a name="l00128"></a>00128     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a9a3c84c7c451499348463e9c04f9bb13">setData</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_gripper_bar_spacing_set_point.html" title="Setpoint length of the bar spacing for a one DOF gripper.">GripperBarSpacingSetPoint</a>&amp; barSpacing);
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130     <span class="keywordtype">void</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a40de7055f442d5cfab57408eb52c80e1">getData</a>(<a class="code" href="classyoubot_1_1_gripper_bar_spacing_set_point.html" title="Setpoint length of the bar spacing for a one DOF gripper.">GripperBarSpacingSetPoint</a>&amp; barSpacing);
+<a name="l00131"></a>00131 
 <a name="l00132"></a>00132 
-<a name="l00133"></a>00133     <span class="keywordtype">bool</span> retrieveValueFromMotorContoller(<a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
-<a name="l00134"></a>00134 
-<a name="l00135"></a>00135     <a class="code" href="classyoubot_1_1_ethercat_master.html" title="The Ethercat Master is managing the whole ethercat communication It have to be a...">EthercatMaster</a>* ethercatMaster;
+<a name="l00133"></a>00133   <span class="keyword">private</span>:
+<a name="l00134"></a>00134     <span class="keywordtype">void</span> parseMailboxStatusFlags(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; mailboxMsg);
+<a name="l00135"></a>00135 
 <a name="l00136"></a>00136 
-<a name="l00137"></a>00137     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timeTillNextMailboxUpdate;
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mailboxMsgRetries;
-<a name="l00140"></a>00140 
-<a name="l00141"></a>00141     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jointNumber;
+<a name="l00137"></a>00137   <span class="keyword">public</span>:
+<a name="l00138"></a>00138     <span class="keywordtype">bool</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a2cd6e6f3c02ad1be67fb27910802836b">setValueToMotorContoller</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; mailboxMsg);
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140     <span class="keywordtype">bool</span> <a class="code" href="classyoubot_1_1_you_bot_gripper.html#a15f7d4eb8fb155c838908bbc08d242ac">retrieveValueFromMotorContoller</a>(<a class="code" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves.">YouBotSlaveMailboxMsg</a>&amp; message);
+<a name="l00141"></a>00141 
 <a name="l00142"></a>00142 
-<a name="l00143"></a>00143     <a class="code" href="classyoubot_1_1_you_bot_gripper_bar.html" title="One bar of the youBot gripper.">YouBotGripperBar</a>* bar1;
-<a name="l00144"></a>00144 
-<a name="l00145"></a>00145     <a class="code" href="classyoubot_1_1_you_bot_gripper_bar.html" title="One bar of the youBot gripper.">YouBotGripperBar</a>* bar2;
-<a name="l00146"></a>00146 
-<a name="l00147"></a>00147 };
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149 } <span class="comment">// namespace youbot</span>
-<a name="l00150"></a>00150 <span class="preprocessor">#endif</span>
+<a name="l00143"></a>00143   <span class="keyword">private</span>:
+<a name="l00144"></a>00144     <a class="code" href="classyoubot_1_1_ethercat_master.html" title="The Ethercat Master is managing the whole ethercat communication It have to be a...">EthercatMaster</a>* ethercatMaster;
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> timeTillNextMailboxUpdate;
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mailboxMsgRetries;
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jointNumber;
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxEncoderValue;
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154     quantity&lt;si::length&gt; maxTravelDistance;
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156     quantity&lt;si::length&gt; barSpacingOffset;
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158     quantity&lt;si::length&gt; lastGripperPosition;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160 };
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162 } <span class="comment">// namespace youbot</span>
+<a name="l00163"></a>00163 <span class="preprocessor">#endif</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">
