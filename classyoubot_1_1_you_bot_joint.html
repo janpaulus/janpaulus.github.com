@@ -46,7 +46,7 @@ Collaboration diagram for YouBotJoint:</div>
 <div class="dynsection">
 <div class="center"><img src="classyoubot_1_1_you_bot_joint__coll__graph.png" border="0" usemap="#_you_bot_joint_coll__map" alt="Collaboration graph"/></div>
 <map name="_you_bot_joint_coll__map" id="_you_bot_joint_coll__map">
-<area shape="rect" href="classyoubot_1_1_joint.html" title="/ abstract joint" alt="" coords="2209,5,2257,35"/><area shape="rect" href="classyoubot_1_1_ethercat_master.html" title="The Ethercat Master is managing the whole ethercat communication It have to be a..." alt="" coords="2179,573,2288,603"/><area shape="rect" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="481,573,647,603"/><area shape="rect" title="STL class." alt="" coords="241,347,295,376"/><area shape="rect" href="classyoubot_1_1_config_file.html" title="ConfigFile" alt="" coords="1792,409,1872,439"/><area shape="rect" href="classyoubot_1_1_sort_tree_vector.html" title="SortTreeVector" alt="" coords="852,440,959,469"/><area shape="rect" title="STL class." alt="" coords="7,347,145,376"/><area shape="rect" href="structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_output_buffer.html" title="Output part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="199,661,337,691"/><area shape="rect" href="structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_input_buffer.html" title="Input part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="203,593,333,623"/><area shape="rect" href="structec__slavet.html" title="for list of ethercat slaves detected" alt="" coords="1355,607,1432,636"/><area shape="rect" href="struct_p_a_c_k_e_d.html" title="SDO structure, not to be confused with EcSDOserviceT." alt="" coords="869,632,941,661"/><area shape="rect" href="classyoubot_1_1_motor_protection.html" title="Implements the i2t motor protection." alt="" coords="1337,663,1449,692"/><area shape="rect" href="structyoubot_1_1_current_with_time_slice.html" title="struct to represent current over time" alt="" coords="491,685,637,715"/><area shape="rect" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="837,744,973,773"/><area shape="rect" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves." alt="" coords="1333,807,1453,836"/><area shape="rect" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="832,839,979,868"/><area shape="rect" href="classyoubot_1_1_you_bot_joint_storage.html" title="Stores YouBotJoint informations which are needed in the driver." alt="" coords="2165,627,2301,656"/></map>
+<area shape="rect" href="classyoubot_1_1_joint.html" title="/ abstract joint" alt="" coords="599,5,647,35"/><area shape="rect" href="classyoubot_1_1_joint_trajectory_controller.html" title="JointTrajectoryController" alt="" coords="543,59,703,88"/><area shape="rect" href="classyoubot_1_1_ethercat_master_interface.html" title="The Ethercat Master interface." alt="" coords="543,112,703,141"/><area shape="rect" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves." alt="" coords="563,165,683,195"/><area shape="rect" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="203,112,339,141"/><area shape="rect" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="197,165,344,195"/><area shape="rect" href="classyoubot_1_1_you_bot_joint_storage.html" title="Stores YouBotJoint informations which are needed in the driver." alt="" coords="555,225,691,255"/><area shape="rect" title="STL class." alt="" coords="244,233,297,263"/><area shape="rect" title="STL class." alt="" coords="7,233,145,263"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classyoubot_1_1_you_bot_joint-members.html">List of all members.</a></p>
@@ -72,9 +72,9 @@ Collaboration diagram for YouBotJoint:</div>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a5668b35871c41287db13b1ed5a7fa516">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_initialize_joint.html">InitializeJoint</a> &amp;parameter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a3cf393595fb08d4e3a5ae5d8c3fb3ee9">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_firmware_version.html">FirmwareVersion</a> &amp;parameter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a634ab1ff3e59c50e0c8cf583a5cd0a9d">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html">YouBotSlaveMailboxMsg</a> &amp;parameter)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">this methode should be only used if you know what you are doing  <a href="#a634ab1ff3e59c50e0c8cf583a5cd0a9d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">this method should be only used if you know what you are doing  <a href="#a634ab1ff3e59c50e0c8cf583a5cd0a9d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a6ab27360dc5f39a117217c61db37f853">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html">YouBotSlaveMailboxMsg</a> &amp;parameter)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">this methode should be only used if you know what you are doing  <a href="#a6ab27360dc5f39a117217c61db37f853"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">this method should be only used if you know what you are doing  <a href="#a6ab27360dc5f39a117217c61db37f853"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a7823d595faa48c6c2891af3a05bf1ae8">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_torque_constant.html">TorqueConstant</a> &amp;parameter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a9e9cbcbe0513822e1c47e854fdb3c105">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_torque_constant.html">TorqueConstant</a> &amp;parameter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a55094996417c9ac2227f7203fd322c64">storeConfigurationParameterPermanent</a> (const <a class="el" href="classyoubot_1_1_you_bot_joint_parameter.html">YouBotJointParameter</a> &amp;parameter)</td></tr>
@@ -107,8 +107,8 @@ Collaboration diagram for YouBotJoint:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the encoder ticks of one joint  <a href="#a3d6170d18e7ad7492466b7330661ed28"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a5ac1be4ba9da1a8f42a95d1b736836f1">setData</a> (const <a class="el" href="structyoubot_1_1_slave_message_output.html">SlaveMessageOutput</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets the output part of a EtherCAT slave message this methode should be only used if you know what you are doing  <a href="#a5ac1be4ba9da1a8f42a95d1b736836f1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a0e32d40cd5a09f93ed4ccb7b1748dfbe">getData</a> (<a class="el" href="structyoubot_1_1_slave_message_input.html">SlaveMessageInput</a> &amp;data)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the input part of a EtherCAT slave message, the sensor values this methode should be only used if you know what you are doing  <a href="#a0e32d40cd5a09f93ed4ccb7b1748dfbe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a60cb7794f5e62cfb866cd4084a11a510">getData</a> (<a class="el" href="classyoubot_1_1_you_bot_slave_msg.html">YouBotSlaveMsg</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the input and ouput part of a EtherCAT slave message this methode should be only used if you know what you are doing  <a href="#a60cb7794f5e62cfb866cd4084a11a510"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a5dbd851f29adb94e66ca07a554419921">setData</a> (const <a class="el" href="classyoubot_1_1_joint_torque_setpoint.html">JointTorqueSetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a torque to one joint  <a href="#a5dbd851f29adb94e66ca07a554419921"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#ae583e3e1ca03bf6da185a128bb4ef0ce">getData</a> (<a class="el" href="classyoubot_1_1_joint_sensed_torque.html">JointSensedTorque</a> &amp;data)</td></tr>
@@ -123,6 +123,13 @@ Collaboration diagram for YouBotJoint:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">set the encoder values of the joint to zero. This postion will be the new reference.  <a href="#acdda6eb5398edb141b7ff040a3f61b08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#ae74a744df590b9d7d23f9cc4c9c5a499">noMoreAction</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#ab4f6a8fb9393bb962ff1b82bbc44a14e">stopJoint</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a662ce50f0905ec92b88a6bb463950162">getJointNumber</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#af69f97dd49a00570eff3bed0a2b30cb2">setTrajectory</a> (const std::vector&lt; quantity&lt; plane_angle &gt; &gt; &amp;positions, const std::vector&lt; quantity&lt; angular_velocity &gt; &gt; &amp;velocities, const std::vector&lt; quantity&lt; angular_acceleration &gt; &gt; &amp;accelerations)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">calculates all trajectory values for the future and sets all the the ethercat master if the trajectory is still active the the values will be set in the next buffer  <a href="#af69f97dd49a00570eff3bed0a2b30cb2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a4be04a0484717131f2e0b924e24dfa34">cancelTrajectory</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stops just the trajectory controller but not the joint movement.  <a href="#a4be04a0484717131f2e0b924e24dfa34"></a><br/></td></tr>
+<tr><td colspan="2"><h2>Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classyoubot_1_1_joint_trajectory_controller.html">JointTrajectoryController</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a45dbd9cac47e9d230ffb6c8cefdc6c11">trajectoryController</a></td></tr>
 <tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_joint_parameter.html">JointParameter</a> &amp;parameter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_joint_parameter.html">JointParameter</a> &amp;parameter)</td></tr>
@@ -178,6 +185,25 @@ Collaboration diagram for YouBotJoint:</div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a4be04a0484717131f2e0b924e24dfa34"></a><!-- doxytag: member="youbot::YouBotJoint::cancelTrajectory" ref="a4be04a0484717131f2e0b924e24dfa34" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cancelTrajectory </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Stops just the trajectory controller but not the joint movement. </p>
+
+</div>
+</div>
 <a class="anchor" id="a7823d595faa48c6c2891af3a05bf1ae8"></a><!-- doxytag: member="youbot::YouBotJoint::getConfigurationParameter" ref="a7823d595faa48c6c2891af3a05bf1ae8" args="(TorqueConstant &amp;parameter)" -->
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +238,7 @@ Collaboration diagram for YouBotJoint:</div>
 </div>
 <div class="memdoc">
 
-<p>this methode should be only used if you know what you are doing </p>
+<p>this method should be only used if you know what you are doing </p>
 
 </div>
 </div>
@@ -424,14 +450,14 @@ Collaboration diagram for YouBotJoint:</div>
 
 </div>
 </div>
-<a class="anchor" id="a0e32d40cd5a09f93ed4ccb7b1748dfbe"></a><!-- doxytag: member="youbot::YouBotJoint::getData" ref="a0e32d40cd5a09f93ed4ccb7b1748dfbe" args="(SlaveMessageInput &amp;data)" -->
+<a class="anchor" id="a60cb7794f5e62cfb866cd4084a11a510"></a><!-- doxytag: member="youbot::YouBotJoint::getData" ref="a60cb7794f5e62cfb866cd4084a11a510" args="(YouBotSlaveMsg &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void getData </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structyoubot_1_1_slave_message_input.html">SlaveMessageInput</a> &amp;&nbsp;</td>
+          <td class="paramtype"><a class="el" href="classyoubot_1_1_you_bot_slave_msg.html">YouBotSlaveMsg</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>data</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td><code> [virtual]</code></td>
@@ -440,7 +466,7 @@ Collaboration diagram for YouBotJoint:</div>
 </div>
 <div class="memdoc">
 
-<p>gets the input part of a EtherCAT slave message, the sensor values this methode should be only used if you know what you are doing </p>
+<p>gets the input and ouput part of a EtherCAT slave message this methode should be only used if you know what you are doing </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>returns the sensor values by reference </td></tr>
@@ -626,6 +652,23 @@ Collaboration diagram for YouBotJoint:</div>
 
 </div>
 </div>
+<a class="anchor" id="a662ce50f0905ec92b88a6bb463950162"></a><!-- doxytag: member="youbot::YouBotJoint::getJointNumber" ref="a662ce50f0905ec92b88a6bb463950162" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int getJointNumber </td>
+          <td>(</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a8478d5253ea061cca65673c46009b96b"></a><!-- doxytag: member="youbot::YouBotJoint::getStatus" ref="a8478d5253ea061cca65673c46009b96b" args="(unsigned int &amp;statusFlags)" -->
 <div class="memitem">
 <div class="memproto">
@@ -765,7 +808,7 @@ Collaboration diagram for YouBotJoint:</div>
 </div>
 <div class="memdoc">
 
-<p>this methode should be only used if you know what you are doing </p>
+<p>this method should be only used if you know what you are doing </p>
 
 </div>
 </div>
@@ -1269,6 +1312,41 @@ Collaboration diagram for YouBotJoint:</div>
 
 </div>
 </div>
+<a class="anchor" id="af69f97dd49a00570eff3bed0a2b30cb2"></a><!-- doxytag: member="youbot::YouBotJoint::setTrajectory" ref="af69f97dd49a00570eff3bed0a2b30cb2" args="(const std::vector&lt; quantity&lt; plane_angle &gt; &gt; &amp;positions, const std::vector&lt; quantity&lt; angular_velocity &gt; &gt; &amp;velocities, const std::vector&lt; quantity&lt; angular_acceleration &gt; &gt; &amp;accelerations)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; quantity&lt; plane_angle &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>positions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; quantity&lt; angular_velocity &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>velocities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; quantity&lt; angular_acceleration &gt; &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>accelerations</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>calculates all trajectory values for the future and sets all the the ethercat master if the trajectory is still active the the values will be set in the next buffer </p>
+
+</div>
+</div>
 <a class="anchor" id="aa50ab4d9a045bfdac0f99dab006a9bff"></a><!-- doxytag: member="youbot::YouBotJoint::setUserVariable" ref="aa50ab4d9a045bfdac0f99dab006a9bff" args="(const unsigned int index, const int data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1330,6 +1408,20 @@ Collaboration diagram for YouBotJoint:</div>
 <div class="memdoc">
 
 <p>stores the joint parameter permanent in the EEPROM of the motor contoller Attentions: The EEPROM has only a finite number of program-erase cycles </p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a45dbd9cac47e9d230ffb6c8cefdc6c11"></a><!-- doxytag: member="youbot::YouBotJoint::trajectoryController" ref="a45dbd9cac47e9d230ffb6c8cefdc6c11" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classyoubot_1_1_joint_trajectory_controller.html">JointTrajectoryController</a> <a class="el" href="classyoubot_1_1_you_bot_joint.html#a45dbd9cac47e9d230ffb6c8cefdc6c11">trajectoryController</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>

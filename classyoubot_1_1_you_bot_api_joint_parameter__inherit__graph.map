@@ -1,13 +1,17 @@
 <map id="G" name="G">
-<area shape="rect" href="$classyoubot_1_1_calibrate_joint.html" title="calibrates the joint" alt="" coords="548,5,647,35"/>
-<area shape="rect" href="$classyoubot_1_1_encoder_ticks_per_round.html" title="the resolution of the encoders, it is needed for the calculations of the youBot Driver..." alt="" coords="520,59,675,88"/>
-<area shape="rect" href="$classyoubot_1_1_firmware_version.html" title="the firmware version of the joint" alt="" coords="539,112,656,141"/>
-<area shape="rect" href="$classyoubot_1_1_gear_ratio.html" title="the gear ratio which is needed for the calculations in the youBot driver" alt="" coords="557,165,637,195"/>
-<area shape="rect" href="$classyoubot_1_1_inverse_movement_direction.html" title="inverse the joint movement direction" alt="" coords="509,219,685,248"/>
-<area shape="rect" href="$classyoubot_1_1_joint_limits.html" title="joint position limits in encoder ticks" alt="" coords="556,272,639,301"/>
-<area shape="rect" href="$classyoubot_1_1_joint_limits_radian.html" title="joint position limits in radian" alt="" coords="536,325,659,355"/>
-<area shape="rect" href="$classyoubot_1_1_joint_name.html" title="the name of the joint" alt="" coords="556,379,639,408"/>
-<area shape="rect" href="$classyoubot_1_1_torque_constant.html" title="the resolution of the encoders, it is needed for the calculations of the youBot Driver..." alt="" coords="541,432,653,461"/>
-<area shape="rect" href="$classyoubot_1_1_joint_parameter.html" title="abstract joint parameter" alt="" coords="135,219,241,248"/>
-<area shape="rect" href="$classyoubot_1_1_parameter.html" title="abstract parameter" alt="" coords="5,219,85,248"/>
+<area shape="rect" href="$classyoubot_1_1_calibrate_joint.html" title="calibrates the joint" alt="" coords="575,5,673,35"/>
+<area shape="rect" href="$classyoubot_1_1_d_parameter_trajectory_control.html" title="D&#45;Parameter of PID trajectory regulator." alt="" coords="531,59,717,88"/>
+<area shape="rect" href="$classyoubot_1_1_encoder_ticks_per_round.html" title="the resolution of the encoders, it is needed for the calculations of the youBot Driver..." alt="" coords="547,112,701,141"/>
+<area shape="rect" href="$classyoubot_1_1_firmware_version.html" title="the firmware version of the joint" alt="" coords="565,165,683,195"/>
+<area shape="rect" href="$classyoubot_1_1_gear_ratio.html" title="the gear ratio which is needed for the calculations in the youBot driver" alt="" coords="584,219,664,248"/>
+<area shape="rect" href="$classyoubot_1_1_i_clipping_parameter_trajectory_control.html" title="gives a limit for the I sum part of the trajectory regulator" alt="" coords="511,272,737,301"/>
+<area shape="rect" href="$classyoubot_1_1_inverse_movement_direction.html" title="inverse the joint movement direction" alt="" coords="536,325,712,355"/>
+<area shape="rect" href="$classyoubot_1_1_i_parameter_trajectory_control.html" title="I&#45;Parameter of PID trajectory regulator." alt="" coords="533,379,715,408"/>
+<area shape="rect" href="$classyoubot_1_1_joint_limits.html" title="joint position limits in encoder ticks" alt="" coords="583,432,665,461"/>
+<area shape="rect" href="$classyoubot_1_1_joint_limits_radian.html" title="joint position limits in radian" alt="" coords="563,485,685,515"/>
+<area shape="rect" href="$classyoubot_1_1_joint_name.html" title="the name of the joint" alt="" coords="583,539,665,568"/>
+<area shape="rect" href="$classyoubot_1_1_p_parameter_trajectory_control.html" title="P&#45;Parameter of PID trajectory regulator." alt="" coords="531,592,717,621"/>
+<area shape="rect" href="$classyoubot_1_1_torque_constant.html" title="the resolution of the encoders, it is needed for the calculations of the youBot Driver..." alt="" coords="568,645,680,675"/>
+<area shape="rect" href="$classyoubot_1_1_joint_parameter.html" title="abstract joint parameter" alt="" coords="135,325,241,355"/>
+<area shape="rect" href="$classyoubot_1_1_parameter.html" title="abstract parameter" alt="" coords="5,325,85,355"/>
 </map>

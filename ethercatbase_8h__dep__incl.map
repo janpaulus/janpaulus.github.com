@@ -10,6 +10,6 @@
 <area shape="rect" href="$red__test_8c.html" title="Example code for Simple Open EtherCAT master." alt="" coords="1056,83,1136,112"/>
 <area shape="rect" href="$simple__test_8c.html" title="Example code for Simple Open EtherCAT master." alt="" coords="1160,83,1259,112"/>
 <area shape="rect" href="$slaveinfo_8c.html" title="Example code for Simple Open EtherCAT master." alt="" coords="1307,83,1389,112"/>
-<area shape="rect" href="$_ethercat_master_8cpp.html" title="EthercatMaster.cpp" alt="" coords="1413,83,1549,112"/>
-<area shape="rect" href="$_ethercat_master_without_thread_8cpp.html" title="EthercatMasterWithoutThread.cpp" alt="" coords="1573,83,1792,112"/>
+<area shape="rect" href="$_ethercat_master_without_thread_8cpp.html" title="EthercatMasterWithoutThread.cpp" alt="" coords="1413,83,1632,112"/>
+<area shape="rect" href="$_ethercat_master_with_thread_8cpp.html" title="EthercatMasterWithThread.cpp" alt="" coords="1656,83,1856,112"/>
 </map>

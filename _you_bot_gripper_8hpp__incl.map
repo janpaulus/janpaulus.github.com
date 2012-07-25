@@ -1,22 +1,29 @@
 <map id="G" name="G">
-<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="345,237,476,267"/>
-<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2295,469,2417,499"/>
-<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="151,237,271,267"/>
-<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="1073,237,1231,267"/>
-<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1569,237,1767,267"/>
-<area shape="rect" href="$_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="961,83,1140,112"/>
-<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1356,237,1545,267"/>
-<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="1791,237,2025,267"/>
-<area shape="rect" href="$_gripper_8hpp.html" title="generic&#45;gripper/Gripper.hpp" alt="" coords="2303,160,2479,189"/>
-<area shape="rect" href="$_gripper_data_8hpp.html" title="generic&#45;gripper/GripperData.hpp" alt="" coords="2561,237,2764,267"/>
-<area shape="rect" href="$_gripper_parameter_8hpp.html" title="generic&#45;gripper/GripperParameter.hpp" alt="" coords="2303,237,2537,267"/>
-<area shape="rect" href="$_one_d_o_f_gripper_8hpp.html" title="one&#45;dof&#45;gripper/OneDOFGripper.hpp" alt="" coords="2353,83,2580,112"/>
-<area shape="rect" href="$_one_d_o_f_gripper_data_8hpp.html" title="one&#45;dof&#45;gripper/OneDOFGripperData.hpp" alt="" coords="2655,160,2911,189"/>
-<area shape="rect" href="$_you_bot_gripper_parameter_8hpp.html" title="youbot/YouBotGripperParameter.hpp" alt="" coords="1544,160,1776,189"/>
-<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="633,160,783,189"/>
-<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="1399,315,1503,344"/>
-<area shape="rect" href="$_motor_protection_8hpp.html" title="youbot/MotorProtection.hpp" alt="" coords="807,160,988,189"/>
-<area shape="rect" href="$ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="503,160,609,189"/>
-<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="2252,315,2460,344"/>
-<area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="2268,392,2444,421"/>
+<area shape="rect" href="$_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="2721,392,2852,421"/>
+<area shape="rect" href="$_units_8hpp.html" title="generic/Units.hpp" alt="" coords="4745,392,4868,421"/>
+<area shape="rect" href="$_time_8hpp.html" title="generic/Time.hpp" alt="" coords="3385,392,3505,421"/>
+<area shape="rect" href="$_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="1815,392,1972,421"/>
+<area shape="rect" href="$_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="3748,392,3945,421"/>
+<area shape="rect" href="$_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="1608,83,1787,112"/>
+<area shape="rect" href="$_ethercat_master_interface_8hpp.html" title="youbot/EthercatMasterInterface.hpp" alt="" coords="644,237,873,267"/>
+<area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1297,392,1487,421"/>
+<area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="988,392,1223,421"/>
+<area shape="rect" href="$_ethercat_master_without_thread_8hpp.html" title="youbot/EthercatMasterWithoutThread.hpp" alt="" coords="1823,237,2084,267"/>
+<area shape="rect" href="$_ethercat_master_with_thread_8hpp.html" title="youbot/EthercatMasterWithThread.hpp" alt="" coords="2375,160,2617,189"/>
+<area shape="rect" href="$_gripper_8hpp.html" title="generic&#45;gripper/Gripper.hpp" alt="" coords="4897,237,5073,267"/>
+<area shape="rect" href="$_gripper_data_8hpp.html" title="generic&#45;gripper/GripperData.hpp" alt="" coords="5105,315,5308,344"/>
+<area shape="rect" href="$_gripper_parameter_8hpp.html" title="generic&#45;gripper/GripperParameter.hpp" alt="" coords="4796,315,5031,344"/>
+<area shape="rect" href="$_one_d_o_f_gripper_8hpp.html" title="one&#45;dof&#45;gripper/OneDOFGripper.hpp" alt="" coords="4999,160,5225,189"/>
+<area shape="rect" href="$_one_d_o_f_gripper_data_8hpp.html" title="one&#45;dof&#45;gripper/OneDOFGripperData.hpp" alt="" coords="5199,237,5455,267"/>
+<area shape="rect" href="$_you_bot_gripper_parameter_8hpp.html" title="youbot/YouBotGripperParameter.hpp" alt="" coords="4084,237,4316,267"/>
+<area shape="rect" href="$_you_bot_gripper_bar_8hpp.html" title="youbot/YouBotGripperBar.hpp" alt="" coords="4028,83,4220,112"/>
+<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="899,469,1003,499"/>
+<area shape="rect" href="$_joint_limit_monitor_8hpp.html" title="youbot/JointLimitMonitor.hpp" alt="" coords="2873,315,3060,344"/>
+<area shape="rect" href="$ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="1071,315,1177,344"/>
+<area shape="rect" href="$_data_object_lock_free_8hpp.html" title="generic/dataobjectlockfree/DataObjectLockFree.hpp" alt="" coords="1772,469,2092,499"/>
+<area shape="rect" href="$_you_bot_joint_storage_8hpp.html" title="youbot/YouBotJointStorage.hpp" alt="" coords="3057,392,3260,421"/>
+<area shape="rect" href="$_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="2244,315,2393,344"/>
+<area shape="rect" href="$_joint_trajectory_controller_8hpp.html" title="youbot/JointTrajectoryController.hpp" alt="" coords="2229,237,2459,267"/>
+<area shape="rect" href="$_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="3135,315,3353,344"/>
+<area shape="rect" href="$_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="4108,392,4316,421"/>
 </map>

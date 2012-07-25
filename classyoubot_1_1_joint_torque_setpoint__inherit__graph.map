@@ -1,4 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" href="$classyoubot_1_1_joint_data_setpoint.html" title="abstract data class for commanded joint data" alt="" coords="12,83,135,112"/>
-<area shape="rect" href="$classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="36,5,111,35"/>
+<area shape="rect" href="$classyoubot_1_1_joint_computed_setpoint.html" title="abstract data class for computed joint data setpoints" alt="" coords="5,160,160,189"/>
+<area shape="rect" href="$classyoubot_1_1_joint_data_setpoint.html" title="abstract data class for commanded joint data" alt="" coords="21,83,144,112"/>
+<area shape="rect" href="$classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="45,5,120,35"/>
 </map>

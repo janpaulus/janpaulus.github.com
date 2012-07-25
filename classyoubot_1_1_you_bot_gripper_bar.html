@@ -39,7 +39,7 @@ Collaboration diagram for YouBotGripperBar:</div>
 <div class="dynsection">
 <div class="center"><img src="classyoubot_1_1_you_bot_gripper_bar__coll__graph.png" border="0" usemap="#_you_bot_gripper_bar_coll__map" alt="Collaboration graph"/></div>
 <map name="_you_bot_gripper_bar_coll__map" id="_you_bot_gripper_bar_coll__map">
-<area shape="rect" href="classyoubot_1_1_ethercat_master.html" title="The Ethercat Master is managing the whole ethercat communication It have to be a..." alt="" coords="2167,395,2276,424"/><area shape="rect" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="481,297,647,327"/><area shape="rect" title="STL class." alt="" coords="241,628,295,657"/><area shape="rect" href="classyoubot_1_1_config_file.html" title="ConfigFile" alt="" coords="1792,783,1872,812"/><area shape="rect" href="classyoubot_1_1_sort_tree_vector.html" title="SortTreeVector" alt="" coords="852,888,959,917"/><area shape="rect" title="STL class." alt="" coords="7,628,145,657"/><area shape="rect" href="structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_output_buffer.html" title="Output part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="199,256,337,285"/><area shape="rect" href="structyoubot_1_1_you_bot_slave_mailbox_msg_1_1mailbox_input_buffer.html" title="Input part from the EtherCat mailbox message of the youBot EtherCat slaves." alt="" coords="203,324,333,353"/><area shape="rect" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="837,289,973,319"/><area shape="rect" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves." alt="" coords="1333,327,1453,356"/><area shape="rect" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves." alt="" coords="832,371,979,400"/></map>
+<area shape="rect" href="classyoubot_1_1_ethercat_master_interface.html" title="The Ethercat Master interface." alt="" coords="5,5,165,35"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classyoubot_1_1_you_bot_gripper_bar-members.html">List of all members.</a></p>
@@ -48,16 +48,19 @@ Collaboration diagram for YouBotGripperBar:</div>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a4d2ad9ecc36e988ccc1a38199c8a8162">YouBotGripperBar</a> (const unsigned int barNo, const unsigned int jointNo, const std::string &amp;configFilePath=&quot;../config/&quot;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a3dae239c96a94225b85e88e0c56431dd">~YouBotGripperBar</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a94223cb8d8121fff6345ebdedd83eabf">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_max_encoder_value.html">MaxEncoderValue</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#acaee35ece6f81de465f4243774d5c93b">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_max_encoder_value.html">MaxEncoderValue</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#ac860e50d5c2706a6c8e52b8352f0c223">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_max_travel_distance.html">MaxTravelDistance</a> &amp;parameter)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#aca10074560e424cb22f922964a2954c0">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_max_encoder_value.html">MaxEncoderValue</a> &amp;parameter) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#aa6d0f83e95968bc2fdd7ff0950d0821a">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_max_travel_distance.html">MaxTravelDistance</a> &amp;parameter) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a11b35f66b4ac30b5f9ee61f0393c6abf">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_max_travel_distance.html">MaxTravelDistance</a> &amp;parameter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a146facc057d0f3468cba91846a3bf1fa">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_bar_spacing_offset.html">BarSpacingOffset</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a3d568eae53e1c01cc8dc1aa57afa15e9">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_bar_spacing_offset.html">BarSpacingOffset</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a758c81652ac4b8c132d56293cd4cd9b2">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_you_bot_gripper_parameter.html">YouBotGripperParameter</a> &amp;parameter)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a4771783191e2b15aed08b4ce217d2ee7">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_bar_spacing_offset.html">BarSpacingOffset</a> &amp;parameter) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a97e2634e5cb6aa9b4704dfc15516ab2f">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_you_bot_gripper_parameter.html">YouBotGripperParameter</a> &amp;parameter) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#ae1f275e29c664d48fb2bf51028ad0823">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_you_bot_gripper_parameter.html">YouBotGripperParameter</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a6ab27360dc5f39a117217c61db37f853">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html">YouBotSlaveMailboxMsg</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#ae8161149aed3985ccca8dc9923a55d9f">setData</a> (const <a class="el" href="classyoubot_1_1_gripper_bar_encoter_setpoint.html">GripperBarEncoterSetpoint</a> &amp;encoderSetpoint)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a7691aa5d9c32ecd3713bb83e271ec8e6">getData</a> (<a class="el" href="classyoubot_1_1_gripper_sensed_velocity.html">GripperSensedVelocity</a> &amp;barVelocity)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a693696dd70b16faed9512c743a16f4e0">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html">YouBotSlaveMailboxMsg</a> &amp;parameter) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#ac62e6a326e7ac126ee197dde1c009dcc">setData</a> (const <a class="el" href="classyoubot_1_1_gripper_bar_encoder_setpoint.html">GripperBarEncoderSetpoint</a> &amp;encoderSetpoint)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#ab8a5778ac8a4d979e8b793d3e52c211d">getData</a> (<a class="el" href="classyoubot_1_1_gripper_sensed_velocity.html">GripperSensedVelocity</a> &amp;barVelocity) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#aada5868796b00e31d9f185562dd08336">getData</a> (<a class="el" href="classyoubot_1_1_gripper_sensed_bar_position.html">GripperSensedBarPosition</a> &amp;barPosition) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a25eca6d6302d097622709bf95827436e">setData</a> (<a class="el" href="classyoubot_1_1_gripper_bar_position_set_point.html">GripperBarPositionSetPoint</a> &amp;barPosition)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_you_bot_gripper_bar.html#a4afe8f5cd798d37e2f05266f4f7ea006">parseGripperErrorFlags</a> (const unsigned int &amp;errosFlags)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>One bar of the youBot gripper. </p>
@@ -113,7 +116,7 @@ Collaboration diagram for YouBotGripperBar:</div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a6ab27360dc5f39a117217c61db37f853"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="a6ab27360dc5f39a117217c61db37f853" args="(YouBotSlaveMailboxMsg &amp;parameter)" -->
+<a class="anchor" id="a693696dd70b16faed9512c743a16f4e0"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="a693696dd70b16faed9512c743a16f4e0" args="(YouBotSlaveMailboxMsg &amp;parameter) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -123,7 +126,7 @@ Collaboration diagram for YouBotGripperBar:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_you_bot_slave_mailbox_msg.html">YouBotSlaveMailboxMsg</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>parameter</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -131,7 +134,7 @@ Collaboration diagram for YouBotGripperBar:</div>
 
 </div>
 </div>
-<a class="anchor" id="a758c81652ac4b8c132d56293cd4cd9b2"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="a758c81652ac4b8c132d56293cd4cd9b2" args="(YouBotGripperParameter &amp;parameter)" -->
+<a class="anchor" id="a97e2634e5cb6aa9b4704dfc15516ab2f"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="a97e2634e5cb6aa9b4704dfc15516ab2f" args="(YouBotGripperParameter &amp;parameter) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -141,7 +144,7 @@ Collaboration diagram for YouBotGripperBar:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_you_bot_gripper_parameter.html">YouBotGripperParameter</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>parameter</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -149,7 +152,7 @@ Collaboration diagram for YouBotGripperBar:</div>
 
 </div>
 </div>
-<a class="anchor" id="a3d568eae53e1c01cc8dc1aa57afa15e9"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="a3d568eae53e1c01cc8dc1aa57afa15e9" args="(BarSpacingOffset &amp;parameter)" -->
+<a class="anchor" id="a4771783191e2b15aed08b4ce217d2ee7"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="a4771783191e2b15aed08b4ce217d2ee7" args="(BarSpacingOffset &amp;parameter) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -159,7 +162,7 @@ Collaboration diagram for YouBotGripperBar:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_bar_spacing_offset.html">BarSpacingOffset</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>parameter</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -167,7 +170,7 @@ Collaboration diagram for YouBotGripperBar:</div>
 
 </div>
 </div>
-<a class="anchor" id="ac860e50d5c2706a6c8e52b8352f0c223"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="ac860e50d5c2706a6c8e52b8352f0c223" args="(MaxTravelDistance &amp;parameter)" -->
+<a class="anchor" id="aa6d0f83e95968bc2fdd7ff0950d0821a"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="aa6d0f83e95968bc2fdd7ff0950d0821a" args="(MaxTravelDistance &amp;parameter) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -177,7 +180,7 @@ Collaboration diagram for YouBotGripperBar:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_max_travel_distance.html">MaxTravelDistance</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>parameter</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -185,7 +188,7 @@ Collaboration diagram for YouBotGripperBar:</div>
 
 </div>
 </div>
-<a class="anchor" id="acaee35ece6f81de465f4243774d5c93b"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="acaee35ece6f81de465f4243774d5c93b" args="(MaxEncoderValue &amp;parameter)" -->
+<a class="anchor" id="aca10074560e424cb22f922964a2954c0"></a><!-- doxytag: member="youbot::YouBotGripperBar::getConfigurationParameter" ref="aca10074560e424cb22f922964a2954c0" args="(MaxEncoderValue &amp;parameter) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -195,7 +198,7 @@ Collaboration diagram for YouBotGripperBar:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_max_encoder_value.html">MaxEncoderValue</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>parameter</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -203,7 +206,25 @@ Collaboration diagram for YouBotGripperBar:</div>
 
 </div>
 </div>
-<a class="anchor" id="a7691aa5d9c32ecd3713bb83e271ec8e6"></a><!-- doxytag: member="youbot::YouBotGripperBar::getData" ref="a7691aa5d9c32ecd3713bb83e271ec8e6" args="(GripperSensedVelocity &amp;barVelocity)" -->
+<a class="anchor" id="aada5868796b00e31d9f185562dd08336"></a><!-- doxytag: member="youbot::YouBotGripperBar::getData" ref="aada5868796b00e31d9f185562dd08336" args="(GripperSensedBarPosition &amp;barPosition) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classyoubot_1_1_gripper_sensed_bar_position.html">GripperSensedBarPosition</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>barPosition</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab8a5778ac8a4d979e8b793d3e52c211d"></a><!-- doxytag: member="youbot::YouBotGripperBar::getData" ref="ab8a5778ac8a4d979e8b793d3e52c211d" args="(GripperSensedVelocity &amp;barVelocity) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -213,7 +234,25 @@ Collaboration diagram for YouBotGripperBar:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_gripper_sensed_velocity.html">GripperSensedVelocity</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>barVelocity</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4afe8f5cd798d37e2f05266f4f7ea006"></a><!-- doxytag: member="youbot::YouBotGripperBar::parseGripperErrorFlags" ref="a4afe8f5cd798d37e2f05266f4f7ea006" args="(const unsigned int &amp;errosFlags)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void parseGripperErrorFlags </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned int &amp;&nbsp;</td>
+          <td class="paramname"> <em>errosFlags</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -293,14 +332,32 @@ Collaboration diagram for YouBotGripperBar:</div>
 
 </div>
 </div>
-<a class="anchor" id="ae8161149aed3985ccca8dc9923a55d9f"></a><!-- doxytag: member="youbot::YouBotGripperBar::setData" ref="ae8161149aed3985ccca8dc9923a55d9f" args="(const GripperBarEncoterSetpoint &amp;encoderSetpoint)" -->
+<a class="anchor" id="a25eca6d6302d097622709bf95827436e"></a><!-- doxytag: member="youbot::YouBotGripperBar::setData" ref="a25eca6d6302d097622709bf95827436e" args="(GripperBarPositionSetPoint &amp;barPosition)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void setData </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classyoubot_1_1_gripper_bar_encoter_setpoint.html">GripperBarEncoterSetpoint</a> &amp;&nbsp;</td>
+          <td class="paramtype"><a class="el" href="classyoubot_1_1_gripper_bar_position_set_point.html">GripperBarPositionSetPoint</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>barPosition</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac62e6a326e7ac126ee197dde1c009dcc"></a><!-- doxytag: member="youbot::YouBotGripperBar::setData" ref="ac62e6a326e7ac126ee197dde1c009dcc" args="(const GripperBarEncoderSetpoint &amp;encoderSetpoint)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setData </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classyoubot_1_1_gripper_bar_encoder_setpoint.html">GripperBarEncoderSetpoint</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>encoderSetpoint</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td><code> [virtual]</code></td>

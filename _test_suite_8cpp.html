@@ -24,14 +24,21 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_8e5ec600274562e57bbefeb6f695e894.html">testing</a>
+  <div class="navpath"><a class="el" href="dir_3316d0a6a08c6ab80179c56d78c9aa4c.html">testing</a>
   </div>
 </div>
 <div class="contents">
 <h1>TestSuite.cpp File Reference</h1><code>#include &quot;<a class="el" href="_test_suite_8cpp.html">YouBotBaseTest.hpp</a>&quot;</code><br/>
 <code>#include &lt;cppunit/TestCase.h&gt;</code><br/>
 <code>#include &lt;cppunit/extensions/HelperMacros.h&gt;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
+<code>#include &lt;signal.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="_you_bot_base_8hpp_source.html">youbot/YouBotBase.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_you_bot_manipulator_8hpp_source.html">youbot/YouBotManipulator.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_data_trace_8hpp_source.html">youbot/DataTrace.hpp</a>&quot;</code><br/>
+<code>#include &lt;boost/ptr_container/ptr_vector.hpp&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_gripper_data_trace_8hpp_source.html">youbot/GripperDataTrace.hpp</a>&quot;</code><br/>
 <code>#include &lt;cppunit/CompilerOutputter.h&gt;</code><br/>
 <code>#include &lt;cppunit/extensions/TestFactoryRegistry.h&gt;</code><br/>
 <code>#include &lt;cppunit/ui/text/TestRunner.h&gt;</code><br/>
@@ -40,7 +47,7 @@ Include dependency graph for TestSuite.cpp:</div>
 <div class="dynsection">
 <div class="center"><img src="_test_suite_8cpp__incl.png" border="0" usemap="#_test_suite_8cpp_map" alt=""/></div>
 <map name="_test_suite_8cpp_map" id="_test_suite_8cpp">
-<area shape="rect" href="_you_bot_base_8hpp.html" title="youbot/YouBotBase.hpp" alt="" coords="1300,83,1460,112"/><area shape="rect" href="_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="1517,469,1648,499"/><area shape="rect" href="_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2720,624,2843,653"/><area shape="rect" href="_time_8hpp.html" title="generic/Time.hpp" alt="" coords="2625,469,2745,499"/><area shape="rect" href="_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="1143,392,1292,421"/><area shape="rect" href="_exceptions_8hpp.html" title="Exceptions.hpp" alt="" coords="843,469,955,499"/><area shape="rect" href="_you_bot_joint_8hpp.html" title="youbot/YouBotJoint.hpp" alt="" coords="3852,160,4012,189"/><area shape="rect" href="_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="3328,315,3547,344"/><area shape="rect" href="_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="1755,315,1933,344"/><area shape="rect" href="_four_swedish_wheel_omni_base_kinematic_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematic.hpp" alt="" coords="264,315,632,344"/><area shape="rect" href="_four_swedish_wheel_omni_base_kinematic_configuration_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematicConfiguration.hpp" alt="" coords="321,392,764,421"/><area shape="rect" href="_joint_8hpp.html" title="generic&#45;joint/Joint.hpp" alt="" coords="4497,392,4644,421"/><area shape="rect" href="_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="4548,547,4724,576"/><area shape="rect" href="_you_bot_joint_storage_8hpp.html" title="youbot/YouBotJointStorage.hpp" alt="" coords="3684,469,3887,499"/><area shape="rect" href="_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="3276,469,3473,499"/><area shape="rect" href="_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1913,469,2103,499"/><area shape="rect" href="_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="2769,469,3004,499"/><area shape="rect" href="_you_bot_joint_parameter_password_protected_8hpp.html" title="youbot/YouBotJointParameterPasswordProtected.hpp" alt="" coords="3629,237,3960,267"/><area shape="rect" href="_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="4012,469,4220,499"/><area shape="rect" href="_you_bot_joint_parameter_read_only_8hpp.html" title="youbot/YouBotJointParameterReadOnly.hpp" alt="" coords="2999,392,3273,421"/><area shape="rect" href="ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="2263,547,2367,576"/><area shape="rect" href="_motor_protection_8hpp.html" title="youbot/MotorProtection.hpp" alt="" coords="2084,392,2265,421"/><area shape="rect" href="ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="1620,392,1727,421"/><area shape="rect" href="_wheeled_base_kinematic_8hpp.html" title="base&#45;kinematic/WheeledBaseKinematic.hpp" alt="" coords="439,469,713,499"/></map>
+<area shape="rect" href="_you_bot_base_8hpp.html" title="youbot/YouBotBase.hpp" alt="" coords="1824,83,1984,112"/><area shape="rect" href="_you_bot_manipulator_8hpp.html" title="youbot/YouBotManipulator.hpp" alt="" coords="2271,83,2468,112"/><area shape="rect" href="_data_trace_8hpp.html" title="youbot/DataTrace.hpp" alt="" coords="4637,83,4784,112"/><area shape="rect" href="_gripper_data_trace_8hpp.html" title="youbot/GripperDataTrace.hpp" alt="" coords="3773,83,3963,112"/><area shape="rect" href="_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="2557,392,2688,421"/><area shape="rect" href="_units_8hpp.html" title="generic/Units.hpp" alt="" coords="1028,392,1151,421"/><area shape="rect" href="_time_8hpp.html" title="generic/Time.hpp" alt="" coords="4101,392,4221,421"/><area shape="rect" href="_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="3067,392,3216,421"/><area shape="rect" href="_exceptions_8hpp.html" title="Exceptions.hpp" alt="" coords="4135,469,4247,499"/><area shape="rect" href="_you_bot_joint_8hpp.html" title="youbot/YouBotJoint.hpp" alt="" coords="2939,160,3099,189"/><area shape="rect" href="_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="2853,315,3072,344"/><area shape="rect" href="_ethercat_master_8hpp.html" title="youbot/EthercatMaster.hpp" alt="" coords="2720,237,2899,267"/><area shape="rect" href="_ethercat_master_interface_8hpp.html" title="youbot/EthercatMasterInterface.hpp" alt="" coords="2347,315,2576,344"/><area shape="rect" href="_ethercat_master_without_thread_8hpp.html" title="youbot/EthercatMasterWithoutThread.hpp" alt="" coords="3669,315,3931,344"/><area shape="rect" href="_ethercat_master_with_thread_8hpp.html" title="youbot/EthercatMasterWithThread.hpp" alt="" coords="3403,315,3645,344"/><area shape="rect" href="_four_swedish_wheel_omni_base_kinematic_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematic.hpp" alt="" coords="1069,237,1437,267"/><area shape="rect" href="_four_swedish_wheel_omni_base_kinematic_configuration_8hpp.html" title="base&#45;kinematic/FourSwedishWheelOmniBaseKinematicConfiguration.hpp" alt="" coords="1171,315,1613,344"/><area shape="rect" href="_you_bot_gripper_8hpp.html" title="youbot/YouBotGripper.hpp" alt="" coords="2723,160,2896,189"/><area shape="rect" href="_you_bot_gripper_parameter_8hpp.html" title="youbot/YouBotGripperParameter.hpp" alt="" coords="3096,315,3328,344"/><area shape="rect" href="_you_bot_gripper_bar_8hpp.html" title="youbot/YouBotGripperBar.hpp" alt="" coords="3300,237,3492,267"/></map>
 </div>
 <div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -50,9 +57,85 @@ This graph shows which files directly or indirectly include this file:</div>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_suite_8cpp.html#a0a22629b14d3ddbab4ebcd0b22a2a348">CPPUNIT_TEST_SUITE_REGISTRATION</a> (<a class="el" href="class_you_bot_base_test.html">YouBotBaseTest</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_suite_8cpp.html#ad6c633f15b157d6e7fd45a0aa8533378">CPPUNIT_TEST_SUITE_REGISTRATION</a> (<a class="el" href="class_you_bot_base_test_without_thread.html">YouBotBaseTestWithoutThread</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_suite_8cpp.html#a52f8f12a64086310525996e116eef87c">CPPUNIT_TEST_SUITE_REGISTRATION</a> (<a class="el" href="class_you_bot_base_kinematics_test.html">YouBotBaseKinematicsTest</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_suite_8cpp.html#a05c84e69bbc7312c832b6ff0b376eb2b">CPPUNIT_TEST_SUITE_REGISTRATION</a> (<a class="el" href="class_you_bot_arm_test.html">YouBotArmTest</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_suite_8cpp.html#ad57bbd75025dd2ceae9cb41308d7aca3">CPPUNIT_TEST_SUITE_REGISTRATION</a> (<a class="el" href="class_you_bot_gripper_test.html">YouBotGripperTest</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="_test_suite_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ad57bbd75025dd2ceae9cb41308d7aca3"></a><!-- doxytag: member="TestSuite.cpp::CPPUNIT_TEST_SUITE_REGISTRATION" ref="ad57bbd75025dd2ceae9cb41308d7aca3" args="(YouBotGripperTest)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPPUNIT_TEST_SUITE_REGISTRATION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_you_bot_gripper_test.html">YouBotGripperTest</a>&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a05c84e69bbc7312c832b6ff0b376eb2b"></a><!-- doxytag: member="TestSuite.cpp::CPPUNIT_TEST_SUITE_REGISTRATION" ref="a05c84e69bbc7312c832b6ff0b376eb2b" args="(YouBotArmTest)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPPUNIT_TEST_SUITE_REGISTRATION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_you_bot_arm_test.html">YouBotArmTest</a>&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52f8f12a64086310525996e116eef87c"></a><!-- doxytag: member="TestSuite.cpp::CPPUNIT_TEST_SUITE_REGISTRATION" ref="a52f8f12a64086310525996e116eef87c" args="(YouBotBaseKinematicsTest)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPPUNIT_TEST_SUITE_REGISTRATION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_you_bot_base_kinematics_test.html">YouBotBaseKinematicsTest</a>&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6c633f15b157d6e7fd45a0aa8533378"></a><!-- doxytag: member="TestSuite.cpp::CPPUNIT_TEST_SUITE_REGISTRATION" ref="ad6c633f15b157d6e7fd45a0aa8533378" args="(YouBotBaseTestWithoutThread)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPPUNIT_TEST_SUITE_REGISTRATION </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_you_bot_base_test_without_thread.html">YouBotBaseTestWithoutThread</a>&nbsp;</td>
+          <td class="paramname"></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0a22629b14d3ddbab4ebcd0b22a2a348"></a><!-- doxytag: member="TestSuite.cpp::CPPUNIT_TEST_SUITE_REGISTRATION" ref="a0a22629b14d3ddbab4ebcd0b22a2a348" args="(YouBotBaseTest)" -->
 <div class="memitem">
 <div class="memproto">

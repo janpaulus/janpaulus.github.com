@@ -1,5 +1,5 @@
 <map id="G" name="G">
 <area shape="rect" href="$slaveinfo_8c.html" title="Example code for Simple Open EtherCAT master." alt="" coords="5,83,88,112"/>
-<area shape="rect" href="$_ethercat_master_8cpp.html" title="EthercatMaster.cpp" alt="" coords="112,83,248,112"/>
-<area shape="rect" href="$_ethercat_master_without_thread_8cpp.html" title="EthercatMasterWithoutThread.cpp" alt="" coords="272,83,491,112"/>
+<area shape="rect" href="$_ethercat_master_without_thread_8cpp.html" title="EthercatMasterWithoutThread.cpp" alt="" coords="112,83,331,112"/>
+<area shape="rect" href="$_ethercat_master_with_thread_8cpp.html" title="EthercatMasterWithThread.cpp" alt="" coords="355,83,555,112"/>
 </map>

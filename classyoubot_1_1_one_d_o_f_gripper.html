@@ -53,14 +53,14 @@ Collaboration diagram for OneDOFGripper:</div>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_one_d_o_f_gripper.html#ae9e09e5de741e3b753ab8e4c8af0027a">setConfigurationParameter</a> (const <a class="el" href="classyoubot_1_1_gripper_parameter.html">GripperParameter</a> &amp;parameter)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_one_d_o_f_gripper.html#a95bb2f765214005f47b00936c388b16d">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_gripper_parameter.html">GripperParameter</a> &amp;parameter)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_one_d_o_f_gripper.html#a2826bf51cfabeff100c3393222465716">getConfigurationParameter</a> (<a class="el" href="classyoubot_1_1_gripper_parameter.html">GripperParameter</a> &amp;parameter) const =0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_one_d_o_f_gripper.html#acdde0055e505712b5afd40e768503ae0">setData</a> (const <a class="el" href="classyoubot_1_1_one_d_o_f_gripper_data.html">OneDOFGripperData</a> &amp;data)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_one_d_o_f_gripper.html#a13469eff74700475a3d7fba51264fdb7">getData</a> (<a class="el" href="classyoubot_1_1_one_d_o_f_gripper_data.html">OneDOFGripperData</a> &amp;data)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classyoubot_1_1_one_d_o_f_gripper.html#a61cf400e5dc17c41c552dddcea3c5b49">getData</a> (<a class="el" href="classyoubot_1_1_one_d_o_f_gripper_data.html">OneDOFGripperData</a> &amp;data) const =0</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>abstract gripper with one degree of freedom </p>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a95bb2f765214005f47b00936c388b16d"></a><!-- doxytag: member="youbot::OneDOFGripper::getConfigurationParameter" ref="a95bb2f765214005f47b00936c388b16d" args="(GripperParameter &amp;parameter)=0" -->
+<a class="anchor" id="a2826bf51cfabeff100c3393222465716"></a><!-- doxytag: member="youbot::OneDOFGripper::getConfigurationParameter" ref="a2826bf51cfabeff100c3393222465716" args="(GripperParameter &amp;parameter) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -70,19 +70,19 @@ Collaboration diagram for OneDOFGripper:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_gripper_parameter.html">GripperParameter</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>parameter</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [pure virtual]</code></td>
+          <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implements <a class="el" href="classyoubot_1_1_gripper.html#a95bb2f765214005f47b00936c388b16d">Gripper</a>.</p>
+<p>Implements <a class="el" href="classyoubot_1_1_gripper.html#a2826bf51cfabeff100c3393222465716">Gripper</a>.</p>
 
-<p>Implemented in <a class="el" href="classyoubot_1_1_you_bot_gripper.html#a5fb53e86b29af795348241dd507020a6">YouBotGripper</a>.</p>
+<p>Implemented in <a class="el" href="classyoubot_1_1_you_bot_gripper.html#a83a6bdaef1331388f6ac2bb2d421468a">YouBotGripper</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a13469eff74700475a3d7fba51264fdb7"></a><!-- doxytag: member="youbot::OneDOFGripper::getData" ref="a13469eff74700475a3d7fba51264fdb7" args="(OneDOFGripperData &amp;data)=0" -->
+<a class="anchor" id="a61cf400e5dc17c41c552dddcea3c5b49"></a><!-- doxytag: member="youbot::OneDOFGripper::getData" ref="a61cf400e5dc17c41c552dddcea3c5b49" args="(OneDOFGripperData &amp;data) const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -92,13 +92,13 @@ Collaboration diagram for OneDOFGripper:</div>
           <td class="paramtype"><a class="el" href="classyoubot_1_1_one_d_o_f_gripper_data.html">OneDOFGripperData</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>data</em></td>
           <td>&nbsp;)&nbsp;</td>
-          <td><code> [pure virtual]</code></td>
+          <td> const<code> [pure virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="classyoubot_1_1_you_bot_gripper.html#ab6e43bb997e4fd17f7c6011383d6d8e7">YouBotGripper</a>.</p>
+<p>Implemented in <a class="el" href="classyoubot_1_1_you_bot_gripper.html#ae682e5b10eceed00020359e87157f6e0">YouBotGripper</a>.</p>
 
 </div>
 </div>

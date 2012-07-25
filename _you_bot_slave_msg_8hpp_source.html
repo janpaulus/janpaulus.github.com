@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_7bebd886d1f7529b900faa14b8b5e01b.html">youbot</a>
+  <div class="navpath"><a class="el" href="dir_c188f3569ca341e23a607146381c217c.html">youbot</a>
   </div>
 </div>
 <div class="contents">
@@ -82,81 +82,134 @@
 <a name="l00052"></a>00052 <span class="preprocessor">#ifndef _YOUBOT_SLAVE_MESSAGE_H</span>
 <a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#define _YOUBOT_SLAVE_MESSAGE_H</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span>
-<a name="l00055"></a>00055 <span class="preprocessor">#include &lt;<a class="code" href="ethercattype_8h.html" title="General typedefs and defines for EtherCAT.">ethercattype.h</a>&gt;</span>
-<a name="l00056"></a>00056 <span class="preprocessor">#include &lt;string&gt;</span>
-<a name="l00057"></a>00057 <span class="preprocessor">#include &lt;time.h&gt;</span>
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keyword">namespace </span>youbot {
-<a name="l00060"></a>00060 <span class="comment"></span>
-<a name="l00061"></a>00061 <span class="comment">  /// Output part from the EtherCat message of the youBot EtherCat slaves</span>
-<a name="l00062"></a>00062 <span class="comment"></span>
-<a name="l00063"></a><a class="code" href="structyoubot_1_1_slave_message_output.html">00063</a>   <span class="keyword">struct </span><a class="code" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a> {
-<a name="l00064"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">00064</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a>;
-<a name="l00065"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">00065</a>     <a class="code" href="ethercattype_8h.html#adde6aaee8457bee49c2a92621fe22b79">uint8</a> <a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a>;
-<a name="l00066"></a>00066   } <a class="code" href="ethercatmain_8h.html#a55d8b81c25ea933b4ac90e13c16a0138" title="max.">__attribute__</a>((__packed__));
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="comment"></span>
-<a name="l00069"></a>00069 <span class="comment">  /// Input part from the EtherCat message of the youBot EtherCat slaves</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#include &quot;<a class="code" href="_data_object_lock_free_8hpp.html">generic/dataobjectlockfree/DataObjectLockFree.hpp</a>&quot;</span>
+<a name="l00056"></a>00056 <span class="preprocessor">#include &lt;<a class="code" href="ethercattype_8h.html" title="General typedefs and defines for EtherCAT.">ethercattype.h</a>&gt;</span>
+<a name="l00057"></a>00057 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00058"></a>00058 <span class="preprocessor">#include &lt;time.h&gt;</span>
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="keyword">namespace </span>youbot {
+<a name="l00061"></a>00061 <span class="comment"></span>
+<a name="l00062"></a>00062 <span class="comment">  /// Output part from the EtherCat message of the youBot EtherCat slaves</span>
+<a name="l00063"></a>00063 <span class="comment"></span>
+<a name="l00064"></a><a class="code" href="structyoubot_1_1_slave_message_output.html">00064</a>   <span class="keyword">struct </span><a class="code" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a> {
+<a name="l00065"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">00065</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a>;
+<a name="l00066"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">00066</a>     <a class="code" href="ethercattype_8h.html#adde6aaee8457bee49c2a92621fe22b79">uint8</a> <a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a>;
+<a name="l00067"></a><a class="code" href="structyoubot_1_1_slave_message_output.html#acd50e02443d113d6a9986162ea61d083">00067</a>     <a class="code" href="structyoubot_1_1_slave_message_output.html#acd50e02443d113d6a9986162ea61d083">SlaveMessageOutput</a>():<a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a>(0),<a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a>(0) { };
+<a name="l00068"></a>00068   } <a class="code" href="ethercatmain_8h.html#a55d8b81c25ea933b4ac90e13c16a0138" title="max.">__attribute__</a>((__packed__));
+<a name="l00069"></a>00069 
 <a name="l00070"></a>00070 <span class="comment"></span>
-<a name="l00071"></a><a class="code" href="structyoubot_1_1_slave_message_input.html">00071</a>   <span class="keyword">struct </span><a class="code" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a> {
-<a name="l00072"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">00072</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>;   <span class="comment">// encoder ticks</span>
-<a name="l00073"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">00073</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">actualCurrent</a>;    <span class="comment">// mA</span>
-<a name="l00074"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">00074</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a>;   <span class="comment">// rpm motor axis</span>
-<a name="l00075"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">00075</a>     <a class="code" href="ethercattype_8h.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a>;
-<a name="l00076"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">00076</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">actualPWM</a>;
-<a name="l00077"></a>00077   } <a class="code" href="ethercatmain_8h.html#a55d8b81c25ea933b4ac90e13c16a0138" title="max.">__attribute__</a>((__packed__));
-<a name="l00078"></a>00078 <span class="comment"></span>
-<a name="l00079"></a>00079 <span class="comment">  ///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00080"></a>00080 <span class="comment">  /// EtherCat message of the youBot EtherCat slaves</span>
-<a name="l00081"></a>00081 <span class="comment">  ///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00082"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html">00082</a> <span class="comment"></span>  <span class="keyword">class </span><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> {
-<a name="l00083"></a>00083   <span class="keyword">public</span>:
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 
-<a name="l00086"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">00086</a>     <a class="code" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>;
-<a name="l00087"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">00087</a>     <a class="code" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>;
-<a name="l00088"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">00088</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090     <span class="comment">// Constructor</span>
-<a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a9e472d68a3b6f580bbf9435279bf4c71">00092</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a9e472d68a3b6f580bbf9435279bf4c71">YouBotSlaveMsg</a>() {
-<a name="l00093"></a>00093       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = 0;
-<a name="l00094"></a>00094       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = 0;
-<a name="l00095"></a>00095       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">actualCurrent</a> = 0;
-<a name="l00096"></a>00096       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a> = 0;
-<a name="l00097"></a>00097       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a> = 0;
-<a name="l00098"></a>00098       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">actualPWM</a> = 0;
-<a name="l00099"></a>00099       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> = 0;
-<a name="l00100"></a>00100       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a> = 0;
-<a name="l00101"></a>00101     }
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103     <span class="comment">// Copy-Constructor</span>
-<a name="l00104"></a>00104 
-<a name="l00105"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a5f0e9d68546ed66296dd818bc614b190">00105</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a5f0e9d68546ed66296dd818bc614b190">YouBotSlaveMsg</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> &amp;copy) {
-<a name="l00106"></a>00106       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>;
-<a name="l00107"></a>00107       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>;
-<a name="l00108"></a>00108       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
-<a name="l00109"></a>00109     }
-<a name="l00110"></a>00110 
-<a name="l00111"></a>00111     <span class="comment">// Destructor</span>
-<a name="l00112"></a>00112 
-<a name="l00113"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#af5be98e56d5563e8c8b34571c66faa7a">00113</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#af5be98e56d5563e8c8b34571c66faa7a">~YouBotSlaveMsg</a>() {
-<a name="l00114"></a>00114     }
-<a name="l00115"></a>00115 
-<a name="l00116"></a>00116     <span class="comment">// assignment operator</span>
-<a name="l00117"></a>00117 
-<a name="l00118"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a1abfcb9cf01f3de2cc2d389d57e7222b">00118</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> &amp; <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a1abfcb9cf01f3de2cc2d389d57e7222b">operator=</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> &amp;copy) {
-<a name="l00119"></a>00119       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>;
-<a name="l00120"></a>00120       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>;
-<a name="l00121"></a>00121       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123       <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-<a name="l00124"></a>00124     }
-<a name="l00125"></a>00125   };
-<a name="l00126"></a>00126 
-<a name="l00127"></a>00127 } <span class="comment">// namespace youbot</span>
+<a name="l00071"></a>00071 <span class="comment">  /// Input part from the EtherCat message of the youBot EtherCat slaves</span>
+<a name="l00072"></a>00072 <span class="comment"></span>
+<a name="l00073"></a><a class="code" href="structyoubot_1_1_slave_message_input.html">00073</a>   <span class="keyword">struct </span><a class="code" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a> {
+<a name="l00074"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">00074</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>;   <span class="comment">// encoder ticks</span>
+<a name="l00075"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">00075</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">actualCurrent</a>;    <span class="comment">// mA</span>
+<a name="l00076"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">00076</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a>;   <span class="comment">// rpm motor axis</span>
+<a name="l00077"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">00077</a>     <a class="code" href="ethercattype_8h.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a>;
+<a name="l00078"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">00078</a>     <a class="code" href="ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> <a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">actualPWM</a>;
+<a name="l00079"></a><a class="code" href="structyoubot_1_1_slave_message_input.html#ab85c06f8c9317638004b21331c849828">00079</a>     <a class="code" href="structyoubot_1_1_slave_message_input.html#ab85c06f8c9317638004b21331c849828">SlaveMessageInput</a>():<a class="code" href="structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>(0),<a class="code" href="structyoubot_1_1_slave_message_input.html#ae9e593e1723fef8c22218ba3da26955c">actualCurrent</a>(0),<a class="code" href="structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a>(0),<a class="code" href="structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a>(0),<a class="code" href="structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">actualPWM</a>(0) { };
+<a name="l00080"></a>00080   } <a class="code" href="ethercatmain_8h.html#a55d8b81c25ea933b4ac90e13c16a0138" title="max.">__attribute__</a>((__packed__));
+<a name="l00081"></a>00081 <span class="comment"></span>
+<a name="l00082"></a>00082 <span class="comment">  ///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00083"></a>00083 <span class="comment">  /// EtherCat message of the youBot EtherCat slaves</span>
+<a name="l00084"></a>00084 <span class="comment">  ///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00085"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html">00085</a> <span class="comment"></span>  <span class="keyword">class </span><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> {
+<a name="l00086"></a>00086   <span class="keyword">public</span>:
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 
+<a name="l00089"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">00089</a>     <a class="code" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>;
+<a name="l00090"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">00090</a>     <a class="code" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>;
+<a name="l00091"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">00091</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     <span class="comment">// Constructor</span>
+<a name="l00094"></a>00094 
+<a name="l00095"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a9e472d68a3b6f580bbf9435279bf4c71">00095</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a9e472d68a3b6f580bbf9435279bf4c71">YouBotSlaveMsg</a>() {
+<a name="l00096"></a>00096       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a> = 0;
+<a name="l00097"></a>00097     }
+<a name="l00098"></a>00098 
+<a name="l00099"></a>00099     <span class="comment">// Copy-Constructor</span>
+<a name="l00100"></a>00100 
+<a name="l00101"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a5f0e9d68546ed66296dd818bc614b190">00101</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a5f0e9d68546ed66296dd818bc614b190">YouBotSlaveMsg</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> &amp;copy) {
+<a name="l00102"></a>00102       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>;
+<a name="l00103"></a>00103       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>;
+<a name="l00104"></a>00104       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
+<a name="l00105"></a>00105     }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107     <span class="comment">// Destructor</span>
+<a name="l00108"></a>00108 
+<a name="l00109"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#af5be98e56d5563e8c8b34571c66faa7a">00109</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#af5be98e56d5563e8c8b34571c66faa7a">~YouBotSlaveMsg</a>() {
+<a name="l00110"></a>00110     }
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112     <span class="comment">// assignment operator</span>
+<a name="l00113"></a>00113 
+<a name="l00114"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a1abfcb9cf01f3de2cc2d389d57e7222b">00114</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> &amp; <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a1abfcb9cf01f3de2cc2d389d57e7222b">operator=</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a> &amp;copy) {
+<a name="l00115"></a>00115       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>;
+<a name="l00116"></a>00116       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>;
+<a name="l00117"></a>00117       <a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a> = copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119       <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00120"></a>00120     }
+<a name="l00121"></a>00121   };
+<a name="l00122"></a>00122   <span class="comment"></span>
+<a name="l00123"></a>00123 <span class="comment">  ///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00124"></a>00124 <span class="comment">  /// EtherCat message of the youBot EtherCat slaves which is thread safe</span>
+<a name="l00125"></a>00125 <span class="comment">  ///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00126"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html">00126</a> <span class="comment"></span>  <span class="keyword">class </span><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html" title="EtherCat message of the youBot EtherCat slaves which is thread safe.">YouBotSlaveMsgThreadSafe</a> {
+<a name="l00127"></a>00127   <span class="keyword">public</span>:
 <a name="l00128"></a>00128 
-<a name="l00129"></a>00129 <span class="preprocessor">#endif  </span><span class="comment">/* _YOUBOT_SLAVE_MESSAGE_H */</span>
+<a name="l00129"></a>00129 
+<a name="l00130"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a210dde4e3368f1573b9ca64c22d88354">00130</a>     <a class="code" href="classyoubot_1_1_data_object_lock_free.html">DataObjectLockFree&lt;SlaveMessageOutput&gt;</a> <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a210dde4e3368f1573b9ca64c22d88354">stctOutput</a>;
+<a name="l00131"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a99f7d17a2065adb3197278b96bc747cd">00131</a>     <a class="code" href="classyoubot_1_1_data_object_lock_free.html">DataObjectLockFree&lt;SlaveMessageInput&gt;</a> <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a99f7d17a2065adb3197278b96bc747cd">stctInput</a>;
+<a name="l00132"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#abce25401a9420fd7fcbd3f0303bf0f55">00132</a>     <a class="code" href="classyoubot_1_1_data_object_lock_free.html">DataObjectLockFree&lt;unsigned int&gt;</a> <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#abce25401a9420fd7fcbd3f0303bf0f55">jointNumber</a>;
+<a name="l00133"></a>00133 
+<a name="l00134"></a>00134     <span class="comment">// Constructor</span>
+<a name="l00135"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#acda0ed62c193893f12cdff7dc719395d">00135</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#acda0ed62c193893f12cdff7dc719395d">YouBotSlaveMsgThreadSafe</a>() {
+<a name="l00136"></a>00136       <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#abce25401a9420fd7fcbd3f0303bf0f55">jointNumber</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(0);
+<a name="l00137"></a>00137     }
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139     
+<a name="l00140"></a>00140     <span class="comment">// Copy-Constructor</span>
+<a name="l00141"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a1d283c646d84844e6fafa41bcebca843">00141</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a1d283c646d84844e6fafa41bcebca843">YouBotSlaveMsgThreadSafe</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html" title="EtherCat message of the youBot EtherCat slaves which is thread safe.">YouBotSlaveMsgThreadSafe</a> &amp;copy) {
+<a name="l00142"></a>00142       <a class="code" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a> tempOutput;
+<a name="l00143"></a>00143       <a class="code" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a> tempInput;
+<a name="l00144"></a>00144       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tempjointNo;
+<a name="l00145"></a>00145       
+<a name="l00146"></a>00146       copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a210dde4e3368f1573b9ca64c22d88354">stctOutput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(tempOutput);
+<a name="l00147"></a>00147       <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a210dde4e3368f1573b9ca64c22d88354">stctOutput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(tempOutput);
+<a name="l00148"></a>00148       
+<a name="l00149"></a>00149       copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a99f7d17a2065adb3197278b96bc747cd">stctInput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(tempInput);
+<a name="l00150"></a>00150       <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a99f7d17a2065adb3197278b96bc747cd">stctInput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(tempInput);
+<a name="l00151"></a>00151               
+<a name="l00152"></a>00152       copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#abce25401a9420fd7fcbd3f0303bf0f55">jointNumber</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(tempjointNo);
+<a name="l00153"></a>00153       <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#abce25401a9420fd7fcbd3f0303bf0f55">jointNumber</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(tempjointNo);
+<a name="l00154"></a>00154     }
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156     <span class="comment">// Destructor</span>
+<a name="l00157"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a2cef38511e805fd4237a07b699b8051d">00157</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a2cef38511e805fd4237a07b699b8051d">~YouBotSlaveMsgThreadSafe</a>() {
+<a name="l00158"></a>00158     }
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160     <span class="comment">// assignment operator</span>
+<a name="l00161"></a><a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a917d5cbbc7ba5c502ba5fa2b9f1c6917">00161</a>     <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html" title="EtherCat message of the youBot EtherCat slaves which is thread safe.">YouBotSlaveMsgThreadSafe</a> &amp; <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a917d5cbbc7ba5c502ba5fa2b9f1c6917">operator=</a>(<span class="keyword">const</span> <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html" title="EtherCat message of the youBot EtherCat slaves which is thread safe.">YouBotSlaveMsgThreadSafe</a> &amp;copy) {
+<a name="l00162"></a>00162       <a class="code" href="structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a> tempOutput;
+<a name="l00163"></a>00163       <a class="code" href="structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a> tempInput;
+<a name="l00164"></a>00164       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tempjointNo;
+<a name="l00165"></a>00165       
+<a name="l00166"></a>00166       copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a210dde4e3368f1573b9ca64c22d88354">stctOutput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(tempOutput);
+<a name="l00167"></a>00167       <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a210dde4e3368f1573b9ca64c22d88354">stctOutput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(tempOutput);
+<a name="l00168"></a>00168       
+<a name="l00169"></a>00169       copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a99f7d17a2065adb3197278b96bc747cd">stctInput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(tempInput);
+<a name="l00170"></a>00170       <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a99f7d17a2065adb3197278b96bc747cd">stctInput</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(tempInput);
+<a name="l00171"></a>00171               
+<a name="l00172"></a>00172       copy.<a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#abce25401a9420fd7fcbd3f0303bf0f55">jointNumber</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(tempjointNo);
+<a name="l00173"></a>00173       <a class="code" href="classyoubot_1_1_you_bot_slave_msg_thread_safe.html#abce25401a9420fd7fcbd3f0303bf0f55">jointNumber</a>.<a class="code" href="classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(tempjointNo);
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175       <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+<a name="l00176"></a>00176     }
+<a name="l00177"></a>00177  
+<a name="l00178"></a>00178   };
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180 } <span class="comment">// namespace youbot</span>
+<a name="l00181"></a>00181 
+<a name="l00182"></a>00182 <span class="preprocessor">#endif  </span><span class="comment">/* _YOUBOT_SLAVE_MESSAGE_H */</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

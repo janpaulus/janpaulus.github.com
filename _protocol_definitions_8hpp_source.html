@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_7bebd886d1f7529b900faa14b8b5e01b.html">youbot</a>
+  <div class="navpath"><a class="el" href="dir_c188f3569ca341e23a607146381c217c.html">youbot</a>
   </div>
 </div>
 <div class="contents">
@@ -82,129 +82,137 @@
 <a name="l00052"></a>00052 <span class="preprocessor">#ifndef PROTOCOLDEFINITIONS_HPP</span>
 <a name="l00053"></a>00053 <span class="preprocessor"></span><span class="preprocessor">#define PROTOCOLDEFINITIONS_HPP</span>
 <a name="l00054"></a>00054 <span class="preprocessor"></span>
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 <span class="comment">//Opcodes of all TMCL commands that can be used in direct mode</span>
-<a name="l00057"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510">00057</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510">TMCLCommandNumber</a> {
-<a name="l00058"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a7b369e7350ac1a6585413ed60a0d6e10">00058</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a7b369e7350ac1a6585413ed60a0d6e10">ROR</a> = 1,  <span class="comment">//Rotate right</span>
-<a name="l00059"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a38d0bc977289569e38f3a751f23b9d09">00059</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a38d0bc977289569e38f3a751f23b9d09">ROL</a> = 2,  <span class="comment">//Rotate left</span>
-<a name="l00060"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a54eb2e1ae0545bb1d4eaa20971796e8f">00060</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a54eb2e1ae0545bb1d4eaa20971796e8f">MST</a> = 3,  <span class="comment">//Motor stop</span>
-<a name="l00061"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a92f4d0e8342ecc97d83eb504d6d44aad">00061</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a92f4d0e8342ecc97d83eb504d6d44aad">MVP</a> = 4,  <span class="comment">//Move to position</span>
-<a name="l00062"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510af9ce0aba31b7e8383d895725f4b93faa">00062</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510af9ce0aba31b7e8383d895725f4b93faa">SAP</a> = 5,  <span class="comment">//Set axis parameter</span>
-<a name="l00063"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a540e3ab03991d11d4a769dc754287704">00063</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a540e3ab03991d11d4a769dc754287704">GAP</a> = 6,  <span class="comment">//Get axis parameter</span>
-<a name="l00064"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a83f3c57924b7585d969ac322f599235e">00064</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a83f3c57924b7585d969ac322f599235e">STAP</a> = 7, <span class="comment">//Store axis parameter into EEPROM</span>
-<a name="l00065"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510ab08929409beaed09bee4049084bf1b7f">00065</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510ab08929409beaed09bee4049084bf1b7f">RSAP</a> = 8, <span class="comment">//Restore axis parameter from EEPROM</span>
-<a name="l00066"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a461765be15699229e48f021076c0695a">00066</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a461765be15699229e48f021076c0695a">SGP</a> = 9,  <span class="comment">//Set global parameter</span>
-<a name="l00067"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a1c708130114cbdbf1421c6371e63a9a5">00067</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a1c708130114cbdbf1421c6371e63a9a5">GGP</a> = 10, <span class="comment">//Get global parameter</span>
-<a name="l00068"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510af9dcefe688ebc7c3f996921221c19658">00068</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510af9dcefe688ebc7c3f996921221c19658">STGP</a> = 11, <span class="comment">//Store global parameter into EEPROM</span>
-<a name="l00069"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a8b02201735c74cd7853af230ff2bceb4">00069</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a8b02201735c74cd7853af230ff2bceb4">RSGP</a> = 12, <span class="comment">//Restore global parameter from EEPROM</span>
-<a name="l00070"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510afad1f28c8b70550fb2655bcae49b26ca">00070</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510afad1f28c8b70550fb2655bcae49b26ca">RFS</a> = 13,
-<a name="l00071"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a63593447263048ac1da8407357dadae4">00071</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a63593447263048ac1da8407357dadae4">SIO</a> = 14,
-<a name="l00072"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a53666d73c4b5940296bda22ce1a6f27e">00072</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a53666d73c4b5940296bda22ce1a6f27e">GIO</a> = 15,
-<a name="l00073"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510ab83313f324ddd41ef3db8f159b9811fe">00073</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510ab83313f324ddd41ef3db8f159b9811fe">SCO</a> = 30,
-<a name="l00074"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510afac7a2b7a82629cbeb62d7ef4c832865">00074</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510afac7a2b7a82629cbeb62d7ef4c832865">GCO</a> = 31,
-<a name="l00075"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a4363832264026f12eb860ae88b6be4c8">00075</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a4363832264026f12eb860ae88b6be4c8">CCO</a> = 32,
-<a name="l00076"></a><a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a08a890e5545ddcb9308f729289f55291">00076</a>   <a class="code" href="_protocol_definitions_8hpp.html#abe5438adcc18c093abde88dcc1a75510a08a890e5545ddcb9308f729289f55291">FIRMWARE_VERSION</a> = 136
-<a name="l00077"></a>00077 } <a class="code" href="_protocol_definitions_8hpp.html#add601c56a159287882bf5d3e6acd288f">CommandNumber</a>;
-<a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">00079</a> <span class="preprocessor">#define USER_VARIABLE_BANK 2</span>
-<a name="l00080"></a>00080 <span class="preprocessor"></span>
-<a name="l00081"></a>00081 <span class="comment">//Opcodes of TMCL control functions (to be used to run or abort a TMCL program in the module)</span>
-<a name="l00082"></a><a class="code" href="_protocol_definitions_8hpp.html#aa686ee46c83a18cd5ce759fdf9746a9e">00082</a> <span class="preprocessor">#define TMCL_APPL_STOP 128</span>
-<a name="l00083"></a><a class="code" href="_protocol_definitions_8hpp.html#a4b64f7c43983fbcaf4fa64a3f1cfa4d3">00083</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_APPL_RUN 129</span>
-<a name="l00084"></a><a class="code" href="_protocol_definitions_8hpp.html#abf837798e04ace0ddfa6b889317151ab">00084</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_APPL_RESET 131</span>
-<a name="l00085"></a>00085 <span class="preprocessor"></span>
-<a name="l00086"></a>00086 <span class="comment">//Options for MVP commandds</span>
-<a name="l00087"></a><a class="code" href="_protocol_definitions_8hpp.html#af461b50f7a99c0d87cb266b1f7b255b4">00087</a> <span class="preprocessor">#define MVP_ABS 0</span>
-<a name="l00088"></a><a class="code" href="_protocol_definitions_8hpp.html#a24abb16bffae8b0ce24a0006b0b2cdfd">00088</a> <span class="preprocessor"></span><span class="preprocessor">#define MVP_REL 1</span>
-<a name="l00089"></a><a class="code" href="_protocol_definitions_8hpp.html#a5d193c43219ad3f5ee6f49665671318f">00089</a> <span class="preprocessor"></span><span class="preprocessor">#define MVP_COORD 2</span>
-<a name="l00090"></a>00090 <span class="preprocessor"></span>
-<a name="l00091"></a>00091 <span class="comment">//Options for RFS command</span>
-<a name="l00092"></a><a class="code" href="_protocol_definitions_8hpp.html#af3e45256ab573c431159c650b4549127">00092</a> <span class="preprocessor">#define RFS_START 0</span>
-<a name="l00093"></a><a class="code" href="_protocol_definitions_8hpp.html#a2f13023d716576e566292f405b0f8d0b">00093</a> <span class="preprocessor"></span><span class="preprocessor">#define RFS_STOP 1</span>
-<a name="l00094"></a><a class="code" href="_protocol_definitions_8hpp.html#a4ec379d1084429e7a818676958e31750">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define RFS_STATUS 2</span>
-<a name="l00095"></a>00095 <span class="preprocessor"></span>
-<a name="l00096"></a>00096 <span class="comment">//Result codes for GetResult</span>
-<a name="l00097"></a><a class="code" href="_protocol_definitions_8hpp.html#a92c5cc2c549d9a4b6f56096bbcac68a8">00097</a> <span class="preprocessor">#define TMCL_RESULT_OK 0</span>
-<a name="l00098"></a><a class="code" href="_protocol_definitions_8hpp.html#a6f8652dbed101670e47a26573c0083e0">00098</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_RESULT_NOT_READY 1</span>
-<a name="l00099"></a><a class="code" href="_protocol_definitions_8hpp.html#a21950d912cf07f36b2cf5286559bf355">00099</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_RESULT_CHECKSUM_ERROR 2</span>
-<a name="l00100"></a>00100 <span class="preprocessor"></span>
-<a name="l00101"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331">00101</a> <span class="keyword">enum</span> <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331">YouBotJointControllerMode</a> {
-<a name="l00102"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331aee6f27e90b9bf054096e96ae6a9f04f7">00102</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331aee6f27e90b9bf054096e96ae6a9f04f7">MOTOR_STOP</a> = 0,
-<a name="l00103"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a745ca72ab8bf9686e2c19635bed3450a">00103</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a745ca72ab8bf9686e2c19635bed3450a">POSITION_CONTROL</a> = 1,
-<a name="l00104"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a04ad62f742035f1283c4d570bc739015">00104</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a04ad62f742035f1283c4d570bc739015">VELOCITY_CONTROL</a> = 2,
-<a name="l00105"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a158988dcca75643c2143cfaf2b11a5ac">00105</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a158988dcca75643c2143cfaf2b11a5ac">NO_MORE_ACTION</a> = 3,
-<a name="l00106"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a56eb56f1963ebb3894e606d0e1f75305">00106</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a56eb56f1963ebb3894e606d0e1f75305">SET_POSITION_TO_REFERENCE</a> = 4,
-<a name="l00107"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a6ddb3b94e3599054126d1f65cd1109f3">00107</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a6ddb3b94e3599054126d1f65cd1109f3">PWM_MODE</a> = 5,
-<a name="l00108"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a768f2095b01860f3d0d2e9b715396885">00108</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331a768f2095b01860f3d0d2e9b715396885">CURRENT_MODE</a> = 6,
-<a name="l00109"></a><a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331ab0c48e95b68bff1f7820e23b8fd0bc98">00109</a>     <a class="code" href="_protocol_definitions_8hpp.html#ad81a2796e148786dae2043bf32874331ab0c48e95b68bff1f7820e23b8fd0bc98">INITIALIZE</a> = 7
-<a name="l00110"></a>00110 };
-<a name="l00111"></a>00111 
-<a name="l00112"></a><a class="code" href="_protocol_definitions_8hpp.html#a2eb31caf50d20bb29283b40c6177f0d5">00112</a> <span class="keyword">enum</span> <a class="code" href="_protocol_definitions_8hpp.html#a2eb31caf50d20bb29283b40c6177f0d5">TMCLModuleAddress</a> {
-<a name="l00113"></a><a class="code" href="_protocol_definitions_8hpp.html#a2eb31caf50d20bb29283b40c6177f0d5af7b6d6d8e5e14633d388ef9cc7a941b7">00113</a>     <a class="code" href="_protocol_definitions_8hpp.html#a2eb31caf50d20bb29283b40c6177f0d5af7b6d6d8e5e14633d388ef9cc7a941b7">DRIVE</a> = 0,
-<a name="l00114"></a><a class="code" href="_protocol_definitions_8hpp.html#a2eb31caf50d20bb29283b40c6177f0d5a3dd51dc741f6a5b935fd294d5aa042e9">00114</a>     <a class="code" href="_protocol_definitions_8hpp.html#a2eb31caf50d20bb29283b40c6177f0d5a3dd51dc741f6a5b935fd294d5aa042e9">GRIPPER</a> = 1
-<a name="l00115"></a>00115 };
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117 <span class="comment">/*</span>
-<a name="l00118"></a>00118 <span class="comment">enum ProcessDataErrorFlags {</span>
-<a name="l00119"></a>00119 <span class="comment">    OVER_CURRENT = 1,</span>
-<a name="l00120"></a>00120 <span class="comment">    UNDER_VOLTAGE = 2,</span>
-<a name="l00121"></a>00121 <span class="comment">    OVER_VOLTAGE = 4,</span>
-<a name="l00122"></a>00122 <span class="comment">    OVER_TEMPERATURE = 8,</span>
-<a name="l00123"></a>00123 <span class="comment">    HALTED = 16,</span>
-<a name="l00124"></a>00124 <span class="comment">    HALL_SENSOR = 32,</span>
-<a name="l00125"></a>00125 <span class="comment">    ENCODER = 64,</span>
-<a name="l00126"></a>00126 <span class="comment">    MOTOR_WINDING = 128,</span>
-<a name="l00127"></a>00127 <span class="comment">    CYCLE_TIME_VIOLATION = 256,</span>
-<a name="l00128"></a>00128 <span class="comment">    INIT_SIN_COMM = 512,</span>
-<a name="l00129"></a>00129 <span class="comment">};</span>
-<a name="l00130"></a>00130 <span class="comment">*/</span>
-<a name="l00131"></a>00131 
-<a name="l00132"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25c">00132</a> <span class="keyword">enum</span> <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25c">MailboxErrorFlags</a> {
-<a name="l00133"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca4548ab7d2aca8604c3e0e536957dfabc">00133</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca4548ab7d2aca8604c3e0e536957dfabc">OVER_CURRENT</a> = 0x1,
-<a name="l00134"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca73d836e0c73fd33408477f5a63c37784">00134</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca73d836e0c73fd33408477f5a63c37784">UNDER_VOLTAGE</a> = 0x2,
-<a name="l00135"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca742fb575c19430d06efcb377876f47d9">00135</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca742fb575c19430d06efcb377876f47d9">OVER_VOLTAGE</a> = 0x4,
-<a name="l00136"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caf8f0795bee7df2533e3f046f172a4cb4">00136</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caf8f0795bee7df2533e3f046f172a4cb4">OVER_TEMPERATURE</a> = 0x8,
-<a name="l00137"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caf812eaf1b7300ddc3d647525f17ad5ea">00137</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caf812eaf1b7300ddc3d647525f17ad5ea">MOTOR_HALTED</a> = 0x10,
-<a name="l00138"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caaec0121115a14ece6c9376a94f7a2776">00138</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caaec0121115a14ece6c9376a94f7a2776">HALL_SENSOR_ERROR</a> = 0x20,
-<a name="l00139"></a>00139 <span class="comment">//    ENCODER_ERROR = 0x40,</span>
-<a name="l00140"></a>00140 <span class="comment">//    INITIALIZATION_ERROR = 0x80,</span>
-<a name="l00141"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca296f55b226b68aaa8a1659de6a6e5807">00141</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca296f55b226b68aaa8a1659de6a6e5807">PWM_MODE_ACTIVE</a> = 0x100,
-<a name="l00142"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca53c6ff5c2a348365c6d73e987a375f4c">00142</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca53c6ff5c2a348365c6d73e987a375f4c">VELOCITY_MODE</a> = 0x200,
-<a name="l00143"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca21de3478520bbc47e9c35e3e651a06bf">00143</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca21de3478520bbc47e9c35e3e651a06bf">POSITION_MODE</a> = 0x400,
-<a name="l00144"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca0ea296a9973e053f8deb6ec51c84433b">00144</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25ca0ea296a9973e053f8deb6ec51c84433b">TORQUE_MODE</a> = 0x800,
-<a name="l00145"></a>00145 <span class="comment">//    EMERGENCY_STOP = 0x1000,</span>
-<a name="l00146"></a>00146 <span class="comment">//    FREERUNNING = 0x2000,</span>
-<a name="l00147"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25cafd9c01723e0d2fd0076795e79a72477d">00147</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25cafd9c01723e0d2fd0076795e79a72477d">POSITION_REACHED</a> = 0x4000,
-<a name="l00148"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caa307353740245a4be434ad2ca7169232">00148</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caa307353740245a4be434ad2ca7169232">INITIALIZED</a> = 0x8000,
-<a name="l00149"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caad9dee005a3d0f9137b2ac1e0869f89b">00149</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caad9dee005a3d0f9137b2ac1e0869f89b">TIMEOUT</a> = 0x10000,
-<a name="l00150"></a><a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caf15217d0b99130e948f7e5a00e34559c">00150</a>     <a class="code" href="_protocol_definitions_8hpp.html#ac577aa9abc122965bc1a85ad2f5aa25caf15217d0b99130e948f7e5a00e34559c">I2T_EXCEEDED</a> = 0x20000
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152 };
-<a name="l00153"></a>00153 
+<a name="l00055"></a>00055 <span class="keyword">namespace </span>youbot {
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="comment">//Opcodes of all TMCL commands that can be used in direct mode</span>
+<a name="l00058"></a>00058 <span class="keyword">typedef</span> <span class="keyword">enum</span> TMCLCommandNumber {
+<a name="l00059"></a>00059   ROR = 1,  <span class="comment">//Rotate right</span>
+<a name="l00060"></a>00060   ROL = 2,  <span class="comment">//Rotate left</span>
+<a name="l00061"></a>00061   MST = 3,  <span class="comment">//Motor stop</span>
+<a name="l00062"></a>00062   MVP = 4,  <span class="comment">//Move to position</span>
+<a name="l00063"></a>00063   SAP = 5,  <span class="comment">//Set axis parameter</span>
+<a name="l00064"></a>00064   GAP = 6,  <span class="comment">//Get axis parameter</span>
+<a name="l00065"></a>00065   STAP = 7, <span class="comment">//Store axis parameter into EEPROM</span>
+<a name="l00066"></a>00066   RSAP = 8, <span class="comment">//Restore axis parameter from EEPROM</span>
+<a name="l00067"></a>00067   SGP = 9,  <span class="comment">//Set global parameter</span>
+<a name="l00068"></a>00068   GGP = 10, <span class="comment">//Get global parameter</span>
+<a name="l00069"></a>00069   STGP = 11, <span class="comment">//Store global parameter into EEPROM</span>
+<a name="l00070"></a>00070   RSGP = 12, <span class="comment">//Restore global parameter from EEPROM</span>
+<a name="l00071"></a>00071   RFS = 13,
+<a name="l00072"></a>00072   SIO = 14,
+<a name="l00073"></a>00073   GIO = 15,
+<a name="l00074"></a>00074   SCO = 30,
+<a name="l00075"></a>00075   GCO = 31,
+<a name="l00076"></a>00076   CCO = 32,
+<a name="l00077"></a>00077   FIRMWARE_VERSION = 136
+<a name="l00078"></a>00078 } CommandNumber;
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">00080</a> <span class="preprocessor">#define USER_VARIABLE_BANK 2</span>
+<a name="l00081"></a>00081 <span class="preprocessor"></span>
+<a name="l00082"></a>00082 <span class="comment">//Opcodes of TMCL control functions (to be used to run or abort a TMCL program in the module)</span>
+<a name="l00083"></a><a class="code" href="_protocol_definitions_8hpp.html#aa686ee46c83a18cd5ce759fdf9746a9e">00083</a> <span class="preprocessor">#define TMCL_APPL_STOP 128</span>
+<a name="l00084"></a><a class="code" href="_protocol_definitions_8hpp.html#a4b64f7c43983fbcaf4fa64a3f1cfa4d3">00084</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_APPL_RUN 129</span>
+<a name="l00085"></a><a class="code" href="_protocol_definitions_8hpp.html#abf837798e04ace0ddfa6b889317151ab">00085</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_APPL_RESET 131</span>
+<a name="l00086"></a>00086 <span class="preprocessor"></span>
+<a name="l00087"></a>00087 <span class="comment">//Options for MVP commandds</span>
+<a name="l00088"></a><a class="code" href="_protocol_definitions_8hpp.html#af461b50f7a99c0d87cb266b1f7b255b4">00088</a> <span class="preprocessor">#define MVP_ABS 0</span>
+<a name="l00089"></a><a class="code" href="_protocol_definitions_8hpp.html#a24abb16bffae8b0ce24a0006b0b2cdfd">00089</a> <span class="preprocessor"></span><span class="preprocessor">#define MVP_REL 1</span>
+<a name="l00090"></a><a class="code" href="_protocol_definitions_8hpp.html#a5d193c43219ad3f5ee6f49665671318f">00090</a> <span class="preprocessor"></span><span class="preprocessor">#define MVP_COORD 2</span>
+<a name="l00091"></a>00091 <span class="preprocessor"></span>
+<a name="l00092"></a>00092 <span class="comment">//Options for RFS command</span>
+<a name="l00093"></a><a class="code" href="_protocol_definitions_8hpp.html#af3e45256ab573c431159c650b4549127">00093</a> <span class="preprocessor">#define RFS_START 0</span>
+<a name="l00094"></a><a class="code" href="_protocol_definitions_8hpp.html#a2f13023d716576e566292f405b0f8d0b">00094</a> <span class="preprocessor"></span><span class="preprocessor">#define RFS_STOP 1</span>
+<a name="l00095"></a><a class="code" href="_protocol_definitions_8hpp.html#a4ec379d1084429e7a818676958e31750">00095</a> <span class="preprocessor"></span><span class="preprocessor">#define RFS_STATUS 2</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span>
+<a name="l00097"></a>00097 <span class="comment">//Result codes for GetResult</span>
+<a name="l00098"></a><a class="code" href="_protocol_definitions_8hpp.html#a92c5cc2c549d9a4b6f56096bbcac68a8">00098</a> <span class="preprocessor">#define TMCL_RESULT_OK 0</span>
+<a name="l00099"></a><a class="code" href="_protocol_definitions_8hpp.html#a6f8652dbed101670e47a26573c0083e0">00099</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_RESULT_NOT_READY 1</span>
+<a name="l00100"></a><a class="code" href="_protocol_definitions_8hpp.html#a21950d912cf07f36b2cf5286559bf355">00100</a> <span class="preprocessor"></span><span class="preprocessor">#define TMCL_RESULT_CHECKSUM_ERROR 2</span>
+<a name="l00101"></a>00101 <span class="preprocessor"></span>
+<a name="l00102"></a>00102 <span class="keyword">enum</span> YouBotJointControllerMode {
+<a name="l00103"></a>00103     MOTOR_STOP = 0,
+<a name="l00104"></a>00104     POSITION_CONTROL = 1,
+<a name="l00105"></a>00105     VELOCITY_CONTROL = 2,
+<a name="l00106"></a>00106     NO_MORE_ACTION = 3,
+<a name="l00107"></a>00107     SET_POSITION_TO_REFERENCE = 4,
+<a name="l00108"></a>00108     PWM_MODE = 5,
+<a name="l00109"></a>00109     CURRENT_MODE = 6,
+<a name="l00110"></a>00110     INITIALIZE = 7
+<a name="l00111"></a>00111 };
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113 <span class="keyword">enum</span> TMCLModuleAddress {
+<a name="l00114"></a>00114     DRIVE = 0,
+<a name="l00115"></a>00115     GRIPPER = 1
+<a name="l00116"></a>00116 };
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 <span class="comment">/*</span>
+<a name="l00119"></a>00119 <span class="comment">enum ProcessDataErrorFlags {</span>
+<a name="l00120"></a>00120 <span class="comment">    OVER_CURRENT = 1,</span>
+<a name="l00121"></a>00121 <span class="comment">    UNDER_VOLTAGE = 2,</span>
+<a name="l00122"></a>00122 <span class="comment">    OVER_VOLTAGE = 4,</span>
+<a name="l00123"></a>00123 <span class="comment">    OVER_TEMPERATURE = 8,</span>
+<a name="l00124"></a>00124 <span class="comment">    HALTED = 16,</span>
+<a name="l00125"></a>00125 <span class="comment">    HALL_SENSOR = 32,</span>
+<a name="l00126"></a>00126 <span class="comment">    ENCODER = 64,</span>
+<a name="l00127"></a>00127 <span class="comment">    MOTOR_WINDING = 128,</span>
+<a name="l00128"></a>00128 <span class="comment">    CYCLE_TIME_VIOLATION = 256,</span>
+<a name="l00129"></a>00129 <span class="comment">    INIT_SIN_COMM = 512,</span>
+<a name="l00130"></a>00130 <span class="comment">};</span>
+<a name="l00131"></a>00131 <span class="comment">*/</span>
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133 <span class="keyword">enum</span> MailboxErrorFlags {
+<a name="l00134"></a>00134     OVER_CURRENT = 0x1,
+<a name="l00135"></a>00135     UNDER_VOLTAGE = 0x2,
+<a name="l00136"></a>00136     OVER_VOLTAGE = 0x4,
+<a name="l00137"></a>00137     OVER_TEMPERATURE = 0x8,
+<a name="l00138"></a>00138     MOTOR_HALTED = 0x10,
+<a name="l00139"></a>00139     HALL_SENSOR_ERROR = 0x20,
+<a name="l00140"></a>00140 <span class="comment">//    ENCODER_ERROR = 0x40,</span>
+<a name="l00141"></a>00141 <span class="comment">//    INITIALIZATION_ERROR = 0x80,</span>
+<a name="l00142"></a>00142     PWM_MODE_ACTIVE = 0x100,
+<a name="l00143"></a>00143     VELOCITY_MODE = 0x200,
+<a name="l00144"></a>00144     POSITION_MODE = 0x400,
+<a name="l00145"></a>00145     TORQUE_MODE = 0x800,
+<a name="l00146"></a>00146 <span class="comment">//    EMERGENCY_STOP = 0x1000,</span>
+<a name="l00147"></a>00147 <span class="comment">//    FREERUNNING = 0x2000,</span>
+<a name="l00148"></a>00148     POSITION_REACHED = 0x4000,
+<a name="l00149"></a>00149     INITIALIZED = 0x8000,
+<a name="l00150"></a>00150     TIMEOUT = 0x10000,
+<a name="l00151"></a>00151     I2T_EXCEEDED = 0x20000
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153 };
 <a name="l00154"></a>00154 
-<a name="l00155"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0ec">00155</a> <span class="keyword">enum</span> <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0ec">YouBotMailboxStatusFlags</a> {
-<a name="l00156"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0ecabf350750d0d4fabd8954c0f1e9bbae94">00156</a>     <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0ecabf350750d0d4fabd8954c0f1e9bbae94">NO_ERROR</a> = 100,
-<a name="l00157"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca495c8431364b64b83e6f7cad3529ffc8">00157</a>     <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca495c8431364b64b83e6f7cad3529ffc8">INVALID_COMMAND</a> = 2,
-<a name="l00158"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca0ee8b5ebe2bca1d366ebeeacc48a5ac9">00158</a>     <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca0ee8b5ebe2bca1d366ebeeacc48a5ac9">WRONG_TYPE</a> = 3,
-<a name="l00159"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0ecabcaefe4d513c962a729fd0f4feedaefa">00159</a>     <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0ecabcaefe4d513c962a729fd0f4feedaefa">INVALID_VALUE</a> = 4,
-<a name="l00160"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca8f492fa6f967e02a33c717aa606a7400">00160</a>     <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca8f492fa6f967e02a33c717aa606a7400">CONFIGURATION_EEPROM_LOCKED</a> = 5,
-<a name="l00161"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca38f5e4e15d017c208ad52f61ca0e9068">00161</a>     <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca38f5e4e15d017c208ad52f61ca0e9068">COMMAND_NOT_AVAILABLE</a> = 6,
-<a name="l00162"></a><a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca694351ad2411d97d1686a48b723a4e1b">00162</a>     <a class="code" href="_protocol_definitions_8hpp.html#aac96928a16a4b78101caea4f882cc0eca694351ad2411d97d1686a48b723a4e1b">REPLY_WRITE_PROTECTED</a> = 8
-<a name="l00163"></a>00163 };
-<a name="l00164"></a>00164 
-<a name="l00165"></a><a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">00165</a> <span class="keyword">enum</span> <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0">ParameterType</a> {
-<a name="l00166"></a><a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0aba3214b86e422dfb4b59c24c973d214d">00166</a>   <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0aba3214b86e422dfb4b59c24c973d214d">MOTOR_CONTOLLER_PARAMETER</a>,
-<a name="l00167"></a><a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0af8b9ff36cc0ddedfbc293948cc18fb86">00167</a>   <a class="code" href="_protocol_definitions_8hpp.html#a4d63980e4031b0fc366e623868b27ed0af8b9ff36cc0ddedfbc293948cc18fb86">API_PARAMETER</a>
-<a name="l00168"></a>00168 };
-<a name="l00169"></a>00169 
-<a name="l00170"></a><a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81">00170</a> <span class="keyword">enum</span> <a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81">BarNumber</a> {
-<a name="l00171"></a><a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81a7f1ebeb3e5a6bde2f77cd467f5a601ba">00171</a>   <a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81a7f1ebeb3e5a6bde2f77cd467f5a601ba">BAR_ONE</a> = 0,
-<a name="l00172"></a><a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81a9fa5353259a809f5c84549cffa6574a5">00172</a>   <a class="code" href="_protocol_definitions_8hpp.html#a0e0cb1a0cb93851fa09014d07c13cc81a9fa5353259a809f5c84549cffa6574a5">BAR_TWO</a> = 1
-<a name="l00173"></a>00173 };
-<a name="l00174"></a>00174 
-<a name="l00175"></a>00175 
-<a name="l00176"></a>00176 <span class="preprocessor">#endif  </span><span class="comment">/* PROTOCOLDEFINITIONS_HPP */</span>
-<a name="l00177"></a>00177 
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156 <span class="keyword">enum</span> YouBotMailboxStatusFlags {
+<a name="l00157"></a>00157     NO_ERROR = 100,
+<a name="l00158"></a>00158     INVALID_COMMAND = 2,
+<a name="l00159"></a>00159     WRONG_TYPE = 3,
+<a name="l00160"></a>00160     INVALID_VALUE = 4,
+<a name="l00161"></a>00161     CONFIGURATION_EEPROM_LOCKED = 5,
+<a name="l00162"></a>00162     COMMAND_NOT_AVAILABLE = 6,
+<a name="l00163"></a>00163     REPLY_WRITE_PROTECTED = 8
+<a name="l00164"></a>00164 };
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166 <span class="keyword">enum</span> ParameterType {
+<a name="l00167"></a>00167   MOTOR_CONTOLLER_PARAMETER,
+<a name="l00168"></a>00168   API_PARAMETER
+<a name="l00169"></a>00169 };
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 <span class="keyword">enum</span> GripperErrorFlags {
+<a name="l00172"></a>00172     STALL_GUARD_STATUS = 0x1,
+<a name="l00173"></a>00173     GRIPPER_OVER_TEMPERATURE = 0x2,
+<a name="l00174"></a>00174     PRE_WARNING_OVER_TEMPERATURE = 0x4,
+<a name="l00175"></a>00175     SHORT_TO_GROUND_A = 0x8,
+<a name="l00176"></a>00176     SHORT_TO_GROUND_B = 0x10,
+<a name="l00177"></a>00177     OPEN_LOAD_A = 0x20,
+<a name="l00178"></a>00178     OPEN_LOAD_B = 0x40,
+<a name="l00179"></a>00179     STAND_STILL = 0x80
+<a name="l00180"></a>00180 };
+<a name="l00181"></a>00181 
+<a name="l00182"></a>00182 } <span class="comment">// namespace youbot</span>
+<a name="l00183"></a>00183 
+<a name="l00184"></a>00184 <span class="preprocessor">#endif  </span><span class="comment">/* PROTOCOLDEFINITIONS_HPP */</span>
+<a name="l00185"></a>00185 
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

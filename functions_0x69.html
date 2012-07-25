@@ -36,8 +36,7 @@
   </div>
   <div class="tabs">
     <ul>
-      <li><a href="functions.html#index__"><span>_</span></a></li>
-      <li><a href="functions_0x61.html#index_a"><span>a</span></a></li>
+      <li><a href="functions.html#index_a"><span>a</span></a></li>
       <li><a href="functions_0x62.html#index_b"><span>b</span></a></li>
       <li><a href="functions_0x63.html#index_c"><span>c</span></a></li>
       <li><a href="functions_0x64.html#index_d"><span>d</span></a></li>
@@ -103,6 +102,9 @@ Here is a list of all class members with links to the classes they belong to:
 <li>IClippingParameterSecondParametersSpeedControl()
 : <a class="el" href="classyoubot_1_1_i_clipping_parameter_second_parameters_speed_control.html#ae1955e2a1ba97ea62a3a82e93b1f63fb">IClippingParameterSecondParametersSpeedControl</a>
 </li>
+<li>IClippingParameterTrajectoryControl()
+: <a class="el" href="classyoubot_1_1_i_clipping_parameter_trajectory_control.html#a3ce6cf25a15332ea3336f632219fee4c">IClippingParameterTrajectoryControl</a>
+</li>
 <li>id
 : <a class="el" href="structec__configlist__t.html#a3384d9640634d49e84776a97f3e2c241">ec_configlist_t</a>
 </li>
@@ -115,14 +117,14 @@ Here is a list of all class members with links to the classes they belong to:
 <li>incomplete
 : <a class="el" href="struct_p_a_c_k_e_d.html#a50792ea3ceaf873f1790ede97be2665b">PACKED</a>
 </li>
-<li>index
-: <a class="el" href="struct_p_a_c_k_e_d.html#aa2ab172834a39584f81b5ff9b1bf285c">PACKED</a>
-</li>
 <li>Index
 : <a class="el" href="struct_p_a_c_k_e_d.html#a8b5fb38df3f34f4db469708aa81cdaa3">PACKED</a>
 , <a class="el" href="structec___o_dlistt.html#a677a2ea11ccbb86a8bc419dfe0af55b2">ec_ODlistt</a>
 , <a class="el" href="structec__eeprom_p_d_ot.html#ab41e25038a14f2ea38f58cd6501566a7">ec_eepromPDOt</a>
 , <a class="el" href="structec__errort.html#a8b5fb38df3f34f4db469708aa81cdaa3">ec_errort</a>
+</li>
+<li>index
+: <a class="el" href="struct_p_a_c_k_e_d.html#aa2ab172834a39584f81b5ff9b1bf285c">PACKED</a>
 </li>
 <li>InitializationMode()
 : <a class="el" href="classyoubot_1_1_initialization_mode.html#ae840f5972efa71d528c77749e5758a67">InitializationMode</a>
@@ -137,11 +139,11 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="structec__slavet.html#a7a99661951b97a06c5050083e25dc105">ec_slavet</a>
 , <a class="el" href="structec__groupt.html#a7a99661951b97a06c5050083e25dc105">ec_groupt</a>
 </li>
-<li>InverseMovementDirection()
-: <a class="el" href="classyoubot_1_1_inverse_movement_direction.html#a6698dcca366f686cd1d2af6ef8ad976c">InverseMovementDirection</a>
-</li>
 <li>inverseMovementDirection
 : <a class="el" href="classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">YouBotJointStorage</a>
+</li>
+<li>InverseMovementDirection()
+: <a class="el" href="classyoubot_1_1_inverse_movement_direction.html#a6698dcca366f686cd1d2af6ef8ad976c">InverseMovementDirection</a>
 </li>
 <li>Ioffset
 : <a class="el" href="structec__groupt.html#a16ff855d59206457e8340ec8a7ed4ed0">ec_groupt</a>
@@ -167,6 +169,9 @@ Here is a list of all class members with links to the classes they belong to:
 <li>IParameterSecondParametersSpeedControl()
 : <a class="el" href="classyoubot_1_1_i_parameter_second_parameters_speed_control.html#a47214e0797db71c32535290bba835970">IParameterSecondParametersSpeedControl</a>
 </li>
+<li>IParameterTrajectoryControl()
+: <a class="el" href="classyoubot_1_1_i_parameter_trajectory_control.html#a5e841226b0d707c4611bb28c66b37de4">IParameterTrajectoryControl</a>
+</li>
 <li>irpt
 : <a class="el" href="struct_p_a_c_k_e_d.html#a90eb99fc1b1c395d3a6b3d1e9132bad5">PACKED</a>
 </li>
@@ -174,16 +179,28 @@ Here is a list of all class members with links to the classes they belong to:
 : <a class="el" href="structec__groupt.html#ac208b1c6b1da42117364b4a06f3686b0">ec_groupt</a>
 </li>
 <li>isErrorInSoemDriver()
-: <a class="el" href="classyoubot_1_1_ethercat_master.html#af3aa50de2a32c8a0a12e7e1fa3e70c60">EthercatMaster</a>
+: <a class="el" href="classyoubot_1_1_ethercat_master_without_thread.html#af3aa50de2a32c8a0a12e7e1fa3e70c60">EthercatMasterWithoutThread</a>
+, <a class="el" href="classyoubot_1_1_ethercat_master_with_thread.html#af3aa50de2a32c8a0a12e7e1fa3e70c60">EthercatMasterWithThread</a>
+, <a class="el" href="classyoubot_1_1_ethercat_master_interface.html#a6a6f394685f15f04dee7ea3e214ccd4b">EthercatMasterInterface</a>
+</li>
+<li>isEtherCATConnectionEstablished()
+: <a class="el" href="classyoubot_1_1_ethercat_master_without_thread.html#a24917f4a168236db7eb46faf41bcdd7b">EthercatMasterWithoutThread</a>
+, <a class="el" href="classyoubot_1_1_ethercat_master_with_thread.html#a24917f4a168236db7eb46faf41bcdd7b">EthercatMasterWithThread</a>
+, <a class="el" href="classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">EthercatMasterInterface</a>
 </li>
 <li>islost
 : <a class="el" href="structec__slavet.html#a2453b03755165ceae0fae4e7d45e6cba">ec_slavet</a>
 </li>
-<li>isRMSCurrentOverLimit()
-: <a class="el" href="classyoubot_1_1_motor_protection.html#a99e6a4730b58f8370982a771036e04aa">MotorProtection</a>
-</li>
 <li>Istartbit
 : <a class="el" href="structec__slavet.html#ae85a33eac233602a9157894456333844">ec_slavet</a>
+</li>
+<li>isThreadActive()
+: <a class="el" href="classyoubot_1_1_ethercat_master_with_thread.html#af18eeb3f99699f2b0e5405e1989ee14d">EthercatMasterWithThread</a>
+, <a class="el" href="classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">EthercatMasterInterface</a>
+, <a class="el" href="classyoubot_1_1_ethercat_master_without_thread.html#af18eeb3f99699f2b0e5405e1989ee14d">EthercatMasterWithoutThread</a>
+</li>
+<li>isTrajectoryControllerActive()
+: <a class="el" href="classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3">JointTrajectoryController</a>
 </li>
 <li>Itype
 : <a class="el" href="structec__slavet.html#a31e2bff1f6e664c0e3d4733364c8bfd7">ec_slavet</a>

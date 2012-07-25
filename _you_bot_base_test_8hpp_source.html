@@ -24,7 +24,7 @@
       <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
-  <div class="navpath"><a class="el" href="dir_8e5ec600274562e57bbefeb6f695e894.html">testing</a>
+  <div class="navpath"><a class="el" href="dir_3316d0a6a08c6ab80179c56d78c9aa4c.html">testing</a>
   </div>
 </div>
 <div class="contents">
@@ -34,33 +34,51 @@
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;cppunit/TestCase.h&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &lt;cppunit/extensions/HelperMacros.h&gt;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="preprocessor">#include &quot;<a class="code" href="_you_bot_base_8hpp.html">youbot/YouBotBase.hpp</a>&quot;</span>
-<a name="l00008"></a>00008 
-<a name="l00009"></a><a class="code" href="class_you_bot_base_test.html">00009</a> <span class="keyword">class </span><a class="code" href="class_you_bot_base_test.html">YouBotBaseTest</a> : <span class="keyword">public</span> CppUnit::TestFixture
-<a name="l00010"></a>00010 {
-<a name="l00011"></a>00011    CPPUNIT_TEST_SUITE    ( <a class="code" href="class_you_bot_base_test.html">YouBotBaseTest</a>                                   );
-<a name="l00012"></a>00012    CPPUNIT_TEST          ( <a class="code" href="class_you_bot_base_test.html#aaad4f8180cfb287c19d720c12164f9a8">youBotBaseTest_GetBaseJoint</a>                      );
-<a name="l00013"></a>00013    CPPUNIT_TEST          ( <a class="code" href="class_you_bot_base_test.html#a17eb0b868170b7ca20a0704016e51431">youBotBaseTest_GetAndSetBaseVelocity</a>             );
-<a name="l00014"></a>00014    CPPUNIT_TEST          ( <a class="code" href="class_you_bot_base_test.html#a4ae7d027807b31672fbdd09e8a0692f7">youBotBaseTest_FourSwedishWheelOmniBaseKinematic</a> );
-<a name="l00015"></a>00015    CPPUNIT_TEST_SUITE_END(                                                  );
-<a name="l00016"></a>00016    
-<a name="l00017"></a>00017    <span class="keyword">public</span>:
-<a name="l00018"></a>00018       <a class="code" href="class_you_bot_base_test.html#ae03bdaff745a700fda612d1a16fadd17">YouBotBaseTest</a>( );
-<a name="l00019"></a>00019       <span class="keyword">virtual</span> <a class="code" href="class_you_bot_base_test.html#a07c03e7b763a0c21830aafef61b5f379">~YouBotBaseTest</a>( );
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021       <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#a63326a1b70b6e3f070e51687798e02de">setUp</a>   ( );
-<a name="l00022"></a>00022       <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#ab804e0f66def63262c1d6b4e3d2a2bd7">tearDown</a>( );
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024       <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#aaad4f8180cfb287c19d720c12164f9a8">youBotBaseTest_GetBaseJoint</a>                     ( );
-<a name="l00025"></a>00025       <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#a17eb0b868170b7ca20a0704016e51431">youBotBaseTest_GetAndSetBaseVelocity</a>            ( );
-<a name="l00026"></a>00026       <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#a4ae7d027807b31672fbdd09e8a0692f7">youBotBaseTest_FourSwedishWheelOmniBaseKinematic</a>( );
-<a name="l00027"></a>00027    
-<a name="l00028"></a>00028    <span class="keyword">private</span>:
-<a name="l00029"></a>00029 <span class="comment">//      youbot::YouBotBase* myYouBotBase;</span>
-<a name="l00030"></a>00030 <span class="comment">//      void operator =( const YouBotBaseTest &amp;copy );</span>
-<a name="l00031"></a>00031 };
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00008"></a>00008 <span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &lt;signal.h&gt;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_you_bot_base_8hpp.html">youbot/YouBotBase.hpp</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_you_bot_manipulator_8hpp.html">youbot/YouBotManipulator.hpp</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="_data_trace_8hpp.html">youbot/DataTrace.hpp</a>&quot;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="keyword">using namespace </span>youbot;
+<a name="l00015"></a>00015 <span class="comment"></span>
+<a name="l00016"></a>00016 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00017"></a>00017 <span class="comment">/// A unit test for the youBot base</span>
+<a name="l00018"></a>00018 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00019"></a><a class="code" href="class_you_bot_base_test.html">00019</a> <span class="comment"></span><span class="keyword">class </span><a class="code" href="class_you_bot_base_test.html" title="A unit test for the youBot base.">YouBotBaseTest</a> : <span class="keyword">public</span> CppUnit::TestFixture {
+<a name="l00020"></a>00020   CPPUNIT_TEST_SUITE(<a class="code" href="class_you_bot_base_test.html" title="A unit test for the youBot base.">YouBotBaseTest</a>);
+<a name="l00021"></a>00021   CPPUNIT_TEST(<a class="code" href="class_you_bot_base_test.html#a1599345f0f76a9e47afd1de9521f1d51">youBotBaseTest_PositionMode</a>);
+<a name="l00022"></a>00022   CPPUNIT_TEST(<a class="code" href="class_you_bot_base_test.html#a11294863248ea091047105309267f2a6">youBotBaseTest_VelocityMode</a>);
+<a name="l00023"></a>00023   CPPUNIT_TEST(<a class="code" href="class_you_bot_base_test.html#ab3bc2fbe7f394ae4d0f7749c0da587ad">youBotBaseTest_CurrentMode</a>);
+<a name="l00024"></a>00024   CPPUNIT_TEST_SUITE_END();
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keyword">public</span>:
+<a name="l00027"></a>00027   <a class="code" href="class_you_bot_base_test.html#ae03bdaff745a700fda612d1a16fadd17">YouBotBaseTest</a>();
+<a name="l00028"></a>00028   <span class="keyword">virtual</span> <a class="code" href="class_you_bot_base_test.html#a07c03e7b763a0c21830aafef61b5f379">~YouBotBaseTest</a>();
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030   <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#a63326a1b70b6e3f070e51687798e02de">setUp</a>();
+<a name="l00031"></a>00031   <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#ab804e0f66def63262c1d6b4e3d2a2bd7">tearDown</a>();
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#endif //YOU_BOT_BASE_TEST_H</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034   <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#a1599345f0f76a9e47afd1de9521f1d51">youBotBaseTest_PositionMode</a>();
+<a name="l00035"></a>00035   <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#a11294863248ea091047105309267f2a6">youBotBaseTest_VelocityMode</a>();
+<a name="l00036"></a>00036   <span class="keywordtype">void</span> <a class="code" href="class_you_bot_base_test.html#ab3bc2fbe7f394ae4d0f7749c0da587ad">youBotBaseTest_CurrentMode</a>();
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="keyword">private</span>:
+<a name="l00039"></a>00039   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> jointNO;
+<a name="l00040"></a>00040   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> stepStartTime;
+<a name="l00041"></a>00041   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> durationNull;
+<a name="l00042"></a>00042   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> overallTime;
+<a name="l00043"></a>00043   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> startTime;
+<a name="l00044"></a>00044   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> updateCycle;
+<a name="l00045"></a>00045   <a class="code" href="classyoubot_1_1_joint_angle_setpoint.html" title="Set-point angle / position of the joint.">JointAngleSetpoint</a> setAngle;
+<a name="l00046"></a>00046   <a class="code" href="classyoubot_1_1_joint_velocity_setpoint.html" title="Set-point velocity of the joint.">JointVelocitySetpoint</a> setVel;
+<a name="l00047"></a>00047   <a class="code" href="classyoubot_1_1_joint_current_setpoint.html" title="Set-point current of the joint.">JointCurrentSetpoint</a> currentSetpoint;
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049 };
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 <span class="preprocessor">#endif //YOU_BOT_BASE_TEST_H</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">
