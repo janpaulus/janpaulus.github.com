@@ -10,6 +10,8 @@
 <area shape="rect" href="$_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="1521,160,1711,189"/>
 <area shape="rect" href="$_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="1735,160,1969,189"/>
 <area shape="rect" href="$_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="975,315,1151,344"/>
-<area shape="rect" href="$_data_object_lock_free_8hpp.html" title="generic/dataobjectlockfree/DataObjectLockFree.hpp" alt="" coords="1424,237,1744,267"/>
-<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="1792,237,1896,267"/>
+<area shape="rect" href="$_data_object_lock_free_8hpp.html" title="generic/dataobjectlockfree/DataObjectLockFree.hpp" alt="" coords="1772,237,2092,267"/>
+<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="1564,237,1668,267"/>
+<area shape="rect" href="$target_8hpp.html" title="generic/dataobjectlockfree/target.hpp" alt="" coords="2023,315,2257,344"/>
+<area shape="rect" href="$oro__arch_8h.html" title="generic/dataobjectlockfree/os/oro_arch.h" alt="" coords="1743,315,1999,344"/>
 </map>

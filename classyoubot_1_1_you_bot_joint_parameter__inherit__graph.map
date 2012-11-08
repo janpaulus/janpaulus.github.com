@@ -34,17 +34,17 @@
 <area shape="rect" href="$classyoubot_1_1_p_parameter_second_parameters_speed_control.html" title="P&#45;Parameter of PID velocity regulator (second position parameter set)." alt="" coords="772,1712,1049,1741"/>
 <area shape="rect" href="$classyoubot_1_1_ramp_generator_speed_and_position_control.html" title="Switches the ramp generator for speed and position control on and off." alt="" coords="781,1765,1040,1795"/>
 <area shape="rect" href="$classyoubot_1_1_speed_control_switching_threshold.html" title="Adjusts the limit to switch between first velocity PID parameter set and second velocity..." alt="" coords="805,1819,1016,1848"/>
-<area shape="rect" href="$classyoubot_1_1_you_bot_joint_parameter_password_protected.html" title="abstract youBot joint parameter" alt="" coords="780,1872,1041,1901"/>
-<area shape="rect" href="$classyoubot_1_1_you_bot_joint_parameter_read_only.html" title="abstract youBot joint parameter which can be read only" alt="" coords="291,939,499,968"/>
-<area shape="rect" href="$classyoubot_1_1_joint_parameter.html" title="abstract joint parameter" alt="" coords="135,939,241,968"/>
-<area shape="rect" href="$classyoubot_1_1_parameter.html" title="abstract parameter" alt="" coords="5,939,85,968"/>
-<area shape="rect" href="$classyoubot_1_1_activate_overvoltage_protection.html" title="Enable overvoltage protection." alt="" coords="1167,1659,1364,1688"/>
-<area shape="rect" href="$classyoubot_1_1_actual_commutation_offset.html" title="This value represents the internal commutation offset." alt="" coords="1180,1712,1351,1741"/>
-<area shape="rect" href="$classyoubot_1_1_approve_protected_parameters.html" title="Enter a password to approve the change of protected parameters." alt="" coords="1169,1765,1361,1795"/>
-<area shape="rect" href="$classyoubot_1_1_b_e_m_f_constant.html" title="BEMF constant of motor." alt="" coords="1211,1819,1320,1848"/>
-<area shape="rect" href="$classyoubot_1_1_commutation_compensation_clockwise.html" title="Commutation (CW) to compensate for the Hall sensor deviations." alt="" coords="1145,1872,1385,1901"/>
-<area shape="rect" href="$classyoubot_1_1_commutation_compensation_counter_clockwise.html" title="Commutation (CCW) to compensate for the Hall sensor deviations." alt="" coords="1123,1925,1408,1955"/>
-<area shape="rect" href="$classyoubot_1_1_commutation_mode.html" title="The Commutation Mode." alt="" coords="1200,1979,1331,2008"/>
-<area shape="rect" href="$classyoubot_1_1_commutation_motor_current.html" title="Motor current for controlled commutation." alt="" coords="1179,2032,1352,2061"/>
-<area shape="rect" href="$classyoubot_1_1_current_control_loop_delay.html" title="Delay of current limitation algorithm / PID current regulator." alt="" coords="1183,2085,1348,2115"/>
+<area shape="rect" href="$classyoubot_1_1_velocity_threshold_for_hall_f_x.html" title="Velocity to switch from controlled to hallFX mode." alt="" coords="820,1872,1001,1901"/>
+<area shape="rect" href="$classyoubot_1_1_you_bot_joint_parameter_password_protected.html" title="abstract youBot joint parameter" alt="" coords="780,1925,1041,1955"/>
+<area shape="rect" href="$classyoubot_1_1_you_bot_joint_parameter_read_only.html" title="abstract youBot joint parameter which can be read only" alt="" coords="291,965,499,995"/>
+<area shape="rect" href="$classyoubot_1_1_joint_parameter.html" title="abstract joint parameter" alt="" coords="135,965,241,995"/>
+<area shape="rect" href="$classyoubot_1_1_parameter.html" title="abstract parameter" alt="" coords="5,965,85,995"/>
+<area shape="rect" href="$classyoubot_1_1_activate_overvoltage_protection.html" title="Enable overvoltage protection." alt="" coords="1167,1739,1364,1768"/>
+<area shape="rect" href="$classyoubot_1_1_actual_commutation_offset.html" title="This value represents the internal commutation offset." alt="" coords="1180,1792,1351,1821"/>
+<area shape="rect" href="$classyoubot_1_1_approve_protected_parameters.html" title="Enter a password to approve the change of protected parameters." alt="" coords="1169,1845,1361,1875"/>
+<area shape="rect" href="$classyoubot_1_1_b_e_m_f_constant.html" title="BEMF constant of motor." alt="" coords="1211,1899,1320,1928"/>
+<area shape="rect" href="$classyoubot_1_1_commutation_compensation_clockwise.html" title="Commutation (CW) to compensate for the Hall sensor deviations." alt="" coords="1145,1952,1385,1981"/>
+<area shape="rect" href="$classyoubot_1_1_commutation_compensation_counter_clockwise.html" title="Commutation (CCW) to compensate for the Hall sensor deviations." alt="" coords="1123,2005,1408,2035"/>
+<area shape="rect" href="$classyoubot_1_1_commutation_mode.html" title="The Commutation Mode." alt="" coords="1200,2059,1331,2088"/>
+<area shape="rect" href="$classyoubot_1_1_commutation_motor_current.html" title="Motor current for controlled commutation." alt="" coords="1179,2112,1352,2141"/>
 </map>

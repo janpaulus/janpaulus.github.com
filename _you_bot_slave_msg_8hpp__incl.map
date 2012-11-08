@@ -1,4 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" href="$_data_object_lock_free_8hpp.html" title="generic/dataobjectlockfree/DataObjectLockFree.hpp" alt="" coords="5,83,325,112"/>
-<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="373,83,477,112"/>
+<area shape="rect" href="$_data_object_lock_free_8hpp.html" title="generic/dataobjectlockfree/DataObjectLockFree.hpp" alt="" coords="211,83,531,112"/>
+<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="555,83,659,112"/>
+<area shape="rect" href="$target_8hpp.html" title="generic/dataobjectlockfree/target.hpp" alt="" coords="5,160,240,189"/>
+<area shape="rect" href="$oro__arch_8h.html" title="generic/dataobjectlockfree/os/oro_arch.h" alt="" coords="264,160,520,189"/>
 </map>
