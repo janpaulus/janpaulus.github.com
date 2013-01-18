@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$d7/d5b/classyoubot_1_1_joint_sensed_torque.html" title="This torque of the joint is computed from the actual current." alt="" coords="5,413,157,520"/>
+<area shape="rect" href="$d1/d86/classyoubot_1_1_joint_sensed_data.html" title="abstract data class for sensed / measured joint data" alt="" coords="21,141,141,229"/>
+<area shape="rect" href="$d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="44,5,119,93"/>
+</map>

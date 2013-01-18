@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="144,5,235,35"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="312,84,411,113"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="125,109,253,139"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="141,163,237,192"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="303,163,420,192"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="469,163,563,192"/>
+</map>

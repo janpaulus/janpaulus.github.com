@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#ae9128b2cb982fd03fae9105d746f8656" title="Enumerate and init all slaves." alt="" coords="312,575,413,604"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#aa740a2ba948117670c4f9741bc31cc38" title="Map all PDOs from slaves to IOmap." alt="" coords="131,936,240,965"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#ae04f6096929eed658625620ba507b219" title="APRDw &quot;auto increment address read&quot; word return primitive." alt="" coords="704,168,792,197"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aca3c5979b5549da9f4a6f441a74e132b" title="APWRw &quot;auto increment address write&quot; word primitive." alt="" coords="1264,117,1352,147"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a30d9ab75b270ba904509fb1af2b8dc17" title="BRD &quot;broadcast read&quot; primitive." alt="" coords="1451,317,1520,347"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3ad29de613339c69a0b132114928b208" title="BRW &quot;broadcast write&quot; primitive." alt="" coords="1449,421,1521,451"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#a8aa31990a858c7e049cfb4de24f28f3e" title="Find slave in standard configuration list ec_configlist[]." alt="" coords="505,445,604,475"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aac2dc2b5a39ace0793473ab89bb56c7d" title="FPRD &quot;configured address read&quot; primitive." alt="" coords="1447,581,1524,611"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a1cebb240642f321d1f641e8a1ffe2fa4" title="FPRDw &quot;configured address read&quot; word return primitive." alt="" coords="1265,371,1351,400"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aa2fe58363a824f15838718ee31f11ffc" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="1268,871,1348,900"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a2fc76bd01a00a0f6da9fb3927eabc24d" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="511,1189,599,1219"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#aacc964b3a092b666f8011717be911d35" title="Read EEPROM from slave bypassing cache." alt="" coords="876,872,985,901"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ad920436309547d99e23cb8fd7b56b1bc" title="Read EEPROM from slave bypassing cache." alt="" coords="872,949,989,979"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a31e35cc2f33ecf639db43c79850462ab" title="Read EEPROM from slave bypassing cache." alt="" coords="1045,581,1163,611"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#af44cb7b11dccd4ea221079ae0a8138e8" title="Find SII section header in slave EEPROM." alt="" coords="711,728,785,757"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a6c314f9524aa84af885f1e6426b71148" title="Read one byte from slave EEPROM via cache." alt="" coords="881,741,980,771"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ab382409c9f74891f82e87dcc7fad875e" title="Get FMMU data from SII FMMU section in slave EEPROM." alt="" coords="508,777,601,807"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a54c0c0d13f6c7b38e98ab91f4db29514" title="Get SM data from SII SM section in slave EEPROM." alt="" coords="517,668,592,697"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#acfb749a5fbaaa6d560204757be2170f5" title="Get next SM data from SII SM section in slave EEPROM." alt="" coords="699,933,797,963"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a4fe43f91402e635e7087b9f1e09d7703" title="Get string from SII string section in slave EEPROM." alt="" coords="511,604,599,633"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a8f77918c0a6a32be1079a11119171901" title="Check actual slave state." alt="" coords="1255,317,1361,347"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a80f6087e11fc1a42832f7c7872122308" title="APRD &quot;auto increment address read&quot; primitive." alt="" coords="1447,528,1524,557"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="1592,579,1683,608"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="1760,475,1859,504"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="1573,525,1701,555"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="1589,421,1685,451"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="1751,421,1868,451"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="1917,421,2011,451"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a02a1741d276571009e46fbe39e9f729f" title="APWR &quot;auto increment address write&quot; primitive." alt="" coords="1445,475,1525,504"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a027bd337ebfa1d39de8a7a1f5c5287de" title="Set eeprom control to master." alt="" coords="1039,871,1169,900"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ace89c7536b04427ffb755e77a5525855" title="Read EEPROM from slave bypassing cache." alt="" coords="1040,741,1168,771"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a683af1ff758441cb62905cb041e428a1" title="ec_eeprom_waitnotbusyFP" alt="" coords="1219,727,1397,756"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ae149a6cd4a61c22efa4cf4185ffd83be" title="Set eeprom control to PDI." alt="" coords="876,819,985,848"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="289,1241,436,1271"/>
+<area shape="rect" href="$d8/dfd/ethercatsoe_8c.html#acb454e12b2034f0121a534de57b0e869" title="SoE read AT and MTD mapping." alt="" coords="691,1343,805,1372"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a15ab60b8e11aa61d67480faa19d0ab28" title="CoE read PDO mapping." alt="" coords="495,1500,615,1529"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a8770ccad0cea1ea8f7dbbd5bfc58b83d" title="CoE read PDO mapping in Complete Access mode (CA)." alt="" coords="487,1396,623,1425"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#aef972d9668958da9db3c350e159caddb" title="Get PDO data from SII PDO section in slave EEPROM." alt="" coords="513,881,596,911"/>
+<area shape="rect" href="$d8/dfd/ethercatsoe_8c.html#af8db8dac3118e949c495d4e50caccfac" title="SoE read, blocking." alt="" coords="885,1448,976,1477"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a652d40885e8275a02ddcf94fbd077c99" title="Clear mailbox buffer." alt="" coords="1056,1555,1152,1584"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a7c1a13c5372ba1b38c9d04085c191e73" title="Read OUT mailbox from slave." alt="" coords="1049,1448,1159,1477"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a575bb6105662ad54fe55c47fc72075c4" title="Write IN mailbox to slave." alt="" coords="1056,1608,1152,1637"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a1e178403f6eb467358bdfcc9eb086691" title="Get index of next mailbox counter value." alt="" coords="1049,1395,1159,1424"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a430e1266d5c0c1bd4153b660e4fa5298" title="Report packet error." alt="" coords="1051,1501,1157,1531"/>
+<area shape="rect" href="$d8/dfd/ethercatsoe_8c.html#a4e7bc2ffc0f30d2427844f2609c14bee" title="Report SoE error." alt="" coords="1057,1341,1151,1371"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#af69e8cb853f10018ef190159752cd7e2" title="Read PDO assign structure." alt="" coords="681,1500,815,1529"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a143f50dea5c6c2694d4050c0caeb5a8e" title="CoE SDO read, blocking." alt="" coords="883,1501,979,1531"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a3aa77952c6d3ce040bb6ba8f4da3a74a" title="Report SDO error." alt="" coords="1056,1661,1152,1691"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a28d3ddf83f70650527d9dce3fb290a35" title="Read PDO assign structure in Complete Access mode." alt="" coords="673,1396,823,1425"/>
+</map>

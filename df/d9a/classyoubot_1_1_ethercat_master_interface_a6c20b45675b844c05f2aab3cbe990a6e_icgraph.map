@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a57c4d699c6ae0983bba98ca5cf4fdfff" title="sets the cartesien base position" alt="" coords="189,5,432,35"/>
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a85ebb1ed649a98966b00e5bb99cd3d5f" title="commands the base in cartesien velocities" alt="" coords="189,59,432,88"/>
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set..." alt="" coords="181,112,440,141"/>
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all base joints all positions will be set at the..." alt="" coords="200,165,421,195"/>
+<area shape="rect" href="$d0/d0a/class_you_bot_base_kinematics_test.html#a1e4ac5cfe4587d6b2b3e7e4edad75a61" title="YouBotBaseKinematicsTest::youBotBaseKinematicsTest" alt="" coords="488,59,840,88"/>
+<area shape="rect" href="$dc/d6b/class_you_bot_arm_test.html#a8e5c85688e9f0038d2dfc28431f21d8d" title="YouBotArmTest::youBotArmTest" alt="" coords="559,112,769,141"/>
+</map>

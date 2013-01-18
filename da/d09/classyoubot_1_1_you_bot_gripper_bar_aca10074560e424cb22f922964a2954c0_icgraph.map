@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$da/d09/classyoubot_1_1_you_bot_gripper_bar.html#aada5868796b00e31d9f185562dd08336" title="getData" alt="" coords="320,5,387,35"/>
+<area shape="rect" href="$d5/d8e/classyoubot_1_1_gripper_data_trace.html#aba64f24d549813a77ab9e04554f045dd" title="youbot::GripperDataTrace::startTrace" alt="" coords="236,59,471,88"/>
+<area shape="rect" href="$d5/d8e/classyoubot_1_1_gripper_data_trace.html#a211eb44b5b9c558cf46af7e7c780ad4e" title="youbot::GripperDataTrace::stopTrace" alt="" coords="236,112,471,141"/>
+<area shape="rect" href="$d9/d46/class_you_bot_gripper_test.html#ac9de7ea2578e3b3fc03d59c774a61530" title="YouBotGripperTest::youBotGripperTest" alt="" coords="231,165,476,195"/>
+</map>

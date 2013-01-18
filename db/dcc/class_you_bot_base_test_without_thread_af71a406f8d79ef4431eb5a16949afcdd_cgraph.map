@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints" alt="" coords="343,272,609,301"/>
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base" alt="" coords="753,5,977,35"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5" title="youbot::EthercatMasterInterface::isThreadActive" alt="" coords="713,379,1017,408"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything..." alt="" coords="699,432,1032,461"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it..." alt="" coords="705,485,1025,515"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb" title="youbot::YouBotJoint::setData" alt="" coords="380,532,572,561"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference..." alt="" coords="351,585,601,615"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c" title="youbot::EthercatMasterInterface::AutomaticReceiveOn" alt="" coords="696,219,1035,248"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0" title="youbot::YouBotJoint::getConfigurationParameter" alt="" coords="716,272,1015,301"/>
+<area shape="rect" href="$d8/d27/classyoubot_1_1_initialize_joint.html#a100505a5d6f738b37e62ebb8aca7956b" title="youbot::InitializeJoint::getParameter" alt="" coords="751,325,980,355"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller." alt="" coords="764,59,967,88"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee" title="youbot::YouBotJoint::setConfigurationParameter" alt="" coords="716,112,1015,141"/>
+<area shape="rect" href="$d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f" title="youbot::InitializeJoint::setParameter" alt="" coords="751,165,980,195"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="659,585,1072,615"/>
+</map>

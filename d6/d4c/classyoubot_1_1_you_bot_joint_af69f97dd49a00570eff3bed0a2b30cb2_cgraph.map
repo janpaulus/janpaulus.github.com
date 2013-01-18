@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f" title="getData" alt="" coords="304,5,371,35"/>
+<area shape="rect" href="$d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3" title="youbot::JointTrajectoryController::isTrajectoryControllerActive" alt="" coords="149,59,525,88"/>
+<area shape="rect" href="$d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a0fa074d7bce5bfc3aa12524ae3e4dd35" title="youbot::JointTrajectoryController::setTrajectoryPositions" alt="" coords="165,112,509,141"/>
+</map>

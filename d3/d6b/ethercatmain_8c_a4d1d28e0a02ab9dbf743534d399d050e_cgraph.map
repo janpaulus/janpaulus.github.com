@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="179,5,307,35"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a5b5e0bf5e801e9f30a0fcd9b50b3efc5" title="Basic setup to connect NIC to socket." alt="" coords="197,59,288,88"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a495531bac8f5d70b5a10494048b15820" title="Fill buffer with ethernet header structure." alt="" coords="356,59,468,88"/>
+</map>

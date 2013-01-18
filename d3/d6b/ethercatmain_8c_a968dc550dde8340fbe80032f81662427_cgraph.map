@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a02a1741d276571009e46fbe39e9f729f" title="APWR &quot;auto increment address write&quot; primitive." alt="" coords="413,57,493,87"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#af4b40499a69dd20db5aa8da081c7274f" title="ec_eeprom_waitnotbusyAP" alt="" coords="185,111,364,140"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="560,31,651,60"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="728,57,827,87"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="541,137,669,167"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="557,84,653,113"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="719,111,836,140"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="885,111,979,140"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a80f6087e11fc1a42832f7c7872122308" title="APRD &quot;auto increment address read&quot; primitive." alt="" coords="415,111,492,140"/>
+</map>

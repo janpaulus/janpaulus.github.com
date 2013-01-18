@@ -1,0 +1,23 @@
+<map id="G" name="G">
+<area shape="rect" href="$d8/d35/ethercatprint_8c.html#abd6f6b98aab3084ea8c40109f75364cb" title="Look up error in ec_errorlist and convert to text string." alt="" coords="143,85,247,115"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a143f50dea5c6c2694d4050c0caeb5a8e" title="CoE SDO read, blocking." alt="" coords="147,272,243,301"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ac5e3fbef1307f9df820124075c373fbd" title="Pops an error from the list." alt="" coords="316,5,404,35"/>
+<area shape="rect" href="$d8/d35/ethercatprint_8c.html#a73428271581f7ee95355e679c7770229" title="Look up text string that belongs to SDO error code." alt="" coords="296,59,424,88"/>
+<area shape="rect" href="$d8/d35/ethercatprint_8c.html#a1e44b3454dae69578da7287201e1e527" title="Look up text string that belongs to SoE error code." alt="" coords="296,112,424,141"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a652d40885e8275a02ddcf94fbd077c99" title="Clear mailbox buffer." alt="" coords="312,325,408,355"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a7c1a13c5372ba1b38c9d04085c191e73" title="Read OUT mailbox from slave." alt="" coords="472,431,581,460"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a575bb6105662ad54fe55c47fc72075c4" title="Write IN mailbox to slave." alt="" coords="312,379,408,408"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a1e178403f6eb467358bdfcc9eb086691" title="Get index of next mailbox counter value." alt="" coords="305,165,415,195"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a430e1266d5c0c1bd4153b660e4fa5298" title="Report packet error." alt="" coords="307,272,413,301"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a3aa77952c6d3ce040bb6ba8f4da3a74a" title="Report SDO error." alt="" coords="312,219,408,248"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aac2dc2b5a39ace0793473ab89bb56c7d" title="FPRD &quot;configured address read&quot; primitive." alt="" coords="631,397,708,427"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aa2fe58363a824f15838718ee31f11ffc" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="629,457,709,487"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="776,464,867,493"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="944,384,1043,413"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="757,357,885,387"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="773,411,869,440"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="935,437,1052,467"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="1101,437,1195,467"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a78a07c2b50526e0f99334f7d2782264f" title="Check if IN mailbox of slave is empty." alt="" coords="475,377,579,407"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a91e361f3f3615c5ee22eb17def4d1532" title="Pushes an error on the error list." alt="" coords="479,245,575,275"/>
+</map>

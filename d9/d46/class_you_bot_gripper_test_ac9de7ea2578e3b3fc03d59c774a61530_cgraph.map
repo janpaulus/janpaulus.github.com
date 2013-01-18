@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a2b6d11b4e6a633a4e1e71d57d530fe2d" title="youbot::YouBotManipulator::calibrateGripper" alt="" coords="213,5,488,35"/>
+<area shape="rect" href="$d6/da5/classyoubot_1_1_you_bot_gripper.html#a5ae591df94fc66ccb85cbb6565368bca" title="youbot::YouBotGripper::close" alt="" coords="255,59,447,88"/>
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a22626c3fbd778a65099558b090fe1362" title="youbot::YouBotManipulator::getArmGripper" alt="" coords="216,112,485,141"/>
+<area shape="rect" href="$da/d09/classyoubot_1_1_you_bot_gripper_bar.html#aca10074560e424cb22f922964a2954c0" title="youbot::YouBotGripperBar::getConfigurationParameter" alt="" coords="184,165,517,195"/>
+<area shape="rect" href="$d6/da5/classyoubot_1_1_you_bot_gripper.html#adc82317bf22262881bf8d45c8596af9d" title="youbot::YouBotGripper::getGripperBar1" alt="" coords="227,219,475,248"/>
+<area shape="rect" href="$d6/da5/classyoubot_1_1_you_bot_gripper.html#a413a735a67b017f88640dbd9cf39921d" title="youbot::YouBotGripper::getGripperBar2" alt="" coords="227,272,475,301"/>
+<area shape="rect" href="$d5/d45/classyoubot_1_1_target_position_reached.html#a100505a5d6f738b37e62ebb8aca7956b" title="youbot::TargetPositionReached::getParameter" alt="" coords="208,325,493,355"/>
+<area shape="rect" href="$d6/da5/classyoubot_1_1_you_bot_gripper.html#a9e8555112049fc2b4945120b3c45f8ab" title="youbot::YouBotGripper::open" alt="" coords="257,379,444,408"/>
+<area shape="rect" href="$de/df1/classyoubot_1_1_calibrate_gripper.html#a7ae6377a16ca67ea5030a495d7b6452f" title="youbot::CalibrateGripper::setParameter" alt="" coords="572,5,817,35"/>
+<area shape="rect" href="$da/d3e/classyoubot_1_1_max_encoder_value.html#a365c2d3302118b2e23b118685bbf3b53" title="youbot::MaxEncoderValue::getParameter" alt="" coords="567,379,823,408"/>
+</map>

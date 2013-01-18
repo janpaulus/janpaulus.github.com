@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3ad29de613339c69a0b132114928b208" title="BRW &quot;broadcast write&quot; primitive." alt="" coords="161,181,233,211"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aac2dc2b5a39ace0793473ab89bb56c7d" title="FPRD &quot;configured address read&quot; primitive." alt="" coords="159,128,236,157"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aa2fe58363a824f15838718ee31f11ffc" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="157,75,237,104"/>
+<area shape="rect" href="$d1/d72/ethercatdc_8c.html#a2ef951e56c248526e468b9666e889042" title="ec_parentport" alt="" coords="148,235,247,264"/>
+<area shape="rect" href="$d1/d72/ethercatdc_8c.html#ac68fe74e5d8764ba735412bbd67df709" title="ec_porttime" alt="" coords="153,288,241,317"/>
+<area shape="rect" href="$d1/d72/ethercatdc_8c.html#a9315c092bc7820bbbcc13bfb23840dcc" title="ec_prevport" alt="" coords="153,341,241,371"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="315,128,405,157"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="483,23,581,52"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="296,181,424,211"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="312,75,408,104"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="473,76,591,105"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="640,76,733,105"/>
+</map>

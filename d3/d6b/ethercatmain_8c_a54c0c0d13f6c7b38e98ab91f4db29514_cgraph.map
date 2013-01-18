@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ae149a6cd4a61c22efa4cf4185ffd83be" title="Set eeprom control to PDI." alt="" coords="256,5,365,35"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#af44cb7b11dccd4ea221079ae0a8138e8" title="Find SII section header in slave EEPROM." alt="" coords="132,32,207,61"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a6c314f9524aa84af885f1e6426b71148" title="Read one byte from slave EEPROM via cache." alt="" coords="261,77,360,107"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aa2fe58363a824f15838718ee31f11ffc" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="821,56,901,85"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="968,55,1059,84"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="1136,81,1235,111"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="949,161,1077,191"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="965,108,1061,137"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="1127,135,1244,164"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="1293,135,1387,164"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a027bd337ebfa1d39de8a7a1f5c5287de" title="Set eeprom control to master." alt="" coords="415,69,545,99"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ace89c7536b04427ffb755e77a5525855" title="Read EEPROM from slave bypassing cache." alt="" coords="416,147,544,176"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a683af1ff758441cb62905cb041e428a1" title="ec_eeprom_waitnotbusyFP" alt="" coords="595,159,773,188"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aac2dc2b5a39ace0793473ab89bb56c7d" title="FPRD &quot;configured address read&quot; primitive." alt="" coords="823,160,900,189"/>
+</map>

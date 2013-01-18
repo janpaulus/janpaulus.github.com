@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$db/d27/classyoubot_1_1_you_bot_joint_parameter_read_only.html#aa64d851b233285f68b743639618a0810" title="youbot::YouBotJointParameterReadOnly::getName" alt="" coords="268,5,583,35"/>
+<area shape="rect" href="$db/d27/classyoubot_1_1_you_bot_joint_parameter_read_only.html#acdf85290d9d3d5e7cb1d3ce080a3ac66" title="youbot::YouBotJointParameterReadOnly::getType" alt="" coords="271,59,580,88"/>
+<area shape="rect" href="$db/d27/classyoubot_1_1_you_bot_joint_parameter_read_only.html#a9f731d1f99d7907c24d3c3680da9b7b9" title="youbot::YouBotJointParameterReadOnly::getYouBotMailboxMsg" alt="" coords="229,112,621,141"/>
+<area shape="rect" href="$db/d27/classyoubot_1_1_you_bot_joint_parameter_read_only.html#ad6989f823f44c86106b3d1558f87c9fb" title="youbot::YouBotJointParameterReadOnly::setYouBotMailboxMsg" alt="" coords="229,165,621,195"/>
+</map>

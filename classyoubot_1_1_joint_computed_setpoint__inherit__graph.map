@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" href="$classyoubot_1_1_joint_torque_setpoint.html" title="The torque set&#45;point of the joint will be set by setting the computed current set&#45;point..." alt="" coords="15,237,151,267"/>
-<area shape="rect" href="$classyoubot_1_1_joint_data_setpoint.html" title="abstract data class for commanded joint data" alt="" coords="21,83,144,112"/>
-<area shape="rect" href="$classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="45,5,120,35"/>
-</map>

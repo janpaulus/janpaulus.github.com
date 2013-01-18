@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0" title="getConfigurationParameter" alt="" coords="332,5,505,35"/>
+<area shape="rect" href="$d3/d1d/classyoubot_1_1_you_bot_joint_parameter.html#aa64d851b233285f68b743639618a0810" title="youbot::YouBotJointParameter::getName" alt="" coords="291,59,547,88"/>
+<area shape="rect" href="$d3/d1d/classyoubot_1_1_you_bot_joint_parameter.html#acdf85290d9d3d5e7cb1d3ce080a3ac66" title="youbot::YouBotJointParameter::getType" alt="" coords="293,112,544,141"/>
+<area shape="rect" href="$d3/d1d/classyoubot_1_1_you_bot_joint_parameter.html#a9f731d1f99d7907c24d3c3680da9b7b9" title="youbot::YouBotJointParameter::getYouBotMailboxMsg" alt="" coords="251,165,587,195"/>
+</map>

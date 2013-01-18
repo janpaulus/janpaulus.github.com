@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" href="$d4/d2f/classyoubot_1_1_gear_ratio.html#a162f9522486b06d3d3b08d35250b3890" title="youbot::GearRatio::getParameter" alt="" coords="253,5,464,35"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5" title="youbot::EthercatMasterInterface::isThreadActive" alt="" coords="207,59,511,88"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything..." alt="" coords="192,112,525,141"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it..." alt="" coords="199,165,519,195"/>
+<area shape="rect" href="$db/df5/classyoubot_1_1_joint_limits.html#a7ab2ad7d9ae9f19a5af4eca083a7206d" title="youbot::JointLimits::setParameter" alt="" coords="251,219,467,248"/>
+</map>

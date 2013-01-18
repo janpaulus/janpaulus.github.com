@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae9128b2cb982fd03fae9105d746f8656" title="Enumerate and init all slaves." alt="" coords="904,504,1005,533"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="881,865,1028,895"/>
+<area shape="rect" href="$d9/d3d/ethercatdc_8h.html#a928bb3140b430b72f0e831ccf10a1b52" title="Set DC&#39;s of all slaves to sync with the first, measure propagation delays." alt="" coords="1087,867,1177,896"/>
+<area shape="rect" href="$d9/d3d/ethercatdc_8h.html#a39fe8b9490690f066c59179e65af981c" title="Set DC of slave to fire sync0 at CyclTime interval with CyclShift offset." alt="" coords="1087,763,1177,792"/>
+<area shape="rect" href="$d9/d3d/ethercatdc_8h.html#a42ad5c4b3c82a6a151c4ee17fe121e57" title="Set DC of slave to fire sync0 and sync1 at CyclTime interval with CyclShift offset..." alt="" coords="152,1647,248,1676"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a027bd337ebfa1d39de8a7a1f5c5287de" title="Set eeprom control to master." alt="" coords="135,372,265,401"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ad920436309547d99e23cb8fd7b56b1bc" title="Read EEPROM from slave bypassing cache." alt="" coords="331,372,448,401"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ae149a6cd4a61c22efa4cf4185ffd83be" title="Set eeprom control to PDI." alt="" coords="335,700,444,729"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#abcb0583af47e109f6fc0fb9b90f9f7cf" title="Reconfigure slave." alt="" coords="892,197,1017,227"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a2fc76bd01a00a0f6da9fb3927eabc24d" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="728,249,816,279"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a7c1a13c5372ba1b38c9d04085c191e73" title="Read OUT mailbox from slave." alt="" coords="145,1249,255,1279"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a575bb6105662ad54fe55c47fc72075c4" title="Write IN mailbox to slave." alt="" coords="152,1303,248,1332"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ace89c7536b04427ffb755e77a5525855" title="Read EEPROM from slave bypassing cache." alt="" coords="136,600,264,629"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ad4724bcbd8417e56ff2405cec44d6535" title="Write EEPROM to slave bypassing cache." alt="" coords="136,259,264,288"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a93fabb257410faa12f7d53277cb612ed" title="eboxtest" alt="" coords="1240,725,1312,755"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves." alt="" coords="1237,659,1315,688"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a97c8cfa2374fc882f9ce995d806a8dbb" title="simpletest" alt="" coords="1236,503,1316,532"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1379,725,1427,755"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a07f2e8095a21da4462cf96661ebccd58" title="redtest" alt="" coords="1372,659,1433,688"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a3552c609d2e51520c4afde65240a22d6" title="slaveinfo" alt="" coords="1367,944,1439,973"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1489,659,1537,688"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1489,944,1537,973"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1379,503,1427,532"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#aa740a2ba948117670c4f9741bc31cc38" title="Map all PDOs from slaves to IOmap." alt="" coords="1077,659,1187,688"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a06c13efc5cc0b881a29ff6a836046b1c" title="Dump complete EEPROM data from slave in buffer." alt="" coords="543,1017,633,1047"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#aacc964b3a092b666f8011717be911d35" title="Read EEPROM from slave bypassing cache." alt="" coords="533,199,643,228"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a9b5b7f6f83d4ee41b72306891f0679f1" title="Recover slave." alt="" coords="893,251,1016,280"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a6c314f9524aa84af885f1e6426b71148" title="Read one byte from slave EEPROM via cache." alt="" coords="340,525,439,555"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#aaa333cdc5ea2ac66cf24a75855d9749b" title="Write EEPROM to slave bypassing cache." alt="" coords="333,199,445,228"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#af44cb7b11dccd4ea221079ae0a8138e8" title="Find SII section header in slave EEPROM." alt="" coords="551,761,625,791"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ab382409c9f74891f82e87dcc7fad875e" title="Get FMMU data from SII FMMU section in slave EEPROM." alt="" coords="725,615,819,644"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#aef972d9668958da9db3c350e159caddb" title="Get PDO data from SII PDO section in slave EEPROM." alt="" coords="731,863,813,892"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a54c0c0d13f6c7b38e98ab91f4db29514" title="Get SM data from SII SM section in slave EEPROM." alt="" coords="735,679,809,708"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a4fe43f91402e635e7087b9f1e09d7703" title="Get string from SII string section in slave EEPROM." alt="" coords="728,556,816,585"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#acfb749a5fbaaa6d560204757be2170f5" title="Get next SM data from SII SM section in slave EEPROM." alt="" coords="539,455,637,484"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a0750885eaa4230b7815a84ce8d627984" title="Write slave state, if slave = 0 then write to all slaves." alt="" coords="1083,555,1181,584"/>
+<area shape="rect" href="$d2/d0d/ethercatfoe_8h.html#a99191c2fcaa3e50999a80b831d1f08ed" title="FoE read, blocking." alt="" coords="343,1329,436,1359"/>
+<area shape="rect" href="$d2/d0d/ethercatfoe_8h.html#a212557ed69e601f59421bd32c463b0d5" title="FoE write, blocking." alt="" coords="341,1436,437,1465"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a02981bb4eb39fd7565eb6f549273d77a" title="CoE read Object Description." alt="" coords="315,1543,464,1572"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a4774936212282a0928789d2371f3a4d5" title="CoE read Object Description List." alt="" coords="337,1383,441,1412"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a17dc7c44c1c0dcae2a7059fba04964af" title="CoE RxPDO write, blocking." alt="" coords="347,1489,432,1519"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a143f50dea5c6c2694d4050c0caeb5a8e" title="CoE SDO read, blocking." alt="" coords="341,1223,437,1252"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#ac0b434553fad5dc86d4a3a7b302db708" title="CoE SDO write, blocking." alt="" coords="341,1276,437,1305"/>
+<area shape="rect" href="$d5/d5a/ethercatsoe_8h.html#af8db8dac3118e949c495d4e50caccfac" title="SoE read, blocking." alt="" coords="344,1063,435,1092"/>
+<area shape="rect" href="$d5/d5a/ethercatsoe_8h.html#ae7ea660f01cb95ab4f37479bbc2f017e" title="SoE write, blocking." alt="" coords="343,1116,436,1145"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#ae4df27beaf8a8a5021b5227e51e6501a" title="CoE TxPDO read remote request, blocking." alt="" coords="347,1169,432,1199"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#af69e8cb853f10018ef190159752cd7e2" title="Read PDO assign structure." alt="" coords="521,1223,655,1252"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a15ab60b8e11aa61d67480faa19d0ab28" title="CoE read PDO mapping." alt="" coords="712,1172,832,1201"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a28d3ddf83f70650527d9dce3fb290a35" title="Read PDO assign structure in Complete Access mode." alt="" coords="513,1276,663,1305"/>
+</map>

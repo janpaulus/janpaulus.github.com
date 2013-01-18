@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the arm joints" alt="" coords="229,85,533,115"/>
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints" alt="" coords="248,219,515,248"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a73e5e0592773a80e574301a65f1a7806" title="Restores the joint parameter from the EEPROM." alt="" coords="284,272,479,301"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#acd7f925057a0c1db899e4a89d20e946a" title="setConfigurationParameter" alt="" coords="295,325,468,355"/>
+<area shape="rect" href="$d9/d4a/classyoubot_1_1_data_trace.html#a605fcf8ca248f266728530ae62721f2c" title="youbot::DataTrace::startTrace" alt="" coords="285,379,477,408"/>
+<area shape="rect" href="$d9/d4a/classyoubot_1_1_data_trace.html#a211eb44b5b9c558cf46af7e7c780ad4e" title="youbot::DataTrace::stopTrace" alt="" coords="285,432,477,461"/>
+<area shape="rect" href="$dc/d6b/class_you_bot_arm_test.html#a8e5c85688e9f0038d2dfc28431f21d8d" title="YouBotArmTest::youBotArmTest" alt="" coords="715,5,925,35"/>
+<area shape="rect" href="$d7/d01/create___data_trace_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="796,59,844,88"/>
+<area shape="rect" href="$d0/d0a/class_you_bot_base_kinematics_test.html#a1e4ac5cfe4587d6b2b3e7e4edad75a61" title="YouBotBaseKinematicsTest::youBotBaseKinematicsTest" alt="" coords="644,112,996,141"/>
+<area shape="rect" href="$dc/db5/class_you_bot_base_test.html#ab3bc2fbe7f394ae4d0f7749c0da587ad" title="YouBotBaseTest::youBotBaseTest_CurrentMode" alt="" coords="668,165,972,195"/>
+<area shape="rect" href="$dc/db5/class_you_bot_base_test.html#a1599345f0f76a9e47afd1de9521f1d51" title="YouBotBaseTest::youBotBaseTest_PositionMode" alt="" coords="667,219,973,248"/>
+<area shape="rect" href="$dc/db5/class_you_bot_base_test.html#a11294863248ea091047105309267f2a6" title="YouBotBaseTest::youBotBaseTest_VelocityMode" alt="" coords="667,272,973,301"/>
+<area shape="rect" href="$db/dcc/class_you_bot_base_test_without_thread.html#ac4c0ff1ab487499c9d0ba08c63228110" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_CurrentMode" alt="" coords="584,325,1056,355"/>
+<area shape="rect" href="$db/dcc/class_you_bot_base_test_without_thread.html#af71a406f8d79ef4431eb5a16949afcdd" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_PositionMode" alt="" coords="583,379,1057,408"/>
+<area shape="rect" href="$db/dcc/class_you_bot_base_test_without_thread.html#a22e98f25973fc3d9233da162806aeabb" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_VelocityMode" alt="" coords="583,432,1057,461"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$d1/d75/classyoubot_1_1_joint_computed_data.html" title="abstract data class for computed joint data" alt="" coords="13,277,149,365"/>
+<area shape="rect" href="$d1/d86/classyoubot_1_1_joint_sensed_data.html" title="abstract data class for sensed / measured joint data" alt="" coords="21,141,141,229"/>
+<area shape="rect" href="$d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="44,5,119,93"/>
+</map>

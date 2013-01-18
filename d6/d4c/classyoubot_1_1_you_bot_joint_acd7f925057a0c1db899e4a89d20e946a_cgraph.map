@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0" title="getConfigurationParameter" alt="" coords="323,5,496,35"/>
+<area shape="rect" href="$d8/d97/classyoubot_1_1_motor_acceleration.html#aae7a85ec4be12f9d9552bb663b8c1bab" title="youbot::MotorAcceleration::getParameter" alt="" coords="280,59,539,88"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6f99ab5669aadf369ce9fc70a2035713" title="youbot::EthercatMasterInterface::registerJointLimitMonitor" alt="" coords="231,112,588,141"/>
+</map>

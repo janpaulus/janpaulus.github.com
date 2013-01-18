@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" href="$classyoubot_1_1_data_object_lock_free.html" title="DataObjectLockFree\&lt; mailboxOutputBuffer \&gt;" alt="" coords="288,32,571,61"/>
-<area shape="rect" title="Internal buffer structure." alt="" coords="121,145,188,175"/>
-<area shape="rect" href="$classyoubot_1_1_data_object_lock_free.html" title="DataObjectLockFree\&lt; std::string \&gt;" alt="" coords="319,111,540,140"/>
-<area shape="rect" href="$classyoubot_1_1_data_object_lock_free.html" title="DataObjectLockFree\&lt; unsigned int \&gt;" alt="" coords="313,180,545,209"/>
-<area shape="rect" href="$classyoubot_1_1_data_object_lock_free.html" title="DataObjectLockFree\&lt; mailboxInputBuffer \&gt;" alt="" coords="293,249,565,279"/>
-</map>

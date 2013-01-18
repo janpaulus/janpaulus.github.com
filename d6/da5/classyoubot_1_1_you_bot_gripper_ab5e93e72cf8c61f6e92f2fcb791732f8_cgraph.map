@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d45/classyoubot_1_1_target_position_reached.html#a100505a5d6f738b37e62ebb8aca7956b" title="youbot::TargetPositionReached::getParameter" alt="" coords="231,5,516,35"/>
+<area shape="rect" href="$da/d3e/classyoubot_1_1_max_encoder_value.html#a365c2d3302118b2e23b118685bbf3b53" title="youbot::MaxEncoderValue::getParameter" alt="" coords="245,59,501,88"/>
+<area shape="rect" href="$dc/da1/classyoubot_1_1_actual_position.html#af87e503b31fec6239a10a9c481aaf38a" title="youbot::ActualPosition::setParameter" alt="" coords="256,112,491,141"/>
+</map>

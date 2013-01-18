@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0" title="youbot::YouBotJoint::getConfigurationParameter" alt="" coords="135,5,433,35"/>
+<area shape="rect" href="$d6/dfd/classyoubot_1_1_inverse_movement_direction.html#aafb2021b6f3e74a710a59a0a74ccc358" title="youbot::InverseMovementDirection::toString" alt="" coords="147,59,421,88"/>
+<area shape="rect" href="$d4/d2f/classyoubot_1_1_gear_ratio.html#aafb2021b6f3e74a710a59a0a74ccc358" title="youbot::GearRatio::toString" alt="" coords="195,112,373,141"/>
+<area shape="rect" href="$db/de4/classyoubot_1_1_encoder_ticks_per_round.html#aafb2021b6f3e74a710a59a0a74ccc358" title="youbot::EncoderTicksPerRound::toString" alt="" coords="156,165,412,195"/>
+<area shape="rect" href="$db/df5/classyoubot_1_1_joint_limits.html#aafb2021b6f3e74a710a59a0a74ccc358" title="youbot::JointLimits::toString" alt="" coords="192,219,376,248"/>
+<area shape="rect" href="$dd/de3/classyoubot_1_1_torque_constant.html#aafb2021b6f3e74a710a59a0a74ccc358" title="youbot::TorqueConstant::toString" alt="" coords="179,272,389,301"/>
+<area shape="rect" href="$d0/d55/classyoubot_1_1_firmware_version.html#aafb2021b6f3e74a710a59a0a74ccc358" title="youbot::FirmwareVersion::toString" alt="" coords="176,325,392,355"/>
+<area shape="rect" href="$dc/d80/classyoubot_1_1_joint_name.html#aafb2021b6f3e74a710a59a0a74ccc358" title="youbot::JointName::toString" alt="" coords="192,379,376,408"/>
+</map>

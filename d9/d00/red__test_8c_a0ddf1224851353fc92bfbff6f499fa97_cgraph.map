@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d50/ebox_8c.html#a41b4a777da4c9dfc6cec01a2d12d4dbe" title="ecatthread" alt="" coords="577,112,660,141"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a07f2e8095a21da4462cf96661ebccd58" title="redtest" alt="" coords="104,379,165,408"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#ab333aa69248425a6a2a2b868ea188f41" title="add_timespec" alt="" coords="772,5,873,35"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a14280050ace4427d196acd17e6d79e55" title="ec_receive_processdata" alt="" coords="741,165,904,195"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a30c66bb9d54e741149f7d40bbdb21078" title="ec_send_processdata" alt="" coords="749,59,896,88"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a2236b3aa05099f148da8f6a0c6b967c7" title="ec_sync" alt="" coords="788,112,857,141"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a974363168ed4259d2d5a48a9e7317354" title="Receive processdata from slaves." alt="" coords="953,112,1153,141"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="1389,377,1488,407"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a3bcbccf53a33907e16fa67c8e5b45d40" title="Blocking receive frame function." alt="" coords="1213,219,1320,248"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a5e2063e4eb419e7abdcc9d863dc7a7b4" title="Transmit processdata to slaves." alt="" coords="960,59,1147,88"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a775297e7bcfe08569ad537d6e3a770fb" title="Add EtherCAT datagram to a standard ethernet frame with existing datagram(s)." alt="" coords="1208,111,1325,140"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="1221,429,1312,459"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="1380,192,1497,221"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="1203,325,1331,355"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ab324bdc67988c7eab8dd7324817886cb" title="Close lib." alt="" coords="240,404,312,433"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves." alt="" coords="237,533,315,563"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a8f77918c0a6a32be1079a11119171901" title="Check actual slave state." alt="" coords="769,481,876,511"/>
+<area shape="rect" href="$d1/d72/ethercatdc_8c.html#a1d811e329c093385d00fcdd48522fc21" title="Locate DC slaves, measure propagation delays." alt="" coords="777,223,868,252"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a4d1d28e0a02ab9dbf743534d399d050e" title="Initialise lib in redundant NIC mode." alt="" coords="215,275,337,304"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a585d9cd831f1d43f1bbaf7a50ee9759c" title="Read all slave states in ec_slave." alt="" coords="393,951,489,980"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a0750885eaa4230b7815a84ce8d627984" title="Write slave state, if slave = 0 then write to all slaves." alt="" coords="569,352,668,381"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ab023ae467cce8a520a2554f74415f2ef" title="Close sockets used." alt="" coords="396,404,487,433"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#ae9128b2cb982fd03fae9105d746f8656" title="Enumerate and init all slaves." alt="" coords="568,873,669,903"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#aa740a2ba948117670c4f9741bc31cc38" title="Map all PDOs from slaves to IOmap." alt="" coords="387,533,496,563"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#ae04f6096929eed658625620ba507b219" title="APRDw &quot;auto increment address read&quot; word return primitive." alt="" coords="779,1212,867,1241"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aca3c5979b5549da9f4a6f441a74e132b" title="APWRw &quot;auto increment address write&quot; word primitive." alt="" coords="779,689,867,719"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a30d9ab75b270ba904509fb1af2b8dc17" title="BRD &quot;broadcast read&quot; primitive." alt="" coords="1019,483,1088,512"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3ad29de613339c69a0b132114928b208" title="BRW &quot;broadcast write&quot; primitive." alt="" coords="1017,376,1089,405"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#a8aa31990a858c7e049cfb4de24f28f3e" title="Find slave in standard configuration list ec_configlist[]." alt="" coords="773,793,872,823"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aac2dc2b5a39ace0793473ab89bb56c7d" title="FPRD &quot;configured address read&quot; primitive." alt="" coords="1015,561,1092,591"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a1cebb240642f321d1f641e8a1ffe2fa4" title="FPRDw &quot;configured address read&quot; word return primitive." alt="" coords="780,953,865,983"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#aa2fe58363a824f15838718ee31f11ffc" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="1013,429,1093,459"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a2fc76bd01a00a0f6da9fb3927eabc24d" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="779,377,867,407"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#aacc964b3a092b666f8011717be911d35" title="Read EEPROM from slave bypassing cache." alt="" coords="768,847,877,876"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ad920436309547d99e23cb8fd7b56b1bc" title="Read EEPROM from slave bypassing cache." alt="" coords="764,585,881,615"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a31e35cc2f33ecf639db43c79850462ab" title="Read EEPROM from slave bypassing cache." alt="" coords="764,900,881,929"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#af44cb7b11dccd4ea221079ae0a8138e8" title="Find SII section header in slave EEPROM." alt="" coords="1016,1216,1091,1245"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a6c314f9524aa84af885f1e6426b71148" title="Read one byte from slave EEPROM via cache." alt="" coords="1217,1293,1316,1323"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ab382409c9f74891f82e87dcc7fad875e" title="Get FMMU data from SII FMMU section in slave EEPROM." alt="" coords="776,1319,869,1348"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a54c0c0d13f6c7b38e98ab91f4db29514" title="Get SM data from SII SM section in slave EEPROM." alt="" coords="785,1108,860,1137"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#acfb749a5fbaaa6d560204757be2170f5" title="Get next SM data from SII SM section in slave EEPROM." alt="" coords="1004,1423,1103,1452"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a4fe43f91402e635e7087b9f1e09d7703" title="Get string from SII string section in slave EEPROM." alt="" coords="779,1265,867,1295"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="1219,483,1315,512"/>
+<area shape="rect" href="$d2/d04/ethercatconfig_8c.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="545,429,692,459"/>
+<area shape="rect" href="$d1/d72/ethercatdc_8c.html#a2ef951e56c248526e468b9666e889042" title="ec_parentport" alt="" coords="1004,219,1103,248"/>
+<area shape="rect" href="$d1/d72/ethercatdc_8c.html#ac68fe74e5d8764ba735412bbd67df709" title="ec_porttime" alt="" coords="1009,272,1097,301"/>
+<area shape="rect" href="$d1/d72/ethercatdc_8c.html#a9315c092bc7820bbbcc13bfb23840dcc" title="ec_prevport" alt="" coords="1009,165,1097,195"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a5b5e0bf5e801e9f30a0fcd9b50b3efc5" title="Basic setup to connect NIC to socket." alt="" coords="396,223,487,252"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a495531bac8f5d70b5a10494048b15820" title="Fill buffer with ethernet header structure." alt="" coords="563,223,675,252"/>
+</map>

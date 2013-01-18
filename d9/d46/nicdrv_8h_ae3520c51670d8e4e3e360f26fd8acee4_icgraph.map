@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a80f6087e11fc1a42832f7c7872122308" title="APRD &quot;auto increment address read&quot; primitive." alt="" coords="203,96,280,125"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a02a1741d276571009e46fbe39e9f729f" title="APWR &quot;auto increment address write&quot; primitive." alt="" coords="435,161,515,191"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a9fb77485174d13b8b5fe8bd2cac816e9" title="APRMW &quot;auto increment address read, multiple write&quot; primitive." alt="" coords="200,392,283,421"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a30d9ab75b270ba904509fb1af2b8dc17" title="BRD &quot;broadcast read&quot; primitive." alt="" coords="440,341,509,371"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a3ad29de613339c69a0b132114928b208" title="BRW &quot;broadcast write&quot; primitive." alt="" coords="643,657,715,687"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#aac2dc2b5a39ace0793473ab89bb56c7d" title="FPRD &quot;configured address read&quot; primitive." alt="" coords="203,697,280,727"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#aa2fe58363a824f15838718ee31f11ffc" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="201,1064,281,1093"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a8a1aa39c19d1e54b7e5f1b5c37c6f84e" title="FPRMW &quot;configured address read, multiple write&quot; primitive." alt="" coords="200,1117,283,1147"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a6b5e08a277e1be8f7a9a783e58fb4d2a" title="LRD &quot;logical memory read&quot; primitive." alt="" coords="208,1171,275,1200"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a785fba63c633dd865d0b778adb0239c2" title="LRW &quot;logical memory read / write&quot; primitive." alt="" coords="207,1224,276,1253"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#ae2b92060d47d3ea8b18cff9184113eba" title="LRW &quot;logical memory read / write&quot; primitive plus Clock Distribution." alt="" coords="197,1277,285,1307"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#ad1edce1f583efd3c9616409b23cb088d" title="LWR &quot;logical memory write&quot; primitive." alt="" coords="207,1331,276,1360"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a5e2063e4eb419e7abdcc9d863dc7a7b4" title="Transmit processdata to slaves." alt="" coords="148,1480,335,1509"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#ae04f6096929eed658625620ba507b219" title="APRDw &quot;auto increment address read&quot; word return primitive." alt="" coords="431,288,519,317"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#af4b40499a69dd20db5aa8da081c7274f" title="ec_eeprom_waitnotbusyAP" alt="" coords="385,96,564,125"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ad1f3c620e76b3395d7deccc23ef0f8c5" title="Read EEPROM from slave bypassing cache." alt="" coords="615,36,743,65"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#a1f7b392753323c242f0c4fafb71def77" title="eeprom_read" alt="" coords="819,63,915,92"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae9128b2cb982fd03fae9105d746f8656" title="Enumerate and init all slaves." alt="" coords="816,656,917,685"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a93fabb257410faa12f7d53277cb612ed" title="eboxtest" alt="" coords="996,657,1068,687"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves." alt="" coords="993,500,1071,529"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a97c8cfa2374fc882f9ce995d806a8dbb" title="simpletest" alt="" coords="992,813,1072,843"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a07f2e8095a21da4462cf96661ebccd58" title="redtest" alt="" coords="1129,552,1191,581"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a3552c609d2e51520c4afde65240a22d6" title="slaveinfo" alt="" coords="1124,448,1196,477"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a968dc550dde8340fbe80032f81662427" title="Write EEPROM to slave bypassing cache." alt="" coords="613,140,744,169"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#a98c21eb7a77138da75ba9db4826eeb12" title="eepromtool" alt="" coords="989,167,1075,196"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#aa04a18ee68c6d5c84c9d688e52940a3d" title="eeprom_write" alt="" coords="817,167,916,196"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#aca3c5979b5549da9f4a6f441a74e132b" title="APWRw &quot;auto increment address write&quot; word primitive." alt="" coords="635,551,723,580"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a9b5b7f6f83d4ee41b72306891f0679f1" title="Recover slave." alt="" coords="805,813,928,843"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a8f77918c0a6a32be1079a11119171901" title="Check actual slave state." alt="" coords="625,345,732,375"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="793,1343,940,1372"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#abcb0583af47e109f6fc0fb9b90f9f7cf" title="Reconfigure slave." alt="" coords="804,1396,929,1425"/>
+<area shape="rect" href="$d9/d3d/ethercatdc_8h.html#a928bb3140b430b72f0e831ccf10a1b52" title="Set DC&#39;s of all slaves to sync with the first, measure propagation delays." alt="" coords="821,760,912,789"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a0750885eaa4230b7815a84ce8d627984" title="Write slave state, if slave = 0 then write to all slaves." alt="" coords="817,867,916,896"/>
+<area shape="rect" href="$d9/d3d/ethercatdc_8h.html#a39fe8b9490690f066c59179e65af981c" title="Set DC of slave to fire sync0 at CyclTime interval with CyclShift offset." alt="" coords="429,1064,520,1093"/>
+<area shape="rect" href="$d9/d3d/ethercatdc_8h.html#a42ad5c4b3c82a6a151c4ee17fe121e57" title="Set DC of slave to fire sync0 and sync1 at CyclTime interval with CyclShift offset..." alt="" coords="427,909,523,939"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a683af1ff758441cb62905cb041e428a1" title="ec_eeprom_waitnotbusyFP" alt="" coords="385,749,564,779"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a31e35cc2f33ecf639db43c79850462ab" title="Read EEPROM from slave bypassing cache." alt="" coords="620,604,737,633"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ace89c7536b04427ffb755e77a5525855" title="Read EEPROM from slave bypassing cache." alt="" coords="615,815,743,844"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a1cebb240642f321d1f641e8a1ffe2fa4" title="FPRDw &quot;configured address read&quot; word return primitive." alt="" coords="636,761,721,791"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a78a07c2b50526e0f99334f7d2782264f" title="Check if IN mailbox of slave is empty." alt="" coords="423,803,527,832"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a7c1a13c5372ba1b38c9d04085c191e73" title="Read OUT mailbox from slave." alt="" coords="420,856,529,885"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a585d9cd831f1d43f1bbaf7a50ee9759c" title="Read all slave states in ec_slave." alt="" coords="819,448,915,477"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ad920436309547d99e23cb8fd7b56b1bc" title="Read EEPROM from slave bypassing cache." alt="" coords="620,1215,737,1244"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ad4724bcbd8417e56ff2405cec44d6535" title="Write EEPROM to slave bypassing cache." alt="" coords="615,868,743,897"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a575bb6105662ad54fe55c47fc72075c4" title="Write IN mailbox to slave." alt="" coords="631,1040,727,1069"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a027bd337ebfa1d39de8a7a1f5c5287de" title="Set eeprom control to master." alt="" coords="409,1320,540,1349"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ae149a6cd4a61c22efa4cf4185ffd83be" title="Set eeprom control to PDI." alt="" coords="624,1473,733,1503"/>
+<area shape="rect" href="$df/dd2/ethercatbase_8h.html#a2fc76bd01a00a0f6da9fb3927eabc24d" title="FPWR &quot;configured address write&quot; primitive." alt="" coords="635,1369,723,1399"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a30c66bb9d54e741149f7d40bbdb21078" title="ec_send_processdata" alt="" coords="793,1449,940,1479"/>
+</map>

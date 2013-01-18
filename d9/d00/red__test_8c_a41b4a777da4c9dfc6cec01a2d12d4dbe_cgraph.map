@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d50/ebox_8c.html#ab333aa69248425a6a2a2b868ea188f41" title="add_timespec" alt="" coords="167,5,268,35"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a14280050ace4427d196acd17e6d79e55" title="ec_receive_processdata" alt="" coords="136,59,299,88"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a30c66bb9d54e741149f7d40bbdb21078" title="ec_send_processdata" alt="" coords="144,112,291,141"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a2236b3aa05099f148da8f6a0c6b967c7" title="ec_sync" alt="" coords="183,165,252,195"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a974363168ed4259d2d5a48a9e7317354" title="Receive processdata from slaves." alt="" coords="348,32,548,61"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="775,7,873,36"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a3bcbccf53a33907e16fa67c8e5b45d40" title="Blocking receive frame function." alt="" coords="608,32,715,61"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a5e2063e4eb419e7abdcc9d863dc7a7b4" title="Transmit processdata to slaves." alt="" coords="355,139,541,168"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a775297e7bcfe08569ad537d6e3a770fb" title="Add EtherCAT datagram to a standard ethernet frame with existing datagram(s)." alt="" coords="603,85,720,115"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="616,139,707,168"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="603,192,720,221"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="597,245,725,275"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="777,192,871,221"/>
+</map>

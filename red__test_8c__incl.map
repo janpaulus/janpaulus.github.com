@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" href="$ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="760,83,864,112"/>
-<area shape="rect" href="$nicdrv_8h.html" title="Headerfile for nicdrv.c." alt="" coords="888,83,955,112"/>
-<area shape="rect" href="$ethercatbase_8h.html" title="Headerfile for ethercatbase.c." alt="" coords="979,83,1085,112"/>
-<area shape="rect" href="$ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="1109,83,1216,112"/>
-<area shape="rect" href="$ethercatcoe_8h.html" title="Headerfile for ethercatcoe.c." alt="" coords="1240,83,1339,112"/>
-<area shape="rect" href="$ethercatconfig_8h.html" title="Headerfile for ethercatconfig.c." alt="" coords="1363,83,1477,112"/>
-<area shape="rect" href="$ethercatdc_8h.html" title="Headerfile for ethercatdc.c." alt="" coords="1501,83,1595,112"/>
-</map>

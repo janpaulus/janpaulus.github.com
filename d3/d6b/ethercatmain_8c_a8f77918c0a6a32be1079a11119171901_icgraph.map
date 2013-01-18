@@ -1,0 +1,15 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d50/ebox_8c.html#a93fabb257410faa12f7d53277cb612ed" title="eboxtest" alt="" coords="520,61,592,91"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae9128b2cb982fd03fae9105d746f8656" title="Enumerate and init all slaves." alt="" coords="361,63,463,92"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a07f2e8095a21da4462cf96661ebccd58" title="redtest" alt="" coords="652,113,713,143"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a3552c609d2e51520c4afde65240a22d6" title="slaveinfo" alt="" coords="647,167,719,196"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a97c8cfa2374fc882f9ce995d806a8dbb" title="simpletest" alt="" coords="516,220,596,249"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="161,116,308,145"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#abcb0583af47e109f6fc0fb9b90f9f7cf" title="Reconfigure slave." alt="" coords="172,220,297,249"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="659,60,707,89"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves." alt="" coords="517,116,595,145"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="769,113,817,143"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="769,167,817,196"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="659,220,707,249"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#aa740a2ba948117670c4f9741bc31cc38" title="Map all PDOs from slaves to IOmap." alt="" coords="357,116,467,145"/>
+</map>

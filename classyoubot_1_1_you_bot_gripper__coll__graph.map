@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" href="$classyoubot_1_1_one_d_o_f_gripper.html" title="abstract gripper with one degree of freedom" alt="" coords="5,85,120,115"/>
-<area shape="rect" href="$classyoubot_1_1_gripper.html" title="abstract gripper" alt="" coords="31,5,95,35"/>
-<area shape="rect" href="$classyoubot_1_1_ethercat_master_interface.html" title="The Ethercat Master interface." alt="" coords="144,85,304,115"/>
-</map>

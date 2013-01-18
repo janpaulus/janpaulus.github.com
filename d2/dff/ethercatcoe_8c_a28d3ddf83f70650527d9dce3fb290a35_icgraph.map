@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a8770ccad0cea1ea8f7dbbd5bfc58b83d" title="CoE read PDO mapping in Complete Access mode (CA)." alt="" coords="207,72,343,101"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="393,72,540,101"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#aa740a2ba948117670c4f9741bc31cc38" title="Map all PDOs from slaves to IOmap." alt="" coords="589,72,699,101"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a93fabb257410faa12f7d53277cb612ed" title="eboxtest" alt="" coords="752,12,824,41"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves." alt="" coords="749,72,827,101"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a97c8cfa2374fc882f9ce995d806a8dbb" title="simpletest" alt="" coords="748,139,828,168"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="891,5,939,35"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a07f2e8095a21da4462cf96661ebccd58" title="redtest" alt="" coords="884,59,945,88"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a3552c609d2e51520c4afde65240a22d6" title="slaveinfo" alt="" coords="879,112,951,141"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1001,59,1049,88"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1001,112,1049,141"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="891,165,939,195"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a14280050ace4427d196acd17e6d79e55" title="ec_receive_processdata" alt="" coords="192,5,355,35"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a974363168ed4259d2d5a48a9e7317354" title="Receive processdata from slaves." alt="" coords="404,5,604,35"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="812,5,911,35"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a3bcbccf53a33907e16fa67c8e5b45d40" title="Blocking receive frame function." alt="" coords="655,31,761,60"/>
+</map>

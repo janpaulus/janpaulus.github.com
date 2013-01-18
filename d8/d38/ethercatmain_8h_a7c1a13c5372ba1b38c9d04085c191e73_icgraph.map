@@ -1,0 +1,29 @@
+<map id="G" name="G">
+<area shape="rect" href="$d2/d0d/ethercatfoe_8h.html#a99191c2fcaa3e50999a80b831d1f08ed" title="FoE read, blocking." alt="" coords="164,5,257,35"/>
+<area shape="rect" href="$d2/d0d/ethercatfoe_8h.html#a212557ed69e601f59421bd32c463b0d5" title="FoE write, blocking." alt="" coords="163,59,259,88"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a02981bb4eb39fd7565eb6f549273d77a" title="CoE read Object Description." alt="" coords="693,109,843,139"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a4774936212282a0928789d2371f3a4d5" title="CoE read Object Description List." alt="" coords="893,161,997,191"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a17dc7c44c1c0dcae2a7059fba04964af" title="CoE RxPDO write, blocking." alt="" coords="168,263,253,292"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a143f50dea5c6c2694d4050c0caeb5a8e" title="CoE SDO read, blocking." alt="" coords="163,316,259,345"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#ac0b434553fad5dc86d4a3a7b302db708" title="CoE SDO write, blocking." alt="" coords="528,517,624,547"/>
+<area shape="rect" href="$d5/d5a/ethercatsoe_8h.html#af8db8dac3118e949c495d4e50caccfac" title="SoE read, blocking." alt="" coords="165,421,256,451"/>
+<area shape="rect" href="$d5/d5a/ethercatsoe_8h.html#ae7ea660f01cb95ab4f37479bbc2f017e" title="SoE write, blocking." alt="" coords="164,576,257,605"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#ae4df27beaf8a8a5021b5227e51e6501a" title="CoE TxPDO read remote request, blocking." alt="" coords="168,629,253,659"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a3552c609d2e51520c4afde65240a22d6" title="slaveinfo" alt="" coords="1180,188,1252,217"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1303,188,1351,217"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#af69e8cb853f10018ef190159752cd7e2" title="Read PDO assign structure." alt="" coords="316,419,449,448"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a15ab60b8e11aa61d67480faa19d0ab28" title="CoE read PDO mapping." alt="" coords="516,381,636,411"/>
+<area shape="rect" href="$d2/dff/ethercatcoe_8c.html#a28d3ddf83f70650527d9dce3fb290a35" title="Read PDO assign structure in Complete Access mode." alt="" coords="308,264,457,293"/>
+<area shape="rect" href="$d7/dad/ethercatcoe_8h.html#a8770ccad0cea1ea8f7dbbd5bfc58b83d" title="CoE read PDO mapping in Complete Access mode (CA)." alt="" coords="508,316,644,345"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a4832e1e90a7ff54c233b13ae1ddd08ed" title="SDO2string" alt="" coords="724,213,812,243"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="695,381,841,411"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#aa740a2ba948117670c4f9741bc31cc38" title="Map all PDOs from slaves to IOmap." alt="" coords="891,381,1000,411"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a93fabb257410faa12f7d53277cb612ed" title="eboxtest" alt="" coords="1053,455,1125,484"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves." alt="" coords="1051,297,1128,327"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a97c8cfa2374fc882f9ce995d806a8dbb" title="simpletest" alt="" coords="1049,381,1129,411"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1192,455,1240,484"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a07f2e8095a21da4462cf96661ebccd58" title="redtest" alt="" coords="1185,297,1247,327"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1303,297,1351,327"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1192,381,1240,411"/>
+<area shape="rect" href="$d5/d5a/ethercatsoe_8h.html#acb454e12b2034f0121a534de57b0e869" title="SoE read AT and MTD mapping." alt="" coords="325,472,440,501"/>
+</map>

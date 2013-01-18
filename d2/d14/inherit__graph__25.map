@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" href="$d3/dc8/classyoubot_1_1_gripper.html" title="abstract gripper" alt="" coords="5,5,69,35"/>
+<area shape="rect" href="$d9/dc6/classyoubot_1_1_one_d_o_f_gripper.html" title="abstract gripper with one degree of freedom" alt="" coords="117,5,232,35"/>
+<area shape="rect" href="$d6/da5/classyoubot_1_1_you_bot_gripper.html" title="The youBot gripper with one degree of freedom." alt="" coords="281,5,385,35"/>
+</map>

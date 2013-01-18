@@ -1,0 +1,25 @@
+<map id="G" name="G">
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a30d9ab75b270ba904509fb1af2b8dc17" title="BRD &quot;broadcast read&quot; primitive." alt="" coords="709,209,779,239"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ab324bdc67988c7eab8dd7324817886cb" title="Close lib." alt="" coords="157,359,229,388"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a4f50e3fbd5f3d756b4b87043a0f87d62" title="Initialise lib in single NIC mode." alt="" coords="164,412,223,441"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#a1f7b392753323c242f0c4fafb71def77" title="eeprom_read" alt="" coords="145,151,241,180"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#aa04a18ee68c6d5c84c9d688e52940a3d" title="eeprom_write" alt="" coords="144,255,243,284"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#ad4c93c08979cc1f64fbe5827ba83b69e" title="input_bin" alt="" coords="157,465,229,495"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#aee528f28184a88918d963666ac796afe" title="input_intelhex" alt="" coords="143,519,244,548"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#a0ac3cf2113cbd77624e88b0556f72ad8" title="output_bin" alt="" coords="153,572,233,601"/>
+<area shape="rect" href="$d1/da4/eepromtool_8c.html#ae6e853a65189c39f04ed0342f27ede15" title="output_intelhex" alt="" coords="139,625,248,655"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae3520c51670d8e4e3e360f26fd8acee4" title="Get new frame identifier index and allocate corresponding rx buffer." alt="" coords="851,209,941,239"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a121be26fdb9da9ef5b9f217fdcd2d50f" title="Set rx buffer status." alt="" coords="1019,104,1117,133"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a3b9a1e2b9fc1e15cf147a85d484db027" title="Generate and set EtherCAT datagram in a standard ethernet frame." alt="" coords="832,52,960,81"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ae49716ef495b23fc91261396fb2f49ec" title="Blocking send and recieve frame function." alt="" coords="848,156,944,185"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#afb39cbe067b1afa202e8c487a33c4d66" title="Transmit buffer over socket (non blocking)." alt="" coords="1009,157,1127,187"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ace7534023c2df9a309fc51a5e7fd6d94" title="Transmit buffer over socket (non blocking)." alt="" coords="1176,157,1269,187"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#ab023ae467cce8a520a2554f74415f2ef" title="Close sockets used." alt="" coords="316,359,407,388"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a5b5e0bf5e801e9f30a0fcd9b50b3efc5" title="Basic setup to connect NIC to socket." alt="" coords="316,412,407,441"/>
+<area shape="rect" href="$dc/d9b/nicdrv_8c.html#a495531bac8f5d70b5a10494048b15820" title="Fill buffer with ethernet header structure." alt="" coords="509,412,621,441"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a80f6087e11fc1a42832f7c7872122308" title="APRD &quot;auto increment address read&quot; primitive." alt="" coords="705,52,783,81"/>
+<area shape="rect" href="$d5/d74/ethercatbase_8c.html#a02a1741d276571009e46fbe39e9f729f" title="APWR &quot;auto increment address write&quot; primitive." alt="" coords="704,156,784,185"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#ad1f3c620e76b3395d7deccc23ef0f8c5" title="Read EEPROM from slave bypassing cache." alt="" coords="297,76,425,105"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#af4b40499a69dd20db5aa8da081c7274f" title="ec_eeprom_waitnotbusyAP" alt="" coords="476,52,655,81"/>
+<area shape="rect" href="$d3/d6b/ethercatmain_8c.html#a968dc550dde8340fbe80032f81662427" title="Write EEPROM to slave bypassing cache." alt="" coords="296,153,427,183"/>
+</map>

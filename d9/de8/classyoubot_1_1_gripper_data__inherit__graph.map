@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" href="$dc/db1/classyoubot_1_1_one_d_o_f_gripper_data.html" title="abstract class of data for gripper with one degree of freedom" alt="" coords="529,141,671,229"/>
+<area shape="rect" href="$d0/da1/classyoubot_1_1_gripper_bar_encoder_setpoint.html" title="The encoder setpoint for one bar." alt="" coords="5,277,184,365"/>
+<area shape="rect" href="$d7/d0c/classyoubot_1_1_gripper_bar_position_set_point.html" title="The bar position for a one gripper bar." alt="" coords="208,277,387,365"/>
+<area shape="rect" href="$d9/dac/classyoubot_1_1_gripper_bar_spacing_set_point.html" title="Setpoint length of the bar spacing for a one DOF gripper." alt="" coords="411,277,589,365"/>
+<area shape="rect" href="$d5/d59/classyoubot_1_1_gripper_sensed_bar_position.html" title="The sensed bar position for a one gripper bar." alt="" coords="613,277,787,365"/>
+<area shape="rect" href="$d8/dfd/classyoubot_1_1_gripper_sensed_bar_spacing.html" title="The sensed bar spacing for a one DOF gripper." alt="" coords="811,277,984,365"/>
+<area shape="rect" href="$d5/d0c/classyoubot_1_1_gripper_sensed_velocity.html" title="The sensed bar velocity for a one DOF gripper." alt="" coords="1008,277,1160,365"/>
+</map>

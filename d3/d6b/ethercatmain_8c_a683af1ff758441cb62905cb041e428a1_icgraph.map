@@ -1,0 +1,29 @@
+<map id="G" name="G">
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ad920436309547d99e23cb8fd7b56b1bc" title="Read EEPROM from slave bypassing cache." alt="" coords="571,57,688,87"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a31e35cc2f33ecf639db43c79850462ab" title="Read EEPROM from slave bypassing cache." alt="" coords="239,381,356,411"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ace89c7536b04427ffb755e77a5525855" title="Read EEPROM from slave bypassing cache." alt="" coords="233,264,361,293"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ad4724bcbd8417e56ff2405cec44d6535" title="Write EEPROM to slave bypassing cache." alt="" coords="233,563,361,592"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae9128b2cb982fd03fae9105d746f8656" title="Enumerate and init all slaves." alt="" coords="920,224,1021,253"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a93fabb257410faa12f7d53277cb612ed" title="eboxtest" alt="" coords="1272,353,1344,383"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves." alt="" coords="1269,300,1347,329"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a97c8cfa2374fc882f9ce995d806a8dbb" title="simpletest" alt="" coords="1268,199,1348,228"/>
+<area shape="rect" href="$d5/d50/ebox_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1411,353,1459,383"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a07f2e8095a21da4462cf96661ebccd58" title="redtest" alt="" coords="1404,300,1465,329"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a3552c609d2e51520c4afde65240a22d6" title="slaveinfo" alt="" coords="1399,420,1471,449"/>
+<area shape="rect" href="$d9/d00/red__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1521,300,1569,329"/>
+<area shape="rect" href="$d7/d2f/slaveinfo_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1521,420,1569,449"/>
+<area shape="rect" href="$d3/d12/simple__test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1411,199,1459,228"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a06c13efc5cc0b881a29ff6a836046b1c" title="Dump complete EEPROM data from slave in buffer." alt="" coords="421,237,512,267"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#aacc964b3a092b666f8011717be911d35" title="Read EEPROM from slave bypassing cache." alt="" coords="737,5,847,35"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a6c314f9524aa84af885f1e6426b71148" title="Read one byte from slave EEPROM via cache." alt="" coords="417,291,516,320"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#a9b5b7f6f83d4ee41b72306891f0679f1" title="Recover slave." alt="" coords="1095,108,1217,137"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#af44cb7b11dccd4ea221079ae0a8138e8" title="Find SII section header in slave EEPROM." alt="" coords="592,316,667,345"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#ab382409c9f74891f82e87dcc7fad875e" title="Get FMMU data from SII FMMU section in slave EEPROM." alt="" coords="745,264,839,293"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#aef972d9668958da9db3c350e159caddb" title="Get PDO data from SII PDO section in slave EEPROM." alt="" coords="751,472,833,501"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a54c0c0d13f6c7b38e98ab91f4db29514" title="Get SM data from SII SM section in slave EEPROM." alt="" coords="755,368,829,397"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#a4fe43f91402e635e7087b9f1e09d7703" title="Get string from SII string section in slave EEPROM." alt="" coords="748,211,836,240"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#acfb749a5fbaaa6d560204757be2170f5" title="Get next SM data from SII SM section in slave EEPROM." alt="" coords="580,111,679,140"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#ae1120a5cace4aa56cf753977ccd37b8d" title="Map all PDOs in one group of slaves to IOmap." alt="" coords="897,472,1044,501"/>
+<area shape="rect" href="$d4/d03/ethercatconfig_8h.html#aa740a2ba948117670c4f9741bc31cc38" title="Map all PDOs from slaves to IOmap." alt="" coords="1101,301,1211,331"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html#aaa333cdc5ea2ac66cf24a75855d9749b" title="Write EEPROM to slave bypassing cache." alt="" coords="411,627,523,656"/>
+</map>

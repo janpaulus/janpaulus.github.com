@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a67e949d3d2ba32b83c85d1e7bbee502b" title="youbot::YouBotJoint::getConfigurationParameter" alt="" coords="160,5,459,35"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a73e5e0592773a80e574301a65f1a7806" title="Restores the joint parameter from the EEPROM." alt="" coords="149,59,469,88"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#af794502c50ffdede2acd05ee34a061dc" title="youbot::YouBotJoint::setConfigurationParameter" alt="" coords="160,112,459,141"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a55094996417c9ac2227f7203fd322c64" title="stores the joint parameter permanent in the EEPROM of the motor contoller Attentions:..." alt="" coords="124,165,495,195"/>
+</map>
