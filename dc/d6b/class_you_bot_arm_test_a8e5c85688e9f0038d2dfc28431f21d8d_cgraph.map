@@ -1,18 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#ab3f30636f1a69db85ec8b84f935db659" title="calibrate the reference position of the arm joints" alt="" coords="167,139,468,168"/>
-<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the arm joints" alt="" coords="165,325,469,355"/>
-<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1" alt="" coords="560,272,816,301"/>
-<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set..." alt="" coords="188,512,447,541"/>
-<area shape="rect" href="$d4/d2f/classyoubot_1_1_gear_ratio.html#a162f9522486b06d3d3b08d35250b3890" title="youbot::GearRatio::getParameter" alt="" coords="583,59,793,88"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5" title="youbot::EthercatMasterInterface::isThreadActive" alt="" coords="536,112,840,141"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything..." alt="" coords="521,165,855,195"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it..." alt="" coords="528,219,848,248"/>
-<area shape="rect" href="$db/df5/classyoubot_1_1_joint_limits.html#a7ab2ad7d9ae9f19a5af4eca083a7206d" title="youbot::JointLimits::setParameter" alt="" coords="580,5,796,35"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c" title="youbot::EthercatMasterInterface::AutomaticReceiveOn" alt="" coords="519,485,857,515"/>
-<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0" title="youbot::YouBotJoint::getConfigurationParameter" alt="" coords="539,539,837,568"/>
-<area shape="rect" href="$d8/d27/classyoubot_1_1_initialize_joint.html#a100505a5d6f738b37e62ebb8aca7956b" title="youbot::InitializeJoint::getParameter" alt="" coords="573,592,803,621"/>
-<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller." alt="" coords="587,325,789,355"/>
-<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee" title="youbot::YouBotJoint::setConfigurationParameter" alt="" coords="539,379,837,408"/>
-<area shape="rect" href="$d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f" title="youbot::InitializeJoint::setParameter" alt="" coords="573,432,803,461"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e" title="youbot::EthercatMasterInterface::AutomaticSendOn" alt="" coords="527,645,849,675"/>
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#ab3f30636f1a69db85ec8b84f935db659" title="calibrate the reference position of the arm joints" alt="" coords="167,112,468,141"/>
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the arm joints" alt="" coords="165,165,469,195"/>
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1" alt="" coords="189,219,445,248"/>
+<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set..." alt="" coords="188,272,447,301"/>
+<area shape="rect" href="$d4/d2f/classyoubot_1_1_gear_ratio.html#a162f9522486b06d3d3b08d35250b3890" title="youbot::GearRatio::getParameter" alt="" coords="579,5,789,35"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5" title="youbot::EthercatMasterInterface::isThreadActive" alt="" coords="532,59,836,88"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything..." alt="" coords="517,112,851,141"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it..." alt="" coords="524,165,844,195"/>
+<area shape="rect" href="$db/df5/classyoubot_1_1_joint_limits.html#a7ab2ad7d9ae9f19a5af4eca083a7206d" title="youbot::JointLimits::setParameter" alt="" coords="576,219,792,248"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e" title="youbot::EthercatMasterInterface::AutomaticSendOn" alt="" coords="523,272,845,301"/>
 </map>

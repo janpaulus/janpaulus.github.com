@@ -1,18 +1,9 @@
 <map id="G" name="G">
-<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints" alt="" coords="239,272,505,301"/>
-<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base" alt="" coords="699,5,923,35"/>
-<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a85ebb1ed649a98966b00e5bb99cd3d5f" title="commands the base in cartesien velocities" alt="" coords="251,539,493,568"/>
-<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference..." alt="" coords="247,619,497,648"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c" title="youbot::EthercatMasterInterface::AutomaticReceiveOn" alt="" coords="641,59,980,88"/>
-<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0" title="youbot::YouBotJoint::getConfigurationParameter" alt="" coords="661,112,960,141"/>
-<area shape="rect" href="$d8/d27/classyoubot_1_1_initialize_joint.html#a100505a5d6f738b37e62ebb8aca7956b" title="youbot::InitializeJoint::getParameter" alt="" coords="696,165,925,195"/>
-<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller." alt="" coords="709,219,912,248"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5" title="youbot::EthercatMasterInterface::isThreadActive" alt="" coords="659,272,963,301"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything..." alt="" coords="644,325,977,355"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it..." alt="" coords="651,379,971,408"/>
-<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee" title="youbot::YouBotJoint::setConfigurationParameter" alt="" coords="661,432,960,461"/>
-<area shape="rect" href="$d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f" title="youbot::InitializeJoint::setParameter" alt="" coords="696,485,925,515"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e" title="youbot::EthercatMasterInterface::AutomaticSendOn" alt="" coords="649,539,972,568"/>
-<area shape="rect" href="$de/d3c/classyoubot_1_1_four_swedish_wheel_omni_base_kinematic.html#a951d05311f9fba793905240491ae926b" title="Calculates from the cartesian velocity the individual wheel velocities." alt="" coords="555,592,1067,621"/>
-<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="604,645,1017,675"/>
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints" alt="" coords="239,5,505,35"/>
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base" alt="" coords="260,59,484,88"/>
+<area shape="rect" href="$d2/d41/classyoubot_1_1_you_bot_base.html#a85ebb1ed649a98966b00e5bb99cd3d5f" title="commands the base in cartesien velocities" alt="" coords="251,112,493,141"/>
+<area shape="rect" href="$d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference..." alt="" coords="247,165,497,195"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e" title="youbot::EthercatMasterInterface::AutomaticSendOn" alt="" coords="649,59,972,88"/>
+<area shape="rect" href="$de/d3c/classyoubot_1_1_four_swedish_wheel_omni_base_kinematic.html#a951d05311f9fba793905240491ae926b" title="Calculates from the cartesian velocity the individual wheel velocities." alt="" coords="555,112,1067,141"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="604,165,1017,195"/>
 </map>

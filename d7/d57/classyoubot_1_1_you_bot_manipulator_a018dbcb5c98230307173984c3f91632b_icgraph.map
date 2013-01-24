@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" href="$d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the arm joints" alt="" coords="148,5,287,35"/>
-<area shape="rect" href="$dc/d6b/class_you_bot_arm_test.html#a8e5c85688e9f0038d2dfc28431f21d8d" title="YouBotArmTest::youBotArmTest" alt="" coords="336,32,547,61"/>
+<area shape="rect" href="$d3/dd5/class_you_bot_arm_test_without_thread.html#a8e5c85688e9f0038d2dfc28431f21d8d" title="YouBotArmTestWithoutThread::youBotArmTest" alt="" coords="148,5,441,35"/>
+<area shape="rect" href="$dc/d6b/class_you_bot_arm_test.html#a8e5c85688e9f0038d2dfc28431f21d8d" title="YouBotArmTest::youBotArmTest" alt="" coords="189,59,400,88"/>
 </map>

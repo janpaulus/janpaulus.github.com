@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" href="$d9/d8d/classyoubot_1_1_pid_controller.html#a5ca3f8e8af6da4388373a03ff9a2d506" title="Initialize PID&#45;gains and integral term limits:[iMax:iMin]&#45;[I1:I2]." alt="" coords="105,5,161,35"/>
+<area shape="rect" href="$d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ad5f651e516b0d9b2a18b231ea3820295" title="youbot::JointTrajectoryController::JointTrajectoryController" alt="" coords="212,5,567,35"/>
+</map>

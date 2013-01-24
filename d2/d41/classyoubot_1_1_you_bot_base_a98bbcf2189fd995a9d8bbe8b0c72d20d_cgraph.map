@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" href="$da/d66/classyoubot_1_1_ethercat_master.html#a5eec05a2312d24b0ae3b0da92e832ff5" title="creates a instance of the singleton EthercatMaster if there is none and returns a..." alt="" coords="183,5,415,35"/>
+<area shape="rect" href="$df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5" title="youbot::EthercatMasterInterface::isThreadActive" alt="" coords="147,59,451,88"/>
+</map>

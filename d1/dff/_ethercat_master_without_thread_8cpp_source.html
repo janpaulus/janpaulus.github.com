@@ -277,7 +277,7 @@ window.onload = initDynSections;
 <a name="l00206"></a>00206 
 <a name="l00207"></a>00207     <span class="comment">/* initialise SOEM, bind socket to ifname */</span>
 <a name="l00208"></a>00208     <span class="keywordflow">if</span> (<a class="code" href="../../d3/d6b/ethercatmain_8c.html#a4f50e3fbd5f3d756b4b87043a0f87d62" title="Initialise lib in single NIC mode.">ec_init</a>(ethernetDevice.c_str())) {
-<a name="l00209"></a>00209       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Initializing EtherCAT on &quot;</span> &lt;&lt; ethernetDevice;
+<a name="l00209"></a>00209       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Initializing EtherCAT on &quot;</span> &lt;&lt; ethernetDevice &lt;&lt; <span class="stringliteral">&quot; without communication thread&quot;</span>;
 <a name="l00210"></a>00210       <span class="comment">/* find and auto-config slaves */</span>
 <a name="l00211"></a>00211       <span class="keywordflow">if</span> (<a class="code" href="../../d2/d04/ethercatconfig_8c.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves.">ec_config</a>(<a class="code" href="../../d2/dbb/ethercattype_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>, &amp;IOmap_) &gt; 0) {
 <a name="l00212"></a>00212 
@@ -557,10 +557,10 @@ window.onload = initDynSections;
 <a name="l00486"></a>00486     <span class="comment">//      //   throw JointErrorException(errorMessage + &quot;got motor winding problem&quot;);</span>
 <a name="l00487"></a>00487     <span class="comment">//    }</span>
 <a name="l00488"></a>00488 
-<a name="l00489"></a>00489     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; PWM_MODE_ACTIVE) {
+<a name="l00489"></a>00489 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; PWM_MODE_ACTIVE) {</span>
 <a name="l00490"></a>00490       <span class="comment">//  LOG(error) &lt;&lt; errorMessage &lt;&lt; &quot;has PWM mode active&quot;;</span>
 <a name="l00491"></a>00491       <span class="comment">//   throw JointErrorException(errorMessage + &quot;the cycle time is violated&quot;);</span>
-<a name="l00492"></a>00492     }
+<a name="l00492"></a>00492 <span class="comment">//    }</span>
 <a name="l00493"></a>00493 
 <a name="l00494"></a>00494     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; VELOCITY_MODE) {
 <a name="l00495"></a>00495       <span class="comment">//   LOG(info) &lt;&lt; errorMessage &lt;&lt; &quot;has velocity mode active&quot;;</span>

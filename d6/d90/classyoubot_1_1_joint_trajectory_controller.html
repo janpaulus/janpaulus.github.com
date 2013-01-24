@@ -72,30 +72,30 @@ window.onload = initDynSections;
 </div>
 <div class="contents">
 <h1>JointTrajectoryController Class Reference</h1><!-- doxytag: class="youbot::JointTrajectoryController" -->
+<p><a class="el" href="../../d6/d56/classyoubot_1_1_joint.html" title="abstract joint">Joint</a> Trajectory Controller.  
+<a href="#_details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html">JointTrajectoryController.hpp</a>&gt;</code></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ad5f651e516b0d9b2a18b231ea3820295">JointTrajectoryController</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a49af5d54d9819c4d6de442dfdd5b6cd4">~JointTrajectoryController</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aaa85cbdf577fd3510d9398cfe7ee312c">getConfigurationParameter</a> (<a class="el" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html">PParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aac59f3703f2fa8a5e1dec3f835ce71da">setConfigurationParameter</a> (const <a class="el" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html">PParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aa191450b7f550cccc069947c48a21e7e">getConfigurationParameter</a> (<a class="el" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html">IParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a3378cd6079b2e397229abc261b2d9aaf">setConfigurationParameter</a> (const <a class="el" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html">IParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a79a9984fbc688aaadfb053e43d872c83">getConfigurationParameter</a> (<a class="el" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html">DParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a794a6c402681142bc11be0256610c621">setConfigurationParameter</a> (const <a class="el" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html">DParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a5520665e7d077f855e0adc3d9646474c">getConfigurationParameter</a> (<a class="el" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html">IClippingParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a125d8f34ba5f05b83dd78c65de552610">setConfigurationParameter</a> (const <a class="el" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html">IClippingParameterTrajectoryControl</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a0fa074d7bce5bfc3aa12524ae3e4dd35">setTrajectoryPositions</a> (const std::list&lt; <a class="el" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> &gt; &amp;targetPositions)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a6cba8030efd25c8f94b244a1a7abbc65">getConfigurationParameter</a> (double &amp;PParameter, double &amp;IParameter, double &amp;DParameter, double &amp;IClippingMax, double &amp;IClippingMin)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a7610ab985339b6f47ba24b1f560ac558">setConfigurationParameter</a> (const double PParameter, const double IParameter, const double DParameter, const double IClippingMax, const double IClippingMin)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ac0f02395e1a76b9d25e5842ea908549d">setTrajectory</a> (const <a class="el" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html">JointTrajectory</a> &amp;input_traj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#af29ae210987316ddbc33068551bb9120">cancelCurrentTrajectory</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3">isTrajectoryControllerActive</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a204d215bf4585906fa71a91cc6693061">updateTrajectoryController</a> (const <a class="el" href="../../d1/d88/structyoubot_1_1_slave_message_input.html">SlaveMessageInput</a> &amp;actual, <a class="el" href="../../df/dc0/structyoubot_1_1_slave_message_output.html">SlaveMessageOutput</a> &amp;velocity)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a346422a0624df037faf9b70e0268812b">getLastTargetPosition</a> (<a class="el" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html">JointEncoderSetpoint</a> &amp;position)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ab3d038a793b2787348b1b9b5549518ba">getControllerUpdatesPerSecond</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a36c1fc71260607f17a01530d21006633">setControllerUpdatesPerSecond</a> (const unsigned int updates)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aea3ebd6ee92fb4e86b7812ab080bd215">getLastTargetPosition</a> (<a class="el" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html">JointAngleSetpoint</a> &amp;position)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a72064babdd60d72a2688a8695270f7a1">getLastTargetVelocity</a> (<a class="el" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html">JointVelocitySetpoint</a> &amp;velocity)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#abdb108bcc4f04a2d275bf2d228c7821d">setGearRatio</a> (const double &amp;ratio)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a20631d8516b6aa29560d57c000d4635e">setEncoderTicksPerRound</a> (const int &amp;encoderTicks)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a94ab2e6fab52860b295ac4b19e590219">setInverseMovementDirection</a> (const bool invDirection)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p><a class="el" href="../../d6/d56/classyoubot_1_1_joint.html" title="abstract joint">Joint</a> Trajectory Controller. </p>
 
-<p>Definition at line <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html">JointTrajectoryController.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html">JointTrajectoryController.hpp</a>.</p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad5f651e516b0d9b2a18b231ea3820295"></a><!-- doxytag: member="youbot::JointTrajectoryController::JointTrajectoryController" ref="ad5f651e516b0d9b2a18b231ea3820295" args="()" -->
 <div class="memitem">
@@ -114,6 +114,15 @@ window.onload = initDynSections;
 
 <p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_ad5f651e516b0d9b2a18b231ea3820295_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_ad5f651e516b0d9b2a18b231ea3820295_cgraph_map" alt=""></div>
+<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_ad5f651e516b0d9b2a18b231ea3820295_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_ad5f651e516b0d9b2a18b231ea3820295_cgraph">
+<area shape="rect" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#a5ca3f8e8af6da4388373a03ff9a2d506" title="Initialize PID&#45;gains and integral term limits:[iMax:iMin]&#45;[I1:I2]." alt="" coords="231,5,417,35"/><area shape="rect" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking)." alt="" coords="217,59,431,88"/><area shape="rect" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#ad20897c5c8bd47f5d4005989bead0e55" title="Reset the state of this PID controller." alt="" coords="481,5,660,35"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a49af5d54d9819c4d6de442dfdd5b6cd4"></a><!-- doxytag: member="youbot::JointTrajectoryController::~JointTrajectoryController" ref="a49af5d54d9819c4d6de442dfdd5b6cd4" args="()" -->
@@ -131,7 +140,7 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00072">72</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00081">81</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
 </div>
 </div>
@@ -151,162 +160,83 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00174">174</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00251">251</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
 <p><div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_icgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_icgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_icgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_icgraph">
-<area shape="rect" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a4be04a0484717131f2e0b924e24dfa34" title="Stops just the trajectory controller but not the joint movement." alt="" coords="215,5,455,35"/></map>
+<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_cgraph_map" alt=""></div>
+<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_af29ae210987316ddbc33068551bb9120_cgraph">
+<area shape="rect" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking)." alt="" coords="215,5,428,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a5520665e7d077f855e0adc3d9646474c"></a><!-- doxytag: member="youbot::JointTrajectoryController::getConfigurationParameter" ref="a5520665e7d077f855e0adc3d9646474c" args="(IClippingParameterTrajectoryControl &amp;parameter)" -->
+<a class="anchor" id="a6cba8030efd25c8f94b244a1a7abbc65"></a><!-- doxytag: member="youbot::JointTrajectoryController::getConfigurationParameter" ref="a6cba8030efd25c8f94b244a1a7abbc65" args="(double &amp;PParameter, double &amp;IParameter, double &amp;DParameter, double &amp;IClippingMax, double &amp;IClippingMin)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void getConfigurationParameter </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html">IClippingParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>PParameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>IParameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>DParameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>IClippingMax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&nbsp;</td>
+          <td class="paramname"> <em>IClippingMin</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00125">125</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00086">86</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a5520665e7d077f855e0adc3d9646474c_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a5520665e7d077f855e0adc3d9646474c_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a5520665e7d077f855e0adc3d9646474c_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a5520665e7d077f855e0adc3d9646474c_cgraph">
-<area shape="rect" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482" title="youbot::IClippingParameterTrajectoryControl::setParameter" alt="" coords="229,5,589,35"/></map>
+<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a6cba8030efd25c8f94b244a1a7abbc65_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a6cba8030efd25c8f94b244a1a7abbc65_cgraph_map" alt=""></div>
+<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a6cba8030efd25c8f94b244a1a7abbc65_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a6cba8030efd25c8f94b244a1a7abbc65_cgraph">
+<area shape="rect" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#a5e01fe7f19ef3821b349e967ec01327f" title="Get PID gains for the controller." alt="" coords="229,5,432,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a79a9984fbc688aaadfb053e43d872c83"></a><!-- doxytag: member="youbot::JointTrajectoryController::getConfigurationParameter" ref="a79a9984fbc688aaadfb053e43d872c83" args="(DParameterTrajectoryControl &amp;parameter)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void getConfigurationParameter </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html">DParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a79a9984fbc688aaadfb053e43d872c83_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a79a9984fbc688aaadfb053e43d872c83_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a79a9984fbc688aaadfb053e43d872c83_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a79a9984fbc688aaadfb053e43d872c83_cgraph">
-<area shape="rect" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482" title="youbot::DParameterTrajectoryControl::setParameter" alt="" coords="229,5,549,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aa191450b7f550cccc069947c48a21e7e"></a><!-- doxytag: member="youbot::JointTrajectoryController::getConfigurationParameter" ref="aa191450b7f550cccc069947c48a21e7e" args="(IParameterTrajectoryControl &amp;parameter)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void getConfigurationParameter </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html">IParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00093">93</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_aa191450b7f550cccc069947c48a21e7e_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_aa191450b7f550cccc069947c48a21e7e_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_aa191450b7f550cccc069947c48a21e7e_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_aa191450b7f550cccc069947c48a21e7e_cgraph">
-<area shape="rect" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482" title="youbot::IParameterTrajectoryControl::setParameter" alt="" coords="229,5,544,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aaa85cbdf577fd3510d9398cfe7ee312c"></a><!-- doxytag: member="youbot::JointTrajectoryController::getConfigurationParameter" ref="aaa85cbdf577fd3510d9398cfe7ee312c" args="(PParameterTrajectoryControl &amp;parameter)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void getConfigurationParameter </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html">PParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_aaa85cbdf577fd3510d9398cfe7ee312c_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_aaa85cbdf577fd3510d9398cfe7ee312c_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_aaa85cbdf577fd3510d9398cfe7ee312c_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_aaa85cbdf577fd3510d9398cfe7ee312c_cgraph">
-<area shape="rect" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482" title="youbot::PParameterTrajectoryControl::setParameter" alt="" coords="229,5,549,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ab3d038a793b2787348b1b9b5549518ba"></a><!-- doxytag: member="youbot::JointTrajectoryController::getControllerUpdatesPerSecond" ref="ab3d038a793b2787348b1b9b5549518ba" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int getControllerUpdatesPerSecond </td>
-          <td>(</td>
-          <td class="paramname"></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00289">289</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a346422a0624df037faf9b70e0268812b"></a><!-- doxytag: member="youbot::JointTrajectoryController::getLastTargetPosition" ref="a346422a0624df037faf9b70e0268812b" args="(JointEncoderSetpoint &amp;position)" -->
+<a class="anchor" id="aea3ebd6ee92fb4e86b7812ab080bd215"></a><!-- doxytag: member="youbot::JointTrajectoryController::getLastTargetPosition" ref="aea3ebd6ee92fb4e86b7812ab080bd215" args="(JointAngleSetpoint &amp;position)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void getLastTargetPosition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html">JointEncoderSetpoint</a> &amp;&nbsp;</td>
+          <td class="paramtype"><a class="el" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html">JointAngleSetpoint</a> &amp;&nbsp;</td>
           <td class="paramname"> <em>position</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -315,7 +245,27 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00280">280</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00337">337</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a72064babdd60d72a2688a8695270f7a1"></a><!-- doxytag: member="youbot::JointTrajectoryController::getLastTargetVelocity" ref="a72064babdd60d72a2688a8695270f7a1" args="(JointVelocitySetpoint &amp;velocity)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getLastTargetVelocity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html">JointVelocitySetpoint</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>velocity</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00343">343</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
 </div>
 </div>
@@ -334,57 +284,135 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00194">194</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_aadb9c59dcd7f82f05f970e0f0e82d6c3_icgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_aadb9c59dcd7f82f05f970e0f0e82d6c3_icgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_aadb9c59dcd7f82f05f970e0f0e82d6c3_icgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_aadb9c59dcd7f82f05f970e0f0e82d6c3_icgraph">
-<area shape="rect" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af69f97dd49a00570eff3bed0a2b30cb2" title="calculates all trajectory values for the future and sets all the the ethercat master..." alt="" coords="235,5,456,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00262">262</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a125d8f34ba5f05b83dd78c65de552610"></a><!-- doxytag: member="youbot::JointTrajectoryController::setConfigurationParameter" ref="a125d8f34ba5f05b83dd78c65de552610" args="(const IClippingParameterTrajectoryControl &amp;parameter)" -->
+<a class="anchor" id="a7610ab985339b6f47ba24b1f560ac558"></a><!-- doxytag: member="youbot::JointTrajectoryController::setConfigurationParameter" ref="a7610ab985339b6f47ba24b1f560ac558" args="(const double PParameter, const double IParameter, const double DParameter, const double IClippingMax, const double IClippingMin)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void setConfigurationParameter </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html">IClippingParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>PParameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>IParameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>DParameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>IClippingMax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&nbsp;</td>
+          <td class="paramname"> <em>IClippingMin</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a125d8f34ba5f05b83dd78c65de552610_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a125d8f34ba5f05b83dd78c65de552610_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a125d8f34ba5f05b83dd78c65de552610_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a125d8f34ba5f05b83dd78c65de552610_cgraph">
-<area shape="rect" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890" title="youbot::IClippingParameterTrajectoryControl::getParameter" alt="" coords="229,5,589,35"/></map>
+<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a7610ab985339b6f47ba24b1f560ac558_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a7610ab985339b6f47ba24b1f560ac558_cgraph_map" alt=""></div>
+<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a7610ab985339b6f47ba24b1f560ac558_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a7610ab985339b6f47ba24b1f560ac558_cgraph">
+<area shape="rect" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#a0df65bd7a4553a4a342e43ad169fd776" title="Set PID gains for the controller." alt="" coords="229,5,432,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a794a6c402681142bc11be0256610c621"></a><!-- doxytag: member="youbot::JointTrajectoryController::setConfigurationParameter" ref="a794a6c402681142bc11be0256610c621" args="(const DParameterTrajectoryControl &amp;parameter)" -->
+<a class="anchor" id="a20631d8516b6aa29560d57c000d4635e"></a><!-- doxytag: member="youbot::JointTrajectoryController::setEncoderTicksPerRound" ref="a20631d8516b6aa29560d57c000d4635e" args="(const int &amp;encoderTicks)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void setConfigurationParameter </td>
+          <td class="memname">void setEncoderTicksPerRound </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html">DParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>encoderTicks</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html#l00125">125</a> of file <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html">JointTrajectoryController.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abdb108bcc4f04a2d275bf2d228c7821d"></a><!-- doxytag: member="youbot::JointTrajectoryController::setGearRatio" ref="abdb108bcc4f04a2d275bf2d228c7821d" args="(const double &amp;ratio)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setGearRatio </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&nbsp;</td>
+          <td class="paramname"> <em>ratio</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html#l00123">123</a> of file <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html">JointTrajectoryController.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94ab2e6fab52860b295ac4b19e590219"></a><!-- doxytag: member="youbot::JointTrajectoryController::setInverseMovementDirection" ref="a94ab2e6fab52860b295ac4b19e590219" args="(const bool invDirection)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setInverseMovementDirection </td>
+          <td>(</td>
+          <td class="paramtype">const bool&nbsp;</td>
+          <td class="paramname"> <em>invDirection</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html#l00127">127</a> of file <a class="el" href="../../da/d9a/_joint_trajectory_controller_8hpp_source.html">JointTrajectoryController.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0f02395e1a76b9d25e5842ea908549d"></a><!-- doxytag: member="youbot::JointTrajectoryController::setTrajectory" ref="ac0f02395e1a76b9d25e5842ea908549d" args="(const JointTrajectory &amp;input_traj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html">JointTrajectory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>input_traj</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -392,121 +420,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a794a6c402681142bc11be0256610c621_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a794a6c402681142bc11be0256610c621_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a794a6c402681142bc11be0256610c621_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a794a6c402681142bc11be0256610c621_cgraph">
-<area shape="rect" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890" title="youbot::DParameterTrajectoryControl::getParameter" alt="" coords="229,5,549,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a3378cd6079b2e397229abc261b2d9aaf"></a><!-- doxytag: member="youbot::JointTrajectoryController::setConfigurationParameter" ref="a3378cd6079b2e397229abc261b2d9aaf" args="(const IParameterTrajectoryControl &amp;parameter)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setConfigurationParameter </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html">IParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00101">101</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a3378cd6079b2e397229abc261b2d9aaf_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a3378cd6079b2e397229abc261b2d9aaf_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a3378cd6079b2e397229abc261b2d9aaf_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a3378cd6079b2e397229abc261b2d9aaf_cgraph">
-<area shape="rect" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890" title="youbot::IParameterTrajectoryControl::getParameter" alt="" coords="229,5,544,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aac59f3703f2fa8a5e1dec3f835ce71da"></a><!-- doxytag: member="youbot::JointTrajectoryController::setConfigurationParameter" ref="aac59f3703f2fa8a5e1dec3f835ce71da" args="(const PParameterTrajectoryControl &amp;parameter)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setConfigurationParameter </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html">PParameterTrajectoryControl</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>parameter</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00085">85</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_aac59f3703f2fa8a5e1dec3f835ce71da_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_aac59f3703f2fa8a5e1dec3f835ce71da_cgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_aac59f3703f2fa8a5e1dec3f835ce71da_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_aac59f3703f2fa8a5e1dec3f835ce71da_cgraph">
-<area shape="rect" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890" title="youbot::PParameterTrajectoryControl::getParameter" alt="" coords="229,5,549,35"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a36c1fc71260607f17a01530d21006633"></a><!-- doxytag: member="youbot::JointTrajectoryController::setControllerUpdatesPerSecond" ref="a36c1fc71260607f17a01530d21006633" args="(const unsigned int updates)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setControllerUpdatesPerSecond </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int&nbsp;</td>
-          <td class="paramname"> <em>updates</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00295">295</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0fa074d7bce5bfc3aa12524ae3e4dd35"></a><!-- doxytag: member="youbot::JointTrajectoryController::setTrajectoryPositions" ref="a0fa074d7bce5bfc3aa12524ae3e4dd35" args="(const std::list&lt; int32 &gt; &amp;targetPositions)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void setTrajectoryPositions </td>
-          <td>(</td>
-          <td class="paramtype">const std::list&lt; <a class="el" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> &gt; &amp;&nbsp;</td>
-          <td class="paramname"> <em>targetPositions</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00141">141</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a0fa074d7bce5bfc3aa12524ae3e4dd35_icgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a0fa074d7bce5bfc3aa12524ae3e4dd35_icgraph_map" alt=""></div>
-<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a0fa074d7bce5bfc3aa12524ae3e4dd35_icgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a0fa074d7bce5bfc3aa12524ae3e4dd35_icgraph">
-<area shape="rect" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af69f97dd49a00570eff3bed0a2b30cb2" title="calculates all trajectory values for the future and sets all the the ethercat master..." alt="" coords="203,5,424,35"/></map>
+<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_ac0f02395e1a76b9d25e5842ea908549d_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_ac0f02395e1a76b9d25e5842ea908549d_cgraph_map" alt=""></div>
+<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_ac0f02395e1a76b9d25e5842ea908549d_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_ac0f02395e1a76b9d25e5842ea908549d_cgraph">
+<area shape="rect" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data." alt="" coords="149,5,365,35"/><area shape="rect" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking)." alt="" coords="151,59,364,88"/></map>
 </div>
 </p>
 
@@ -537,7 +458,16 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html#l00266">266</a> of file <a class="el" href="../../de/da1/_joint_trajectory_controller_8cpp_source.html">JointTrajectoryController.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="../../d6/d90/classyoubot_1_1_joint_trajectory_controller_a204d215bf4585906fa71a91cc6693061_cgraph.png" border="0" usemap="#d6/d90/classyoubot_1_1_joint_trajectory_controller_a204d215bf4585906fa71a91cc6693061_cgraph_map" alt=""></div>
+<map name="d6/d90/classyoubot_1_1_joint_trajectory_controller_a204d215bf4585906fa71a91cc6693061_cgraph_map" id="d6/d90/classyoubot_1_1_joint_trajectory_controller_a204d215bf4585906fa71a91cc6693061_cgraph">
+<area shape="rect" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data." alt="" coords="227,5,443,35"/><area shape="rect" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#af02615e7bfbad23d89f98936edc8056c" title="Update the Pid loop with nonuniform time step size." alt="" coords="231,59,439,88"/></map>
+</div>
+</p>
 
 </div>
 </div>

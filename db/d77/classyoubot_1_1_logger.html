@@ -85,12 +85,13 @@ window.onload = initDynSections;
 <tr><td colspan="2"><h2>Static Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d77/classyoubot_1_1_logger.html#a33b9292bbe3f53447ed7fc3321c4222f">toConsole</a> = true</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d77/classyoubot_1_1_logger.html#a70c836b82ae9a3a92ca493e7d9456115">toFile</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d77/classyoubot_1_1_logger.html#a6dfdf018e60bd8cd7cdc3506da93c14b">toROS</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static severity_level&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d77/classyoubot_1_1_logger.html#a7b60c8d449ee715e4deed9a552591e1d">logginLevel</a> = info</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Implementation logging to console and to a file. </p>
 
-<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00075">75</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00077">77</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a30895892c6177c9368a19b7d85a9045e"></a><!-- doxytag: member="youbot::Logger::Logger" ref="a30895892c6177c9368a19b7d85a9045e" args="(const std::string &amp;funcName, const int &amp;lineNo, const std::string &amp;fileName, severity_level level)" -->
 <div class="memitem">
@@ -129,7 +130,7 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/d27/_logger_8cpp_source.html#l00060">60</a> of file <a class="el" href="../../de/d27/_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/d27/_logger_8cpp_source.html#l00061">61</a> of file <a class="el" href="../../de/d27/_logger_8cpp_source.html">Logger.cpp</a>.</p>
 
 </div>
 </div>
@@ -148,7 +149,7 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../de/d27/_logger_8cpp_source.html#l00102">102</a> of file <a class="el" href="../../de/d27/_logger_8cpp_source.html">Logger.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/d27/_logger_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../de/d27/_logger_8cpp_source.html">Logger.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +170,7 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00089">89</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -185,7 +186,7 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00090">90</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -200,7 +201,7 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00084">84</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00087">87</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +216,22 @@ window.onload = initDynSections;
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00088">88</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6dfdf018e60bd8cd7cdc3506da93c14b"></a><!-- doxytag: member="youbot::Logger::toROS" ref="a6dfdf018e60bd8cd7cdc3506da93c14b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../db/d77/classyoubot_1_1_logger.html#a6dfdf018e60bd8cd7cdc3506da93c14b">toROS</a> = false<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de3/_logger_8hpp_source.html#l00089">89</a> of file <a class="el" href="../../d3/de3/_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>

@@ -122,255 +122,404 @@ window.onload = initDynSections;
 <a name="l00051"></a>00051 <span class="preprocessor">#include &quot;<a class="code" href="../../da/d9a/_joint_trajectory_controller_8hpp.html">youbot/JointTrajectoryController.hpp</a>&quot;</span>
 <a name="l00052"></a>00052 <span class="keyword">namespace </span>youbot {
 <a name="l00053"></a>00053 
-<a name="l00054"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ad5f651e516b0d9b2a18b231ea3820295">00054</a> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ad5f651e516b0d9b2a18b231ea3820295">JointTrajectoryController::JointTrajectoryController</a>() {
-<a name="l00055"></a>00055   <span class="comment">// Bouml preserved body begin 000EA0F1</span>
-<a name="l00056"></a>00056     this-&gt;ISum = 0;
-<a name="l00057"></a>00057     this-&gt;DDiff = 0;
-<a name="l00058"></a>00058     this-&gt;PParameter = 20.0;
-<a name="l00059"></a>00059     this-&gt;IParameter = 10;
-<a name="l00060"></a>00060     this-&gt;DParameter = 50;
-<a name="l00061"></a>00061     this-&gt;last_pose_diff = 0;
-<a name="l00062"></a>00062     this-&gt;ISum_clipping = 1000;
-<a name="l00063"></a>00063     this-&gt;pose_diff_clipping = 65535;
-<a name="l00064"></a>00064     this-&gt;isControllerActive = <span class="keyword">false</span>;
-<a name="l00065"></a>00065     this-&gt;controllerUpdatesPerSecond = 1000;
-<a name="l00066"></a>00066     this-&gt;targetPosition = 0;
-<a name="l00067"></a>00067     this-&gt;trajectoryPositionsBuffer1InUse = <span class="keyword">false</span>;
-<a name="l00068"></a>00068     this-&gt;trajectoryPositionsBuffer2InUse = <span class="keyword">false</span>;
-<a name="l00069"></a>00069   <span class="comment">// Bouml preserved body end 000EA0F1</span>
-<a name="l00070"></a>00070 }
-<a name="l00071"></a>00071 
-<a name="l00072"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a49af5d54d9819c4d6de442dfdd5b6cd4">00072</a> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a49af5d54d9819c4d6de442dfdd5b6cd4">JointTrajectoryController::~JointTrajectoryController</a>() {
-<a name="l00073"></a>00073   <span class="comment">// Bouml preserved body begin 000EA171</span>
-<a name="l00074"></a>00074   <span class="comment">// Bouml preserved body end 000EA171</span>
-<a name="l00075"></a>00075 }
-<a name="l00076"></a>00076 
-<a name="l00077"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aaa85cbdf577fd3510d9398cfe7ee312c">00077</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aaa85cbdf577fd3510d9398cfe7ee312c">JointTrajectoryController::getConfigurationParameter</a>(<a class="code" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html" title="P-Parameter of PID trajectory regulator.">PParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00078"></a>00078   <span class="comment">// Bouml preserved body begin 000ED671</span>
-<a name="l00079"></a>00079   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00080"></a>00080     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00081"></a>00081   parameter.<a class="code" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482">setParameter</a>(this-&gt;PParameter);
-<a name="l00082"></a>00082   <span class="comment">// Bouml preserved body end 000ED671</span>
-<a name="l00083"></a>00083 }
-<a name="l00084"></a>00084 
-<a name="l00085"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aac59f3703f2fa8a5e1dec3f835ce71da">00085</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aac59f3703f2fa8a5e1dec3f835ce71da">JointTrajectoryController::setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html" title="P-Parameter of PID trajectory regulator.">PParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00086"></a>00086   <span class="comment">// Bouml preserved body begin 000ED6F1</span>
-<a name="l00087"></a>00087   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00088"></a>00088     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00089"></a>00089   parameter.<a class="code" href="../../db/d95/classyoubot_1_1_p_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890">getParameter</a>(this-&gt;PParameter);
-<a name="l00090"></a>00090   <span class="comment">// Bouml preserved body end 000ED6F1</span>
-<a name="l00091"></a>00091 }
-<a name="l00092"></a>00092 
-<a name="l00093"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aa191450b7f550cccc069947c48a21e7e">00093</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aaa85cbdf577fd3510d9398cfe7ee312c">JointTrajectoryController::getConfigurationParameter</a>(<a class="code" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html" title="I-Parameter of PID trajectory regulator.">IParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00094"></a>00094   <span class="comment">// Bouml preserved body begin 000EE971</span>
-<a name="l00095"></a>00095   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00096"></a>00096     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00097"></a>00097   parameter.<a class="code" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482">setParameter</a>(this-&gt;IParameter);
-<a name="l00098"></a>00098   <span class="comment">// Bouml preserved body end 000EE971</span>
-<a name="l00099"></a>00099 }
-<a name="l00100"></a>00100 
-<a name="l00101"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a3378cd6079b2e397229abc261b2d9aaf">00101</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aac59f3703f2fa8a5e1dec3f835ce71da">JointTrajectoryController::setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html" title="I-Parameter of PID trajectory regulator.">IParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00102"></a>00102   <span class="comment">// Bouml preserved body begin 000EEAF1</span>
-<a name="l00103"></a>00103   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00104"></a>00104     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00105"></a>00105   parameter.<a class="code" href="../../d7/ddb/classyoubot_1_1_i_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890">getParameter</a>(this-&gt;IParameter);
-<a name="l00106"></a>00106   <span class="comment">// Bouml preserved body end 000EEAF1</span>
-<a name="l00107"></a>00107 }
-<a name="l00108"></a>00108 
-<a name="l00109"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a79a9984fbc688aaadfb053e43d872c83">00109</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aaa85cbdf577fd3510d9398cfe7ee312c">JointTrajectoryController::getConfigurationParameter</a>(<a class="code" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html" title="D-Parameter of PID trajectory regulator.">DParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00110"></a>00110   <span class="comment">// Bouml preserved body begin 000EE9F1</span>
-<a name="l00111"></a>00111   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00112"></a>00112     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00113"></a>00113   parameter.<a class="code" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482">setParameter</a>(this-&gt;DParameter);
-<a name="l00114"></a>00114   <span class="comment">// Bouml preserved body end 000EE9F1</span>
-<a name="l00115"></a>00115 }
-<a name="l00116"></a>00116 
-<a name="l00117"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a794a6c402681142bc11be0256610c621">00117</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aac59f3703f2fa8a5e1dec3f835ce71da">JointTrajectoryController::setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html" title="D-Parameter of PID trajectory regulator.">DParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00118"></a>00118   <span class="comment">// Bouml preserved body begin 000EEB71</span>
-<a name="l00119"></a>00119   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00120"></a>00120     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00121"></a>00121   parameter.<a class="code" href="../../d3/d3e/classyoubot_1_1_d_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890">getParameter</a>(this-&gt;DParameter);
-<a name="l00122"></a>00122   <span class="comment">// Bouml preserved body end 000EEB71</span>
-<a name="l00123"></a>00123 }
+<a name="l00054"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ad5f651e516b0d9b2a18b231ea3820295">00054</a>   <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ad5f651e516b0d9b2a18b231ea3820295">JointTrajectoryController::JointTrajectoryController</a>() {
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056     this-&gt;pid.<a class="code" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#a5ca3f8e8af6da4388373a03ff9a2d506" title="Initialize PID-gains and integral term limits:[iMax:iMin]-[I1:I2].">initPid</a>(80.0, 1, 0, 1000, -1000);
+<a name="l00057"></a>00057     time = boost::posix_time::microsec_clock::local_time();
+<a name="l00058"></a>00058     last_time = boost::posix_time::microsec_clock::local_time();
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060     this-&gt;isControllerActive = <span class="keyword">false</span>;
+<a name="l00061"></a>00061     this-&gt;targetPosition = 0;
+<a name="l00062"></a>00062     this-&gt;targetVelocity = 0;
+<a name="l00063"></a>00063     this-&gt;targetAcceleration = 0;
+<a name="l00064"></a>00064     this-&gt;encoderTicksPerRound = 1;
+<a name="l00065"></a>00065     this-&gt;gearRatio = 1;
+<a name="l00066"></a>00066     this-&gt;inverseDirection = <span class="keyword">false</span>;
+<a name="l00067"></a>00067     actualpose = 0;
+<a name="l00068"></a>00068     actualvel = 0;
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070     <span class="comment">// Creates a dummy trajectory</span>
+<a name="l00071"></a>00071     boost::shared_ptr&lt;SpecifiedTrajectory&gt; traj_ptr(<span class="keyword">new</span> SpecifiedTrajectory(1));
+<a name="l00072"></a>00072     SpecifiedTrajectory &amp;traj = *traj_ptr;
+<a name="l00073"></a>00073     traj[0].start_time = boost::posix_time::microsec_clock::local_time();
+<a name="l00074"></a>00074     traj[0].duration = boost::posix_time::microseconds(0);
+<a name="l00075"></a>00075     <span class="comment">//traj[0].splines.coef[0] = 0.0;</span>
+<a name="l00076"></a>00076     current_trajectory_box_.<a class="code" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(traj_ptr);
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079   }
+<a name="l00080"></a>00080 
+<a name="l00081"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a49af5d54d9819c4d6de442dfdd5b6cd4">00081</a>   <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a49af5d54d9819c4d6de442dfdd5b6cd4">JointTrajectoryController::~JointTrajectoryController</a>() {
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084   }
+<a name="l00085"></a>00085 
+<a name="l00086"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a6cba8030efd25c8f94b244a1a7abbc65">00086</a>   <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a6cba8030efd25c8f94b244a1a7abbc65">JointTrajectoryController::getConfigurationParameter</a>(<span class="keywordtype">double</span>&amp; PParameter, <span class="keywordtype">double</span>&amp; IParameter, <span class="keywordtype">double</span>&amp; DParameter, <span class="keywordtype">double</span>&amp; IClippingMax, <span class="keywordtype">double</span>&amp; IClippingMin) {
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088     <span class="keywordflow">if</span> (this-&gt;isControllerActive)
+<a name="l00089"></a>00089       <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
+<a name="l00090"></a>00090     this-&gt;pid.<a class="code" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#a5e01fe7f19ef3821b349e967ec01327f" title="Get PID gains for the controller.">getGains</a>(PParameter, IParameter, DParameter, IClippingMax, IClippingMin);
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092   }
+<a name="l00093"></a>00093 
+<a name="l00094"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a7610ab985339b6f47ba24b1f560ac558">00094</a>   <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a7610ab985339b6f47ba24b1f560ac558">JointTrajectoryController::setConfigurationParameter</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> PParameter, <span class="keyword">const</span> <span class="keywordtype">double</span> IParameter, <span class="keyword">const</span> <span class="keywordtype">double</span> DParameter, <span class="keyword">const</span> <span class="keywordtype">double</span> IClippingMax, <span class="keyword">const</span> <span class="keywordtype">double</span> IClippingMin) {
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096     <span class="keywordflow">if</span> (this-&gt;isControllerActive)
+<a name="l00097"></a>00097       <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
+<a name="l00098"></a>00098     this-&gt;pid.<a class="code" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#a0df65bd7a4553a4a342e43ad169fd776" title="Set PID gains for the controller.">setGains</a>(PParameter, IParameter, DParameter, IClippingMax, IClippingMin);
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100   }
+<a name="l00101"></a>00101 
+<a name="l00102"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ac0f02395e1a76b9d25e5842ea908549d">00102</a>   <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ac0f02395e1a76b9d25e5842ea908549d">JointTrajectoryController::setTrajectory</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html" title="Joint Trajectory representation.">JointTrajectory</a>&amp; input_traj) {
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105     <span class="keywordflow">if</span> (input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>.size() == 0)
+<a name="l00106"></a>00106       <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid trajectory&quot;</span>);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108     boost::posix_time::ptime time_now = boost::posix_time::microsec_clock::local_time();
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     boost::shared_ptr&lt;SpecifiedTrajectory&gt; new_traj_ptr(<span class="keyword">new</span> SpecifiedTrajectory);
+<a name="l00111"></a>00111     SpecifiedTrajectory &amp;new_traj = *new_traj_ptr;
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113     <span class="comment">// ------ Grabs the trajectory that we&#39;re currently following.</span>
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115     boost::shared_ptr&lt;const SpecifiedTrajectory&gt; prev_traj_ptr;
+<a name="l00116"></a>00116     current_trajectory_box_.<a class="code" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(prev_traj_ptr);
+<a name="l00117"></a>00117     <span class="keywordflow">if</span> (!prev_traj_ptr) {
+<a name="l00118"></a>00118       <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;The current trajectory can never be null&quot;</span>);
+<a name="l00119"></a>00119       <span class="keywordflow">return</span>;
+<a name="l00120"></a>00120     }
+<a name="l00121"></a>00121     <span class="keyword">const</span> SpecifiedTrajectory &amp;prev_traj = *prev_traj_ptr;
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123     <span class="comment">// ------ Copies over the segments from the previous trajectory that are still useful.</span>
 <a name="l00124"></a>00124 
-<a name="l00125"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a5520665e7d077f855e0adc3d9646474c">00125</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aaa85cbdf577fd3510d9398cfe7ee312c">JointTrajectoryController::getConfigurationParameter</a>(<a class="code" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html" title="gives a limit for the I sum part of the trajectory regulator">IClippingParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00126"></a>00126   <span class="comment">// Bouml preserved body begin 000EEA71</span>
-<a name="l00127"></a>00127   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00128"></a>00128     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00129"></a>00129   parameter.<a class="code" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html#a47b9d75174cb44090b49c4bc44001482">setParameter</a>(this-&gt;ISum_clipping);
-<a name="l00130"></a>00130   <span class="comment">// Bouml preserved body end 000EEA71</span>
-<a name="l00131"></a>00131 }
-<a name="l00132"></a>00132 
-<a name="l00133"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a125d8f34ba5f05b83dd78c65de552610">00133</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aac59f3703f2fa8a5e1dec3f835ce71da">JointTrajectoryController::setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html" title="gives a limit for the I sum part of the trajectory regulator">IClippingParameterTrajectoryControl</a>&amp; parameter) {
-<a name="l00134"></a>00134   <span class="comment">// Bouml preserved body begin 000EEBF1</span>
-<a name="l00135"></a>00135   <span class="keywordflow">if</span>(this-&gt;isControllerActive)
-<a name="l00136"></a>00136     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;The trajectory controller is running&quot;</span>);
-<a name="l00137"></a>00137   parameter.<a class="code" href="../../d6/d33/classyoubot_1_1_i_clipping_parameter_trajectory_control.html#a162f9522486b06d3d3b08d35250b3890">getParameter</a>(this-&gt;ISum_clipping);
-<a name="l00138"></a>00138   <span class="comment">// Bouml preserved body end 000EEBF1</span>
-<a name="l00139"></a>00139 }
-<a name="l00140"></a>00140 
-<a name="l00141"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a0fa074d7bce5bfc3aa12524ae3e4dd35">00141</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a0fa074d7bce5bfc3aa12524ae3e4dd35">JointTrajectoryController::setTrajectoryPositions</a>(<span class="keyword">const</span> std::list&lt;int32&gt;&amp; targetPositions) {
-<a name="l00142"></a>00142   <span class="comment">// Bouml preserved body begin 000EA1F1</span>
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144     <span class="keywordtype">int</span> buffer1size = 0;
-<a name="l00145"></a>00145     <span class="keywordtype">int</span> buffer2size = 0;
-<a name="l00146"></a>00146     {
-<a name="l00147"></a>00147       boost::mutex::scoped_lock dataMutex1(trajectoryPositionsBuffer1Mutex);
-<a name="l00148"></a>00148       buffer1size = this-&gt;trajectoryPositionsBuffer1.size();
-<a name="l00149"></a>00149     }
-<a name="l00150"></a>00150     {
-<a name="l00151"></a>00151       boost::mutex::scoped_lock dataMutex2(trajectoryPositionsBuffer2Mutex);
-<a name="l00152"></a>00152       buffer2size = this-&gt;trajectoryPositionsBuffer1.size();
-<a name="l00153"></a>00153     }
-<a name="l00154"></a>00154 
-<a name="l00155"></a>00155     <span class="keywordflow">if</span> (trajectoryPositionsBuffer1InUse == <span class="keyword">false</span> &amp;&amp; buffer1size == 0) {
-<a name="l00156"></a>00156       {
-<a name="l00157"></a>00157         boost::mutex::scoped_lock dataMutex1(trajectoryPositionsBuffer1Mutex);
-<a name="l00158"></a>00158         this-&gt;trajectoryPositionsBuffer1 = targetPositions;
-<a name="l00159"></a>00159         this-&gt;isControllerActive = <span class="keyword">true</span>;
-<a name="l00160"></a>00160       }
-<a name="l00161"></a>00161     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (trajectoryPositionsBuffer2InUse == <span class="keyword">false</span> &amp;&amp; buffer2size == 0) {
-<a name="l00162"></a>00162       {
-<a name="l00163"></a>00163         boost::mutex::scoped_lock dataMutex2(trajectoryPositionsBuffer2Mutex);
-<a name="l00164"></a>00164         this-&gt;trajectoryPositionsBuffer2 = targetPositions;
-<a name="l00165"></a>00165         this-&gt;isControllerActive = <span class="keyword">true</span>;
-<a name="l00166"></a>00166       }
-<a name="l00167"></a>00167 
-<a name="l00168"></a>00168     } <span class="keywordflow">else</span> {
-<a name="l00169"></a>00169       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; <span class="stringliteral">&quot;Could not set the trajectory!&quot;</span>;
-<a name="l00170"></a>00170     }
-<a name="l00171"></a>00171   <span class="comment">// Bouml preserved body end 000EA1F1</span>
-<a name="l00172"></a>00172 }
+<a name="l00125"></a>00125     <span class="comment">// Useful segments are still relevant after the current time.</span>
+<a name="l00126"></a>00126     <span class="keywordtype">int</span> first_useful = -1;
+<a name="l00127"></a>00127     <span class="keywordflow">while</span> (first_useful + 1 &lt; (<span class="keywordtype">int</span>) prev_traj.size() &amp;&amp; prev_traj[first_useful + 1].start_time &lt;= time_now) {
+<a name="l00128"></a>00128       ++first_useful;
+<a name="l00129"></a>00129     }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131     <span class="comment">// Useful segments are not going to be completely overwritten by the message&#39;s splines.</span>
+<a name="l00132"></a>00132     <span class="keywordtype">int</span> last_useful = -1;
+<a name="l00133"></a>00133     <span class="keywordflow">while</span> (last_useful + 1 &lt; (<span class="keywordtype">int</span>) prev_traj.size() &amp;&amp; prev_traj[last_useful + 1].start_time &lt; time_now) {
+<a name="l00134"></a>00134       ++last_useful;
+<a name="l00135"></a>00135     }
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137     <span class="keywordflow">if</span> (last_useful &lt; first_useful)
+<a name="l00138"></a>00138       first_useful = last_useful;
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140     <span class="comment">// Copies over the old segments that were determined to be useful.</span>
+<a name="l00141"></a>00141     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = std::max(first_useful, 0); i &lt;= last_useful; ++i) {
+<a name="l00142"></a>00142       new_traj.push_back(prev_traj[i]);
+<a name="l00143"></a>00143     }
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145     <span class="comment">// We always save the last segment so that we know where to stop if</span>
+<a name="l00146"></a>00146     <span class="comment">// there are no new segments.</span>
+<a name="l00147"></a>00147     <span class="keywordflow">if</span> (new_traj.size() == 0)
+<a name="l00148"></a>00148       new_traj.push_back(prev_traj[prev_traj.size() - 1]);
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150     <span class="comment">// ------ Determines when and where the new segments start</span>
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152     <span class="comment">// Finds the end conditions of the final segment</span>
+<a name="l00153"></a>00153     <a class="code" href="../../de/d88/structyoubot_1_1_segment.html" title="Joint trajectory segment.">Segment</a> &amp;last = new_traj[new_traj.size() - 1];
+<a name="l00154"></a>00154     <span class="keywordtype">double</span> prev_positions;
+<a name="l00155"></a>00155     <span class="keywordtype">double</span> prev_velocities;
+<a name="l00156"></a>00156     <span class="keywordtype">double</span> prev_accelerations;
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158     <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(debug) &lt;&lt; <span class="stringliteral">&quot;Initial conditions for new set of splines:&quot;</span>;
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160     sampleSplineWithTimeBounds(last.<a class="code" href="../../de/d88/structyoubot_1_1_segment.html#a888f77373ead6205ead06a7630abf459">spline</a>.<a class="code" href="../../d1/d38/structyoubot_1_1_spline.html#a8b1f0a33c10ed9414edd4a91e2299617">coef</a>, (<span class="keywordtype">double</span>)last.<a class="code" href="../../de/d88/structyoubot_1_1_segment.html#a388d6950cae337c3325d184116babf18">duration</a>.total_microseconds()/1000.0/1000.0,
+<a name="l00161"></a>00161             (double)last.<a class="code" href="../../de/d88/structyoubot_1_1_segment.html#a6bdbb233c9b9b359f533b5f721d0729d">start_time</a>.time_of_day().total_microseconds()/1000.0/1000.0,
+<a name="l00162"></a>00162             prev_positions, prev_velocities, prev_accelerations);
+<a name="l00163"></a>00163     <span class="comment">//  ROS_DEBUG(&quot;    %.2lf, %.2lf, %.2lf  (%s)&quot;, prev_positions[i], prev_velocities[i],</span>
+<a name="l00164"></a>00164     <span class="comment">//            prev_accelerations[i], joints_[i]-&gt;joint_-&gt;name.c_str());</span>
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167     <span class="comment">// ------ Tacks on the new segments</span>
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170     <span class="keywordtype">double</span> positions;
+<a name="l00171"></a>00171     <span class="keywordtype">double</span> velocities;
+<a name="l00172"></a>00172     <span class="keywordtype">double</span> accelerations;
 <a name="l00173"></a>00173 
-<a name="l00174"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#af29ae210987316ddbc33068551bb9120">00174</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#af29ae210987316ddbc33068551bb9120">JointTrajectoryController::cancelCurrentTrajectory</a>() {
-<a name="l00175"></a>00175   <span class="comment">// Bouml preserved body begin 000F0771</span>
-<a name="l00176"></a>00176    <span class="keywordflow">if</span> (trajectoryPositionsBuffer1InUse == <span class="keyword">true</span>) {
-<a name="l00177"></a>00177       {
-<a name="l00178"></a>00178         boost::mutex::scoped_lock dataMutex1(trajectoryPositionsBuffer1Mutex);
-<a name="l00179"></a>00179         this-&gt;trajectoryPositionsBuffer1.clear();
-<a name="l00180"></a>00180 
-<a name="l00181"></a>00181       }
-<a name="l00182"></a>00182     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (trajectoryPositionsBuffer2InUse == <span class="keyword">true</span>) {
-<a name="l00183"></a>00183       {
-<a name="l00184"></a>00184         boost::mutex::scoped_lock dataMutex2(trajectoryPositionsBuffer2Mutex);
-<a name="l00185"></a>00185         this-&gt;trajectoryPositionsBuffer2.clear();
-<a name="l00186"></a>00186       }
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175 
+<a name="l00176"></a>00176     std::vector&lt;boost::posix_time::time_duration&gt; durations;
+<a name="l00177"></a>00177     durations.push_back(input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>[0].time_from_start);
+<a name="l00178"></a>00178 
+<a name="l00179"></a>00179     <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 1; i &lt; input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>.size(); ++i)
+<a name="l00180"></a>00180       durations.push_back(input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>[i].time_from_start - input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>[i - 1].time_from_start);
+<a name="l00181"></a>00181 
+<a name="l00182"></a>00182     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>.size(); ++i) {
+<a name="l00183"></a>00183       <a class="code" href="../../de/d88/structyoubot_1_1_segment.html" title="Joint trajectory segment.">Segment</a> seg;
+<a name="l00184"></a>00184 
+<a name="l00185"></a>00185       seg.<a class="code" href="../../de/d88/structyoubot_1_1_segment.html#a6bdbb233c9b9b359f533b5f721d0729d">start_time</a> = input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a6bdbb233c9b9b359f533b5f721d0729d">start_time</a> + input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>[i].time_from_start;
+<a name="l00186"></a>00186       seg.<a class="code" href="../../de/d88/structyoubot_1_1_segment.html#a388d6950cae337c3325d184116babf18">duration</a> = durations[i];
 <a name="l00187"></a>00187 
-<a name="l00188"></a>00188     } <span class="keywordflow">else</span> {
-<a name="l00189"></a>00189       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; <span class="stringliteral">&quot;Could not cancel the trajectory!&quot;</span>;
-<a name="l00190"></a>00190     }
-<a name="l00191"></a>00191   <span class="comment">// Bouml preserved body end 000F0771</span>
-<a name="l00192"></a>00192 }
-<a name="l00193"></a>00193 
-<a name="l00194"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3">00194</a> <span class="keywordtype">bool</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3">JointTrajectoryController::isTrajectoryControllerActive</a>() {
-<a name="l00195"></a>00195   <span class="comment">// Bouml preserved body begin 000EECF1</span>
-<a name="l00196"></a>00196   <span class="keywordflow">return</span> this-&gt;isControllerActive;
-<a name="l00197"></a>00197   <span class="comment">// Bouml preserved body end 000EECF1</span>
-<a name="l00198"></a>00198 }
-<a name="l00199"></a>00199 
-<a name="l00200"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a204d215bf4585906fa71a91cc6693061">00200</a> <span class="keywordtype">bool</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a204d215bf4585906fa71a91cc6693061">JointTrajectoryController::updateTrajectoryController</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a>&amp; actual, <a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a>&amp; velocity) {
-<a name="l00201"></a>00201   <span class="comment">// Bouml preserved body begin 000EA271</span>
-<a name="l00202"></a>00202 
-<a name="l00203"></a>00203     {
-<a name="l00204"></a>00204       boost::mutex::scoped_lock dataMutex2(trajectoryPositionsBuffer1Mutex);
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206       <span class="keywordflow">if</span> (!trajectoryPositionsBuffer1.empty() &amp;&amp; !trajectoryPositionsBuffer1InUse &amp;&amp; !trajectoryPositionsBuffer2InUse) {
-<a name="l00207"></a>00207         trajectoryPositionsBuffer1InUse = <span class="keyword">true</span>;
-<a name="l00208"></a>00208       }
-<a name="l00209"></a>00209 
-<a name="l00210"></a>00210       <span class="keywordflow">if</span> (!trajectoryPositionsBuffer1.empty() &amp;&amp; trajectoryPositionsBuffer1InUse) {
-<a name="l00211"></a>00211         {
-<a name="l00212"></a>00212           boost::mutex::scoped_lock dataMutex(targetPositionMutex);
-<a name="l00213"></a>00213           targetPosition = (trajectoryPositionsBuffer1).front();
-<a name="l00214"></a>00214         }
-<a name="l00215"></a>00215         (trajectoryPositionsBuffer1).pop_front();
-<a name="l00216"></a>00216       } <span class="keywordflow">else</span> {
-<a name="l00217"></a>00217         trajectoryPositionsBuffer1InUse = <span class="keyword">false</span>;
-<a name="l00218"></a>00218       }
-<a name="l00219"></a>00219     }
-<a name="l00220"></a>00220     {
-<a name="l00221"></a>00221       boost::mutex::scoped_lock dataMutex2(trajectoryPositionsBuffer2Mutex);
-<a name="l00222"></a>00222       <span class="keywordflow">if</span> (!trajectoryPositionsBuffer2.empty() &amp;&amp; !trajectoryPositionsBuffer1InUse &amp;&amp; !trajectoryPositionsBuffer2InUse) {
-<a name="l00223"></a>00223         trajectoryPositionsBuffer2InUse = <span class="keyword">true</span>;
-<a name="l00224"></a>00224       }
-<a name="l00225"></a>00225 
-<a name="l00226"></a>00226       <span class="keywordflow">if</span> (!trajectoryPositionsBuffer2.empty() &amp;&amp; trajectoryPositionsBuffer2InUse) {
-<a name="l00227"></a>00227         {
-<a name="l00228"></a>00228           boost::mutex::scoped_lock dataMutex(targetPositionMutex);
-<a name="l00229"></a>00229           targetPosition = (trajectoryPositionsBuffer2).front();
-<a name="l00230"></a>00230         }
-<a name="l00231"></a>00231         (trajectoryPositionsBuffer2).pop_front();
-<a name="l00232"></a>00232       } <span class="keywordflow">else</span> {
-<a name="l00233"></a>00233         trajectoryPositionsBuffer2InUse = <span class="keyword">false</span>;
-<a name="l00234"></a>00234       }
-<a name="l00235"></a>00235     }
-<a name="l00236"></a>00236     
-<a name="l00237"></a>00237     
-<a name="l00238"></a>00238     <span class="keywordflow">if</span>(!trajectoryPositionsBuffer1InUse &amp;&amp; !trajectoryPositionsBuffer2InUse){
-<a name="l00239"></a>00239       this-&gt;isControllerActive = <span class="keyword">false</span>;
-<a name="l00240"></a>00240       <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00241"></a>00241     }
-<a name="l00242"></a>00242       
-<a name="l00243"></a>00243    <span class="comment"></span>
-<a name="l00244"></a>00244 <span class="comment">  ///////////////////////// Controller</span>
-<a name="l00245"></a>00245 <span class="comment"></span>  
-<a name="l00246"></a>00246     <a class="code" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> pose_diff;
-<a name="l00247"></a>00247     {
-<a name="l00248"></a>00248       boost::mutex::scoped_lock dataMutex(targetPositionMutex);
-<a name="l00249"></a>00249       pose_diff =  targetPosition - actual.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>;
-<a name="l00250"></a>00250     }
-<a name="l00251"></a>00251 
-<a name="l00252"></a>00252     <span class="keywordflow">if</span>(pose_diff &gt; pose_diff_clipping)
-<a name="l00253"></a>00253       pose_diff = pose_diff_clipping;
-<a name="l00254"></a>00254     
-<a name="l00255"></a>00255     <span class="keywordflow">if</span>(pose_diff &lt; -pose_diff_clipping)
-<a name="l00256"></a>00256       pose_diff = -pose_diff_clipping;
-<a name="l00257"></a>00257     
-<a name="l00258"></a>00258 
-<a name="l00259"></a>00259     this-&gt;ISum = this-&gt;ISum + pose_diff;
-<a name="l00260"></a>00260     
-<a name="l00261"></a>00261     <span class="keywordflow">if</span>(ISum &gt; ISum_clipping)
-<a name="l00262"></a>00262       ISum = ISum_clipping;
-<a name="l00263"></a>00263     
-<a name="l00264"></a>00264     <span class="keywordflow">if</span>(ISum &lt; -ISum_clipping)
-<a name="l00265"></a>00265       ISum = -ISum_clipping;
-<a name="l00266"></a>00266       
-<a name="l00267"></a>00267       
-<a name="l00268"></a>00268     this-&gt;DDiff = this-&gt;last_pose_diff - pose_diff;
-<a name="l00269"></a>00269     velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = ((this-&gt;PParameter/256.0) * pose_diff) + ((this-&gt;IParameter/65536.0)* this-&gt;ISum) + ((this-&gt;DParameter/256.0) * this-&gt;DDiff);
-<a name="l00270"></a>00270     this-&gt;last_pose_diff =  pose_diff;
-<a name="l00271"></a>00271     
-<a name="l00272"></a>00272     velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = VELOCITY_CONTROL;
-<a name="l00273"></a>00273   <span class="comment">//  printf(&quot;pose_target: %10d  pose_diff: %10d   velout: %10d\n&quot;,targetPosition, pose_diff, velocity.value);</span>
-<a name="l00274"></a>00274     
-<a name="l00275"></a>00275     this-&gt;isControllerActive = <span class="keyword">true</span>;
-<a name="l00276"></a>00276     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00277"></a>00277   <span class="comment">// Bouml preserved body end 000EA271</span>
-<a name="l00278"></a>00278 }
-<a name="l00279"></a>00279 
-<a name="l00280"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a346422a0624df037faf9b70e0268812b">00280</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a346422a0624df037faf9b70e0268812b">JointTrajectoryController::getLastTargetPosition</a>(<a class="code" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html" title="encoder ticks setpoint of the joint">JointEncoderSetpoint</a>&amp; position) {
-<a name="l00281"></a>00281   <span class="comment">// Bouml preserved body begin 000EED71</span>
-<a name="l00282"></a>00282   {
-<a name="l00283"></a>00283       boost::mutex::scoped_lock dataMutex(targetPositionMutex);
-<a name="l00284"></a>00284       position.<a class="code" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> = targetPosition;
-<a name="l00285"></a>00285   }
-<a name="l00286"></a>00286   <span class="comment">// Bouml preserved body end 000EED71</span>
-<a name="l00287"></a>00287 }
-<a name="l00288"></a>00288 
-<a name="l00289"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ab3d038a793b2787348b1b9b5549518ba">00289</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ab3d038a793b2787348b1b9b5549518ba">JointTrajectoryController::getControllerUpdatesPerSecond</a>() {
-<a name="l00290"></a>00290   <span class="comment">// Bouml preserved body begin 000F40F1</span>
-<a name="l00291"></a>00291   <span class="keywordflow">return</span> this-&gt;controllerUpdatesPerSecond;
-<a name="l00292"></a>00292   <span class="comment">// Bouml preserved body end 000F40F1</span>
-<a name="l00293"></a>00293 }
-<a name="l00294"></a>00294 
-<a name="l00295"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a36c1fc71260607f17a01530d21006633">00295</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a36c1fc71260607f17a01530d21006633">JointTrajectoryController::setControllerUpdatesPerSecond</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> updates) {
-<a name="l00296"></a>00296   <span class="comment">// Bouml preserved body begin 000F4171</span>
-<a name="l00297"></a>00297   this-&gt;controllerUpdatesPerSecond = updates;
-<a name="l00298"></a>00298   <span class="comment">// Bouml preserved body end 000F4171</span>
-<a name="l00299"></a>00299 }
-<a name="l00300"></a>00300 
-<a name="l00301"></a>00301 
-<a name="l00302"></a>00302 } <span class="comment">// namespace youbot</span>
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189       positions = input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>[i].positions.value();
+<a name="l00190"></a>00190       velocities = input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>[i].velocities.value();
+<a name="l00191"></a>00191       accelerations = input_traj.<a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>[i].accelerations.value();
+<a name="l00192"></a>00192 
+<a name="l00193"></a>00193       <span class="comment">// Converts the boundary conditions to splines.</span>
+<a name="l00194"></a>00194 
+<a name="l00195"></a>00195       <span class="comment">//   if (prev_accelerations.size() &gt; 0 &amp;&amp; accelerations.size() &gt; 0)</span>
+<a name="l00196"></a>00196       <span class="comment">//   {</span>
+<a name="l00197"></a>00197       getQuinticSplineCoefficients(
+<a name="l00198"></a>00198               prev_positions, prev_velocities, prev_accelerations,
+<a name="l00199"></a>00199               positions, velocities, accelerations,
+<a name="l00200"></a>00200               (<span class="keywordtype">double</span>)durations[i].total_microseconds()/1000.0/1000.0,
+<a name="l00201"></a>00201               seg.<a class="code" href="../../de/d88/structyoubot_1_1_segment.html#a888f77373ead6205ead06a7630abf459">spline</a>.<a class="code" href="../../d1/d38/structyoubot_1_1_spline.html#a8b1f0a33c10ed9414edd4a91e2299617">coef</a>);
+<a name="l00202"></a>00202       <span class="comment">/*</span>
+<a name="l00203"></a>00203 <span class="comment">    }</span>
+<a name="l00204"></a>00204 <span class="comment">    else if (prev_velocities.size() &gt; 0 &amp;&amp; velocities.size() &gt; 0)</span>
+<a name="l00205"></a>00205 <span class="comment">    {</span>
+<a name="l00206"></a>00206 <span class="comment">      getCubicSplineCoefficients(</span>
+<a name="l00207"></a>00207 <span class="comment">        prev_positions[j], prev_velocities[j],</span>
+<a name="l00208"></a>00208 <span class="comment">        positions[j], velocities[j],</span>
+<a name="l00209"></a>00209 <span class="comment">        durations[i],</span>
+<a name="l00210"></a>00210 <span class="comment">        seg.splines[j].coef);</span>
+<a name="l00211"></a>00211 <span class="comment">      seg.splines[j].coef.resize(6, 0.0);</span>
+<a name="l00212"></a>00212 <span class="comment">    }</span>
+<a name="l00213"></a>00213 <span class="comment">    else</span>
+<a name="l00214"></a>00214 <span class="comment">    {</span>
+<a name="l00215"></a>00215 <span class="comment">      seg.splines[j].coef[0] = prev_positions[j];</span>
+<a name="l00216"></a>00216 <span class="comment">      if (durations[i] == 0.0)</span>
+<a name="l00217"></a>00217 <span class="comment">        seg.splines[j].coef[1] = 0.0;</span>
+<a name="l00218"></a>00218 <span class="comment">      else</span>
+<a name="l00219"></a>00219 <span class="comment">        seg.splines[j].coef[1] = (positions[j] - prev_positions[j]) / durations[i];</span>
+<a name="l00220"></a>00220 <span class="comment">      seg.splines[j].coef[2] = 0.0;</span>
+<a name="l00221"></a>00221 <span class="comment">      seg.splines[j].coef[3] = 0.0;</span>
+<a name="l00222"></a>00222 <span class="comment">      seg.splines[j].coef[4] = 0.0;</span>
+<a name="l00223"></a>00223 <span class="comment">      seg.splines[j].coef[5] = 0.0;</span>
+<a name="l00224"></a>00224 <span class="comment">    }</span>
+<a name="l00225"></a>00225 <span class="comment">       */</span>
+<a name="l00226"></a>00226 
+<a name="l00227"></a>00227       <span class="comment">// Pushes the splines onto the end of the new trajectory.</span>
+<a name="l00228"></a>00228 
+<a name="l00229"></a>00229       new_traj.push_back(seg);
+<a name="l00230"></a>00230 
+<a name="l00231"></a>00231       <span class="comment">// Computes the starting conditions for the next segment</span>
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233       prev_positions = positions;
+<a name="l00234"></a>00234       prev_velocities = velocities;
+<a name="l00235"></a>00235       prev_accelerations = accelerations;
+<a name="l00236"></a>00236     }
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238     <span class="comment">// ------ Commits the new trajectory</span>
+<a name="l00239"></a>00239 
+<a name="l00240"></a>00240     <span class="keywordflow">if</span> (!new_traj_ptr) {
+<a name="l00241"></a>00241       <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;The new trajectory was null!&quot;</span>);
+<a name="l00242"></a>00242       <span class="keywordflow">return</span>;
+<a name="l00243"></a>00243     }
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245     current_trajectory_box_.<a class="code" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(new_traj_ptr);
+<a name="l00246"></a>00246     <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(debug) &lt;&lt; <span class="stringliteral">&quot;The new trajectory has &quot;</span> &lt;&lt; new_traj.size() &lt;&lt; <span class="stringliteral">&quot; segments&quot;</span>;
+<a name="l00247"></a>00247     this-&gt;isControllerActive = <span class="keyword">true</span>;
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249   }
+<a name="l00250"></a>00250 
+<a name="l00251"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#af29ae210987316ddbc33068551bb9120">00251</a>   <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#af29ae210987316ddbc33068551bb9120">JointTrajectoryController::cancelCurrentTrajectory</a>() {
+<a name="l00252"></a>00252     <span class="comment">// Creates a dummy trajectory</span>
+<a name="l00253"></a>00253     boost::shared_ptr&lt;SpecifiedTrajectory&gt; traj_ptr(<span class="keyword">new</span> SpecifiedTrajectory(1));
+<a name="l00254"></a>00254     SpecifiedTrajectory &amp;traj = *traj_ptr;
+<a name="l00255"></a>00255     traj[0].start_time = boost::posix_time::microsec_clock::local_time();
+<a name="l00256"></a>00256     traj[0].duration = boost::posix_time::microseconds(0);
+<a name="l00257"></a>00257     <span class="comment">//traj[0].splines.coef[0] = 0.0;</span>
+<a name="l00258"></a>00258     current_trajectory_box_.<a class="code" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a6c00d55b920ec29b410c4a084e823fdf" title="Set the data to a certain value (non blocking).">Set</a>(traj_ptr);
+<a name="l00259"></a>00259     <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <span class="stringliteral">&quot;Trajectory has been canceled&quot;</span>;
+<a name="l00260"></a>00260   }
+<a name="l00261"></a>00261 
+<a name="l00262"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3">00262</a>   <span class="keywordtype">bool</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3">JointTrajectoryController::isTrajectoryControllerActive</a>() {
+<a name="l00263"></a>00263     <span class="keywordflow">return</span> this-&gt;isControllerActive;
+<a name="l00264"></a>00264   }
+<a name="l00265"></a>00265 
+<a name="l00266"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a204d215bf4585906fa71a91cc6693061">00266</a>   <span class="keywordtype">bool</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a204d215bf4585906fa71a91cc6693061">JointTrajectoryController::updateTrajectoryController</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html" title="Input part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageInput</a>&amp; actual, <a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a>&amp; velocity) {
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268     time = boost::posix_time::microsec_clock::local_time();
+<a name="l00269"></a>00269     boost::posix_time::time_duration dt = time - last_time;
+<a name="l00270"></a>00270     last_time = time;
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272     boost::shared_ptr&lt;const SpecifiedTrajectory&gt; traj_ptr;
+<a name="l00273"></a>00273     current_trajectory_box_.<a class="code" href="../../dc/dbd/classyoubot_1_1_data_object_lock_free.html#a42e9a061d84f8646a92d807e9657a74c" title="Get a copy of the data.">Get</a>(traj_ptr);
+<a name="l00274"></a>00274     <span class="keywordflow">if</span> (!traj_ptr || !this-&gt;isControllerActive) {
+<a name="l00275"></a>00275       this-&gt;isControllerActive = <span class="keyword">false</span>;
+<a name="l00276"></a>00276       <span class="comment">//   LOG(error) &lt;&lt; &quot;The current trajectory can never be null&quot;;</span>
+<a name="l00277"></a>00277       <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00278"></a>00278     }
+<a name="l00279"></a>00279     
+<a name="l00280"></a>00280     <span class="comment">// Only because this is what the code originally looked like.</span>
+<a name="l00281"></a>00281     <span class="keyword">const</span> SpecifiedTrajectory &amp;traj = *traj_ptr;
+<a name="l00282"></a>00282 
+<a name="l00283"></a>00283 
+<a name="l00284"></a>00284     <span class="comment">// Determines which segment of the trajectory to use.  (Not particularly realtime friendly).</span>
+<a name="l00285"></a>00285     <span class="keywordtype">int</span> seg = -1;
+<a name="l00286"></a>00286     <span class="keywordflow">while</span> (seg + 1 &lt; (<span class="keywordtype">int</span>) traj.size() &amp;&amp; traj[seg + 1].start_time &lt; time) {
+<a name="l00287"></a>00287       ++seg;
+<a name="l00288"></a>00288     }
+<a name="l00289"></a>00289 
+<a name="l00290"></a>00290     <span class="keywordflow">if</span> (seg == -1) {
+<a name="l00291"></a>00291       <span class="keywordflow">if</span> (traj.size() == 0)
+<a name="l00292"></a>00292         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; <span class="stringliteral">&quot;No segments in the trajectory&quot;</span>;
+<a name="l00293"></a>00293       <span class="keywordflow">else</span>
+<a name="l00294"></a>00294         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; <span class="stringliteral">&quot;No earlier segments.&quot;</span>;
+<a name="l00295"></a>00295       <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00296"></a>00296     }
+<a name="l00297"></a>00297     <span class="keywordflow">if</span>(seg == (<span class="keywordtype">int</span>) traj.size()-1 &amp;&amp; (traj[seg].start_time + traj[seg].duration)  &lt; time){
+<a name="l00298"></a>00298       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <span class="stringliteral">&quot;trajectory finished.&quot;</span>;
+<a name="l00299"></a>00299       this-&gt;isControllerActive = <span class="keyword">false</span>;
+<a name="l00300"></a>00300       velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = 0;
+<a name="l00301"></a>00301       velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = VELOCITY_CONTROL;
+<a name="l00302"></a>00302       <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00303"></a>00303     }
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305     <span class="comment">// ------ Trajectory Sampling</span>
+<a name="l00306"></a>00306     duration = (double)traj[seg].duration.total_microseconds()/1000.0/1000.0; <span class="comment">//convert to seconds</span>
+<a name="l00307"></a>00307     time_till_seg_start = (double)(time - traj[seg].start_time).total_microseconds()/1000.0/1000.0;
+<a name="l00308"></a>00308 
+<a name="l00309"></a>00309     sampleSplineWithTimeBounds(traj[seg].spline.coef, duration, time_till_seg_start, targetPosition, targetVelocity, targetAcceleration);
+<a name="l00310"></a>00310 
+<a name="l00311"></a>00311 
+<a name="l00312"></a>00312     <span class="keywordflow">if</span>(inverseDirection){
+<a name="l00313"></a>00313       actualpose = -actual.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>;
+<a name="l00314"></a>00314       actualvel = -actual.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a>;
+<a name="l00315"></a>00315     }<span class="keywordflow">else</span>{
+<a name="l00316"></a>00316       actualpose = actual.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a>;
+<a name="l00317"></a>00317       actualvel = actual.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a035aad0e5f882ba9eaf8ee2c1b9e01c9">actualVelocity</a>;
+<a name="l00318"></a>00318     }
+<a name="l00319"></a>00319     <span class="comment">// ------ Trajectory Following</span>
+<a name="l00320"></a>00320     pose_error = ((actualpose / encoderTicksPerRound) * gearRatio * (2.0 * M_PI)) - targetPosition;
+<a name="l00321"></a>00321     velocity_error = ((actualvel/ 60.0) * gearRatio * 2.0 * M_PI) - targetVelocity ;
+<a name="l00322"></a>00322 
+<a name="l00323"></a>00323     velsetpoint = pid.<a class="code" href="../../d9/d8d/classyoubot_1_1_pid_controller.html#af02615e7bfbad23d89f98936edc8056c" title="Update the Pid loop with nonuniform time step size.">updatePid</a>(pose_error, velocity_error, dt);
+<a name="l00324"></a>00324 
+<a name="l00325"></a>00325     velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = (<a class="code" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a>) round((velsetpoint / (gearRatio * 2.0 * M_PI)) * 60.0);
+<a name="l00326"></a>00326 
+<a name="l00327"></a>00327     velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = VELOCITY_CONTROL;
+<a name="l00328"></a>00328     
+<a name="l00329"></a>00329     <span class="keywordflow">if</span>(inverseDirection){
+<a name="l00330"></a>00330       velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = -velocity.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a>;
+<a name="l00331"></a>00331     }
+<a name="l00332"></a>00332     
+<a name="l00333"></a>00333     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00334"></a>00334 
+<a name="l00335"></a>00335   }
+<a name="l00336"></a>00336 
+<a name="l00337"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aea3ebd6ee92fb4e86b7812ab080bd215">00337</a>   <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aea3ebd6ee92fb4e86b7812ab080bd215">JointTrajectoryController::getLastTargetPosition</a>(<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html" title="Set-point angle / position of the joint.">JointAngleSetpoint</a>&amp; position) {
+<a name="l00338"></a>00338 
+<a name="l00339"></a>00339     position.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = targetPosition* radian;
+<a name="l00340"></a>00340 
+<a name="l00341"></a>00341   }
+<a name="l00342"></a>00342 
+<a name="l00343"></a><a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a72064babdd60d72a2688a8695270f7a1">00343</a>   <span class="keywordtype">void</span> <a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a72064babdd60d72a2688a8695270f7a1">JointTrajectoryController::getLastTargetVelocity</a>(<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html" title="Set-point velocity of the joint.">JointVelocitySetpoint</a>&amp; velocity) {
+<a name="l00344"></a>00344     velocity.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = targetVelocity *radian_per_second;
+<a name="l00345"></a>00345   }
+<a name="l00346"></a>00346 
+<a name="l00347"></a>00347   <span class="keywordtype">void</span> JointTrajectoryController::getQuinticSplineCoefficients(<span class="keyword">const</span> <span class="keywordtype">double</span> start_pos, <span class="keyword">const</span> <span class="keywordtype">double</span> start_vel, <span class="keyword">const</span> <span class="keywordtype">double</span> start_acc, <span class="keyword">const</span> <span class="keywordtype">double</span> end_pos, <span class="keyword">const</span> <span class="keywordtype">double</span> end_vel, <span class="keyword">const</span> <span class="keywordtype">double</span> end_acc, <span class="keyword">const</span> <span class="keywordtype">double</span> time, std::vector&lt;double&gt;&amp; coefficients) {
+<a name="l00348"></a>00348 
+<a name="l00349"></a>00349     coefficients.resize(6);
+<a name="l00350"></a>00350 
+<a name="l00351"></a>00351     <span class="keywordflow">if</span> (time == 0.0) {
+<a name="l00352"></a>00352       coefficients[0] = end_pos;
+<a name="l00353"></a>00353       coefficients[1] = end_vel;
+<a name="l00354"></a>00354       coefficients[2] = 0.5 * end_acc;
+<a name="l00355"></a>00355       coefficients[3] = 0.0;
+<a name="l00356"></a>00356       coefficients[4] = 0.0;
+<a name="l00357"></a>00357       coefficients[5] = 0.0;
+<a name="l00358"></a>00358     } <span class="keywordflow">else</span> {
+<a name="l00359"></a>00359       <span class="keywordtype">double</span> T[6];
+<a name="l00360"></a>00360       generatePowers(5, time, T);
+<a name="l00361"></a>00361 
+<a name="l00362"></a>00362       coefficients[0] = start_pos;
+<a name="l00363"></a>00363       coefficients[1] = start_vel;
+<a name="l00364"></a>00364       coefficients[2] = 0.5 * start_acc;
+<a name="l00365"></a>00365       coefficients[3] = (-20.0 * start_pos + 20.0 * end_pos - 3.0 * start_acc * T[2] + end_acc * T[2] -
+<a name="l00366"></a>00366               12.0 * start_vel * T[1] - 8.0 * end_vel * T[1]) / (2.0 * T[3]);
+<a name="l00367"></a>00367       coefficients[4] = (30.0 * start_pos - 30.0 * end_pos + 3.0 * start_acc * T[2] - 2.0 * end_acc * T[2] +
+<a name="l00368"></a>00368               16.0 * start_vel * T[1] + 14.0 * end_vel * T[1]) / (2.0 * T[4]);
+<a name="l00369"></a>00369       coefficients[5] = (-12.0 * start_pos + 12.0 * end_pos - start_acc * T[2] + end_acc * T[2] -
+<a name="l00370"></a>00370               6.0 * start_vel * T[1] - 6.0 * end_vel * T[1]) / (2.0 * T[5]);
+<a name="l00371"></a>00371     }
+<a name="l00372"></a>00372 
+<a name="l00373"></a>00373   }
+<a name="l00374"></a>00374 
+<a name="l00375"></a>00375   <span class="keywordtype">void</span> JointTrajectoryController::sampleQuinticSpline(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; coefficients, <span class="keyword">const</span> <span class="keywordtype">double</span> time, <span class="keywordtype">double</span>&amp; position, <span class="keywordtype">double</span>&amp; velocity, <span class="keywordtype">double</span>&amp; acceleration) {
+<a name="l00376"></a>00376 
+<a name="l00377"></a>00377     <span class="comment">// create powers of time:</span>
+<a name="l00378"></a>00378     <span class="keywordtype">double</span> t[6];
+<a name="l00379"></a>00379     generatePowers(5, time, t);
+<a name="l00380"></a>00380 
+<a name="l00381"></a>00381     position = t[0] * coefficients[0] +
+<a name="l00382"></a>00382             t[1] * coefficients[1] +
+<a name="l00383"></a>00383             t[2] * coefficients[2] +
+<a name="l00384"></a>00384             t[3] * coefficients[3] +
+<a name="l00385"></a>00385             t[4] * coefficients[4] +
+<a name="l00386"></a>00386             t[5] * coefficients[5];
+<a name="l00387"></a>00387 
+<a name="l00388"></a>00388     velocity = t[0] * coefficients[1] +
+<a name="l00389"></a>00389             2.0 * t[1] * coefficients[2] +
+<a name="l00390"></a>00390             3.0 * t[2] * coefficients[3] +
+<a name="l00391"></a>00391             4.0 * t[3] * coefficients[4] +
+<a name="l00392"></a>00392             5.0 * t[4] * coefficients[5];
+<a name="l00393"></a>00393 
+<a name="l00394"></a>00394     acceleration = 2.0 * t[0] * coefficients[2] +
+<a name="l00395"></a>00395             6.0 * t[1] * coefficients[3] +
+<a name="l00396"></a>00396             12.0 * t[2] * coefficients[4] +
+<a name="l00397"></a>00397             20.0 * t[3] * coefficients[5];
+<a name="l00398"></a>00398 
+<a name="l00399"></a>00399   }
+<a name="l00400"></a>00400 
+<a name="l00401"></a>00401   <span class="keywordtype">void</span> JointTrajectoryController::getCubicSplineCoefficients(<span class="keyword">const</span> <span class="keywordtype">double</span> start_pos, <span class="keyword">const</span> <span class="keywordtype">double</span> start_vel, <span class="keyword">const</span> <span class="keywordtype">double</span> end_pos, <span class="keyword">const</span> <span class="keywordtype">double</span> end_vel, <span class="keyword">const</span> <span class="keywordtype">double</span> time, std::vector&lt;double&gt;&amp; coefficients) {
+<a name="l00402"></a>00402 
+<a name="l00403"></a>00403     coefficients.resize(4);
+<a name="l00404"></a>00404 
+<a name="l00405"></a>00405     <span class="keywordflow">if</span> (time == 0.0) {
+<a name="l00406"></a>00406       coefficients[0] = end_pos;
+<a name="l00407"></a>00407       coefficients[1] = end_vel;
+<a name="l00408"></a>00408       coefficients[2] = 0.0;
+<a name="l00409"></a>00409       coefficients[3] = 0.0;
+<a name="l00410"></a>00410     } <span class="keywordflow">else</span> {
+<a name="l00411"></a>00411       <span class="keywordtype">double</span> T[4];
+<a name="l00412"></a>00412       generatePowers(3, time, T);
+<a name="l00413"></a>00413 
+<a name="l00414"></a>00414       coefficients[0] = start_pos;
+<a name="l00415"></a>00415       coefficients[1] = start_vel;
+<a name="l00416"></a>00416       coefficients[2] = (-3.0 * start_pos + 3.0 * end_pos - 2.0 * start_vel * T[1] - end_vel * T[1]) / T[2];
+<a name="l00417"></a>00417       coefficients[3] = (2.0 * start_pos - 2.0 * end_pos + start_vel * T[1] + end_vel * T[1]) / T[3];
+<a name="l00418"></a>00418     }
+<a name="l00419"></a>00419 
+<a name="l00420"></a>00420   }
+<a name="l00421"></a>00421 
+<a name="l00422"></a>00422   <span class="keywordtype">void</span> JointTrajectoryController::generatePowers(<span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keyword">const</span> <span class="keywordtype">double</span> x, <span class="keywordtype">double</span>* powers) {
+<a name="l00423"></a>00423 
+<a name="l00424"></a>00424     powers[0] = 1.0;
+<a name="l00425"></a>00425     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= n; i++) {
+<a name="l00426"></a>00426       powers[i] = powers[i - 1] * x;
+<a name="l00427"></a>00427     }
+<a name="l00428"></a>00428 
+<a name="l00429"></a>00429   }
+<a name="l00430"></a>00430 
+<a name="l00431"></a>00431   <span class="keywordtype">void</span> JointTrajectoryController::sampleSplineWithTimeBounds(<span class="keyword">const</span> std::vector&lt;double&gt;&amp; coefficients, <span class="keyword">const</span> <span class="keywordtype">double</span> duration, <span class="keyword">const</span> <span class="keywordtype">double</span> time, <span class="keywordtype">double</span>&amp; position, <span class="keywordtype">double</span>&amp; velocity, <span class="keywordtype">double</span>&amp; acceleration) {
+<a name="l00432"></a>00432 
+<a name="l00433"></a>00433     <span class="keywordflow">if</span> (time &lt; 0) {
+<a name="l00434"></a>00434       <span class="keywordtype">double</span> _;
+<a name="l00435"></a>00435       sampleQuinticSpline(coefficients, 0.0, position, _, _);
+<a name="l00436"></a>00436       velocity = 0;
+<a name="l00437"></a>00437       acceleration = 0;
+<a name="l00438"></a>00438     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (time &gt; duration) {
+<a name="l00439"></a>00439       <span class="keywordtype">double</span> _;
+<a name="l00440"></a>00440       sampleQuinticSpline(coefficients, duration, position, _, _);
+<a name="l00441"></a>00441       velocity = 0;
+<a name="l00442"></a>00442       acceleration = 0;
+<a name="l00443"></a>00443     } <span class="keywordflow">else</span> {
+<a name="l00444"></a>00444       sampleQuinticSpline(coefficients, time,
+<a name="l00445"></a>00445               position, velocity, acceleration);
+<a name="l00446"></a>00446     }
+<a name="l00447"></a>00447 
+<a name="l00448"></a>00448   }
+<a name="l00449"></a>00449 
+<a name="l00450"></a>00450 
+<a name="l00451"></a>00451 } <span class="comment">// namespace youbot</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

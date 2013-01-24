@@ -1,6 +1,8 @@
 <map id="G" name="G">
 <area shape="rect" href="$db/d8b/classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a917d5cbbc7ba5c502ba5fa2b9f1c6917" title="youbot::YouBotSlaveMsgThreadSafe::operator=" alt="" coords="247,5,545,35"/>
 <area shape="rect" href="$d7/dfe/classyoubot_1_1_you_bot_slave_mailbox_msg_thread_safe.html#a4239f5cab5de981d34f9bce7404b7eb0" title="youbot::YouBotSlaveMailboxMsgThreadSafe::operator=" alt="" coords="224,59,568,88"/>
-<area shape="rect" href="$d7/dfe/classyoubot_1_1_you_bot_slave_mailbox_msg_thread_safe.html#aeb696b6491f691a00055d54c5985fa16" title="youbot::YouBotSlaveMailboxMsgThreadSafe::YouBotSlaveMailboxMsgThreadSafe" alt="" coords="147,112,645,141"/>
-<area shape="rect" href="$db/d8b/classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a1d283c646d84844e6fafa41bcebca843" title="youbot::YouBotSlaveMsgThreadSafe::YouBotSlaveMsgThreadSafe" alt="" coords="191,165,601,195"/>
+<area shape="rect" href="$d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ac0f02395e1a76b9d25e5842ea908549d" title="youbot::JointTrajectoryController::setTrajectory" alt="" coords="251,112,541,141"/>
+<area shape="rect" href="$d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a204d215bf4585906fa71a91cc6693061" title="youbot::JointTrajectoryController::updateTrajectoryController" alt="" coords="212,165,580,195"/>
+<area shape="rect" href="$d7/dfe/classyoubot_1_1_you_bot_slave_mailbox_msg_thread_safe.html#aeb696b6491f691a00055d54c5985fa16" title="youbot::YouBotSlaveMailboxMsgThreadSafe::YouBotSlaveMailboxMsgThreadSafe" alt="" coords="147,219,645,248"/>
+<area shape="rect" href="$db/d8b/classyoubot_1_1_you_bot_slave_msg_thread_safe.html#a1d283c646d84844e6fafa41bcebca843" title="youbot::YouBotSlaveMsgThreadSafe::YouBotSlaveMsgThreadSafe" alt="" coords="191,272,601,301"/>
 </map>

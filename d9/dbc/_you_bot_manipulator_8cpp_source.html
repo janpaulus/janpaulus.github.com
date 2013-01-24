@@ -128,664 +128,782 @@ window.onload = initDynSections;
 <a name="l00057"></a>00057 
 <a name="l00058"></a>00058     this-&gt;controllerType = 841;
 <a name="l00059"></a>00059     this-&gt;alternativeControllerType = 1610;
-<a name="l00060"></a>00060     this-&gt;minFirmwareVersion = 1.48;
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062     <span class="keywordtype">string</span> filename;
-<a name="l00063"></a>00063     filename = name;
-<a name="l00064"></a>00064     filename.append(<span class="stringliteral">&quot;.cfg&quot;</span>);
-<a name="l00065"></a>00065     useGripper = <span class="keyword">true</span>;
-<a name="l00066"></a>00066     configfile.reset(<span class="keyword">new</span> <a class="code" href="../../dd/d75/classyoubot_1_1_config_file.html" title="Reads and writes a configuration file.">ConfigFile</a>(filename, configFilePath));
-<a name="l00067"></a>00067     
-<a name="l00068"></a>00068     <span class="keywordflow">if</span>(ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
-<a name="l00069"></a>00069       ethercatMasterWithThread = <span class="keyword">static_cast&lt;</span><a class="code" href="../../d0/d0b/classyoubot_1_1_ethercat_master_with_thread.html" title="The Ethercat Master is managing the whole ethercat communication It have to be a...">EthercatMasterWithThread</a>*<span class="keyword">&gt;</span>(&amp;(<a class="code" href="../../da/d66/classyoubot_1_1_ethercat_master.html#a5eec05a2312d24b0ae3b0da92e832ff5" title="creates a instance of the singleton EthercatMaster if there is none and returns a...">EthercatMaster::getInstance</a>()));
-<a name="l00070"></a>00070     }<span class="keywordflow">else</span>{
-<a name="l00071"></a>00071       ethercatMasterWithThread = NULL;
-<a name="l00072"></a>00072     }
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074     this-&gt;initializeJoints();
-<a name="l00075"></a>00075     
+<a name="l00060"></a>00060     this-&gt;supportedFirmwareVersions.push_back(<span class="stringliteral">&quot;1.48&quot;</span>);
+<a name="l00061"></a>00061     this-&gt;supportedFirmwareVersions.push_back(<span class="stringliteral">&quot;148&quot;</span>);
+<a name="l00062"></a>00062     this-&gt;supportedFirmwareVersions.push_back(<span class="stringliteral">&quot;200&quot;</span>);
+<a name="l00063"></a>00063     this-&gt;actualFirmwareVersionAllJoints = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065     <span class="keywordtype">string</span> filename;
+<a name="l00066"></a>00066     filename = name;
+<a name="l00067"></a>00067     filename.append(<span class="stringliteral">&quot;.cfg&quot;</span>);
+<a name="l00068"></a>00068     useGripper = <span class="keyword">true</span>;
+<a name="l00069"></a>00069     configfile.reset(<span class="keyword">new</span> <a class="code" href="../../dd/d75/classyoubot_1_1_config_file.html" title="Reads and writes a configuration file.">ConfigFile</a>(filename, configFilePath));
+<a name="l00070"></a>00070     
+<a name="l00071"></a>00071     <span class="keywordflow">if</span>(ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
+<a name="l00072"></a>00072       ethercatMasterWithThread = <span class="keyword">static_cast&lt;</span><a class="code" href="../../d0/d0b/classyoubot_1_1_ethercat_master_with_thread.html" title="The Ethercat Master is managing the whole ethercat communication It have to be a...">EthercatMasterWithThread</a>*<span class="keyword">&gt;</span>(&amp;(<a class="code" href="../../da/d66/classyoubot_1_1_ethercat_master.html#a5eec05a2312d24b0ae3b0da92e832ff5" title="creates a instance of the singleton EthercatMaster if there is none and returns a...">EthercatMaster::getInstance</a>()));
+<a name="l00073"></a>00073     }<span class="keywordflow">else</span>{
+<a name="l00074"></a>00074       ethercatMasterWithThread = NULL;
+<a name="l00075"></a>00075     }
 <a name="l00076"></a>00076 
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078   <span class="comment">// Bouml preserved body end 00067F71</span>
-<a name="l00079"></a>00079 }
+<a name="l00077"></a>00077     this-&gt;initializeJoints();
+<a name="l00078"></a>00078     
+<a name="l00079"></a>00079 
 <a name="l00080"></a>00080 
-<a name="l00081"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ae1a39c6eaa5a05fd44f8d81129c85267">00081</a> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ae1a39c6eaa5a05fd44f8d81129c85267">YouBotManipulator::~YouBotManipulator</a>() {
-<a name="l00082"></a>00082   <span class="comment">// Bouml preserved body begin 00067FF1</span>
-<a name="l00083"></a>00083     <span class="keywordflow">if</span>(ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
-<a name="l00084"></a>00084       <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
-<a name="l00085"></a>00085         ethercatMasterWithThread-&gt;<a class="code" href="../../d0/d0b/classyoubot_1_1_ethercat_master_with_thread.html#a6affaf953d89c5f7a9696c306e26d63c">deleteJointTrajectoryControllerRegistration</a>(this-&gt;joints[i].getJointNumber());
-<a name="l00086"></a>00086       }
-<a name="l00087"></a>00087     }
-<a name="l00088"></a>00088   <span class="comment">// Bouml preserved body end 00067FF1</span>
-<a name="l00089"></a>00089 }
-<a name="l00090"></a>00090 <span class="comment"></span>
-<a name="l00091"></a>00091 <span class="comment">///does the sine commutation of the arm joints</span>
-<a name="l00092"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf">00092</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the arm joints">YouBotManipulator::doJointCommutation</a>() {
-<a name="l00093"></a>00093   <span class="comment">// Bouml preserved body begin 000A3371</span>
-<a name="l00094"></a>00094 
-<a name="l00095"></a>00095     <a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html" title="Initialize Joint.">InitializeJoint</a> doInitialization;
-<a name="l00096"></a>00096     <span class="keywordtype">bool</span> isInitialized = <span class="keyword">false</span>;
-<a name="l00097"></a>00097     <span class="keywordtype">int</span> noInitialization = 0;
-<a name="l00098"></a>00098     std::string jointName;
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101     <a class="code" href="../../df/d58/classyoubot_1_1_clear_motor_controller_timeout_flag.html" title="Clear the flag that indicates a communication timeout between the EtherCAT master...">ClearMotorControllerTimeoutFlag</a> clearTimeoutFlag;
-<a name="l00102"></a>00102     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
-<a name="l00103"></a>00103       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
-<a name="l00104"></a>00104     }
-<a name="l00105"></a>00105 
-<a name="l00106"></a>00106     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
-<a name="l00107"></a>00107       doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(<span class="keyword">false</span>);
-<a name="l00108"></a>00108       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0">getConfigurationParameter</a>(doInitialization);
-<a name="l00109"></a>00109       doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a100505a5d6f738b37e62ebb8aca7956b">getParameter</a>(isInitialized);
-<a name="l00110"></a>00110       <span class="keywordflow">if</span> (!isInitialized) {
-<a name="l00111"></a>00111         noInitialization++;
-<a name="l00112"></a>00112       }
-<a name="l00113"></a>00113     }
-<a name="l00114"></a>00114 
-<a name="l00115"></a>00115     <span class="keywordflow">if</span> (noInitialization != 0) {
-<a name="l00116"></a>00116       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Manipulator Joint Commutation&quot;</span>;
-<a name="l00117"></a>00117       doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(<span class="keyword">true</span>);
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119       ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
-<a name="l00120"></a>00120       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(1).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(doInitialization);
-<a name="l00121"></a>00121       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(2).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(doInitialization);
-<a name="l00122"></a>00122       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(3).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(doInitialization);
-<a name="l00123"></a>00123       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(4).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(doInitialization);
-<a name="l00124"></a>00124       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(5).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(doInitialization);
-<a name="l00125"></a>00125       ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
+<a name="l00081"></a>00081   <span class="comment">// Bouml preserved body end 00067F71</span>
+<a name="l00082"></a>00082 }
+<a name="l00083"></a>00083 
+<a name="l00084"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ae1a39c6eaa5a05fd44f8d81129c85267">00084</a> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ae1a39c6eaa5a05fd44f8d81129c85267">YouBotManipulator::~YouBotManipulator</a>() {
+<a name="l00085"></a>00085   <span class="comment">// Bouml preserved body begin 00067FF1</span>
+<a name="l00086"></a>00086     <span class="keywordflow">if</span>(ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
+<a name="l00087"></a>00087       <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00088"></a>00088         ethercatMasterWithThread-&gt;<a class="code" href="../../d0/d0b/classyoubot_1_1_ethercat_master_with_thread.html#a6affaf953d89c5f7a9696c306e26d63c">deleteJointTrajectoryControllerRegistration</a>(this-&gt;joints[i].getJointNumber());
+<a name="l00089"></a>00089       }
+<a name="l00090"></a>00090     }
+<a name="l00091"></a>00091   <span class="comment">// Bouml preserved body end 00067FF1</span>
+<a name="l00092"></a>00092 }
+<a name="l00093"></a>00093 <span class="comment"></span>
+<a name="l00094"></a>00094 <span class="comment">///does the sine commutation of the arm joints</span>
+<a name="l00095"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf">00095</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the arm joints">YouBotManipulator::doJointCommutation</a>() {
+<a name="l00096"></a>00096   <span class="comment">// Bouml preserved body begin 000A3371</span>
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098   <span class="keywordflow">if</span>(this-&gt;actualFirmwareVersionAllJoints == <span class="stringliteral">&quot;1.48&quot;</span>  || this-&gt;actualFirmwareVersionAllJoints == <span class="stringliteral">&quot;148&quot;</span>){
+<a name="l00099"></a>00099     this-&gt;commutationFirmware148();
+<a name="l00100"></a>00100   }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;actualFirmwareVersionAllJoints == <span class="stringliteral">&quot;200&quot;</span> ){
+<a name="l00101"></a>00101     this-&gt;commutationFirmware200();
+<a name="l00102"></a>00102   }<span class="keywordflow">else</span>{
+<a name="l00103"></a>00103     <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Unable to commutate joints - Unsupported firmware version!&quot;</span>);
+<a name="l00104"></a>00104   }
+<a name="l00105"></a>00105   <span class="comment">// Bouml preserved body end 000A3371</span>
+<a name="l00106"></a>00106 }
+<a name="l00107"></a>00107 <span class="comment"></span>
+<a name="l00108"></a>00108 <span class="comment">///calibrate the reference position of the arm joints</span>
+<a name="l00109"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ab3f30636f1a69db85ec8b84f935db659">00109</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ab3f30636f1a69db85ec8b84f935db659" title="calibrate the reference position of the arm joints">YouBotManipulator::calibrateManipulator</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> forceCalibration) {
+<a name="l00110"></a>00110   <span class="comment">// Bouml preserved body begin 000A9C71</span>
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112     <span class="comment">//Calibrate all manipulator joints</span>
+<a name="l00113"></a>00113     std::vector&lt;JointRoundsPerMinuteSetpoint&gt; calibrationVel;
+<a name="l00114"></a>00114     <a class="code" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html" title="Rounds per minute set-point of the joint.">JointRoundsPerMinuteSetpoint</a> tempdummy;
+<a name="l00115"></a>00115     tempdummy.<a class="code" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html#a5d7afecfc9d91f67b0ad7c56202006f6">rpm</a> = 0;
+<a name="l00116"></a>00116     calibrationVel.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, tempdummy);
+<a name="l00117"></a>00117     std::vector&lt;quantity&lt;si::current&gt; &gt; maxCurrent;
+<a name="l00118"></a>00118     quantity&lt;si::current&gt; tempdummy2;
+<a name="l00119"></a>00119     maxCurrent.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, tempdummy2);
+<a name="l00120"></a>00120     std::vector&lt;bool&gt; doCalibration;
+<a name="l00121"></a>00121     doCalibration.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, <span class="keyword">true</span>);
+<a name="l00122"></a>00122     std::string jointName;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124     <span class="keywordtype">double</span> dummy = 0;
+<a name="l00125"></a>00125     <span class="keywordtype">char</span> index = 16; <span class="comment">// Parameter 0 to 15 of bank 2 are password protected</span>
 <a name="l00126"></a>00126 
-<a name="l00127"></a>00127       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> statusFlags;
-<a name="l00128"></a>00128       std::vector&lt;bool&gt; isCommutated;
-<a name="l00129"></a>00129       isCommutated.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, <span class="keyword">false</span>);
-<a name="l00130"></a>00130       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> u = 0;
-<a name="l00131"></a>00131 
-<a name="l00132"></a>00132       <span class="comment">// check for the next 5 sec if the joints are commutated</span>
-<a name="l00133"></a>00133       <span class="keywordflow">for</span> (u = 1; u &lt;= 5000; u++) {
-<a name="l00134"></a>00134         <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
-<a name="l00135"></a>00135           <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
-<a name="l00136"></a>00136             ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00137"></a>00137             ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00138"></a>00138           }
-<a name="l00139"></a>00139           this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller.">getStatus</a>(statusFlags);
-<a name="l00140"></a>00140           <span class="keywordflow">if</span> (statusFlags &amp; INITIALIZED) {
-<a name="l00141"></a>00141             isCommutated[i - 1] = <span class="keyword">true</span>;
-<a name="l00142"></a>00142           }
-<a name="l00143"></a>00143         }
-<a name="l00144"></a>00144         <span class="keywordflow">if</span> (isCommutated[0] &amp;&amp; isCommutated[1] &amp;&amp; isCommutated[2] &amp;&amp; isCommutated[3] &amp;&amp; isCommutated[4]) {
-<a name="l00145"></a>00145           <span class="keywordflow">break</span>;
-<a name="l00146"></a>00146         }
-<a name="l00147"></a>00147         <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(1);
-<a name="l00148"></a>00148       }
-<a name="l00149"></a>00149 
-<a name="l00150"></a>00150       <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(10); <span class="comment">// the controller likes it</span>
-<a name="l00151"></a>00151 
-<a name="l00152"></a>00152       <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
-<a name="l00153"></a>00153         doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(<span class="keyword">false</span>);
-<a name="l00154"></a>00154         this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0">getConfigurationParameter</a>(doInitialization);
-<a name="l00155"></a>00155         doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a100505a5d6f738b37e62ebb8aca7956b">getParameter</a>(isInitialized);
-<a name="l00156"></a>00156         <span class="keywordflow">if</span> (!isInitialized) {
-<a name="l00157"></a>00157           std::stringstream jointNameStream;
-<a name="l00158"></a>00158           jointNameStream &lt;&lt; <span class="stringliteral">&quot;manipulator joint &quot;</span> &lt;&lt; i;
-<a name="l00159"></a>00159           jointName = jointNameStream.str();
-<a name="l00160"></a>00160           <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Could not commutate &quot;</span> + jointName);
-<a name="l00161"></a>00161         }
-<a name="l00162"></a>00162       }
-<a name="l00163"></a>00163     }
-<a name="l00164"></a>00164 
-<a name="l00165"></a>00165 
-<a name="l00166"></a>00166   <span class="comment">// Bouml preserved body end 000A3371</span>
-<a name="l00167"></a>00167 }
-<a name="l00168"></a>00168 <span class="comment"></span>
-<a name="l00169"></a>00169 <span class="comment">///calibrate the reference position of the arm joints</span>
-<a name="l00170"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ab3f30636f1a69db85ec8b84f935db659">00170</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#ab3f30636f1a69db85ec8b84f935db659" title="calibrate the reference position of the arm joints">YouBotManipulator::calibrateManipulator</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> forceCalibration) {
-<a name="l00171"></a>00171   <span class="comment">// Bouml preserved body begin 000A9C71</span>
-<a name="l00172"></a>00172 
-<a name="l00173"></a>00173     <span class="comment">//Calibrate all manipulator joints</span>
-<a name="l00174"></a>00174     std::vector&lt;JointRoundsPerMinuteSetpoint&gt; calibrationVel;
-<a name="l00175"></a>00175     <a class="code" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html" title="Rounds per minute set-point of the joint.">JointRoundsPerMinuteSetpoint</a> tempdummy;
-<a name="l00176"></a>00176     tempdummy.<a class="code" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html#a5d7afecfc9d91f67b0ad7c56202006f6">rpm</a> = 0;
-<a name="l00177"></a>00177     calibrationVel.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, tempdummy);
-<a name="l00178"></a>00178     std::vector&lt;quantity&lt;si::current&gt; &gt; maxCurrent;
-<a name="l00179"></a>00179     quantity&lt;si::current&gt; tempdummy2;
-<a name="l00180"></a>00180     maxCurrent.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, tempdummy2);
-<a name="l00181"></a>00181     std::vector&lt;bool&gt; doCalibration;
-<a name="l00182"></a>00182     doCalibration.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, <span class="keyword">true</span>);
-<a name="l00183"></a>00183     std::string jointName;
-<a name="l00184"></a>00184 
-<a name="l00185"></a>00185     <span class="keywordtype">double</span> dummy = 0;
-<a name="l00186"></a>00186     <span class="keywordtype">char</span> index = 16; <span class="comment">// Parameter 0 to 15 of bank 2 are password protected</span>
+<a name="l00127"></a>00127     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> IsCalibratedReadMessage;
+<a name="l00128"></a>00128     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
+<a name="l00129"></a>00129     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = GGP;
+<a name="l00130"></a>00130     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
+<a name="l00131"></a>00131     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
+<a name="l00132"></a>00132     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
+<a name="l00133"></a>00133     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#ae21b6d107ed3b4e1ef20017909e98179">stctInput</a>.<a class="code" href="../../d8/dff/structyoubot_1_1mailbox_input_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> IsCalibratedSetMessage;
+<a name="l00136"></a>00136     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
+<a name="l00137"></a>00137     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = SGP;
+<a name="l00138"></a>00138     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
+<a name="l00139"></a>00139     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
+<a name="l00140"></a>00140     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 1;
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143     <span class="comment">//get parameters for calibration</span>
+<a name="l00144"></a>00144     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146       std::stringstream jointNameStream;
+<a name="l00147"></a>00147       jointNameStream &lt;&lt; <span class="stringliteral">&quot;Joint_&quot;</span> &lt;&lt; i + 1;
+<a name="l00148"></a>00148       jointName = jointNameStream.str();
+<a name="l00149"></a>00149       <span class="keywordtype">bool</span> calib = <span class="keyword">true</span>;
+<a name="l00150"></a>00150       configfile-&gt;readInto(calib, jointName, <span class="stringliteral">&quot;DoCalibration&quot;</span>);
+<a name="l00151"></a>00151       doCalibration[i] = calib;
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153       joints[i].getConfigurationParameter(IsCalibratedReadMessage);
+<a name="l00154"></a>00154       <span class="keywordflow">if</span> (IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#ae21b6d107ed3b4e1ef20017909e98179">stctInput</a>.<a class="code" href="../../d8/dff/structyoubot_1_1mailbox_input_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> == 1) {
+<a name="l00155"></a>00155         doCalibration[i] = <span class="keyword">false</span>;
+<a name="l00156"></a>00156       }
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158       <span class="keywordflow">if</span> (forceCalibration) {
+<a name="l00159"></a>00159         doCalibration[i] = <span class="keyword">true</span>;
+<a name="l00160"></a>00160       }
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162       configfile-&gt;readInto(dummy, jointName, <span class="stringliteral">&quot;CalibrationMaxCurrent_[ampere]&quot;</span>);
+<a name="l00163"></a>00163       maxCurrent[i] = dummy * ampere;
+<a name="l00164"></a>00164       std::string direction;
+<a name="l00165"></a>00165       configfile-&gt;readInto(direction, jointName, <span class="stringliteral">&quot;CalibrationDirection&quot;</span>);
+<a name="l00166"></a>00166       <a class="code" href="../../d4/d2f/classyoubot_1_1_gear_ratio.html" title="the gear ratio which is needed for the calculations in the youBot driver">GearRatio</a> gearRatio;
+<a name="l00167"></a>00167       joints[i].getConfigurationParameter(gearRatio);
+<a name="l00168"></a>00168       <span class="keywordtype">double</span> gearratio = 1;
+<a name="l00169"></a>00169       gearRatio.<a class="code" href="../../d4/d2f/classyoubot_1_1_gear_ratio.html#a162f9522486b06d3d3b08d35250b3890">getParameter</a>(gearratio);
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171       <span class="keywordflow">if</span> (direction == <span class="stringliteral">&quot;POSITIV&quot;</span>) {
+<a name="l00172"></a>00172         calibrationVel[i].rpm = 1 / gearratio;
+<a name="l00173"></a>00173       } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (direction == <span class="stringliteral">&quot;NEGATIV&quot;</span>) {
+<a name="l00174"></a>00174         calibrationVel[i].rpm = -1 / gearratio;
+<a name="l00175"></a>00175       } <span class="keywordflow">else</span> {
+<a name="l00176"></a>00176         <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Wrong calibration direction for &quot;</span> + jointName);
+<a name="l00177"></a>00177       }
+<a name="l00178"></a>00178     }
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181     <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Calibrate Manipulator Joints &quot;</span>;
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183     std::vector&lt;bool&gt; finished;
+<a name="l00184"></a>00184     finished.assign(ARMJOINTS, <span class="keyword">false</span>);
+<a name="l00185"></a>00185     <a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html" title="Sensed electric current of the joint.">JointSensedCurrent</a> sensedCurrent;
+<a name="l00186"></a>00186 
 <a name="l00187"></a>00187 
-<a name="l00188"></a>00188     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> IsCalibratedReadMessage;
-<a name="l00189"></a>00189     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
-<a name="l00190"></a>00190     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = GGP;
-<a name="l00191"></a>00191     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
-<a name="l00192"></a>00192     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
-<a name="l00193"></a>00193     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
-<a name="l00194"></a>00194     IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#ae21b6d107ed3b4e1ef20017909e98179">stctInput</a>.<a class="code" href="../../d8/dff/structyoubot_1_1mailbox_input_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
-<a name="l00195"></a>00195 
-<a name="l00196"></a>00196     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> IsCalibratedSetMessage;
-<a name="l00197"></a>00197     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
-<a name="l00198"></a>00198     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = SGP;
-<a name="l00199"></a>00199     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
-<a name="l00200"></a>00200     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
-<a name="l00201"></a>00201     IsCalibratedSetMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 1;
-<a name="l00202"></a>00202 
-<a name="l00203"></a>00203 
-<a name="l00204"></a>00204     <span class="comment">//get parameters for calibration</span>
-<a name="l00205"></a>00205     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
-<a name="l00206"></a>00206 
-<a name="l00207"></a>00207       std::stringstream jointNameStream;
-<a name="l00208"></a>00208       jointNameStream &lt;&lt; <span class="stringliteral">&quot;Joint_&quot;</span> &lt;&lt; i + 1;
-<a name="l00209"></a>00209       jointName = jointNameStream.str();
-<a name="l00210"></a>00210       <span class="keywordtype">bool</span> calib = <span class="keyword">true</span>;
-<a name="l00211"></a>00211       configfile-&gt;readInto(calib, jointName, <span class="stringliteral">&quot;DoCalibration&quot;</span>);
-<a name="l00212"></a>00212       doCalibration[i] = calib;
-<a name="l00213"></a>00213 
-<a name="l00214"></a>00214       joints[i].getConfigurationParameter(IsCalibratedReadMessage);
-<a name="l00215"></a>00215       <span class="keywordflow">if</span> (IsCalibratedReadMessage.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#ae21b6d107ed3b4e1ef20017909e98179">stctInput</a>.<a class="code" href="../../d8/dff/structyoubot_1_1mailbox_input_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> == 1) {
-<a name="l00216"></a>00216         doCalibration[i] = <span class="keyword">false</span>;
-<a name="l00217"></a>00217       }
-<a name="l00218"></a>00218 
-<a name="l00219"></a>00219       <span class="keywordflow">if</span> (forceCalibration) {
-<a name="l00220"></a>00220         doCalibration[i] = <span class="keyword">true</span>;
+<a name="l00188"></a>00188     <span class="comment">//move the joints slowly in calibration direction</span>
+<a name="l00189"></a>00189     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
+<a name="l00190"></a>00190       <span class="keywordflow">if</span> (doCalibration[i] == <span class="keyword">true</span>) {
+<a name="l00191"></a>00191         joints[i].setData(calibrationVel[i]);
+<a name="l00192"></a>00192         <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
+<a name="l00193"></a>00193           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00194"></a>00194           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00195"></a>00195         }
+<a name="l00196"></a>00196       } <span class="keywordflow">else</span> {
+<a name="l00197"></a>00197         finished[i] = <span class="keyword">true</span>;
+<a name="l00198"></a>00198       }
+<a name="l00199"></a>00199     }
+<a name="l00200"></a>00200 
+<a name="l00201"></a>00201     <span class="comment">//monitor the current to find end stop </span>
+<a name="l00202"></a>00202     <span class="keywordflow">while</span> (!(finished[0] &amp;&amp; finished[1] &amp;&amp; finished[2] &amp;&amp; finished[3] &amp;&amp; finished[4])) {
+<a name="l00203"></a>00203       <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
+<a name="l00204"></a>00204         <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
+<a name="l00205"></a>00205           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00206"></a>00206           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00207"></a>00207         }
+<a name="l00208"></a>00208         joints[i].getData(sensedCurrent);
+<a name="l00209"></a>00209         <span class="comment">//turn till a max current is reached</span>
+<a name="l00210"></a>00210         <span class="keywordflow">if</span> (abs(sensedCurrent.<a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a>) &gt; abs(maxCurrent[i])) {
+<a name="l00211"></a>00211           <span class="comment">//stop movement</span>
+<a name="l00212"></a>00212           <a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html" title="Set-point current of the joint.">youbot::JointCurrentSetpoint</a> currentStopMovement;
+<a name="l00213"></a>00213           currentStopMovement.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0 * ampere;
+<a name="l00214"></a>00214           joints[i].setData(currentStopMovement);
+<a name="l00215"></a>00215           <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
+<a name="l00216"></a>00216             ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00217"></a>00217             ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00218"></a>00218           }
+<a name="l00219"></a>00219           finished[i] = <span class="keyword">true</span>;
+<a name="l00220"></a>00220         }
 <a name="l00221"></a>00221       }
-<a name="l00222"></a>00222 
-<a name="l00223"></a>00223       configfile-&gt;readInto(dummy, jointName, <span class="stringliteral">&quot;CalibrationMaxCurrent_[ampere]&quot;</span>);
-<a name="l00224"></a>00224       maxCurrent[i] = dummy * ampere;
-<a name="l00225"></a>00225       std::string direction;
-<a name="l00226"></a>00226       configfile-&gt;readInto(direction, jointName, <span class="stringliteral">&quot;CalibrationDirection&quot;</span>);
-<a name="l00227"></a>00227       <a class="code" href="../../d4/d2f/classyoubot_1_1_gear_ratio.html" title="the gear ratio which is needed for the calculations in the youBot driver">GearRatio</a> gearRatio;
-<a name="l00228"></a>00228       joints[i].getConfigurationParameter(gearRatio);
-<a name="l00229"></a>00229       <span class="keywordtype">double</span> gearratio = 1;
-<a name="l00230"></a>00230       gearRatio.<a class="code" href="../../d4/d2f/classyoubot_1_1_gear_ratio.html#a162f9522486b06d3d3b08d35250b3890">getParameter</a>(gearratio);
-<a name="l00231"></a>00231 
-<a name="l00232"></a>00232       <span class="keywordflow">if</span> (direction == <span class="stringliteral">&quot;POSITIV&quot;</span>) {
-<a name="l00233"></a>00233         calibrationVel[i].rpm = 1 / gearratio;
-<a name="l00234"></a>00234       } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (direction == <span class="stringliteral">&quot;NEGATIV&quot;</span>) {
-<a name="l00235"></a>00235         calibrationVel[i].rpm = -1 / gearratio;
-<a name="l00236"></a>00236       } <span class="keywordflow">else</span> {
-<a name="l00237"></a>00237         <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Wrong calibration direction for &quot;</span> + jointName);
-<a name="l00238"></a>00238       }
-<a name="l00239"></a>00239     }
-<a name="l00240"></a>00240 
+<a name="l00222"></a>00222       <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(1);
+<a name="l00223"></a>00223     }
+<a name="l00224"></a>00224 
+<a name="l00225"></a>00225     <span class="comment">// wait to let the joint stop the motion</span>
+<a name="l00226"></a>00226     <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(100);
+<a name="l00227"></a>00227 
+<a name="l00228"></a>00228     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
+<a name="l00229"></a>00229       <span class="keywordflow">if</span> (doCalibration[i] == <span class="keyword">true</span>) {
+<a name="l00230"></a>00230         <span class="comment">//set encoder reference position</span>
+<a name="l00231"></a>00231         joints[i].setEncoderToZero();
+<a name="l00232"></a>00232         <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
+<a name="l00233"></a>00233           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00234"></a>00234           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00235"></a>00235         }
+<a name="l00236"></a>00236         <span class="comment">// set a flag in the user variable to remember that it is calibrated</span>
+<a name="l00237"></a>00237         joints[i].setConfigurationParameter(IsCalibratedSetMessage);
+<a name="l00238"></a>00238         <span class="comment">//     LOG(info) &lt;&lt; &quot;Calibration finished for joint: &quot; &lt;&lt; this-&gt;jointName;</span>
+<a name="l00239"></a>00239       }
+<a name="l00240"></a>00240     }
 <a name="l00241"></a>00241 
-<a name="l00242"></a>00242     <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Calibrate Manipulator Joints &quot;</span>;
-<a name="l00243"></a>00243 
-<a name="l00244"></a>00244     std::vector&lt;bool&gt; finished;
-<a name="l00245"></a>00245     finished.assign(ARMJOINTS, <span class="keyword">false</span>);
-<a name="l00246"></a>00246     <a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html" title="Sensed electric current of the joint.">JointSensedCurrent</a> sensedCurrent;
-<a name="l00247"></a>00247     <a class="code" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html" title="Rounds per minute set-point of the joint.">JointRoundsPerMinuteSetpoint</a> stopMovement;
-<a name="l00248"></a>00248     stopMovement.<a class="code" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html#a5d7afecfc9d91f67b0ad7c56202006f6">rpm</a> = 0;
-<a name="l00249"></a>00249     <a class="code" href="../../d1/d95/classyoubot_1_1_joint_p_w_m_setpoint.html" title="Pulse-width modulation set-point of the joint.">JointPWMSetpoint</a> pwmStopMovement;
-<a name="l00250"></a>00250     pwmStopMovement.<a class="code" href="../../d1/d95/classyoubot_1_1_joint_p_w_m_setpoint.html#a490a9e9e2b50ef1774453ae170fc60a1">pwm</a> = 0;
-<a name="l00251"></a>00251 
-<a name="l00252"></a>00252 
-<a name="l00253"></a>00253     <span class="comment">//move the joints slowly in calibration direction</span>
-<a name="l00254"></a>00254     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
-<a name="l00255"></a>00255       <span class="keywordflow">if</span> (doCalibration[i] == <span class="keyword">true</span>) {
-<a name="l00256"></a>00256         joints[i].setData(calibrationVel[i]);
-<a name="l00257"></a>00257         <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
-<a name="l00258"></a>00258           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00259"></a>00259           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00260"></a>00260         }
-<a name="l00261"></a>00261       } <span class="keywordflow">else</span> {
-<a name="l00262"></a>00262         finished[i] = <span class="keyword">true</span>;
-<a name="l00263"></a>00263       }
+<a name="l00242"></a>00242     <span class="comment">//setting joint Limits</span>
+<a name="l00243"></a>00243     <a class="code" href="../../db/df5/classyoubot_1_1_joint_limits.html" title="joint position limits in encoder ticks">JointLimits</a> jLimits;
+<a name="l00244"></a>00244     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
+<a name="l00245"></a>00245       <span class="keywordtype">long</span> upperlimit = 0, lowerlimit = 0;
+<a name="l00246"></a>00246       std::stringstream jointNameStream;
+<a name="l00247"></a>00247       <span class="keywordtype">bool</span> inverted = <span class="keyword">false</span>;
+<a name="l00248"></a>00248       jointNameStream &lt;&lt; <span class="stringliteral">&quot;Joint_&quot;</span> &lt;&lt; i + 1;
+<a name="l00249"></a>00249       jointName = jointNameStream.str();
+<a name="l00250"></a>00250       <a class="code" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html" title="encoder ticks setpoint of the joint">JointEncoderSetpoint</a> minEncoderValue;
+<a name="l00251"></a>00251       configfile-&gt;readInto(lowerlimit, jointName, <span class="stringliteral">&quot;LowerLimit_[encoderTicks]&quot;</span>);
+<a name="l00252"></a>00252       configfile-&gt;readInto(upperlimit, jointName, <span class="stringliteral">&quot;UpperLimit_[encoderTicks]&quot;</span>);
+<a name="l00253"></a>00253       configfile-&gt;readInto(inverted, jointName, <span class="stringliteral">&quot;InverseMovementDirection&quot;</span>);
+<a name="l00254"></a>00254       
+<a name="l00255"></a>00255       <span class="keywordflow">if</span>(inverted){
+<a name="l00256"></a>00256         minEncoderValue.<a class="code" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> = lowerlimit + 1000;
+<a name="l00257"></a>00257       }<span class="keywordflow">else</span>{
+<a name="l00258"></a>00258         minEncoderValue.<a class="code" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> = upperlimit - 1000;
+<a name="l00259"></a>00259       }
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261       jLimits.<a class="code" href="../../db/df5/classyoubot_1_1_joint_limits.html#a7ab2ad7d9ae9f19a5af4eca083a7206d">setParameter</a>(lowerlimit, upperlimit, <span class="keyword">true</span>);
+<a name="l00262"></a>00262       joints[i].setConfigurationParameter(jLimits);
+<a name="l00263"></a>00263      <span class="comment">// joints[i].setData(minEncoderValue);</span>
 <a name="l00264"></a>00264     }
 <a name="l00265"></a>00265 
-<a name="l00266"></a>00266     <span class="comment">//monitor the current to find end stop </span>
-<a name="l00267"></a>00267     <span class="keywordflow">while</span> (!(finished[0] &amp;&amp; finished[1] &amp;&amp; finished[2] &amp;&amp; finished[3] &amp;&amp; finished[4])) {
-<a name="l00268"></a>00268       <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
-<a name="l00269"></a>00269         <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
-<a name="l00270"></a>00270           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00271"></a>00271           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00272"></a>00272         }
-<a name="l00273"></a>00273         joints[i].getData(sensedCurrent);
-<a name="l00274"></a>00274         <span class="comment">//turn till a max current is reached</span>
-<a name="l00275"></a>00275         <span class="keywordflow">if</span> (abs(sensedCurrent.<a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a>) &gt; abs(maxCurrent[i])) {
-<a name="l00276"></a>00276           <span class="comment">//stop movement</span>
-<a name="l00277"></a>00277           joints[i].setData(pwmStopMovement);
-<a name="l00278"></a>00278           <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
-<a name="l00279"></a>00279             ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00280"></a>00280             ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00281"></a>00281           }
-<a name="l00282"></a>00282           finished[i] = <span class="keyword">true</span>;
-<a name="l00283"></a>00283         }
-<a name="l00284"></a>00284       }
-<a name="l00285"></a>00285       <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(1);
-<a name="l00286"></a>00286     }
-<a name="l00287"></a>00287 
-<a name="l00288"></a>00288     <span class="comment">// wait to let the joint stop the motion</span>
-<a name="l00289"></a>00289     <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(100);
-<a name="l00290"></a>00290 
-<a name="l00291"></a>00291     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
-<a name="l00292"></a>00292       <span class="keywordflow">if</span> (doCalibration[i] == <span class="keyword">true</span>) {
-<a name="l00293"></a>00293         <span class="comment">//set encoder reference position</span>
-<a name="l00294"></a>00294         joints[i].setEncoderToZero();
-<a name="l00295"></a>00295         <span class="keywordflow">if</span>(!ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()){
-<a name="l00296"></a>00296           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00297"></a>00297           ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00298"></a>00298         }
-<a name="l00299"></a>00299         <span class="comment">// set a flag in the user variable to remember that it is calibrated</span>
-<a name="l00300"></a>00300         joints[i].setConfigurationParameter(IsCalibratedSetMessage);
-<a name="l00301"></a>00301         <span class="comment">//     LOG(info) &lt;&lt; &quot;Calibration finished for joint: &quot; &lt;&lt; this-&gt;jointName;</span>
-<a name="l00302"></a>00302       }
-<a name="l00303"></a>00303     }
-<a name="l00304"></a>00304 
-<a name="l00305"></a>00305     <span class="comment">//setting joint Limits</span>
-<a name="l00306"></a>00306     <a class="code" href="../../db/df5/classyoubot_1_1_joint_limits.html" title="joint position limits in encoder ticks">JointLimits</a> jLimits;
-<a name="l00307"></a>00307     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; ARMJOINTS; i++) {
-<a name="l00308"></a>00308       <span class="keywordtype">long</span> upperlimit = 0, lowerlimit = 0;
-<a name="l00309"></a>00309       std::stringstream jointNameStream;
-<a name="l00310"></a>00310       jointNameStream &lt;&lt; <span class="stringliteral">&quot;Joint_&quot;</span> &lt;&lt; i + 1;
-<a name="l00311"></a>00311       jointName = jointNameStream.str();
-<a name="l00312"></a>00312       <a class="code" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html" title="encoder ticks setpoint of the joint">JointEncoderSetpoint</a> minEncoderValue;
-<a name="l00313"></a>00313       configfile-&gt;readInto(lowerlimit, jointName, <span class="stringliteral">&quot;LowerLimit_[encoderTicks]&quot;</span>);
-<a name="l00314"></a>00314       configfile-&gt;readInto(upperlimit, jointName, <span class="stringliteral">&quot;UpperLimit_[encoderTicks]&quot;</span>);
-<a name="l00315"></a>00315       minEncoderValue.<a class="code" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> = upperlimit;
-<a name="l00316"></a>00316 
-<a name="l00317"></a>00317       jLimits.<a class="code" href="../../db/df5/classyoubot_1_1_joint_limits.html#a7ab2ad7d9ae9f19a5af4eca083a7206d">setParameter</a>(lowerlimit, upperlimit, <span class="keyword">true</span>);
-<a name="l00318"></a>00318       joints[i].setConfigurationParameter(jLimits);
-<a name="l00319"></a>00319     }
-<a name="l00320"></a>00320 
-<a name="l00321"></a>00321 
-<a name="l00322"></a>00322 
-<a name="l00323"></a>00323   <span class="comment">// Bouml preserved body end 000A9C71</span>
-<a name="l00324"></a>00324 }
-<a name="l00325"></a>00325 
-<a name="l00326"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a2b6d11b4e6a633a4e1e71d57d530fe2d">00326</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a2b6d11b4e6a633a4e1e71d57d530fe2d">YouBotManipulator::calibrateGripper</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> forceCalibration) {
-<a name="l00327"></a>00327   <span class="comment">// Bouml preserved body begin 000A9CF1</span>
-<a name="l00328"></a>00328     <span class="comment">// Calibrating Gripper</span>
-<a name="l00329"></a>00329     <span class="keywordtype">bool</span> doCalibration = <span class="keyword">true</span>;
-<a name="l00330"></a>00330     configfile-&gt;readInto(doCalibration, <span class="stringliteral">&quot;Gripper&quot;</span>, <span class="stringliteral">&quot;DoCalibration&quot;</span>);
-<a name="l00331"></a>00331     <span class="keywordflow">if</span>(useGripper &amp;&amp; doCalibration){
-<a name="l00332"></a>00332       <a class="code" href="../../de/df1/classyoubot_1_1_calibrate_gripper.html" title="Calibrate the gripper.">CalibrateGripper</a> calibrate;
-<a name="l00333"></a>00333       calibrate.<a class="code" href="../../de/df1/classyoubot_1_1_calibrate_gripper.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(forceCalibration);
-<a name="l00334"></a>00334       gripper-&gt;setConfigurationParameter(calibrate);
-<a name="l00335"></a>00335     }
-<a name="l00336"></a>00336   <span class="comment">// Bouml preserved body end 000A9CF1</span>
-<a name="l00337"></a>00337 }
-<a name="l00338"></a>00338 <span class="comment"></span>
-<a name="l00339"></a>00339 <span class="comment">///return a joint form the arm1</span>
-<a name="l00340"></a>00340 <span class="comment">///@param armJointNumber 1-5 for the arm1 joints</span>
-<a name="l00341"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b">00341</a> <span class="comment"></span><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html" title="youBot joint for the base and the manipulator.">YouBotJoint</a>&amp; <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">YouBotManipulator::getArmJoint</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> armJointNumber) {
-<a name="l00342"></a>00342   <span class="comment">// Bouml preserved body begin 0004F7F1</span>
-<a name="l00343"></a>00343 
-<a name="l00344"></a>00344     <span class="keywordflow">if</span> (armJointNumber &lt;= 0 || armJointNumber &gt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>) {
-<a name="l00345"></a>00345       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Invalid Joint Number&quot;</span>);
-<a name="l00346"></a>00346     }
-<a name="l00347"></a>00347     <span class="keywordflow">return</span> joints[armJointNumber - 1];
-<a name="l00348"></a>00348   <span class="comment">// Bouml preserved body end 0004F7F1</span>
-<a name="l00349"></a>00349 }
-<a name="l00350"></a>00350 
-<a name="l00351"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a22626c3fbd778a65099558b090fe1362">00351</a> <a class="code" href="../../d6/da5/classyoubot_1_1_you_bot_gripper.html" title="The youBot gripper with one degree of freedom.">YouBotGripper</a>&amp; <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a22626c3fbd778a65099558b090fe1362">YouBotManipulator::getArmGripper</a>() {
-<a name="l00352"></a>00352   <span class="comment">// Bouml preserved body begin 0005F9F1</span>
-<a name="l00353"></a>00353     <span class="keywordflow">if</span>(!useGripper){
-<a name="l00354"></a>00354       <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;The gripper is disabled!&quot;</span>);
-<a name="l00355"></a>00355     }
-<a name="l00356"></a>00356     <span class="keywordflow">return</span> *gripper;
-<a name="l00357"></a>00357   <span class="comment">// Bouml preserved body end 0005F9F1</span>
-<a name="l00358"></a>00358 }
-<a name="l00359"></a>00359 <span class="comment"></span>
-<a name="l00360"></a>00360 <span class="comment">///commands positions or angles to all manipulator joints</span>
-<a name="l00361"></a>00361 <span class="comment">///all positions will be set at the same time</span>
-<a name="l00362"></a>00362 <span class="comment">///@param JointData the to command positions</span>
-<a name="l00363"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94">00363</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointAngleSetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
-<a name="l00364"></a>00364   <span class="comment">// Bouml preserved body begin 0008FDF1</span>
-<a name="l00365"></a>00365     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
-<a name="l00366"></a>00366       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointAngleSetpoints&quot;</span>);
-<a name="l00367"></a>00367 
-<a name="l00368"></a>00368     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
-<a name="l00369"></a>00369     joints[0].setData(JointData[0], NON_BLOCKING);
-<a name="l00370"></a>00370     joints[1].setData(JointData[1], NON_BLOCKING);
-<a name="l00371"></a>00371     joints[2].setData(JointData[2], NON_BLOCKING);
-<a name="l00372"></a>00372     joints[3].setData(JointData[3], NON_BLOCKING);
-<a name="l00373"></a>00373     joints[4].setData(JointData[4], NON_BLOCKING);
-<a name="l00374"></a>00374     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
-<a name="l00375"></a>00375 
-<a name="l00376"></a>00376   <span class="comment">// Bouml preserved body end 0008FDF1</span>
-<a name="l00377"></a>00377 }
-<a name="l00378"></a>00378 <span class="comment"></span>
-<a name="l00379"></a>00379 <span class="comment">///gets the position or angle of all manipulator joints which have been calculated from the actual encoder value</span>
-<a name="l00380"></a>00380 <span class="comment">///These values are all read at the same time from the different joints </span>
-<a name="l00381"></a>00381 <span class="comment">///@param data returns the angles by reference</span>
-<a name="l00382"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa">00382</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedAngle&gt;&amp; data) {
-<a name="l00383"></a>00383   <span class="comment">// Bouml preserved body begin 0008FE71</span>
-<a name="l00384"></a>00384     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
-<a name="l00385"></a>00385     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
-<a name="l00386"></a>00386     joints[0].getData(data[0]);
-<a name="l00387"></a>00387     joints[1].getData(data[1]);
-<a name="l00388"></a>00388     joints[2].getData(data[2]);
-<a name="l00389"></a>00389     joints[3].getData(data[3]);
-<a name="l00390"></a>00390     joints[4].getData(data[4]);
-<a name="l00391"></a>00391     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
-<a name="l00392"></a>00392   <span class="comment">// Bouml preserved body end 0008FE71</span>
-<a name="l00393"></a>00393 }
-<a name="l00394"></a>00394 <span class="comment"></span>
-<a name="l00395"></a>00395 <span class="comment">///commands velocities to all manipulator joints</span>
-<a name="l00396"></a>00396 <span class="comment">///all velocities will be set at the same time</span>
-<a name="l00397"></a>00397 <span class="comment">///@param JointData the to command velocities</span>
-<a name="l00398"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a231a007161db9d60f3bae50962c1fe50">00398</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointVelocitySetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
-<a name="l00399"></a>00399   <span class="comment">// Bouml preserved body begin 0008FEF1</span>
-<a name="l00400"></a>00400     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
-<a name="l00401"></a>00401       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointVelocitySetpoints&quot;</span>);
-<a name="l00402"></a>00402 
-<a name="l00403"></a>00403     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
-<a name="l00404"></a>00404     joints[0].setData(JointData[0], NON_BLOCKING);
-<a name="l00405"></a>00405     joints[1].setData(JointData[1], NON_BLOCKING);
-<a name="l00406"></a>00406     joints[2].setData(JointData[2], NON_BLOCKING);
-<a name="l00407"></a>00407     joints[3].setData(JointData[3], NON_BLOCKING);
-<a name="l00408"></a>00408     joints[4].setData(JointData[4], NON_BLOCKING);
-<a name="l00409"></a>00409     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
-<a name="l00410"></a>00410   <span class="comment">// Bouml preserved body end 0008FEF1</span>
-<a name="l00411"></a>00411 }
-<a name="l00412"></a>00412 <span class="comment"></span>
-<a name="l00413"></a>00413 <span class="comment">///gets the velocities of all manipulator joints which have been calculated from the actual encoder values</span>
-<a name="l00414"></a>00414 <span class="comment">///These values are all read at the same time from the different joints </span>
-<a name="l00415"></a>00415 <span class="comment">///@param data returns the velocities by reference</span>
-<a name="l00416"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#af12e8391878e68979c1276c89e5025a6">00416</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedVelocity&gt;&amp; data) {
-<a name="l00417"></a>00417   <span class="comment">// Bouml preserved body begin 0008FF71</span>
-<a name="l00418"></a>00418     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
-<a name="l00419"></a>00419     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
-<a name="l00420"></a>00420     joints[0].getData(data[0]);
-<a name="l00421"></a>00421     joints[1].getData(data[1]);
-<a name="l00422"></a>00422     joints[2].getData(data[2]);
-<a name="l00423"></a>00423     joints[3].getData(data[3]);
-<a name="l00424"></a>00424     joints[4].getData(data[4]);
-<a name="l00425"></a>00425     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
-<a name="l00426"></a>00426   <span class="comment">// Bouml preserved body end 0008FF71</span>
-<a name="l00427"></a>00427 }
-<a name="l00428"></a>00428 <span class="comment"></span>
-<a name="l00429"></a>00429 <span class="comment">///commands current to all manipulator joints</span>
-<a name="l00430"></a>00430 <span class="comment">///all current values will be set at the same time</span>
-<a name="l00431"></a>00431 <span class="comment">///@param JointData the to command current</span>
-<a name="l00432"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a94e23ba84d84fd865f38e9e2eaafbba9">00432</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointCurrentSetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
-<a name="l00433"></a>00433   <span class="comment">// Bouml preserved body begin 000CDE71</span>
-<a name="l00434"></a>00434     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
-<a name="l00435"></a>00435       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointCurrentSetpoint&quot;</span>);
-<a name="l00436"></a>00436 
-<a name="l00437"></a>00437     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
-<a name="l00438"></a>00438     joints[0].setData(JointData[0], NON_BLOCKING);
-<a name="l00439"></a>00439     joints[1].setData(JointData[1], NON_BLOCKING);
-<a name="l00440"></a>00440     joints[2].setData(JointData[2], NON_BLOCKING);
-<a name="l00441"></a>00441     joints[3].setData(JointData[3], NON_BLOCKING);
-<a name="l00442"></a>00442     joints[4].setData(JointData[4], NON_BLOCKING);
-<a name="l00443"></a>00443     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
-<a name="l00444"></a>00444   <span class="comment">// Bouml preserved body end 000CDE71</span>
-<a name="l00445"></a>00445 }
-<a name="l00446"></a>00446 <span class="comment"></span>
-<a name="l00447"></a>00447 <span class="comment">///gets the motor currents of all manipulator joints which have been measured by a hal sensor</span>
-<a name="l00448"></a>00448 <span class="comment">///These values are all read at the same time from the different joints </span>
-<a name="l00449"></a>00449 <span class="comment">///@param data returns the actual motor currents by reference</span>
-<a name="l00450"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#acfae3141fafbe0e7dd4c7a0fe994297e">00450</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedCurrent&gt;&amp; data) {
-<a name="l00451"></a>00451   <span class="comment">// Bouml preserved body begin 00090071</span>
-<a name="l00452"></a>00452     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
-<a name="l00453"></a>00453     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
-<a name="l00454"></a>00454     joints[0].getData(data[0]);
-<a name="l00455"></a>00455     joints[1].getData(data[1]);
-<a name="l00456"></a>00456     joints[2].getData(data[2]);
-<a name="l00457"></a>00457     joints[3].getData(data[3]);
-<a name="l00458"></a>00458     joints[4].getData(data[4]);
-<a name="l00459"></a>00459     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
-<a name="l00460"></a>00460   <span class="comment">// Bouml preserved body end 00090071</span>
-<a name="l00461"></a>00461 }
-<a name="l00462"></a>00462 <span class="comment"></span>
-<a name="l00463"></a>00463 <span class="comment">///commands torque to all manipulator joints</span>
-<a name="l00464"></a>00464 <span class="comment">///all torque values will be set at the same time</span>
-<a name="l00465"></a>00465 <span class="comment">///@param JointData the to command torque </span>
-<a name="l00466"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aead98c475b8bd2f3e6b8c9fce208f5af">00466</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointTorqueSetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
-<a name="l00467"></a>00467   <span class="comment">// Bouml preserved body begin 000CDEF1</span>
-<a name="l00468"></a>00468     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
-<a name="l00469"></a>00469       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointTorqueSetpoint&quot;</span>);
-<a name="l00470"></a>00470 
-<a name="l00471"></a>00471     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
-<a name="l00472"></a>00472     joints[0].setData(JointData[0], NON_BLOCKING);
-<a name="l00473"></a>00473     joints[1].setData(JointData[1], NON_BLOCKING);
-<a name="l00474"></a>00474     joints[2].setData(JointData[2], NON_BLOCKING);
-<a name="l00475"></a>00475     joints[3].setData(JointData[3], NON_BLOCKING);
-<a name="l00476"></a>00476     joints[4].setData(JointData[4], NON_BLOCKING);
-<a name="l00477"></a>00477     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
-<a name="l00478"></a>00478   <span class="comment">// Bouml preserved body end 000CDEF1</span>
-<a name="l00479"></a>00479 }
-<a name="l00480"></a>00480 <span class="comment"></span>
-<a name="l00481"></a>00481 <span class="comment">///gets the joint torque of all manipulator joints which have been calculated from the current</span>
-<a name="l00482"></a>00482 <span class="comment">///These values are all read at the same time from the different joints </span>
-<a name="l00483"></a>00483 <span class="comment">///@param data returns the actual joint torque by reference</span>
-<a name="l00484"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a38b673767e67bdf914a8201442faee5f">00484</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedTorque&gt;&amp; data) {
-<a name="l00485"></a>00485   <span class="comment">// Bouml preserved body begin 000CDF71</span>
-<a name="l00486"></a>00486     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
-<a name="l00487"></a>00487     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
-<a name="l00488"></a>00488     joints[0].getData(data[0]);
-<a name="l00489"></a>00489     joints[1].getData(data[1]);
-<a name="l00490"></a>00490     joints[2].getData(data[2]);
-<a name="l00491"></a>00491     joints[3].getData(data[3]);
-<a name="l00492"></a>00492     joints[4].getData(data[4]);
-<a name="l00493"></a>00493     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
-<a name="l00494"></a>00494   <span class="comment">// Bouml preserved body end 000CDF71</span>
-<a name="l00495"></a>00495 }
-<a name="l00496"></a>00496 
-<a name="l00497"></a>00497 <span class="keywordtype">bool</span> YouBotManipulator::areSame(<span class="keyword">const</span> <span class="keywordtype">double</span> A, <span class="keyword">const</span> <span class="keywordtype">double</span> B) {
-<a name="l00498"></a>00498   <span class="comment">// Bouml preserved body begin 000A82F1</span>
-<a name="l00499"></a>00499     <span class="keywordflow">return</span> std::fabs(A - B) &lt; 0.0001;
-<a name="l00500"></a>00500   <span class="comment">// Bouml preserved body end 000A82F1</span>
-<a name="l00501"></a>00501 }
-<a name="l00502"></a>00502 
-<a name="l00503"></a>00503 <span class="keywordtype">void</span> YouBotManipulator::initializeJoints() {
-<a name="l00504"></a>00504   <span class="comment">// Bouml preserved body begin 00068071</span>
-<a name="l00505"></a>00505 
-<a name="l00506"></a>00506  <span class="comment">//   LOG(info) &lt;&lt; &quot;Initializing Joints&quot;;</span>
-<a name="l00507"></a>00507 
-<a name="l00508"></a>00508 
-<a name="l00509"></a>00509     <span class="comment">//get number of slaves</span>
-<a name="l00510"></a>00510     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> noSlaves = ethercatMaster.getNumberOfSlaves();
-<a name="l00511"></a>00511 
-<a name="l00512"></a>00512 
-<a name="l00513"></a>00513     <span class="keywordflow">if</span> (noSlaves &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>) {
-<a name="l00514"></a>00514       <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Not enough ethercat slaves were found to create a YouBotManipulator!&quot;</span>);
-<a name="l00515"></a>00515     }
-<a name="l00516"></a>00516 
-<a name="l00517"></a>00517 
-<a name="l00518"></a>00518     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> slaveNumber = 0;
-<a name="l00519"></a>00519     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint1&quot;</span>);
-<a name="l00520"></a>00520     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
-<a name="l00521"></a>00521       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
-<a name="l00522"></a>00522     } <span class="keywordflow">else</span> {
-<a name="l00523"></a>00523       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
-<a name="l00524"></a>00524     }
-<a name="l00525"></a>00525 
-<a name="l00526"></a>00526     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint2&quot;</span>);
-<a name="l00527"></a>00527     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
-<a name="l00528"></a>00528       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
-<a name="l00529"></a>00529     } <span class="keywordflow">else</span> {
-<a name="l00530"></a>00530       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
-<a name="l00531"></a>00531     }
+<a name="l00266"></a>00266   <span class="comment">// Bouml preserved body end 000A9C71</span>
+<a name="l00267"></a>00267 }
+<a name="l00268"></a>00268 
+<a name="l00269"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a2b6d11b4e6a633a4e1e71d57d530fe2d">00269</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a2b6d11b4e6a633a4e1e71d57d530fe2d">YouBotManipulator::calibrateGripper</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> forceCalibration) {
+<a name="l00270"></a>00270   <span class="comment">// Bouml preserved body begin 000A9CF1</span>
+<a name="l00271"></a>00271     <span class="comment">// Calibrating Gripper</span>
+<a name="l00272"></a>00272     <span class="keywordtype">bool</span> doCalibration = <span class="keyword">true</span>;
+<a name="l00273"></a>00273     configfile-&gt;readInto(doCalibration, <span class="stringliteral">&quot;Gripper&quot;</span>, <span class="stringliteral">&quot;DoCalibration&quot;</span>);
+<a name="l00274"></a>00274     <span class="keywordflow">if</span>(useGripper &amp;&amp; doCalibration){
+<a name="l00275"></a>00275       <a class="code" href="../../de/df1/classyoubot_1_1_calibrate_gripper.html" title="Calibrate the gripper.">CalibrateGripper</a> calibrate;
+<a name="l00276"></a>00276       calibrate.<a class="code" href="../../de/df1/classyoubot_1_1_calibrate_gripper.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(forceCalibration);
+<a name="l00277"></a>00277       gripper-&gt;setConfigurationParameter(calibrate);
+<a name="l00278"></a>00278     }
+<a name="l00279"></a>00279   <span class="comment">// Bouml preserved body end 000A9CF1</span>
+<a name="l00280"></a>00280 }
+<a name="l00281"></a>00281 <span class="comment"></span>
+<a name="l00282"></a>00282 <span class="comment">///return a joint form the arm1</span>
+<a name="l00283"></a>00283 <span class="comment">///@param armJointNumber 1-5 for the arm joints</span>
+<a name="l00284"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b">00284</a> <span class="comment"></span><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html" title="youBot joint for the base and the manipulator.">YouBotJoint</a>&amp; <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">YouBotManipulator::getArmJoint</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> armJointNumber) {
+<a name="l00285"></a>00285   <span class="comment">// Bouml preserved body begin 0004F7F1</span>
+<a name="l00286"></a>00286 
+<a name="l00287"></a>00287     <span class="keywordflow">if</span> (armJointNumber &lt;= 0 || armJointNumber &gt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>) {
+<a name="l00288"></a>00288       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Invalid Joint Number&quot;</span>);
+<a name="l00289"></a>00289     }
+<a name="l00290"></a>00290     <span class="keywordflow">return</span> joints[armJointNumber - 1];
+<a name="l00291"></a>00291   <span class="comment">// Bouml preserved body end 0004F7F1</span>
+<a name="l00292"></a>00292 }
+<a name="l00293"></a>00293 
+<a name="l00294"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a22626c3fbd778a65099558b090fe1362">00294</a> <a class="code" href="../../d6/da5/classyoubot_1_1_you_bot_gripper.html" title="The youBot gripper with one degree of freedom.">YouBotGripper</a>&amp; <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a22626c3fbd778a65099558b090fe1362">YouBotManipulator::getArmGripper</a>() {
+<a name="l00295"></a>00295   <span class="comment">// Bouml preserved body begin 0005F9F1</span>
+<a name="l00296"></a>00296     <span class="keywordflow">if</span>(!useGripper){
+<a name="l00297"></a>00297       <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;The gripper is disabled!&quot;</span>);
+<a name="l00298"></a>00298     }
+<a name="l00299"></a>00299     <span class="keywordflow">return</span> *gripper;
+<a name="l00300"></a>00300   <span class="comment">// Bouml preserved body end 0005F9F1</span>
+<a name="l00301"></a>00301 }
+<a name="l00302"></a>00302 <span class="comment"></span>
+<a name="l00303"></a>00303 <span class="comment">///commands positions or angles to all manipulator joints</span>
+<a name="l00304"></a>00304 <span class="comment">///all positions will be set at the same time</span>
+<a name="l00305"></a>00305 <span class="comment">///@param JointData the to command positions</span>
+<a name="l00306"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94">00306</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointAngleSetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
+<a name="l00307"></a>00307   <span class="comment">// Bouml preserved body begin 0008FDF1</span>
+<a name="l00308"></a>00308     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
+<a name="l00309"></a>00309       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointAngleSetpoints&quot;</span>);
+<a name="l00310"></a>00310 
+<a name="l00311"></a>00311     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
+<a name="l00312"></a>00312     joints[0].setData(JointData[0], NON_BLOCKING);
+<a name="l00313"></a>00313     joints[1].setData(JointData[1], NON_BLOCKING);
+<a name="l00314"></a>00314     joints[2].setData(JointData[2], NON_BLOCKING);
+<a name="l00315"></a>00315     joints[3].setData(JointData[3], NON_BLOCKING);
+<a name="l00316"></a>00316     joints[4].setData(JointData[4], NON_BLOCKING);
+<a name="l00317"></a>00317     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
+<a name="l00318"></a>00318 
+<a name="l00319"></a>00319   <span class="comment">// Bouml preserved body end 0008FDF1</span>
+<a name="l00320"></a>00320 }
+<a name="l00321"></a>00321 <span class="comment"></span>
+<a name="l00322"></a>00322 <span class="comment">///gets the position or angle of all manipulator joints which have been calculated from the actual encoder value</span>
+<a name="l00323"></a>00323 <span class="comment">///These values are all read at the same time from the different joints </span>
+<a name="l00324"></a>00324 <span class="comment">///@param data returns the angles by reference</span>
+<a name="l00325"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa">00325</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedAngle&gt;&amp; data) {
+<a name="l00326"></a>00326   <span class="comment">// Bouml preserved body begin 0008FE71</span>
+<a name="l00327"></a>00327     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
+<a name="l00328"></a>00328     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
+<a name="l00329"></a>00329     joints[0].getData(data[0]);
+<a name="l00330"></a>00330     joints[1].getData(data[1]);
+<a name="l00331"></a>00331     joints[2].getData(data[2]);
+<a name="l00332"></a>00332     joints[3].getData(data[3]);
+<a name="l00333"></a>00333     joints[4].getData(data[4]);
+<a name="l00334"></a>00334     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
+<a name="l00335"></a>00335   <span class="comment">// Bouml preserved body end 0008FE71</span>
+<a name="l00336"></a>00336 }
+<a name="l00337"></a>00337 <span class="comment"></span>
+<a name="l00338"></a>00338 <span class="comment">///commands velocities to all manipulator joints</span>
+<a name="l00339"></a>00339 <span class="comment">///all velocities will be set at the same time</span>
+<a name="l00340"></a>00340 <span class="comment">///@param JointData the to command velocities</span>
+<a name="l00341"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a231a007161db9d60f3bae50962c1fe50">00341</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointVelocitySetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
+<a name="l00342"></a>00342   <span class="comment">// Bouml preserved body begin 0008FEF1</span>
+<a name="l00343"></a>00343     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
+<a name="l00344"></a>00344       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointVelocitySetpoints&quot;</span>);
+<a name="l00345"></a>00345 
+<a name="l00346"></a>00346     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
+<a name="l00347"></a>00347     joints[0].setData(JointData[0], NON_BLOCKING);
+<a name="l00348"></a>00348     joints[1].setData(JointData[1], NON_BLOCKING);
+<a name="l00349"></a>00349     joints[2].setData(JointData[2], NON_BLOCKING);
+<a name="l00350"></a>00350     joints[3].setData(JointData[3], NON_BLOCKING);
+<a name="l00351"></a>00351     joints[4].setData(JointData[4], NON_BLOCKING);
+<a name="l00352"></a>00352     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
+<a name="l00353"></a>00353   <span class="comment">// Bouml preserved body end 0008FEF1</span>
+<a name="l00354"></a>00354 }
+<a name="l00355"></a>00355 <span class="comment"></span>
+<a name="l00356"></a>00356 <span class="comment">///gets the velocities of all manipulator joints which have been calculated from the actual encoder values</span>
+<a name="l00357"></a>00357 <span class="comment">///These values are all read at the same time from the different joints </span>
+<a name="l00358"></a>00358 <span class="comment">///@param data returns the velocities by reference</span>
+<a name="l00359"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#af12e8391878e68979c1276c89e5025a6">00359</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedVelocity&gt;&amp; data) {
+<a name="l00360"></a>00360   <span class="comment">// Bouml preserved body begin 0008FF71</span>
+<a name="l00361"></a>00361     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
+<a name="l00362"></a>00362     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
+<a name="l00363"></a>00363     joints[0].getData(data[0]);
+<a name="l00364"></a>00364     joints[1].getData(data[1]);
+<a name="l00365"></a>00365     joints[2].getData(data[2]);
+<a name="l00366"></a>00366     joints[3].getData(data[3]);
+<a name="l00367"></a>00367     joints[4].getData(data[4]);
+<a name="l00368"></a>00368     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
+<a name="l00369"></a>00369   <span class="comment">// Bouml preserved body end 0008FF71</span>
+<a name="l00370"></a>00370 }
+<a name="l00371"></a>00371 <span class="comment"></span>
+<a name="l00372"></a>00372 <span class="comment">///commands current to all manipulator joints</span>
+<a name="l00373"></a>00373 <span class="comment">///all current values will be set at the same time</span>
+<a name="l00374"></a>00374 <span class="comment">///@param JointData the to command current</span>
+<a name="l00375"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a94e23ba84d84fd865f38e9e2eaafbba9">00375</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointCurrentSetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
+<a name="l00376"></a>00376   <span class="comment">// Bouml preserved body begin 000CDE71</span>
+<a name="l00377"></a>00377     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
+<a name="l00378"></a>00378       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointCurrentSetpoint&quot;</span>);
+<a name="l00379"></a>00379 
+<a name="l00380"></a>00380     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
+<a name="l00381"></a>00381     joints[0].setData(JointData[0], NON_BLOCKING);
+<a name="l00382"></a>00382     joints[1].setData(JointData[1], NON_BLOCKING);
+<a name="l00383"></a>00383     joints[2].setData(JointData[2], NON_BLOCKING);
+<a name="l00384"></a>00384     joints[3].setData(JointData[3], NON_BLOCKING);
+<a name="l00385"></a>00385     joints[4].setData(JointData[4], NON_BLOCKING);
+<a name="l00386"></a>00386     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
+<a name="l00387"></a>00387   <span class="comment">// Bouml preserved body end 000CDE71</span>
+<a name="l00388"></a>00388 }
+<a name="l00389"></a>00389 <span class="comment"></span>
+<a name="l00390"></a>00390 <span class="comment">///gets the motor currents of all manipulator joints which have been measured by a hal sensor</span>
+<a name="l00391"></a>00391 <span class="comment">///These values are all read at the same time from the different joints </span>
+<a name="l00392"></a>00392 <span class="comment">///@param data returns the actual motor currents by reference</span>
+<a name="l00393"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#acfae3141fafbe0e7dd4c7a0fe994297e">00393</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedCurrent&gt;&amp; data) {
+<a name="l00394"></a>00394   <span class="comment">// Bouml preserved body begin 00090071</span>
+<a name="l00395"></a>00395     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
+<a name="l00396"></a>00396     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
+<a name="l00397"></a>00397     joints[0].getData(data[0]);
+<a name="l00398"></a>00398     joints[1].getData(data[1]);
+<a name="l00399"></a>00399     joints[2].getData(data[2]);
+<a name="l00400"></a>00400     joints[3].getData(data[3]);
+<a name="l00401"></a>00401     joints[4].getData(data[4]);
+<a name="l00402"></a>00402     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
+<a name="l00403"></a>00403   <span class="comment">// Bouml preserved body end 00090071</span>
+<a name="l00404"></a>00404 }
+<a name="l00405"></a>00405 <span class="comment"></span>
+<a name="l00406"></a>00406 <span class="comment">///commands torque to all manipulator joints</span>
+<a name="l00407"></a>00407 <span class="comment">///all torque values will be set at the same time</span>
+<a name="l00408"></a>00408 <span class="comment">///@param JointData the to command torque </span>
+<a name="l00409"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aead98c475b8bd2f3e6b8c9fce208f5af">00409</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a08291f5e8196227c240aa14c6afa2c94" title="commands positions or angles to all manipulator joints all positions will be set...">YouBotManipulator::setJointData</a>(<span class="keyword">const</span> std::vector&lt;JointTorqueSetpoint&gt;&amp; <a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>) {
+<a name="l00410"></a>00410   <span class="comment">// Bouml preserved body begin 000CDEF1</span>
+<a name="l00411"></a>00411     <span class="keywordflow">if</span> (JointData.size() != <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>)
+<a name="l00412"></a>00412       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Wrong number of JointTorqueSetpoint&quot;</span>);
+<a name="l00413"></a>00413 
+<a name="l00414"></a>00414     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">false</span>);
+<a name="l00415"></a>00415     joints[0].setData(JointData[0], NON_BLOCKING);
+<a name="l00416"></a>00416     joints[1].setData(JointData[1], NON_BLOCKING);
+<a name="l00417"></a>00417     joints[2].setData(JointData[2], NON_BLOCKING);
+<a name="l00418"></a>00418     joints[3].setData(JointData[3], NON_BLOCKING);
+<a name="l00419"></a>00419     joints[4].setData(JointData[4], NON_BLOCKING);
+<a name="l00420"></a>00420     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a6c20b45675b844c05f2aab3cbe990a6e">AutomaticSendOn</a>(<span class="keyword">true</span>);
+<a name="l00421"></a>00421   <span class="comment">// Bouml preserved body end 000CDEF1</span>
+<a name="l00422"></a>00422 }
+<a name="l00423"></a>00423 <span class="comment"></span>
+<a name="l00424"></a>00424 <span class="comment">///gets the joint torque of all manipulator joints which have been calculated from the current</span>
+<a name="l00425"></a>00425 <span class="comment">///These values are all read at the same time from the different joints </span>
+<a name="l00426"></a>00426 <span class="comment">///@param data returns the actual joint torque by reference</span>
+<a name="l00427"></a><a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a38b673767e67bdf914a8201442faee5f">00427</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#aec8f0aca2e44650bdae203474b57cbfa" title="gets the position or angle of all manipulator joints which have been calculated from...">YouBotManipulator::getJointData</a>(std::vector&lt;JointSensedTorque&gt;&amp; data) {
+<a name="l00428"></a>00428   <span class="comment">// Bouml preserved body begin 000CDF71</span>
+<a name="l00429"></a>00429     data.resize(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>);
+<a name="l00430"></a>00430     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">false</span>);
+<a name="l00431"></a>00431     joints[0].getData(data[0]);
+<a name="l00432"></a>00432     joints[1].getData(data[1]);
+<a name="l00433"></a>00433     joints[2].getData(data[2]);
+<a name="l00434"></a>00434     joints[3].getData(data[3]);
+<a name="l00435"></a>00435     joints[4].getData(data[4]);
+<a name="l00436"></a>00436     ethercatMaster.<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a1b249885fbf5163445bc6328f865bb9c">AutomaticReceiveOn</a>(<span class="keyword">true</span>);
+<a name="l00437"></a>00437   <span class="comment">// Bouml preserved body end 000CDF71</span>
+<a name="l00438"></a>00438 }
+<a name="l00439"></a>00439 <span class="comment"></span>
+<a name="l00440"></a>00440 <span class="comment">///does the commutation of the arm joints with firmware 2.0</span>
+<a name="l00441"></a>00441 <span class="comment"></span><span class="keywordtype">void</span> YouBotManipulator::commutationFirmware200() {
+<a name="l00442"></a>00442   <span class="comment">// Bouml preserved body begin 0010D8F1</span>
+<a name="l00443"></a>00443   
+<a name="l00444"></a>00444     <a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html" title="Initialize Joint.">InitializeJoint</a> doInitialization;
+<a name="l00445"></a>00445     <span class="keywordtype">bool</span> isInitialized = <span class="keyword">false</span>;
+<a name="l00446"></a>00446     <span class="keywordtype">int</span> noInitialization = 0;
+<a name="l00447"></a>00447     std::string jointName;
+<a name="l00448"></a>00448     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> statusFlags;
+<a name="l00449"></a>00449     std::vector&lt;bool&gt; isCommutated;
+<a name="l00450"></a>00450     isCommutated.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, <span class="keyword">false</span>);
+<a name="l00451"></a>00451     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> u = 0;
+<a name="l00452"></a>00452     <a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html" title="Set-point current of the joint.">JointCurrentSetpoint</a> zerocurrent;
+<a name="l00453"></a>00453     zerocurrent.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0.0 * ampere;
+<a name="l00454"></a>00454 
+<a name="l00455"></a>00455 
+<a name="l00456"></a>00456     <a class="code" href="../../df/d58/classyoubot_1_1_clear_motor_controller_timeout_flag.html" title="Clear the flag that indicates a communication timeout between the EtherCAT master...">ClearMotorControllerTimeoutFlag</a> clearTimeoutFlag;
+<a name="l00457"></a>00457     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00458"></a>00458       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00459"></a>00459     }
+<a name="l00460"></a>00460 
+<a name="l00461"></a>00461     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00462"></a>00462       doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(<span class="keyword">false</span>);
+<a name="l00463"></a>00463       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).getConfigurationParameter(doInitialization);
+<a name="l00464"></a>00464       doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a100505a5d6f738b37e62ebb8aca7956b">getParameter</a>(isInitialized);
+<a name="l00465"></a>00465       <span class="keywordflow">if</span> (!isInitialized) {
+<a name="l00466"></a>00466         noInitialization++;
+<a name="l00467"></a>00467       }
+<a name="l00468"></a>00468     }
+<a name="l00469"></a>00469 
+<a name="l00470"></a>00470     <span class="keywordflow">if</span> (noInitialization != 0) {
+<a name="l00471"></a>00471       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Manipulator Joint Commutation&quot;</span>;
+<a name="l00472"></a>00472       doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(<span class="keyword">true</span>);
+<a name="l00473"></a>00473 
+<a name="l00474"></a>00474       JointRoundsPerMinuteSetpoint rpmSetpoint(100);
+<a name="l00475"></a>00475         
+<a name="l00476"></a>00476       ethercatMaster.AutomaticReceiveOn(<span class="keyword">false</span>);
+<a name="l00477"></a>00477       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(1).setData(rpmSetpoint);
+<a name="l00478"></a>00478       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(2).setData(rpmSetpoint);
+<a name="l00479"></a>00479       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(3).setData(rpmSetpoint);
+<a name="l00480"></a>00480       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(4).setData(rpmSetpoint);
+<a name="l00481"></a>00481       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(5).setData(rpmSetpoint);
+<a name="l00482"></a>00482       ethercatMaster.AutomaticReceiveOn(<span class="keyword">true</span>);
+<a name="l00483"></a>00483      
+<a name="l00484"></a>00484       
+<a name="l00485"></a>00485       <span class="comment">// check for the next 5 sec if the joints are commutated</span>
+<a name="l00486"></a>00486       <span class="keywordflow">for</span> (u = 1; u &lt;= 5000; u++) {
+<a name="l00487"></a>00487         <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00488"></a>00488           this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).getStatus(statusFlags);
+<a name="l00489"></a>00489           <span class="keywordflow">if</span> (statusFlags &amp; INITIALIZED) {
+<a name="l00490"></a>00490             isCommutated[i - 1] = <span class="keyword">true</span>;
+<a name="l00491"></a>00491             this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).setData(zerocurrent);
+<a name="l00492"></a>00492           }
+<a name="l00493"></a>00493         }
+<a name="l00494"></a>00494         <span class="keywordflow">if</span>(!ethercatMaster.isThreadActive()){
+<a name="l00495"></a>00495           ethercatMaster.sendProcessData();
+<a name="l00496"></a>00496           ethercatMaster.receiveProcessData();
+<a name="l00497"></a>00497         }
+<a name="l00498"></a>00498         <span class="keywordflow">if</span> (isCommutated[0] &amp;&amp; isCommutated[1] &amp;&amp; isCommutated[2] &amp;&amp; isCommutated[3] &amp;&amp; isCommutated[4]) {
+<a name="l00499"></a>00499           <span class="keywordflow">break</span>;
+<a name="l00500"></a>00500         }
+<a name="l00501"></a>00501         <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(1);
+<a name="l00502"></a>00502       }
+<a name="l00503"></a>00503 
+<a name="l00504"></a>00504       <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00505"></a>00505         this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).setData(zerocurrent);
+<a name="l00506"></a>00506         <span class="keywordflow">if</span>(!ethercatMaster.isThreadActive()){
+<a name="l00507"></a>00507           ethercatMaster.sendProcessData();
+<a name="l00508"></a>00508           ethercatMaster.receiveProcessData();
+<a name="l00509"></a>00509         }
+<a name="l00510"></a>00510         doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a7ae6377a16ca67ea5030a495d7b6452f">setParameter</a>(<span class="keyword">false</span>);
+<a name="l00511"></a>00511         this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).getConfigurationParameter(doInitialization);
+<a name="l00512"></a>00512         doInitialization.<a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html#a100505a5d6f738b37e62ebb8aca7956b">getParameter</a>(isInitialized);
+<a name="l00513"></a>00513         <span class="keywordflow">if</span> (!isInitialized) {
+<a name="l00514"></a>00514           std::stringstream jointNameStream;
+<a name="l00515"></a>00515           jointNameStream &lt;&lt; <span class="stringliteral">&quot;manipulator joint &quot;</span> &lt;&lt; i;
+<a name="l00516"></a>00516           jointName = jointNameStream.str();
+<a name="l00517"></a>00517           <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Could not commutate &quot;</span> + jointName);
+<a name="l00518"></a>00518         }
+<a name="l00519"></a>00519       }
+<a name="l00520"></a>00520     }
+<a name="l00521"></a>00521   <span class="comment">// Bouml preserved body end 0010D8F1</span>
+<a name="l00522"></a>00522 }
+<a name="l00523"></a>00523 <span class="comment"></span>
+<a name="l00524"></a>00524 <span class="comment">///does the commutation of the arm joints with firmware 1.48 and below</span>
+<a name="l00525"></a>00525 <span class="comment"></span><span class="keywordtype">void</span> YouBotManipulator::commutationFirmware148() {
+<a name="l00526"></a>00526   <span class="comment">// Bouml preserved body begin 0010D971</span>
+<a name="l00527"></a>00527   
+<a name="l00528"></a>00528     InitializeJoint doInitialization;
+<a name="l00529"></a>00529     <span class="keywordtype">bool</span> isInitialized = <span class="keyword">false</span>;
+<a name="l00530"></a>00530     <span class="keywordtype">int</span> noInitialization = 0;
+<a name="l00531"></a>00531     std::string jointName;
 <a name="l00532"></a>00532 
-<a name="l00533"></a>00533     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint3&quot;</span>);
-<a name="l00534"></a>00534     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
-<a name="l00535"></a>00535       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
-<a name="l00536"></a>00536     } <span class="keywordflow">else</span> {
-<a name="l00537"></a>00537       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
-<a name="l00538"></a>00538     }
-<a name="l00539"></a>00539 
-<a name="l00540"></a>00540     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint4&quot;</span>);
-<a name="l00541"></a>00541     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
-<a name="l00542"></a>00542       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
-<a name="l00543"></a>00543     } <span class="keywordflow">else</span> {
-<a name="l00544"></a>00544       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
-<a name="l00545"></a>00545     }
-<a name="l00546"></a>00546 
-<a name="l00547"></a>00547     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint5&quot;</span>);
-<a name="l00548"></a>00548     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
-<a name="l00549"></a>00549       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
-<a name="l00550"></a>00550     } <span class="keywordflow">else</span> {
-<a name="l00551"></a>00551       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
-<a name="l00552"></a>00552     }
-<a name="l00553"></a>00553 
-<a name="l00554"></a>00554 
-<a name="l00555"></a>00555 
-<a name="l00556"></a>00556 
-<a name="l00557"></a>00557 
-<a name="l00558"></a>00558     <span class="comment">//Configure Joint Parameters</span>
-<a name="l00559"></a>00559     std::string jointName;
-<a name="l00560"></a>00560     JointName jName;
-<a name="l00561"></a>00561     GearRatio gearRatio;
-<a name="l00562"></a>00562     EncoderTicksPerRound ticksPerRound;
-<a name="l00563"></a>00563     InverseMovementDirection inverseDir;
-<a name="l00564"></a>00564     <span class="keywordtype">double</span> gearRatio_numerator = 0;
-<a name="l00565"></a>00565     <span class="keywordtype">double</span> gearRatio_denominator = 1;
-<a name="l00566"></a>00566     FirmwareVersion firmwareTypeVersion;
-<a name="l00567"></a>00567     TorqueConstant torqueConst;
-<a name="l00568"></a>00568 
-<a name="l00569"></a>00569 
-<a name="l00570"></a>00570     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
-<a name="l00571"></a>00571       std::stringstream jointNameStream;
-<a name="l00572"></a>00572       jointNameStream &lt;&lt; <span class="stringliteral">&quot;Joint_&quot;</span> &lt;&lt; i + 1;
-<a name="l00573"></a>00573       jointName = jointNameStream.str();
-<a name="l00574"></a>00574 
-<a name="l00575"></a>00575 
-<a name="l00576"></a>00576       joints[i].getConfigurationParameter(firmwareTypeVersion);
-<a name="l00577"></a>00577       std::string version;
-<a name="l00578"></a>00578       <span class="keywordtype">int</span> controllerType;
-<a name="l00579"></a>00579       <span class="keywordtype">double</span> firmwareVersion;
-<a name="l00580"></a>00580       firmwareTypeVersion.getParameter(controllerType, firmwareVersion);
-<a name="l00581"></a>00581 
-<a name="l00582"></a>00582       <span class="keywordtype">string</span> name;
-<a name="l00583"></a>00583       configfile-&gt;readInto(name, jointName, <span class="stringliteral">&quot;JointName&quot;</span>);
-<a name="l00584"></a>00584       jName.setParameter(name);
-<a name="l00585"></a>00585 
-<a name="l00586"></a>00586       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;\t Controller Type: &quot;</span> &lt;&lt; controllerType &lt;&lt; <span class="stringliteral">&quot;  Firmware version: &quot;</span> &lt;&lt; firmwareVersion;
-<a name="l00587"></a>00587 
-<a name="l00588"></a>00588       <span class="keywordflow">if</span> (this-&gt;controllerType != controllerType &amp;&amp; alternativeControllerType != controllerType) {
-<a name="l00589"></a>00589         std::stringstream ss;
-<a name="l00590"></a>00590         ss &lt;&lt; <span class="stringliteral">&quot;The youBot manipulator motor controller have to be of type: &quot;</span> &lt;&lt; this-&gt;controllerType &lt;&lt; <span class="stringliteral">&quot; or &quot;</span> &lt;&lt; alternativeControllerType;
-<a name="l00591"></a>00591         <span class="keywordflow">throw</span> std::runtime_error(ss.str().c_str());
-<a name="l00592"></a>00592       }
-<a name="l00593"></a>00593 
-<a name="l00594"></a>00594       <span class="keywordflow">if</span> (!areSame(firmwareVersion, this-&gt;minFirmwareVersion)) {
-<a name="l00595"></a>00595         <span class="keywordflow">if</span> (firmwareVersion &lt; this-&gt;minFirmwareVersion) {
-<a name="l00596"></a>00596           std::stringstream ss;
-<a name="l00597"></a>00597           ss &lt;&lt; <span class="stringliteral">&quot;The motor controller firmware version have be &quot;</span> &lt;&lt; this-&gt;minFirmwareVersion &lt;&lt; <span class="stringliteral">&quot; or higher.&quot;</span>;
-<a name="l00598"></a>00598           <span class="keywordflow">throw</span> std::runtime_error(ss.str().c_str());
-<a name="l00599"></a>00599         }
-<a name="l00600"></a>00600       }
+<a name="l00533"></a>00533 
+<a name="l00534"></a>00534     ClearMotorControllerTimeoutFlag clearTimeoutFlag;
+<a name="l00535"></a>00535     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00536"></a>00536       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).setConfigurationParameter(clearTimeoutFlag);
+<a name="l00537"></a>00537     }
+<a name="l00538"></a>00538 
+<a name="l00539"></a>00539     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00540"></a>00540       doInitialization.setParameter(<span class="keyword">false</span>);
+<a name="l00541"></a>00541       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).getConfigurationParameter(doInitialization);
+<a name="l00542"></a>00542       doInitialization.getParameter(isInitialized);
+<a name="l00543"></a>00543       <span class="keywordflow">if</span> (!isInitialized) {
+<a name="l00544"></a>00544         noInitialization++;
+<a name="l00545"></a>00545       }
+<a name="l00546"></a>00546     }
+<a name="l00547"></a>00547 
+<a name="l00548"></a>00548     <span class="keywordflow">if</span> (noInitialization != 0) {
+<a name="l00549"></a>00549       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Manipulator Joint Commutation&quot;</span>;
+<a name="l00550"></a>00550       doInitialization.setParameter(<span class="keyword">true</span>);
+<a name="l00551"></a>00551 
+<a name="l00552"></a>00552       ethercatMaster.AutomaticReceiveOn(<span class="keyword">false</span>);
+<a name="l00553"></a>00553       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(1).setConfigurationParameter(doInitialization);
+<a name="l00554"></a>00554       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(2).setConfigurationParameter(doInitialization);
+<a name="l00555"></a>00555       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(3).setConfigurationParameter(doInitialization);
+<a name="l00556"></a>00556       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(4).setConfigurationParameter(doInitialization);
+<a name="l00557"></a>00557       this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(5).setConfigurationParameter(doInitialization);
+<a name="l00558"></a>00558       ethercatMaster.AutomaticReceiveOn(<span class="keyword">true</span>);
+<a name="l00559"></a>00559 
+<a name="l00560"></a>00560       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> statusFlags;
+<a name="l00561"></a>00561       std::vector&lt;bool&gt; isCommutated;
+<a name="l00562"></a>00562       isCommutated.assign(<a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>, <span class="keyword">false</span>);
+<a name="l00563"></a>00563       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> u = 0;
+<a name="l00564"></a>00564 
+<a name="l00565"></a>00565       <span class="comment">// check for the next 5 sec if the joints are commutated</span>
+<a name="l00566"></a>00566       <span class="keywordflow">for</span> (u = 1; u &lt;= 5000; u++) {
+<a name="l00567"></a>00567         <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00568"></a>00568           <span class="keywordflow">if</span>(!ethercatMaster.isThreadActive()){
+<a name="l00569"></a>00569             ethercatMaster.sendProcessData();
+<a name="l00570"></a>00570             ethercatMaster.receiveProcessData();
+<a name="l00571"></a>00571           }
+<a name="l00572"></a>00572           this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).getStatus(statusFlags);
+<a name="l00573"></a>00573           <span class="keywordflow">if</span> (statusFlags &amp; INITIALIZED) {
+<a name="l00574"></a>00574             isCommutated[i - 1] = <span class="keyword">true</span>;
+<a name="l00575"></a>00575           }
+<a name="l00576"></a>00576         }
+<a name="l00577"></a>00577         <span class="keywordflow">if</span> (isCommutated[0] &amp;&amp; isCommutated[1] &amp;&amp; isCommutated[2] &amp;&amp; isCommutated[3] &amp;&amp; isCommutated[4]) {
+<a name="l00578"></a>00578           <span class="keywordflow">break</span>;
+<a name="l00579"></a>00579         }
+<a name="l00580"></a>00580         <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(1);
+<a name="l00581"></a>00581       }
+<a name="l00582"></a>00582 
+<a name="l00583"></a>00583       <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(10); <span class="comment">// the controller likes it</span>
+<a name="l00584"></a>00584 
+<a name="l00585"></a>00585       <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00586"></a>00586         doInitialization.setParameter(<span class="keyword">false</span>);
+<a name="l00587"></a>00587         this-&gt;<a class="code" href="../../d7/d57/classyoubot_1_1_you_bot_manipulator.html#a018dbcb5c98230307173984c3f91632b" title="return a joint form the arm1">getArmJoint</a>(i).getConfigurationParameter(doInitialization);
+<a name="l00588"></a>00588         doInitialization.getParameter(isInitialized);
+<a name="l00589"></a>00589         <span class="keywordflow">if</span> (!isInitialized) {
+<a name="l00590"></a>00590           std::stringstream jointNameStream;
+<a name="l00591"></a>00591           jointNameStream &lt;&lt; <span class="stringliteral">&quot;manipulator joint &quot;</span> &lt;&lt; i;
+<a name="l00592"></a>00592           jointName = jointNameStream.str();
+<a name="l00593"></a>00593           <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Could not commutate &quot;</span> + jointName);
+<a name="l00594"></a>00594         }
+<a name="l00595"></a>00595       }
+<a name="l00596"></a>00596     }
+<a name="l00597"></a>00597 
+<a name="l00598"></a>00598 
+<a name="l00599"></a>00599   <span class="comment">// Bouml preserved body end 0010D971</span>
+<a name="l00600"></a>00600 }
 <a name="l00601"></a>00601 
-<a name="l00602"></a>00602       configfile-&gt;readInto(gearRatio_numerator, jointName, <span class="stringliteral">&quot;GearRatio_numerator&quot;</span>);
-<a name="l00603"></a>00603       configfile-&gt;readInto(gearRatio_denominator, jointName, <span class="stringliteral">&quot;GearRatio_denominator&quot;</span>);
-<a name="l00604"></a>00604       gearRatio.setParameter(gearRatio_numerator / gearRatio_denominator);
-<a name="l00605"></a>00605       <span class="keywordtype">int</span> ticks;
-<a name="l00606"></a>00606       configfile-&gt;readInto(ticks, jointName, <span class="stringliteral">&quot;EncoderTicksPerRound&quot;</span>);
-<a name="l00607"></a>00607       ticksPerRound.setParameter(ticks);
-<a name="l00608"></a>00608       
-<a name="l00609"></a>00609       <span class="keywordtype">double</span> torqueConstant;
-<a name="l00610"></a>00610       configfile-&gt;readInto(torqueConstant, jointName, <span class="stringliteral">&quot;TorqueConstant_[newton_meter_divided_by_ampere]&quot;</span>);
-<a name="l00611"></a>00611       torqueConst.setParameter(torqueConstant);
-<a name="l00612"></a>00612       
-<a name="l00613"></a>00613       <span class="keywordtype">bool</span> invdir = <span class="keyword">false</span>;
-<a name="l00614"></a>00614       configfile-&gt;readInto(invdir, jointName, <span class="stringliteral">&quot;InverseMovementDirection&quot;</span>);
-<a name="l00615"></a>00615       inverseDir.setParameter(invdir);
+<a name="l00602"></a>00602 <span class="keywordtype">void</span> YouBotManipulator::initializeJoints() {
+<a name="l00603"></a>00603   <span class="comment">// Bouml preserved body begin 00068071</span>
+<a name="l00604"></a>00604 
+<a name="l00605"></a>00605  <span class="comment">//   LOG(info) &lt;&lt; &quot;Initializing Joints&quot;;</span>
+<a name="l00606"></a>00606 
+<a name="l00607"></a>00607 
+<a name="l00608"></a>00608     <span class="comment">//get number of slaves</span>
+<a name="l00609"></a>00609     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> noSlaves = ethercatMaster.getNumberOfSlaves();
+<a name="l00610"></a>00610 
+<a name="l00611"></a>00611 
+<a name="l00612"></a>00612     <span class="keywordflow">if</span> (noSlaves &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>) {
+<a name="l00613"></a>00613       <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Not enough ethercat slaves were found to create a YouBotManipulator!&quot;</span>);
+<a name="l00614"></a>00614     }
+<a name="l00615"></a>00615 
 <a name="l00616"></a>00616 
-<a name="l00617"></a>00617       joints[i].setConfigurationParameter(jName);
-<a name="l00618"></a>00618       joints[i].setConfigurationParameter(gearRatio);
-<a name="l00619"></a>00619       joints[i].setConfigurationParameter(ticksPerRound);
-<a name="l00620"></a>00620       joints[i].setConfigurationParameter(torqueConst);
-<a name="l00621"></a>00621       joints[i].setConfigurationParameter(inverseDir);
-<a name="l00622"></a>00622       
-<a name="l00623"></a>00623       <span class="comment">//Joint Trajectory Controller</span>
-<a name="l00624"></a>00624       <span class="comment">/*</span>
-<a name="l00625"></a>00625 <span class="comment">      if(ethercatMaster.isThreadActive()){</span>
-<a name="l00626"></a>00626 <span class="comment">        unsigned int numberOfThreadCyclesPerSecond = ethercatMasterWithThread-&gt;getNumberOfThreadCyclesPerSecond();</span>
-<a name="l00627"></a>00627 <span class="comment">        joints[i].trajectoryController.setControllerUpdatesPerSecond(numberOfThreadCyclesPerSecond);</span>
-<a name="l00628"></a>00628 <span class="comment">        ethercatMasterWithThread-&gt;registerJointTrajectoryController(&amp;(joints[i].trajectoryController), joints[i].getJointNumber());</span>
-<a name="l00629"></a>00629 <span class="comment">      }</span>
-<a name="l00630"></a>00630 <span class="comment">      */</span>
-<a name="l00631"></a>00631     }
-<a name="l00632"></a>00632 
-<a name="l00633"></a>00633 
-<a name="l00634"></a>00634     configfile-&gt;readInto(useGripper, <span class="stringliteral">&quot;Gripper&quot;</span>, <span class="stringliteral">&quot;EnableGripper&quot;</span>);
-<a name="l00635"></a>00635     
-<a name="l00636"></a>00636     <span class="keywordflow">if</span>(useGripper){
-<a name="l00637"></a>00637     <span class="comment">//Initializing Gripper</span>
-<a name="l00638"></a>00638     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint5&quot;</span>);
-<a name="l00639"></a>00639     this-&gt;gripper.reset(<span class="keyword">new</span> YouBotGripper(slaveNumber));
-<a name="l00640"></a>00640     BarSpacingOffset barOffest;
-<a name="l00641"></a>00641     MaxTravelDistance maxDistance;
-<a name="l00642"></a>00642     MaxEncoderValue maxEncoder;
-<a name="l00643"></a>00643     GripperBarName BarName;
-<a name="l00644"></a>00644     <span class="keywordtype">double</span> dummy = 0;
-<a name="l00645"></a>00645     <span class="keywordtype">int</span> controllerType;
-<a name="l00646"></a>00646     <span class="keywordtype">double</span> firmwareVersion;
-<a name="l00647"></a>00647     <span class="keywordtype">string</span> barname;
-<a name="l00648"></a>00648     
-<a name="l00649"></a>00649     GripperFirmwareVersion gripperVersion;
-<a name="l00650"></a>00650     this-&gt;gripper-&gt;getConfigurationParameter(gripperVersion);
-<a name="l00651"></a>00651     gripperVersion.getParameter(controllerType, firmwareVersion);
-<a name="l00652"></a>00652     
-<a name="l00653"></a>00653     <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Gripper&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\t\t Controller Type: &quot;</span> &lt;&lt; controllerType &lt;&lt; <span class="stringliteral">&quot;  Firmware version: &quot;</span> &lt;&lt; firmwareVersion;
+<a name="l00617"></a>00617     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> slaveNumber = 0;
+<a name="l00618"></a>00618     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint1&quot;</span>);
+<a name="l00619"></a>00619     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
+<a name="l00620"></a>00620       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
+<a name="l00621"></a>00621     } <span class="keywordflow">else</span> {
+<a name="l00622"></a>00622       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
+<a name="l00623"></a>00623     }
+<a name="l00624"></a>00624 
+<a name="l00625"></a>00625     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint2&quot;</span>);
+<a name="l00626"></a>00626     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
+<a name="l00627"></a>00627       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
+<a name="l00628"></a>00628     } <span class="keywordflow">else</span> {
+<a name="l00629"></a>00629       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
+<a name="l00630"></a>00630     }
+<a name="l00631"></a>00631 
+<a name="l00632"></a>00632     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint3&quot;</span>);
+<a name="l00633"></a>00633     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
+<a name="l00634"></a>00634       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
+<a name="l00635"></a>00635     } <span class="keywordflow">else</span> {
+<a name="l00636"></a>00636       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
+<a name="l00637"></a>00637     }
+<a name="l00638"></a>00638 
+<a name="l00639"></a>00639     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint4&quot;</span>);
+<a name="l00640"></a>00640     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
+<a name="l00641"></a>00641       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
+<a name="l00642"></a>00642     } <span class="keywordflow">else</span> {
+<a name="l00643"></a>00643       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
+<a name="l00644"></a>00644     }
+<a name="l00645"></a>00645 
+<a name="l00646"></a>00646     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint5&quot;</span>);
+<a name="l00647"></a>00647     <span class="keywordflow">if</span> (slaveNumber &lt;= noSlaves) {
+<a name="l00648"></a>00648       joints.push_back(<span class="keyword">new</span> YouBotJoint(slaveNumber));
+<a name="l00649"></a>00649     } <span class="keywordflow">else</span> {
+<a name="l00650"></a>00650       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The ethercat slave number is not available!&quot;</span>);
+<a name="l00651"></a>00651     }
+<a name="l00652"></a>00652 
+<a name="l00653"></a>00653 
 <a name="l00654"></a>00654 
-<a name="l00655"></a>00655     <span class="comment">// Gripper Bar 1</span>
-<a name="l00656"></a>00656     configfile-&gt;readInto(barname, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;BarName&quot;</span>);
-<a name="l00657"></a>00657     BarName.setParameter(barname);
-<a name="l00658"></a>00658     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(BarName);
-<a name="l00659"></a>00659     
-<a name="l00660"></a>00660     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;BarSpacingOffset_[meter]&quot;</span>);
-<a name="l00661"></a>00661     barOffest.setParameter(dummy * meter);
-<a name="l00662"></a>00662     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(barOffest);
-<a name="l00663"></a>00663     
-<a name="l00664"></a>00664     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;MaxTravelDistance_[meter]&quot;</span>);
-<a name="l00665"></a>00665     maxDistance.setParameter(dummy * meter);
-<a name="l00666"></a>00666     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(maxDistance);
-<a name="l00667"></a>00667     
-<a name="l00668"></a>00668     <span class="keywordtype">int</span> maxenc = 0;
-<a name="l00669"></a>00669     configfile-&gt;readInto(maxenc, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;MaxEncoderValue&quot;</span>);
-<a name="l00670"></a>00670     maxEncoder.setParameter(maxenc);
-<a name="l00671"></a>00671     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(maxEncoder);
-<a name="l00672"></a>00672     
-<a name="l00673"></a>00673     <span class="keywordtype">int</span> stallThreshold = 0;
-<a name="l00674"></a>00674     configfile-&gt;readInto(stallThreshold, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;StallGuard2Threshold&quot;</span>);
-<a name="l00675"></a>00675     StallGuard2Threshold threshold;
-<a name="l00676"></a>00676     threshold.setParameter(stallThreshold);
-<a name="l00677"></a>00677     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(threshold);
-<a name="l00678"></a>00678 
-<a name="l00679"></a>00679     <span class="keywordtype">bool</span> stallGuardFilter = <span class="keyword">false</span>;
-<a name="l00680"></a>00680     configfile-&gt;readInto(stallGuardFilter, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;StallGuard2FilterEnable&quot;</span>);
-<a name="l00681"></a>00681     StallGuard2FilterEnable filter;
-<a name="l00682"></a>00682     filter.setParameter(stallGuardFilter);
-<a name="l00683"></a>00683     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(filter);
-<a name="l00684"></a>00684     
-<a name="l00685"></a>00685     <span class="comment">// Gripper Bar 2</span>
-<a name="l00686"></a>00686     configfile-&gt;readInto(barname, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;BarName&quot;</span>);
-<a name="l00687"></a>00687     BarName.setParameter(barname);
-<a name="l00688"></a>00688     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(BarName);
-<a name="l00689"></a>00689     
-<a name="l00690"></a>00690     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;BarSpacingOffset_[meter]&quot;</span>);
-<a name="l00691"></a>00691     barOffest.setParameter(dummy * meter);
-<a name="l00692"></a>00692     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(barOffest);
-<a name="l00693"></a>00693     
-<a name="l00694"></a>00694     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;MaxTravelDistance_[meter]&quot;</span>);
-<a name="l00695"></a>00695     maxDistance.setParameter(dummy * meter);
-<a name="l00696"></a>00696     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(maxDistance);
-<a name="l00697"></a>00697 
-<a name="l00698"></a>00698     configfile-&gt;readInto(maxenc, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;MaxEncoderValue&quot;</span>);
-<a name="l00699"></a>00699     maxEncoder.setParameter(maxenc);
-<a name="l00700"></a>00700     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(maxEncoder);
-<a name="l00701"></a>00701     
-<a name="l00702"></a>00702     configfile-&gt;readInto(stallThreshold, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;StallGuard2Threshold&quot;</span>);
-<a name="l00703"></a>00703     threshold.setParameter(stallThreshold);
-<a name="l00704"></a>00704     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(threshold);
-<a name="l00705"></a>00705 
-<a name="l00706"></a>00706     configfile-&gt;readInto(stallGuardFilter, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;StallGuard2FilterEnable&quot;</span>);
-<a name="l00707"></a>00707     filter.setParameter(stallGuardFilter);
-<a name="l00708"></a>00708     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(filter);
-<a name="l00709"></a>00709     }
-<a name="l00710"></a>00710     
-<a name="l00711"></a>00711 
-<a name="l00712"></a>00712     <span class="keywordflow">return</span>;
-<a name="l00713"></a>00713   <span class="comment">// Bouml preserved body end 00068071</span>
-<a name="l00714"></a>00714 }
-<a name="l00715"></a>00715 
-<a name="l00716"></a>00716 
-<a name="l00717"></a>00717 } <span class="comment">// namespace youbot</span>
+<a name="l00655"></a>00655 
+<a name="l00656"></a>00656 
+<a name="l00657"></a>00657     <span class="comment">//Configure Joint Parameters</span>
+<a name="l00658"></a>00658     std::string jointName;
+<a name="l00659"></a>00659     JointName jName;
+<a name="l00660"></a>00660     GearRatio gearRatio;
+<a name="l00661"></a>00661     EncoderTicksPerRound ticksPerRound;
+<a name="l00662"></a>00662     InverseMovementDirection inverseDir;
+<a name="l00663"></a>00663     <span class="keywordtype">double</span> gearRatio_numerator = 0;
+<a name="l00664"></a>00664     <span class="keywordtype">double</span> gearRatio_denominator = 1;
+<a name="l00665"></a>00665     FirmwareVersion firmwareTypeVersion;
+<a name="l00666"></a>00666     TorqueConstant torqueConst;
+<a name="l00667"></a>00667     <span class="keywordtype">double</span> trajectory_p=0, trajectory_i=0, trajectory_d=0, trajectory_imax=0, trajectory_imin=0;
+<a name="l00668"></a>00668 
+<a name="l00669"></a>00669 
+<a name="l00670"></a>00670     <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/dc1/_you_bot_manipulator_8hpp.html#af15474166d5520653d35d27b01d7a281" title="The number of manipulator joints.">ARMJOINTS</a>; i++) {
+<a name="l00671"></a>00671       std::stringstream jointNameStream;
+<a name="l00672"></a>00672       jointNameStream &lt;&lt; <span class="stringliteral">&quot;Joint_&quot;</span> &lt;&lt; i + 1;
+<a name="l00673"></a>00673       jointName = jointNameStream.str();
+<a name="l00674"></a>00674 
+<a name="l00675"></a>00675 
+<a name="l00676"></a>00676       joints[i].getConfigurationParameter(firmwareTypeVersion);
+<a name="l00677"></a>00677       std::string version;
+<a name="l00678"></a>00678       <span class="keywordtype">int</span> controllerType;
+<a name="l00679"></a>00679       std::string firmwareVersion;
+<a name="l00680"></a>00680       firmwareTypeVersion.getParameter(controllerType, firmwareVersion);
+<a name="l00681"></a>00681 
+<a name="l00682"></a>00682       <span class="keywordtype">string</span> name;
+<a name="l00683"></a>00683       configfile-&gt;readInto(name, jointName, <span class="stringliteral">&quot;JointName&quot;</span>);
+<a name="l00684"></a>00684       jName.setParameter(name);
+<a name="l00685"></a>00685 
+<a name="l00686"></a>00686       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;\t Controller Type: &quot;</span> &lt;&lt; controllerType &lt;&lt; <span class="stringliteral">&quot;  Firmware version: &quot;</span> &lt;&lt; firmwareVersion;
+<a name="l00687"></a>00687 
+<a name="l00688"></a>00688       <span class="keywordflow">if</span> (this-&gt;controllerType != controllerType &amp;&amp; alternativeControllerType != controllerType) {
+<a name="l00689"></a>00689         std::stringstream ss;
+<a name="l00690"></a>00690         ss &lt;&lt; <span class="stringliteral">&quot;The youBot manipulator motor controller have to be of type: &quot;</span> &lt;&lt; this-&gt;controllerType &lt;&lt; <span class="stringliteral">&quot; or &quot;</span> &lt;&lt; alternativeControllerType;
+<a name="l00691"></a>00691         <span class="keywordflow">throw</span> std::runtime_error(ss.str().c_str());
+<a name="l00692"></a>00692       }
+<a name="l00693"></a>00693 
+<a name="l00694"></a>00694       <span class="comment">//check if firmware is supported</span>
+<a name="l00695"></a>00695       <span class="keywordtype">bool</span> isfirmwareSupported = <span class="keyword">false</span>;
+<a name="l00696"></a>00696       <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> d = 0; d &lt; supportedFirmwareVersions.size(); d++){
+<a name="l00697"></a>00697         <span class="keywordflow">if</span>(this-&gt;supportedFirmwareVersions[d] == firmwareVersion){
+<a name="l00698"></a>00698           isfirmwareSupported = <span class="keyword">true</span>;
+<a name="l00699"></a>00699           <span class="keywordflow">break</span>;
+<a name="l00700"></a>00700         }
+<a name="l00701"></a>00701       }
+<a name="l00702"></a>00702       
+<a name="l00703"></a>00703       <span class="keywordflow">if</span>(!isfirmwareSupported){
+<a name="l00704"></a>00704         <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Unsupported firmware version: &quot;</span> + firmwareVersion);
+<a name="l00705"></a>00705       }
+<a name="l00706"></a>00706       
+<a name="l00707"></a>00707       <span class="keywordflow">if</span>(this-&gt;actualFirmwareVersionAllJoints == <span class="stringliteral">&quot;&quot;</span>){
+<a name="l00708"></a>00708         this-&gt;actualFirmwareVersionAllJoints = firmwareVersion;
+<a name="l00709"></a>00709       }
+<a name="l00710"></a>00710       
+<a name="l00711"></a>00711       <span class="keywordflow">if</span>(!(firmwareVersion == this-&gt;actualFirmwareVersionAllJoints)){
+<a name="l00712"></a>00712          <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;All joints must have the same firmware version!&quot;</span>);
+<a name="l00713"></a>00713       }
+<a name="l00714"></a>00714 
+<a name="l00715"></a>00715       configfile-&gt;readInto(gearRatio_numerator, jointName, <span class="stringliteral">&quot;GearRatio_numerator&quot;</span>);
+<a name="l00716"></a>00716       configfile-&gt;readInto(gearRatio_denominator, jointName, <span class="stringliteral">&quot;GearRatio_denominator&quot;</span>);
+<a name="l00717"></a>00717       gearRatio.setParameter(gearRatio_numerator / gearRatio_denominator);
+<a name="l00718"></a>00718       <span class="keywordtype">int</span> ticks;
+<a name="l00719"></a>00719       configfile-&gt;readInto(ticks, jointName, <span class="stringliteral">&quot;EncoderTicksPerRound&quot;</span>);
+<a name="l00720"></a>00720       ticksPerRound.setParameter(ticks);
+<a name="l00721"></a>00721       
+<a name="l00722"></a>00722       <span class="keywordtype">double</span> torqueConstant;
+<a name="l00723"></a>00723       configfile-&gt;readInto(torqueConstant, jointName, <span class="stringliteral">&quot;TorqueConstant_[newton_meter_divided_by_ampere]&quot;</span>);
+<a name="l00724"></a>00724       torqueConst.setParameter(torqueConstant);
+<a name="l00725"></a>00725       
+<a name="l00726"></a>00726       <span class="keywordtype">bool</span> invdir = <span class="keyword">false</span>;
+<a name="l00727"></a>00727       configfile-&gt;readInto(invdir, jointName, <span class="stringliteral">&quot;InverseMovementDirection&quot;</span>);
+<a name="l00728"></a>00728       inverseDir.setParameter(invdir);
+<a name="l00729"></a>00729 
+<a name="l00730"></a>00730       joints[i].setConfigurationParameter(jName);
+<a name="l00731"></a>00731       joints[i].setConfigurationParameter(gearRatio);
+<a name="l00732"></a>00732       joints[i].setConfigurationParameter(ticksPerRound);
+<a name="l00733"></a>00733       joints[i].setConfigurationParameter(torqueConst);
+<a name="l00734"></a>00734       joints[i].setConfigurationParameter(inverseDir);
+<a name="l00735"></a>00735       
+<a name="l00736"></a>00736       <span class="comment">//Joint Trajectory Controller</span>
+<a name="l00737"></a>00737       <span class="keywordflow">if</span>(ethercatMaster.isThreadActive()){
+<a name="l00738"></a>00738         configfile-&gt;readInto(trajectory_p, jointName, <span class="stringliteral">&quot;trajectory_controller_P&quot;</span>);
+<a name="l00739"></a>00739         configfile-&gt;readInto(trajectory_i, jointName, <span class="stringliteral">&quot;trajectory_controller_I&quot;</span>);
+<a name="l00740"></a>00740         configfile-&gt;readInto(trajectory_d, jointName, <span class="stringliteral">&quot;trajectory_controller_D&quot;</span>);
+<a name="l00741"></a>00741         configfile-&gt;readInto(trajectory_imax, jointName, <span class="stringliteral">&quot;trajectory_controller_I_max&quot;</span>);
+<a name="l00742"></a>00742         configfile-&gt;readInto(trajectory_imin, jointName, <span class="stringliteral">&quot;trajectory_controller_I_min&quot;</span>);
+<a name="l00743"></a>00743         joints[i].trajectoryController.setConfigurationParameter(trajectory_p, trajectory_i, trajectory_d, trajectory_imax, trajectory_imin);
+<a name="l00744"></a>00744         joints[i].trajectoryController.setEncoderTicksPerRound(ticks);
+<a name="l00745"></a>00745         joints[i].trajectoryController.setGearRatio(gearRatio_numerator / gearRatio_denominator);
+<a name="l00746"></a>00746         joints[i].trajectoryController.setInverseMovementDirection(invdir);
+<a name="l00747"></a>00747         ethercatMasterWithThread-&gt;registerJointTrajectoryController(&amp;(joints[i].trajectoryController), joints[i].getJointNumber());
+<a name="l00748"></a>00748       }
+<a name="l00749"></a>00749     }
+<a name="l00750"></a>00750 
+<a name="l00751"></a>00751 
+<a name="l00752"></a>00752     configfile-&gt;readInto(useGripper, <span class="stringliteral">&quot;Gripper&quot;</span>, <span class="stringliteral">&quot;EnableGripper&quot;</span>);
+<a name="l00753"></a>00753     
+<a name="l00754"></a>00754     <span class="keywordflow">if</span>(useGripper){
+<a name="l00755"></a>00755     <span class="comment">//Initializing Gripper</span>
+<a name="l00756"></a>00756     configfile-&gt;readInto(slaveNumber, <span class="stringliteral">&quot;JointTopology&quot;</span>, <span class="stringliteral">&quot;ManipulatorJoint5&quot;</span>);
+<a name="l00757"></a>00757     this-&gt;gripper.reset(<span class="keyword">new</span> YouBotGripper(slaveNumber));
+<a name="l00758"></a>00758     BarSpacingOffset barOffest;
+<a name="l00759"></a>00759     MaxTravelDistance maxDistance;
+<a name="l00760"></a>00760     MaxEncoderValue maxEncoder;
+<a name="l00761"></a>00761     GripperBarName BarName;
+<a name="l00762"></a>00762     <span class="keywordtype">double</span> dummy = 0;
+<a name="l00763"></a>00763     <span class="keywordtype">int</span> controllerType;
+<a name="l00764"></a>00764     <span class="keywordtype">double</span> firmwareVersion;
+<a name="l00765"></a>00765     <span class="keywordtype">string</span> barname;
+<a name="l00766"></a>00766     
+<a name="l00767"></a>00767     GripperFirmwareVersion gripperVersion;
+<a name="l00768"></a>00768     this-&gt;gripper-&gt;getConfigurationParameter(gripperVersion);
+<a name="l00769"></a>00769     gripperVersion.getParameter(controllerType, firmwareVersion);
+<a name="l00770"></a>00770     
+<a name="l00771"></a>00771     <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt; <span class="stringliteral">&quot;Gripper&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\t\t Controller Type: &quot;</span> &lt;&lt; controllerType &lt;&lt; <span class="stringliteral">&quot;  Firmware version: &quot;</span> &lt;&lt; firmwareVersion;
+<a name="l00772"></a>00772 
+<a name="l00773"></a>00773     <span class="comment">// Gripper Bar 1</span>
+<a name="l00774"></a>00774     configfile-&gt;readInto(barname, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;BarName&quot;</span>);
+<a name="l00775"></a>00775     BarName.setParameter(barname);
+<a name="l00776"></a>00776     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(BarName);
+<a name="l00777"></a>00777     
+<a name="l00778"></a>00778     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;BarSpacingOffset_[meter]&quot;</span>);
+<a name="l00779"></a>00779     barOffest.setParameter(dummy * meter);
+<a name="l00780"></a>00780     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(barOffest);
+<a name="l00781"></a>00781     
+<a name="l00782"></a>00782     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;MaxTravelDistance_[meter]&quot;</span>);
+<a name="l00783"></a>00783     maxDistance.setParameter(dummy * meter);
+<a name="l00784"></a>00784     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(maxDistance);
+<a name="l00785"></a>00785     
+<a name="l00786"></a>00786     <span class="keywordtype">int</span> maxenc = 0;
+<a name="l00787"></a>00787     configfile-&gt;readInto(maxenc, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;MaxEncoderValue&quot;</span>);
+<a name="l00788"></a>00788     maxEncoder.setParameter(maxenc);
+<a name="l00789"></a>00789     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(maxEncoder);
+<a name="l00790"></a>00790     
+<a name="l00791"></a>00791     <span class="keywordtype">int</span> stallThreshold = 0;
+<a name="l00792"></a>00792     configfile-&gt;readInto(stallThreshold, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;StallGuard2Threshold&quot;</span>);
+<a name="l00793"></a>00793     StallGuard2Threshold threshold;
+<a name="l00794"></a>00794     threshold.setParameter(stallThreshold);
+<a name="l00795"></a>00795     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(threshold);
+<a name="l00796"></a>00796 
+<a name="l00797"></a>00797     <span class="keywordtype">bool</span> stallGuardFilter = <span class="keyword">false</span>;
+<a name="l00798"></a>00798     configfile-&gt;readInto(stallGuardFilter, <span class="stringliteral">&quot;GripperBar1&quot;</span>, <span class="stringliteral">&quot;StallGuard2FilterEnable&quot;</span>);
+<a name="l00799"></a>00799     StallGuard2FilterEnable filter;
+<a name="l00800"></a>00800     filter.setParameter(stallGuardFilter);
+<a name="l00801"></a>00801     this-&gt;gripper-&gt;getGripperBar1().setConfigurationParameter(filter);
+<a name="l00802"></a>00802     
+<a name="l00803"></a>00803     <span class="comment">// Gripper Bar 2</span>
+<a name="l00804"></a>00804     configfile-&gt;readInto(barname, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;BarName&quot;</span>);
+<a name="l00805"></a>00805     BarName.setParameter(barname);
+<a name="l00806"></a>00806     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(BarName);
+<a name="l00807"></a>00807     
+<a name="l00808"></a>00808     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;BarSpacingOffset_[meter]&quot;</span>);
+<a name="l00809"></a>00809     barOffest.setParameter(dummy * meter);
+<a name="l00810"></a>00810     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(barOffest);
+<a name="l00811"></a>00811     
+<a name="l00812"></a>00812     configfile-&gt;readInto(dummy, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;MaxTravelDistance_[meter]&quot;</span>);
+<a name="l00813"></a>00813     maxDistance.setParameter(dummy * meter);
+<a name="l00814"></a>00814     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(maxDistance);
+<a name="l00815"></a>00815 
+<a name="l00816"></a>00816     configfile-&gt;readInto(maxenc, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;MaxEncoderValue&quot;</span>);
+<a name="l00817"></a>00817     maxEncoder.setParameter(maxenc);
+<a name="l00818"></a>00818     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(maxEncoder);
+<a name="l00819"></a>00819     
+<a name="l00820"></a>00820     configfile-&gt;readInto(stallThreshold, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;StallGuard2Threshold&quot;</span>);
+<a name="l00821"></a>00821     threshold.setParameter(stallThreshold);
+<a name="l00822"></a>00822     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(threshold);
+<a name="l00823"></a>00823 
+<a name="l00824"></a>00824     configfile-&gt;readInto(stallGuardFilter, <span class="stringliteral">&quot;GripperBar2&quot;</span>, <span class="stringliteral">&quot;StallGuard2FilterEnable&quot;</span>);
+<a name="l00825"></a>00825     filter.setParameter(stallGuardFilter);
+<a name="l00826"></a>00826     this-&gt;gripper-&gt;getGripperBar2().setConfigurationParameter(filter);
+<a name="l00827"></a>00827     }
+<a name="l00828"></a>00828     
+<a name="l00829"></a>00829 
+<a name="l00830"></a>00830     <span class="keywordflow">return</span>;
+<a name="l00831"></a>00831   <span class="comment">// Bouml preserved body end 00068071</span>
+<a name="l00832"></a>00832 }
+<a name="l00833"></a>00833 
+<a name="l00834"></a>00834 
+<a name="l00835"></a>00835 } <span class="comment">// namespace youbot</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

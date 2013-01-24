@@ -3,8 +3,8 @@
 <area shape="rect" href="$d9/d5e/classyoubot_1_1_parameter.html" title="abstract parameter" alt="" coords="4521,5,4601,93"/>
 <area shape="rect" href="$d8/d32/classyoubot_1_1_actual_acceleration.html" title="The current acceleration (read only)." alt="" coords="5,553,173,847"/>
 <area shape="rect" href="$de/d8e/classyoubot_1_1_actual_load_value.html" title="Readout of the actual load value with used for stall detection (stallGuard2)." alt="" coords="197,544,365,856"/>
-<area shape="rect" href="$dc/da1/classyoubot_1_1_actual_position.html" title="Acceleration parameter for velocity control and position control." alt="" coords="389,544,557,856"/>
-<area shape="rect" href="$d1/d9d/classyoubot_1_1_actual_velocity.html" title="Acceleration parameter for velocity control and position control." alt="" coords="581,544,749,856"/>
+<area shape="rect" href="$dc/da1/classyoubot_1_1_actual_position.html" title="Actual position of one gripper bar." alt="" coords="389,544,557,856"/>
+<area shape="rect" href="$d1/d9d/classyoubot_1_1_actual_velocity.html" title="Actual velocity of one gripper bar." alt="" coords="581,544,749,856"/>
 <area shape="rect" href="$db/d87/classyoubot_1_1_bar_spacing_offset.html" title="Represents a bar spacing offset." alt="" coords="773,563,941,837"/>
 <area shape="rect" href="$de/df1/classyoubot_1_1_calibrate_gripper.html" title="Calibrate the gripper." alt="" coords="965,563,1133,837"/>
 <area shape="rect" href="$d9/d8b/classyoubot_1_1_chopper_blank_time.html" title="Selects the comparator blank time." alt="" coords="1157,544,1325,856"/>
@@ -25,7 +25,7 @@
 <area shape="rect" href="$de/d2f/classyoubot_1_1_max_travel_distance.html" title="The maximum bar spacing distance of the gripper." alt="" coords="4189,563,4357,837"/>
 <area shape="rect" href="$d1/d8e/classyoubot_1_1_microstep_resolution.html" title="0: full step 1: half step 2: 4 microsteps 3: 8 microsteps 4: 16 microsteps 5: 32..." alt="" coords="4381,544,4549,856"/>
 <area shape="rect" href="$df/dd7/classyoubot_1_1_minimum_speed.html" title="Should always be set 1 to ensure exact reaching of the target position." alt="" coords="4573,544,4741,856"/>
-<area shape="rect" href="$d0/dac/classyoubot_1_1_position_setpoint.html" title="Acceleration parameter for velocity control and position control." alt="" coords="4765,544,4933,856"/>
+<area shape="rect" href="$d0/dac/classyoubot_1_1_position_setpoint.html" title="Position setpoint for one gripper bar." alt="" coords="4765,544,4933,856"/>
 <area shape="rect" href="$d1/def/classyoubot_1_1_power_down_delay.html" title="Standstill period before the current is changed down to standby current." alt="" coords="4957,544,5125,856"/>
 <area shape="rect" href="$d3/d5d/classyoubot_1_1_pulse_divisor.html" title="The exponent of the scaling factor for the pulse (step) generator should be de/incremented..." alt="" coords="5149,544,5317,856"/>
 <area shape="rect" href="$df/dae/classyoubot_1_1_ramp_divisor.html" title="The exponent of the scaling factor for the ramp generator&#45; should be de/incremented..." alt="" coords="5341,544,5509,856"/>

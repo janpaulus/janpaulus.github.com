@@ -119,113 +119,131 @@ window.onload = initDynSections;
 <a name="l00048"></a>00048   }
 <a name="l00049"></a>00049   myTrace.startTrace();
 <a name="l00050"></a>00050   
-<a name="l00051"></a>00051   startTime = myTrace.getTimeDurationMilliSec();
-<a name="l00052"></a>00052   overallTime = startTime + durationNull + stepStartTime + durationNull;
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054   <span class="keywordflow">while</span> (myTrace.getTimeDurationMilliSec() &lt; overallTime) {
-<a name="l00055"></a>00055     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull) {
-<a name="l00056"></a>00056       setAngle.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = 0 * radian;
-<a name="l00057"></a>00057     }
-<a name="l00058"></a>00058     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull
-<a name="l00059"></a>00059             &amp;&amp; myTrace.getTimeDurationMilliSec() &lt; startTime + durationNull + stepStartTime) {
-<a name="l00060"></a>00060       setAngle.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = 2 * radian;
-<a name="l00061"></a>00061     }
-<a name="l00062"></a>00062     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull + stepStartTime) {
-<a name="l00063"></a>00063       setAngle.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = 0 * radian;
-<a name="l00064"></a>00064     }
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(setAngle);
-<a name="l00067"></a>00067     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
-<a name="l00068"></a>00068       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00069"></a>00069       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00051"></a>00051   <a class="code" href="../../df/d58/classyoubot_1_1_clear_motor_controller_timeout_flag.html" title="Clear the flag that indicates a communication timeout between the EtherCAT master...">ClearMotorControllerTimeoutFlag</a> clearTimeoutFlag;
+<a name="l00052"></a>00052   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(1).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00053"></a>00053   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(2).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00054"></a>00054   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(3).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00055"></a>00055   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(4).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00056"></a>00056   
+<a name="l00057"></a>00057   startTime = myTrace.getTimeDurationMilliSec();
+<a name="l00058"></a>00058   overallTime = startTime + durationNull + stepStartTime + durationNull;
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060   <span class="keywordflow">while</span> (myTrace.getTimeDurationMilliSec() &lt; overallTime) {
+<a name="l00061"></a>00061     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull) {
+<a name="l00062"></a>00062       setAngle.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = 0 * radian;
+<a name="l00063"></a>00063     }
+<a name="l00064"></a>00064     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull
+<a name="l00065"></a>00065             &amp;&amp; myTrace.getTimeDurationMilliSec() &lt; startTime + durationNull + stepStartTime) {
+<a name="l00066"></a>00066       setAngle.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = 2 * radian;
+<a name="l00067"></a>00067     }
+<a name="l00068"></a>00068     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull + stepStartTime) {
+<a name="l00069"></a>00069       setAngle.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = 0 * radian;
 <a name="l00070"></a>00070     }
-<a name="l00071"></a>00071     myTrace.updateTrace(setAngle);
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073     <a class="code" href="../../d8/d3a/_time_8hpp.html#ae1979c9bf0754365b7c0b2a6248893d1">SLEEP_MICROSEC</a>(updateCycle);
-<a name="l00074"></a>00074   }
-<a name="l00075"></a>00075   myTrace.stopTrace();
-<a name="l00076"></a>00076   myTrace.plotTrace();
-<a name="l00077"></a>00077 }
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(setAngle);
+<a name="l00073"></a>00073     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
+<a name="l00074"></a>00074       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00075"></a>00075       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00076"></a>00076     }
+<a name="l00077"></a>00077     myTrace.updateTrace(setAngle);
 <a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#a22e98f25973fc3d9233da162806aeabb">00079</a> <span class="keywordtype">void</span> <a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#a22e98f25973fc3d9233da162806aeabb">YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_VelocityMode</a>() {
-<a name="l00080"></a>00080   <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt;__func__&lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-<a name="l00081"></a>00081   <a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html" title="It groups the base joints together.">YouBotBase</a> myBase(<span class="stringliteral">&quot;youbot-base&quot;</span>);
-<a name="l00082"></a>00082   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints">doJointCommutation</a>();
-<a name="l00083"></a>00083   <a class="code" href="../../d9/d4a/classyoubot_1_1_data_trace.html" title="Creates a trace of all process data and reads all configuration parameter from one...">DataTrace</a> myTrace(myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO), __func__, <span class="keyword">true</span>);
-<a name="l00084"></a>00084   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference...">setEncoderToZero</a>();
-<a name="l00085"></a>00085   <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
-<a name="l00086"></a>00086     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00087"></a>00087     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00088"></a>00088   }
-<a name="l00089"></a>00089   myTrace.startTrace();
-<a name="l00090"></a>00090   
-<a name="l00091"></a>00091   startTime = myTrace.getTimeDurationMilliSec();
-<a name="l00092"></a>00092   overallTime = startTime + durationNull + stepStartTime + durationNull;
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094   <span class="keywordflow">while</span> (myTrace.getTimeDurationMilliSec() &lt; overallTime) {
-<a name="l00095"></a>00095     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull) {
-<a name="l00096"></a>00096       setVel.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = 0 * radian_per_second;
-<a name="l00097"></a>00097     }
-<a name="l00098"></a>00098     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull
-<a name="l00099"></a>00099             &amp;&amp; myTrace.getTimeDurationMilliSec() &lt; startTime + durationNull + stepStartTime) {
-<a name="l00100"></a>00100       setVel.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = 2 * radian_per_second;
-<a name="l00101"></a>00101     }
-<a name="l00102"></a>00102     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull + stepStartTime) {
-<a name="l00103"></a>00103       setVel.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = 0 * radian_per_second;
-<a name="l00104"></a>00104     }
+<a name="l00079"></a>00079     <a class="code" href="../../d8/d3a/_time_8hpp.html#ae1979c9bf0754365b7c0b2a6248893d1">SLEEP_MICROSEC</a>(updateCycle);
+<a name="l00080"></a>00080   }
+<a name="l00081"></a>00081   myTrace.stopTrace();
+<a name="l00082"></a>00082   myTrace.plotTrace();
+<a name="l00083"></a>00083 }
+<a name="l00084"></a>00084 
+<a name="l00085"></a><a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#a22e98f25973fc3d9233da162806aeabb">00085</a> <span class="keywordtype">void</span> <a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#a22e98f25973fc3d9233da162806aeabb">YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_VelocityMode</a>() {
+<a name="l00086"></a>00086   <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt;__func__&lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00087"></a>00087   <a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html" title="It groups the base joints together.">YouBotBase</a> myBase(<span class="stringliteral">&quot;youbot-base&quot;</span>);
+<a name="l00088"></a>00088   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints">doJointCommutation</a>();
+<a name="l00089"></a>00089   <a class="code" href="../../d9/d4a/classyoubot_1_1_data_trace.html" title="Creates a trace of all process data and reads all configuration parameter from one...">DataTrace</a> myTrace(myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO), __func__, <span class="keyword">true</span>);
+<a name="l00090"></a>00090   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference...">setEncoderToZero</a>();
+<a name="l00091"></a>00091   <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
+<a name="l00092"></a>00092     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00093"></a>00093     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00094"></a>00094   }
+<a name="l00095"></a>00095   myTrace.startTrace();
+<a name="l00096"></a>00096   
+<a name="l00097"></a>00097   <a class="code" href="../../df/d58/classyoubot_1_1_clear_motor_controller_timeout_flag.html" title="Clear the flag that indicates a communication timeout between the EtherCAT master...">ClearMotorControllerTimeoutFlag</a> clearTimeoutFlag;
+<a name="l00098"></a>00098   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(1).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00099"></a>00099   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(2).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00100"></a>00100   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(3).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00101"></a>00101   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(4).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00102"></a>00102   
+<a name="l00103"></a>00103   startTime = myTrace.getTimeDurationMilliSec();
+<a name="l00104"></a>00104   overallTime = startTime + durationNull + stepStartTime + durationNull;
 <a name="l00105"></a>00105 
-<a name="l00106"></a>00106     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(setVel);
-<a name="l00107"></a>00107     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
-<a name="l00108"></a>00108       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00109"></a>00109       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00110"></a>00110     }
-<a name="l00111"></a>00111     myTrace.updateTrace(setVel);
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113     <a class="code" href="../../d8/d3a/_time_8hpp.html#ae1979c9bf0754365b7c0b2a6248893d1">SLEEP_MICROSEC</a>(updateCycle);
-<a name="l00114"></a>00114   }
-<a name="l00115"></a>00115   myTrace.stopTrace();
-<a name="l00116"></a>00116   myTrace.plotTrace();
-<a name="l00117"></a>00117 }
-<a name="l00118"></a>00118 
-<a name="l00119"></a><a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#ac4c0ff1ab487499c9d0ba08c63228110">00119</a> <span class="keywordtype">void</span> <a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#ac4c0ff1ab487499c9d0ba08c63228110">YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_CurrentMode</a>() {
-<a name="l00120"></a>00120   <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt;__func__&lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-<a name="l00121"></a>00121   <a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html" title="It groups the base joints together.">YouBotBase</a> myBase(<span class="stringliteral">&quot;youbot-base&quot;</span>);
-<a name="l00122"></a>00122   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints">doJointCommutation</a>();
-<a name="l00123"></a>00123   <a class="code" href="../../d9/d4a/classyoubot_1_1_data_trace.html" title="Creates a trace of all process data and reads all configuration parameter from one...">DataTrace</a> myTrace(myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO), __func__, <span class="keyword">true</span>);
-<a name="l00124"></a>00124   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference...">setEncoderToZero</a>();
-<a name="l00125"></a>00125   <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
-<a name="l00126"></a>00126     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00127"></a>00127     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00128"></a>00128   }
-<a name="l00129"></a>00129   myTrace.startTrace();
-<a name="l00130"></a>00130   
-<a name="l00131"></a>00131   startTime = myTrace.getTimeDurationMilliSec();
-<a name="l00132"></a>00132   overallTime = startTime + durationNull + stepStartTime + durationNull;
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134   <span class="keywordflow">while</span> (myTrace.getTimeDurationMilliSec() &lt; overallTime) {
-<a name="l00135"></a>00135     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull) {
-<a name="l00136"></a>00136       currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0 * ampere;
-<a name="l00137"></a>00137     }
-<a name="l00138"></a>00138     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull
-<a name="l00139"></a>00139             &amp;&amp; myTrace.getTimeDurationMilliSec() &lt; startTime + durationNull + stepStartTime) {
-<a name="l00140"></a>00140       currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0.5 * ampere;
-<a name="l00141"></a>00141     }
-<a name="l00142"></a>00142     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull + stepStartTime) {
-<a name="l00143"></a>00143       currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0 * ampere;
-<a name="l00144"></a>00144     }
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(currentSetpoint);
-<a name="l00147"></a>00147     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
-<a name="l00148"></a>00148       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
-<a name="l00149"></a>00149       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
-<a name="l00150"></a>00150     }
-<a name="l00151"></a>00151     myTrace.updateTrace(currentSetpoint);
-<a name="l00152"></a>00152 
-<a name="l00153"></a>00153     <a class="code" href="../../d8/d3a/_time_8hpp.html#ae1979c9bf0754365b7c0b2a6248893d1">SLEEP_MICROSEC</a>(updateCycle);
-<a name="l00154"></a>00154   }
-<a name="l00155"></a>00155   myTrace.stopTrace();
-<a name="l00156"></a>00156   myTrace.plotTrace();
-<a name="l00157"></a>00157 }
+<a name="l00106"></a>00106   <span class="keywordflow">while</span> (myTrace.getTimeDurationMilliSec() &lt; overallTime) {
+<a name="l00107"></a>00107     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull) {
+<a name="l00108"></a>00108       setVel.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = 0 * radian_per_second;
+<a name="l00109"></a>00109     }
+<a name="l00110"></a>00110     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull
+<a name="l00111"></a>00111             &amp;&amp; myTrace.getTimeDurationMilliSec() &lt; startTime + durationNull + stepStartTime) {
+<a name="l00112"></a>00112       setVel.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = 2 * radian_per_second;
+<a name="l00113"></a>00113     }
+<a name="l00114"></a>00114     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull + stepStartTime) {
+<a name="l00115"></a>00115       setVel.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = 0 * radian_per_second;
+<a name="l00116"></a>00116     }
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(setVel);
+<a name="l00119"></a>00119     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
+<a name="l00120"></a>00120       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00121"></a>00121       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00122"></a>00122     }
+<a name="l00123"></a>00123     myTrace.updateTrace(setVel);
+<a name="l00124"></a>00124 
+<a name="l00125"></a>00125     <a class="code" href="../../d8/d3a/_time_8hpp.html#ae1979c9bf0754365b7c0b2a6248893d1">SLEEP_MICROSEC</a>(updateCycle);
+<a name="l00126"></a>00126   }
+<a name="l00127"></a>00127   myTrace.stopTrace();
+<a name="l00128"></a>00128   myTrace.plotTrace();
+<a name="l00129"></a>00129 }
+<a name="l00130"></a>00130 
+<a name="l00131"></a><a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#ac4c0ff1ab487499c9d0ba08c63228110">00131</a> <span class="keywordtype">void</span> <a class="code" href="../../db/dcc/class_you_bot_base_test_without_thread.html#ac4c0ff1ab487499c9d0ba08c63228110">YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_CurrentMode</a>() {
+<a name="l00132"></a>00132   <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(info) &lt;&lt;__func__&lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00133"></a>00133   <a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html" title="It groups the base joints together.">YouBotBase</a> myBase(<span class="stringliteral">&quot;youbot-base&quot;</span>);
+<a name="l00134"></a>00134   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#a295f064ccd87b1ba4cb6e738c4d43acf" title="does the sine commutation of the base joints">doJointCommutation</a>();
+<a name="l00135"></a>00135   <a class="code" href="../../d9/d4a/classyoubot_1_1_data_trace.html" title="Creates a trace of all process data and reads all configuration parameter from one...">DataTrace</a> myTrace(myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO), __func__, <span class="keyword">true</span>);
+<a name="l00136"></a>00136   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference...">setEncoderToZero</a>();
+<a name="l00137"></a>00137   <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
+<a name="l00138"></a>00138     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00139"></a>00139     ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00140"></a>00140   }
+<a name="l00141"></a>00141   myTrace.startTrace();
+<a name="l00142"></a>00142   
+<a name="l00143"></a>00143   <a class="code" href="../../df/d58/classyoubot_1_1_clear_motor_controller_timeout_flag.html" title="Clear the flag that indicates a communication timeout between the EtherCAT master...">ClearMotorControllerTimeoutFlag</a> clearTimeoutFlag;
+<a name="l00144"></a>00144   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(1).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00145"></a>00145   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(2).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00146"></a>00146   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(3).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00147"></a>00147   myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(4).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a>(clearTimeoutFlag);
+<a name="l00148"></a>00148   
+<a name="l00149"></a>00149   startTime = myTrace.getTimeDurationMilliSec();
+<a name="l00150"></a>00150   overallTime = startTime + durationNull + stepStartTime + durationNull;
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152   <span class="keywordflow">while</span> (myTrace.getTimeDurationMilliSec() &lt; overallTime) {
+<a name="l00153"></a>00153     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull) {
+<a name="l00154"></a>00154       currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0 * ampere;
+<a name="l00155"></a>00155     }
+<a name="l00156"></a>00156     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull
+<a name="l00157"></a>00157             &amp;&amp; myTrace.getTimeDurationMilliSec() &lt; startTime + durationNull + stepStartTime) {
+<a name="l00158"></a>00158       currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0.5 * ampere;
+<a name="l00159"></a>00159     }
+<a name="l00160"></a>00160     <span class="keywordflow">if</span> (myTrace.getTimeDurationMilliSec() &gt; startTime + durationNull + stepStartTime) {
+<a name="l00161"></a>00161       currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0 * ampere;
+<a name="l00162"></a>00162     }
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(currentSetpoint);
+<a name="l00165"></a>00165     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
+<a name="l00166"></a>00166       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
+<a name="l00167"></a>00167       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
+<a name="l00168"></a>00168     }
+<a name="l00169"></a>00169     myTrace.updateTrace(currentSetpoint);
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171     <a class="code" href="../../d8/d3a/_time_8hpp.html#ae1979c9bf0754365b7c0b2a6248893d1">SLEEP_MICROSEC</a>(updateCycle);
+<a name="l00172"></a>00172   }
+<a name="l00173"></a>00173   myTrace.stopTrace();
+<a name="l00174"></a>00174   myTrace.plotTrace();
+<a name="l00175"></a>00175 }
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

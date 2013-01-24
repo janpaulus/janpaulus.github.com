@@ -1,11 +1,13 @@
 <map id="G" name="G">
-<area shape="rect" href="$d1/d75/classyoubot_1_1_joint_computed_data.html" title="abstract data class for computed joint data" alt="" coords="13,287,149,375"/>
-<area shape="rect" href="$d1/d86/classyoubot_1_1_joint_sensed_angle.html" title="Sensed position / angle of the joint." alt="" coords="173,277,320,384"/>
-<area shape="rect" href="$dd/de0/classyoubot_1_1_joint_sensed_current.html" title="Sensed electric current of the joint." alt="" coords="344,277,499,384"/>
-<area shape="rect" href="$d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html" title="Sensed encoder ticks of the joint." alt="" coords="523,277,715,384"/>
-<area shape="rect" href="$d8/df8/classyoubot_1_1_joint_sensed_p_w_m.html" title="actual pwm value of the joint" alt="" coords="739,277,883,384"/>
-<area shape="rect" href="$d0/d26/classyoubot_1_1_joint_sensed_rounds_per_minute.html" title="Sensed rounds per minute (rpm) of the joint." alt="" coords="907,277,1123,384"/>
-<area shape="rect" href="$dc/ddd/classyoubot_1_1_joint_sensed_velocity.html" title="Sensed velocity of the joint." alt="" coords="1147,277,1307,384"/>
-<area shape="rect" href="$d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="581,5,656,93"/>
+<area shape="rect" href="$d1/d75/classyoubot_1_1_joint_computed_data.html" title="abstract data class for computed joint data" alt="" coords="17,287,153,375"/>
+<area shape="rect" href="$d6/db6/classyoubot_1_1_joint_controller_computed_data.html" title="abstract data class for data which have been computed by the hardware controller" alt="" coords="185,287,375,375"/>
+<area shape="rect" href="$d1/d86/classyoubot_1_1_joint_sensed_angle.html" title="Sensed position / angle of the joint." alt="" coords="399,277,545,384"/>
+<area shape="rect" href="$dd/de0/classyoubot_1_1_joint_sensed_current.html" title="Sensed electric current of the joint." alt="" coords="569,277,724,384"/>
+<area shape="rect" href="$d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html" title="Sensed encoder ticks of the joint." alt="" coords="748,277,940,384"/>
+<area shape="rect" href="$d8/df8/classyoubot_1_1_joint_sensed_p_w_m.html" title="actual pwm value of the joint" alt="" coords="964,277,1108,384"/>
+<area shape="rect" href="$d0/d26/classyoubot_1_1_joint_sensed_rounds_per_minute.html" title="Sensed rounds per minute (rpm) of the joint." alt="" coords="1132,277,1348,384"/>
+<area shape="rect" href="$dc/ddd/classyoubot_1_1_joint_sensed_velocity.html" title="Sensed velocity of the joint." alt="" coords="1372,277,1532,384"/>
+<area shape="rect" href="$d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints" alt="" coords="708,5,783,93"/>
 <area shape="rect" href="$d7/d5b/classyoubot_1_1_joint_sensed_torque.html" title="This torque of the joint is computed from the actual current." alt="" coords="5,432,157,539"/>
+<area shape="rect" href="$d6/d30/classyoubot_1_1_joint_ramp_generator_velocity.html" title="Sensed velocity of the joint." alt="" coords="181,432,387,539"/>
 </map>

@@ -123,38 +123,33 @@ window.onload = initDynSections;
 <a name="l00052"></a>00052 <span class="comment"> *</span>
 <a name="l00053"></a>00053 <span class="comment"> ****************************************************************/</span>
 <a name="l00054"></a>00054 <span class="preprocessor">#include &quot;<a class="code" href="../../d2/deb/_units_8hpp.html">generic/Units.hpp</a>&quot;</span>
-<a name="l00055"></a>00055 <span class="preprocessor">#include &quot;<a class="code" href="../../d6/dcc/_joint_data_8hpp.html">generic-joint/JointData.hpp</a>&quot;</span>
-<a name="l00056"></a>00056 <span class="keyword">namespace </span>youbot {
-<a name="l00057"></a>00057 <span class="comment"></span>
-<a name="l00058"></a>00058 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00059"></a>00059 <span class="comment">/// Joint Trajectory representation</span>
-<a name="l00060"></a>00060 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00061"></a><a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html">00061</a> <span class="comment"></span><span class="keyword">class </span><a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html" title="Joint Trajectory representation.">JointTrajectory</a> : <span class="keyword">public</span> <a class="code" href="../../de/d09/classyoubot_1_1_joint_data_setpoint.html" title="abstract data class for commanded joint data">JointDataSetpoint</a> {
-<a name="l00062"></a>00062   <span class="keyword">private</span>:
-<a name="l00063"></a>00063     std::vector&lt; quantity&lt;plane_angle&gt; &gt; positions;
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065     std::vector&lt; quantity&lt;angular_velocity&gt; &gt; velocities;
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067     std::vector&lt; quantity&lt;angular_acceleration&gt; &gt; accelerations;
-<a name="l00068"></a>00068 
-<a name="l00069"></a>00069     std::vector&lt; quantity&lt;si::time&gt; &gt; time;
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072   <span class="keyword">public</span>:
-<a name="l00073"></a>00073     <span class="keywordtype">void</span> <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a0ac0f8bfeef59253102684c5196eba42">setTrajectoryPoint</a>(<span class="keyword">const</span> quantity&lt;plane_angle&gt;&amp; position, <span class="keyword">const</span> quantity&lt;angular_velocity&gt;&amp; velocity, <span class="keyword">const</span> quantity&lt;angular_acceleration&gt;&amp; acceleration, <span class="keyword">const</span> quantity&lt;si::time&gt;&amp; time);
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075     <span class="keyword">const</span> std::vector&lt; quantity&lt;plane_angle&gt; &gt;&amp; <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#afc519663403653e2f3925f9d2b219371">getPositions</a>();
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077     <span class="keyword">const</span> std::vector&lt; quantity&lt;angular_velocity&gt; &gt;&amp; <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a46ea608f981ea409d7d4fe5fcb0b346b">getVelocities</a>();
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079     <span class="keyword">const</span> std::vector&lt; quantity&lt;angular_acceleration&gt; &gt;&amp; <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a42b1355f1647ab20bc9130dd51c00d34">getAccelerations</a>();
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081     <span class="keyword">const</span> std::vector&lt;quantity&lt;si::time&gt; &gt;&amp; <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#ab2bb60c8823716ed6b78e9982f816349">getTimes</a>();
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 };
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085 } <span class="comment">// namespace youbot</span>
-<a name="l00086"></a>00086 <span class="preprocessor">#endif</span>
+<a name="l00055"></a>00055 <span class="preprocessor">#include &quot;<a class="code" href="../../d8/d3a/_time_8hpp.html">generic/Time.hpp</a>&quot;</span>
+<a name="l00056"></a>00056 <span class="preprocessor">#include &quot;<a class="code" href="../../d6/dcc/_joint_data_8hpp.html">generic-joint/JointData.hpp</a>&quot;</span>
+<a name="l00057"></a>00057 <span class="keyword">namespace </span>youbot {
+<a name="l00058"></a>00058 <span class="comment"></span>
+<a name="l00059"></a>00059 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00060"></a>00060 <span class="comment">/// Joint Trajectory Segment</span>
+<a name="l00061"></a>00061 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00062"></a><a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html">00062</a> <span class="comment"></span><span class="keyword">struct </span><a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html" title="Joint Trajectory Segment.">TrajectorySegment</a>
+<a name="l00063"></a>00063 {
+<a name="l00064"></a><a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#acecac98d5e843217e5a8bb77636740a4">00064</a>   quantity&lt;plane_angle&gt; <a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#acecac98d5e843217e5a8bb77636740a4">positions</a>;
+<a name="l00065"></a><a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#a1b6cce5a233f2f430515a736a69a951d">00065</a>   quantity&lt;angular_velocity&gt; <a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#a1b6cce5a233f2f430515a736a69a951d">velocities</a>;
+<a name="l00066"></a><a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#af6bc508d74db7749bb72769c7ffd8f7d">00066</a>   quantity&lt;angular_acceleration&gt; <a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#af6bc508d74db7749bb72769c7ffd8f7d">accelerations</a>;
+<a name="l00067"></a><a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#afb991aac4706ea7d55128d01664b0daa">00067</a>   boost::posix_time::time_duration <a class="code" href="../../d4/de2/structyoubot_1_1_trajectory_segment.html#afb991aac4706ea7d55128d01664b0daa">time_from_start</a>;
+<a name="l00068"></a>00068 };<span class="comment"></span>
+<a name="l00069"></a>00069 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00070"></a>00070 <span class="comment">/// Joint Trajectory representation</span>
+<a name="l00071"></a>00071 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00072"></a><a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html">00072</a> <span class="comment"></span><span class="keyword">class </span><a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html" title="Joint Trajectory representation.">JointTrajectory</a> {
+<a name="l00073"></a>00073   <span class="keyword">public</span>:
+<a name="l00074"></a><a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">00074</a>     std::vector&lt; TrajectorySegment &gt; <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a5199c5aaaaf2ae7c2b826cfaba83d37a">segments</a>;
+<a name="l00075"></a>00075 
+<a name="l00076"></a><a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a6bdbb233c9b9b359f533b5f721d0729d">00076</a>     boost::posix_time::ptime <a class="code" href="../../d3/d62/classyoubot_1_1_joint_trajectory.html#a6bdbb233c9b9b359f533b5f721d0729d">start_time</a>;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 };
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 } <span class="comment">// namespace youbot</span>
+<a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

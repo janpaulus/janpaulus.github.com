@@ -1,26 +1,28 @@
 <map id="G" name="G">
-<area shape="rect" href="$d2/d20/_ethercat_master_interface_8hpp.html" title="youbot/EthercatMasterInterface.hpp" alt="" coords="405,315,635,344"/>
-<area shape="rect" href="$df/d0a/_ethercat_master_without_thread_8hpp.html" title="youbot/EthercatMasterWithoutThread.hpp" alt="" coords="2005,315,2267,344"/>
-<area shape="rect" href="$d6/d0e/_ethercat_master_with_thread_8hpp.html" title="youbot/EthercatMasterWithThread.hpp" alt="" coords="1743,83,1985,112"/>
-<area shape="rect" href="$df/dea/_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="760,469,949,499"/>
-<area shape="rect" href="$d2/dbb/ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="620,547,724,576"/>
-<area shape="rect" href="$d0/d9d/_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="973,469,1208,499"/>
-<area shape="rect" href="$dd/d81/_joint_limit_monitor_8hpp.html" title="youbot/JointLimitMonitor.hpp" alt="" coords="1701,392,1888,421"/>
-<area shape="rect" href="$d8/d38/ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="579,392,685,421"/>
-<area shape="rect" href="$d2/d29/_data_object_lock_free_8hpp.html" title="generic/dataobjectlockfree/DataObjectLockFree.hpp" alt="" coords="5,547,325,576"/>
-<area shape="rect" href="$dc/d69/target_8hpp.html" title="generic/dataobjectlockfree/target.hpp" alt="" coords="47,624,281,653"/>
-<area shape="rect" href="$df/d8e/oro__arch_8h.html" title="generic/dataobjectlockfree/os/oro_arch.h" alt="" coords="305,624,561,653"/>
-<area shape="rect" href="$d3/de3/_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="3755,469,3885,499"/>
-<area shape="rect" href="$d2/deb/_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2675,624,2797,653"/>
-<area shape="rect" href="$d8/d3a/_time_8hpp.html" title="generic/Time.hpp" alt="" coords="1507,469,1627,499"/>
-<area shape="rect" href="$de/d24/_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="3909,469,4067,499"/>
-<area shape="rect" href="$d5/d23/_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1883,469,2080,499"/>
-<area shape="rect" href="$d9/d2a/_you_bot_joint_storage_8hpp.html" title="youbot/YouBotJointStorage.hpp" alt="" coords="2260,469,2463,499"/>
-<area shape="rect" href="$d6/df2/_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="3411,392,3560,421"/>
-<area shape="rect" href="$da/d9a/_joint_trajectory_controller_8hpp.html" title="youbot/JointTrajectoryController.hpp" alt="" coords="2476,160,2705,189"/>
-<area shape="rect" href="$d8/d72/_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="2481,315,2700,344"/>
-<area shape="rect" href="$d9/d3d/_you_bot_joint_parameter_password_protected_8hpp.html" title="youbot/YouBotJointParameterPasswordProtected.hpp" alt="" coords="2527,237,2857,267"/>
-<area shape="rect" href="$d3/d61/_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="2707,469,2915,499"/>
-<area shape="rect" href="$d6/d61/_you_bot_joint_parameter_read_only_8hpp.html" title="youbot/YouBotJointParameterReadOnly.hpp" alt="" coords="2453,392,2728,421"/>
-<area shape="rect" href="$d6/dcc/_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="2715,547,2891,576"/>
+<area shape="rect" href="$d2/d20/_ethercat_master_interface_8hpp.html" title="youbot/EthercatMasterInterface.hpp" alt="" coords="513,315,743,344"/>
+<area shape="rect" href="$df/d0a/_ethercat_master_without_thread_8hpp.html" title="youbot/EthercatMasterWithoutThread.hpp" alt="" coords="3140,315,3401,344"/>
+<area shape="rect" href="$d6/d0e/_ethercat_master_with_thread_8hpp.html" title="youbot/EthercatMasterWithThread.hpp" alt="" coords="2864,83,3107,112"/>
+<area shape="rect" href="$df/dea/_you_bot_slave_msg_8hpp.html" title="youbot/YouBotSlaveMsg.hpp" alt="" coords="649,469,839,499"/>
+<area shape="rect" href="$d2/dbb/ethercattype_8h.html" title="General typedefs and defines for EtherCAT." alt="" coords="555,547,659,576"/>
+<area shape="rect" href="$d0/d9d/_you_bot_slave_mailbox_msg_8hpp.html" title="youbot/YouBotSlaveMailboxMsg.hpp" alt="" coords="913,469,1148,499"/>
+<area shape="rect" href="$dd/d81/_joint_limit_monitor_8hpp.html" title="youbot/JointLimitMonitor.hpp" alt="" coords="1505,392,1692,421"/>
+<area shape="rect" href="$d8/d38/ethercatmain_8h.html" title="Headerfile for ethercatmain.c." alt="" coords="716,392,823,421"/>
+<area shape="rect" href="$d2/d29/_data_object_lock_free_8hpp.html" title="generic/dataobjectlockfree/DataObjectLockFree.hpp" alt="" coords="211,547,531,576"/>
+<area shape="rect" href="$dc/d69/target_8hpp.html" title="generic/dataobjectlockfree/target.hpp" alt="" coords="5,624,240,653"/>
+<area shape="rect" href="$df/d8e/oro__arch_8h.html" title="generic/dataobjectlockfree/os/oro_arch.h" alt="" coords="264,624,520,653"/>
+<area shape="rect" href="$d3/de3/_logger_8hpp.html" title="generic/Logger.hpp" alt="" coords="3463,469,3593,499"/>
+<area shape="rect" href="$d2/deb/_units_8hpp.html" title="generic/Units.hpp" alt="" coords="2057,624,2180,653"/>
+<area shape="rect" href="$d8/d3a/_time_8hpp.html" title="generic/Time.hpp" alt="" coords="3848,469,3968,499"/>
+<area shape="rect" href="$de/d24/_exceptions_8hpp.html" title="generic/Exceptions.hpp" alt="" coords="3281,469,3439,499"/>
+<area shape="rect" href="$d5/d23/_protocol_definitions_8hpp.html" title="youbot/ProtocolDefinitions.hpp" alt="" coords="1783,469,1980,499"/>
+<area shape="rect" href="$d9/d2a/_you_bot_joint_storage_8hpp.html" title="youbot/YouBotJointStorage.hpp" alt="" coords="1375,469,1577,499"/>
+<area shape="rect" href="$d6/df2/_config_file_8hpp.html" title="generic/ConfigFile.hpp" alt="" coords="2911,392,3060,421"/>
+<area shape="rect" href="$da/d9a/_joint_trajectory_controller_8hpp.html" title="youbot/JointTrajectoryController.hpp" alt="" coords="3591,160,3820,189"/>
+<area shape="rect" href="$db/db7/_pid_controller_8hpp.html" title="generic/PidController.hpp" alt="" coords="3945,392,4111,421"/>
+<area shape="rect" href="$d9/de2/_joint_trajectory_8hpp.html" title="generic&#45;joint/JointTrajectory.hpp" alt="" coords="4417,392,4623,421"/>
+<area shape="rect" href="$d8/d72/_you_bot_joint_parameter_8hpp.html" title="youbot/YouBotJointParameter.hpp" alt="" coords="2172,315,2391,344"/>
+<area shape="rect" href="$d9/d3d/_you_bot_joint_parameter_password_protected_8hpp.html" title="youbot/YouBotJointParameterPasswordProtected.hpp" alt="" coords="2331,237,2661,267"/>
+<area shape="rect" href="$d6/dcc/_joint_data_8hpp.html" title="generic&#45;joint/JointData.hpp" alt="" coords="3321,547,3497,576"/>
+<area shape="rect" href="$d3/d61/_joint_parameter_8hpp.html" title="generic&#45;joint/JointParameter.hpp" alt="" coords="2177,469,2385,499"/>
+<area shape="rect" href="$d6/d61/_you_bot_joint_parameter_read_only_8hpp.html" title="youbot/YouBotJointParameterReadOnly.hpp" alt="" coords="1969,392,2244,421"/>
 </map>

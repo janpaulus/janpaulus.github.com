@@ -361,11 +361,11 @@ window.onload = initDynSections;
 <a name="l00290"></a>00290     parameter.<a class="code" href="../../db/dc1/classyoubot_1_1_joint_limits_radian.html#a8b2768141cf6dd44e21da1ad914668ed">setParameter</a>(lowlimit, uplimit, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a9856b9b0462a7279795164f077005875">areLimitsActive</a>);
 <a name="l00291"></a>00291   <span class="comment">// Bouml preserved body end 000D43F1</span>
 <a name="l00292"></a>00292 }
-<a name="l00293"></a>00293 
-<a name="l00294"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5668b35871c41287db13b1ed5a7fa516">00294</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">YouBotJoint::setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html" title="Initialize Joint.">InitializeJoint</a>&amp; parameter) {
-<a name="l00295"></a>00295   <span class="comment">// Bouml preserved body begin 000973F1</span>
-<a name="l00296"></a>00296     <span class="keywordflow">if</span> (parameter.value) {
-<a name="l00297"></a>00297       <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l00293"></a>00293 <span class="comment"></span>
+<a name="l00294"></a>00294 <span class="comment">/// commutation method for firmware 1.48 and below</span>
+<a name="l00295"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5668b35871c41287db13b1ed5a7fa516">00295</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">YouBotJoint::setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d27/classyoubot_1_1_initialize_joint.html" title="Initialize Joint.">InitializeJoint</a>&amp; parameter) {
+<a name="l00296"></a>00296   <span class="comment">// Bouml preserved body begin 000973F1</span>
+<a name="l00297"></a>00297     <span class="keywordflow">if</span> (parameter.value) {
 <a name="l00298"></a>00298       messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = INITIALIZE;
 <a name="l00299"></a>00299       messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = 0;
 <a name="l00300"></a>00300 
@@ -413,10 +413,10 @@ window.onload = initDynSections;
 <a name="l00342"></a>00342     versionString[7] = message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#ae21b6d107ed3b4e1ef20017909e98179">stctInput</a>.<a class="code" href="../../d8/dff/structyoubot_1_1mailbox_input_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> &amp; 0xff;
 <a name="l00343"></a>00343 
 <a name="l00344"></a>00344     <span class="keywordtype">int</span> controllerType = 0;
-<a name="l00345"></a>00345     <span class="keywordtype">double</span> firmwareVersion = 0;
+<a name="l00345"></a>00345     <span class="keywordtype">char</span> firmwareVersion[8] = {0};
 <a name="l00346"></a>00346 
-<a name="l00347"></a>00347     sscanf (versionString,<span class="stringliteral">&quot;%dV%lf&quot;</span>,&amp;controllerType,&amp;firmwareVersion);
-<a name="l00348"></a>00348     parameter.<a class="code" href="../../d0/d55/classyoubot_1_1_firmware_version.html#ad6a68ea7f9410ebe311f048f891ca937">setParameter</a>(controllerType, firmwareVersion);
+<a name="l00347"></a>00347     sscanf (versionString,<span class="stringliteral">&quot;%dV%s&quot;</span>,&amp;controllerType,firmwareVersion);
+<a name="l00348"></a>00348     parameter.<a class="code" href="../../d0/d55/classyoubot_1_1_firmware_version.html#a7ec3c2b0db37f092a431f4b8653ff055">setParameter</a>(controllerType, firmwareVersion);
 <a name="l00349"></a>00349     <span class="keywordflow">return</span>;
 <a name="l00350"></a>00350   <span class="comment">// Bouml preserved body end 0009AA71</span>
 <a name="l00351"></a>00351 }
@@ -767,10 +767,10 @@ window.onload = initDynSections;
 <a name="l00696"></a>00696   <span class="comment">// Bouml preserved body end 000955F1</span>
 <a name="l00697"></a>00697 }
 <a name="l00698"></a>00698 <span class="comment"></span>
-<a name="l00699"></a>00699 <span class="comment">///gets the actual PWM value of one joint</span>
-<a name="l00700"></a>00700 <span class="comment">///@param data returns the PWM value by reference</span>
-<a name="l00701"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a9cecb1ac216298ae9e63b08e307d7519">00701</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d8/df8/classyoubot_1_1_joint_sensed_p_w_m.html" title="actual pwm value of the joint">JointSensedPWM</a>&amp; data) {
-<a name="l00702"></a>00702   <span class="comment">// Bouml preserved body begin 000CAFF1</span>
+<a name="l00699"></a>00699 <span class="comment">///gets the encoder ticks of one joint</span>
+<a name="l00700"></a>00700 <span class="comment">///@param data returns the ticks by reference</span>
+<a name="l00701"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a3d6170d18e7ad7492466b7330661ed28">00701</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html" title="Sensed encoder ticks of the joint.">JointSensedEncoderTicks</a>&amp; data) {
+<a name="l00702"></a>00702   <span class="comment">// Bouml preserved body begin 000AB7F1</span>
 <a name="l00703"></a>00703     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
 <a name="l00704"></a>00704       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
 <a name="l00705"></a>00705     }
@@ -779,692 +779,618 @@ window.onload = initDynSections;
 <a name="l00708"></a>00708     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
 <a name="l00709"></a>00709     this-&gt;parseYouBotErrorFlags(messageBuffer);
 <a name="l00710"></a>00710 
-<a name="l00711"></a>00711     data.<a class="code" href="../../d8/df8/classyoubot_1_1_joint_sensed_p_w_m.html#ab8c4aea1af31992e2aed3cf6b5c81609">pwm</a> = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a601f3ebd9899aeffa8c6166032512b12">actualPWM</a>;
-<a name="l00712"></a>00712     
-<a name="l00713"></a>00713     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
-<a name="l00714"></a>00714       data.<a class="code" href="../../d8/df8/classyoubot_1_1_joint_sensed_p_w_m.html#ab8c4aea1af31992e2aed3cf6b5c81609">pwm</a> *= -1;
-<a name="l00715"></a>00715     }
-<a name="l00716"></a>00716     
-<a name="l00717"></a>00717   <span class="comment">// Bouml preserved body end 000CAFF1</span>
-<a name="l00718"></a>00718 }
-<a name="l00719"></a>00719 <span class="comment"></span>
-<a name="l00720"></a>00720 <span class="comment">///commands a pulse-width modulation to one joint</span>
-<a name="l00721"></a>00721 <span class="comment">///@param data the to command pulse-width modulation</span>
-<a name="l00722"></a>00722 <span class="comment">///@param communicationMode at the moment only non blocking communication is implemented</span>
-<a name="l00723"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ab37749288600772ad530f6722d5b840d">00723</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">YouBotJoint::setData</a>(<span class="keyword">const</span> <a class="code" href="../../d1/d95/classyoubot_1_1_joint_p_w_m_setpoint.html" title="Pulse-width modulation set-point of the joint.">JointPWMSetpoint</a>&amp; data, SyncMode communicationMode) {
-<a name="l00724"></a>00724   <span class="comment">// Bouml preserved body begin 00095671</span>
-<a name="l00725"></a>00725     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l00726"></a>00726       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l00727"></a>00727     }
-<a name="l00728"></a>00728     
-<a name="l00729"></a>00729     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l00730"></a>00730     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
-<a name="l00731"></a>00731     this-&gt;parseYouBotErrorFlags(messageBuffer);
-<a name="l00732"></a>00732     
-<a name="l00733"></a>00733     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = PWM_MODE;
-<a name="l00734"></a>00734     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = data.<a class="code" href="../../d1/d95/classyoubot_1_1_joint_p_w_m_setpoint.html#a490a9e9e2b50ef1774453ae170fc60a1">pwm</a>;
-<a name="l00735"></a>00735     
-<a name="l00736"></a>00736     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
-<a name="l00737"></a>00737       messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> *= -1;
-<a name="l00738"></a>00738     }
-<a name="l00739"></a>00739     ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>);
-<a name="l00740"></a>00740   <span class="comment">// Bouml preserved body end 00095671</span>
-<a name="l00741"></a>00741 }
-<a name="l00742"></a>00742 <span class="comment"></span>
-<a name="l00743"></a>00743 <span class="comment">///gets the encoder ticks of one joint</span>
-<a name="l00744"></a>00744 <span class="comment">///@param data returns the ticks by reference</span>
-<a name="l00745"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a3d6170d18e7ad7492466b7330661ed28">00745</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html" title="Sensed encoder ticks of the joint.">JointSensedEncoderTicks</a>&amp; data) {
-<a name="l00746"></a>00746   <span class="comment">// Bouml preserved body begin 000AB7F1</span>
+<a name="l00711"></a>00711     <span class="comment">//  LOG(trace) &lt;&lt; &quot;enc: &quot; &lt;&lt; messageBuffer.stctInput.actualPosition;</span>
+<a name="l00712"></a>00712     data.<a class="code" href="../../d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a> ;
+<a name="l00713"></a>00713     
+<a name="l00714"></a>00714     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
+<a name="l00715"></a>00715       data.<a class="code" href="../../d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> *= -1;
+<a name="l00716"></a>00716     }
+<a name="l00717"></a>00717 
+<a name="l00718"></a>00718   <span class="comment">// Bouml preserved body end 000AB7F1</span>
+<a name="l00719"></a>00719 }
+<a name="l00720"></a>00720 <span class="comment"></span>
+<a name="l00721"></a>00721 <span class="comment">///sets the output part of a EtherCAT slave message</span>
+<a name="l00722"></a>00722 <span class="comment">///this methode should be only used if you know what you are doing</span>
+<a name="l00723"></a>00723 <span class="comment">///@param data output part of a EtherCAT slave message</span>
+<a name="l00724"></a>00724 <span class="comment">///@param communicationMode at the moment only non blocking communication is implemented</span>
+<a name="l00725"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5ac1be4ba9da1a8f42a95d1b736836f1">00725</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">YouBotJoint::setData</a>(<span class="keyword">const</span> <a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a>&amp; data, SyncMode communicationMode) {
+<a name="l00726"></a>00726   <span class="comment">// Bouml preserved body begin 000C5671</span>
+<a name="l00727"></a>00727     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l00728"></a>00728     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l00729"></a>00729       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l00730"></a>00730     }
+<a name="l00731"></a>00731     
+<a name="l00732"></a>00732     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l00733"></a>00733     this-&gt;parseYouBotErrorFlags(messageBuffer);
+<a name="l00734"></a>00734     
+<a name="l00735"></a>00735     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a> = data;
+<a name="l00736"></a>00736   
+<a name="l00737"></a>00737     ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>);
+<a name="l00738"></a>00738   <span class="comment">// Bouml preserved body end 000C5671</span>
+<a name="l00739"></a>00739 }
+<a name="l00740"></a>00740 <span class="comment"></span>
+<a name="l00741"></a>00741 <span class="comment">///gets the input and ouput part of a EtherCAT slave message</span>
+<a name="l00742"></a>00742 <span class="comment">///this methode should be only used if you know what you are doing</span>
+<a name="l00743"></a>00743 <span class="comment">///@param data returns the sensor values by reference</span>
+<a name="l00744"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a60cb7794f5e62cfb866cd4084a11a510">00744</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a>&amp; data) {
+<a name="l00745"></a>00745   <span class="comment">// Bouml preserved body begin 000C56F1</span>
+<a name="l00746"></a>00746     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
 <a name="l00747"></a>00747     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
 <a name="l00748"></a>00748       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
 <a name="l00749"></a>00749     }
 <a name="l00750"></a>00750     
-<a name="l00751"></a>00751     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l00752"></a>00752     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
-<a name="l00753"></a>00753     this-&gt;parseYouBotErrorFlags(messageBuffer);
-<a name="l00754"></a>00754 
-<a name="l00755"></a>00755     <span class="comment">//  LOG(trace) &lt;&lt; &quot;enc: &quot; &lt;&lt; messageBuffer.stctInput.actualPosition;</span>
-<a name="l00756"></a>00756     data.<a class="code" href="../../d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#acf08e6420b0bb3f814c0d1b3655434cd">actualPosition</a> ;
-<a name="l00757"></a>00757     
-<a name="l00758"></a>00758     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
-<a name="l00759"></a>00759       data.<a class="code" href="../../d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html#ac07011b7b49a920db4fe889edb8b368f">encoderTicks</a> *= -1;
-<a name="l00760"></a>00760     }
-<a name="l00761"></a>00761 
-<a name="l00762"></a>00762   <span class="comment">// Bouml preserved body end 000AB7F1</span>
-<a name="l00763"></a>00763 }
-<a name="l00764"></a>00764 <span class="comment"></span>
-<a name="l00765"></a>00765 <span class="comment">///sets the output part of a EtherCAT slave message</span>
-<a name="l00766"></a>00766 <span class="comment">///this methode should be only used if you know what you are doing</span>
-<a name="l00767"></a>00767 <span class="comment">///@param data output part of a EtherCAT slave message</span>
-<a name="l00768"></a>00768 <span class="comment">///@param communicationMode at the moment only non blocking communication is implemented</span>
-<a name="l00769"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5ac1be4ba9da1a8f42a95d1b736836f1">00769</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">YouBotJoint::setData</a>(<span class="keyword">const</span> <a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html" title="Output part from the EtherCat message of the youBot EtherCat slaves.">SlaveMessageOutput</a>&amp; data, SyncMode communicationMode) {
-<a name="l00770"></a>00770   <span class="comment">// Bouml preserved body begin 000C5671</span>
-<a name="l00771"></a>00771     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l00772"></a>00772     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l00773"></a>00773       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l00774"></a>00774     }
-<a name="l00775"></a>00775     
-<a name="l00776"></a>00776     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
-<a name="l00777"></a>00777     this-&gt;parseYouBotErrorFlags(messageBuffer);
-<a name="l00778"></a>00778     
-<a name="l00779"></a>00779     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a> = data;
-<a name="l00780"></a>00780   
-<a name="l00781"></a>00781     ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>);
-<a name="l00782"></a>00782   <span class="comment">// Bouml preserved body end 000C5671</span>
-<a name="l00783"></a>00783 }
-<a name="l00784"></a>00784 <span class="comment"></span>
-<a name="l00785"></a>00785 <span class="comment">///gets the input and ouput part of a EtherCAT slave message</span>
-<a name="l00786"></a>00786 <span class="comment">///this methode should be only used if you know what you are doing</span>
-<a name="l00787"></a>00787 <span class="comment">///@param data returns the sensor values by reference</span>
-<a name="l00788"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a60cb7794f5e62cfb866cd4084a11a510">00788</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a>&amp; data) {
-<a name="l00789"></a>00789   <span class="comment">// Bouml preserved body begin 000C56F1</span>
-<a name="l00790"></a>00790     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l00791"></a>00791     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l00792"></a>00792       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l00793"></a>00793     }
-<a name="l00794"></a>00794     
-<a name="l00795"></a>00795     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
-<a name="l00796"></a>00796     this-&gt;parseYouBotErrorFlags(messageBuffer);
-<a name="l00797"></a>00797 
-<a name="l00798"></a>00798     data = messageBuffer;
-<a name="l00799"></a>00799   <span class="comment">// Bouml preserved body end 000C56F1</span>
-<a name="l00800"></a>00800 }
-<a name="l00801"></a>00801 <span class="comment"></span>
-<a name="l00802"></a>00802 <span class="comment">///commands a torque to one joint</span>
-<a name="l00803"></a>00803 <span class="comment">///@param data the to command torque</span>
-<a name="l00804"></a>00804 <span class="comment">///@param communicationMode at the moment only non blocking communication is implemented</span>
-<a name="l00805"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5dbd851f29adb94e66ca07a554419921">00805</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">YouBotJoint::setData</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d45/classyoubot_1_1_joint_torque_setpoint.html" title="The torque set-point of the joint will be set by setting the computed current set-point...">JointTorqueSetpoint</a>&amp; data, SyncMode communicationMode) {
-<a name="l00806"></a>00806   <span class="comment">// Bouml preserved body begin 000C7071</span>
-<a name="l00807"></a>00807     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l00808"></a>00808       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l00809"></a>00809     }
-<a name="l00810"></a>00810     
-<a name="l00811"></a>00811     <a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html" title="Set-point current of the joint.">JointCurrentSetpoint</a> currentSetpoint;
-<a name="l00812"></a>00812     
-<a name="l00813"></a>00813     <span class="keywordflow">if</span> (this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a3f0093fc51e1459de3a71de9ac450fbf">torqueConstant</a> == 0) {
-<a name="l00814"></a>00814       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A torque constant of 0 is not allowed&quot;</span>);
-<a name="l00815"></a>00815     }
-<a name="l00816"></a>00816    
-<a name="l00817"></a>00817     currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = ((data.<a class="code" href="../../d8/d45/classyoubot_1_1_joint_torque_setpoint.html#aeab9b928859187f005beca2b113cfb3a">torque</a>.value()*this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a>)/this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a3f0093fc51e1459de3a71de9ac450fbf">torqueConstant</a>) * ampere;
-<a name="l00818"></a>00818     this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(currentSetpoint);
-<a name="l00819"></a>00819   <span class="comment">// Bouml preserved body end 000C7071</span>
-<a name="l00820"></a>00820 }
-<a name="l00821"></a>00821 <span class="comment"></span>
-<a name="l00822"></a>00822 <span class="comment">///gets the motor torque of one joint which have been calculated from the current</span>
-<a name="l00823"></a>00823 <span class="comment">///@param data returns the actual motor torque by reference</span>
-<a name="l00824"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae583e3e1ca03bf6da185a128bb4ef0ce">00824</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d7/d5b/classyoubot_1_1_joint_sensed_torque.html" title="This torque of the joint is computed from the actual current.">JointSensedTorque</a>&amp; data) {
-<a name="l00825"></a>00825   <span class="comment">// Bouml preserved body begin 000C70F1</span>
-<a name="l00826"></a>00826   <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l00827"></a>00827       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l00828"></a>00828   }
-<a name="l00829"></a>00829   
-<a name="l00830"></a>00830   <a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html" title="Sensed electric current of the joint.">JointSensedCurrent</a> sensedCurrent;
-<a name="l00831"></a>00831   this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">getData</a>(sensedCurrent);
-<a name="l00832"></a>00832   
-<a name="l00833"></a>00833   <span class="keywordflow">if</span> (this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> == 0) {
-<a name="l00834"></a>00834     <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A Gear Ratio of 0 is not allowed&quot;</span>);
-<a name="l00835"></a>00835   }
-<a name="l00836"></a>00836   data.<a class="code" href="../../d7/d5b/classyoubot_1_1_joint_sensed_torque.html#aeab9b928859187f005beca2b113cfb3a">torque</a> = ((sensedCurrent.<a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a>.value() * this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a3f0093fc51e1459de3a71de9ac450fbf">torqueConstant</a>) / this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a>) * newton_meter;
-<a name="l00837"></a>00837   <span class="comment">// Bouml preserved body end 000C70F1</span>
-<a name="l00838"></a>00838 }
-<a name="l00839"></a>00839 
-<a name="l00840"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae6bb64697e202afe37bfd7285cb7e3db">00840</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae6bb64697e202afe37bfd7285cb7e3db">YouBotJoint::getUserVariable</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <span class="keywordtype">int</span>&amp; data) {
-<a name="l00841"></a>00841   <span class="comment">// Bouml preserved body begin 000AD171</span>
-<a name="l00842"></a>00842   
-<a name="l00843"></a>00843   <span class="keywordflow">if</span>(index == 0 || index &gt; 55){
-<a name="l00844"></a>00844     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;User variable index is out of range use 1-55 at: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
-<a name="l00845"></a>00845   }
-<a name="l00846"></a>00846   <span class="comment">//56 is the last userdata at bank 2</span>
-<a name="l00847"></a>00847     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> message;
-<a name="l00848"></a>00848     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
-<a name="l00849"></a>00849     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = GGP;
-<a name="l00850"></a>00850     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
-<a name="l00851"></a>00851     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
-<a name="l00852"></a>00852     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
-<a name="l00853"></a>00853     
-<a name="l00854"></a>00854    <span class="keywordflow">if</span> (!retrieveValueFromMotorContoller(message)) {
-<a name="l00855"></a>00855      <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;Unable to get parameter from joint: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
-<a name="l00856"></a>00856    }
-<a name="l00857"></a>00857    this-&gt;parseMailboxStatusFlags(message);
-<a name="l00858"></a>00858    
-<a name="l00859"></a>00859    data = message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#ae21b6d107ed3b4e1ef20017909e98179">stctInput</a>.<a class="code" href="../../d8/dff/structyoubot_1_1mailbox_input_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a>;
-<a name="l00860"></a>00860   <span class="comment">// Bouml preserved body end 000AD171</span>
-<a name="l00861"></a>00861 }
-<a name="l00862"></a>00862 
-<a name="l00863"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#aa50ab4d9a045bfdac0f99dab006a9bff">00863</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#aa50ab4d9a045bfdac0f99dab006a9bff">YouBotJoint::setUserVariable</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <span class="keyword">const</span> <span class="keywordtype">int</span> data) {
-<a name="l00864"></a>00864   <span class="comment">// Bouml preserved body begin 000AD1F1</span>
-<a name="l00865"></a>00865   
-<a name="l00866"></a>00866   <span class="keywordflow">if</span>(index &lt; 17 || index &gt; 55){
-<a name="l00867"></a>00867     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;User variable index is out of range use 17-55 at: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
-<a name="l00868"></a>00868   }
-<a name="l00869"></a>00869   <span class="comment">//56 is the last userdata at bank 2</span>
-<a name="l00870"></a>00870     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> message;
-<a name="l00871"></a>00871     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
-<a name="l00872"></a>00872     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = GGP;
-<a name="l00873"></a>00873     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
-<a name="l00874"></a>00874     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
-<a name="l00875"></a>00875     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = data;
+<a name="l00751"></a>00751     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l00752"></a>00752     this-&gt;parseYouBotErrorFlags(messageBuffer);
+<a name="l00753"></a>00753 
+<a name="l00754"></a>00754     data = messageBuffer;
+<a name="l00755"></a>00755   <span class="comment">// Bouml preserved body end 000C56F1</span>
+<a name="l00756"></a>00756 }
+<a name="l00757"></a>00757 <span class="comment"></span>
+<a name="l00758"></a>00758 <span class="comment">///commands a torque to one joint</span>
+<a name="l00759"></a>00759 <span class="comment">///@param data the to command torque</span>
+<a name="l00760"></a>00760 <span class="comment">///@param communicationMode at the moment only non blocking communication is implemented</span>
+<a name="l00761"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5dbd851f29adb94e66ca07a554419921">00761</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">YouBotJoint::setData</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d45/classyoubot_1_1_joint_torque_setpoint.html" title="The torque set-point of the joint will be set by setting the computed current set-point...">JointTorqueSetpoint</a>&amp; data, SyncMode communicationMode) {
+<a name="l00762"></a>00762   <span class="comment">// Bouml preserved body begin 000C7071</span>
+<a name="l00763"></a>00763     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l00764"></a>00764       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l00765"></a>00765     }
+<a name="l00766"></a>00766     
+<a name="l00767"></a>00767     <a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html" title="Set-point current of the joint.">JointCurrentSetpoint</a> currentSetpoint;
+<a name="l00768"></a>00768     
+<a name="l00769"></a>00769     <span class="keywordflow">if</span> (this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a3f0093fc51e1459de3a71de9ac450fbf">torqueConstant</a> == 0) {
+<a name="l00770"></a>00770       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A torque constant of 0 is not allowed&quot;</span>);
+<a name="l00771"></a>00771     }
+<a name="l00772"></a>00772    
+<a name="l00773"></a>00773     currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = ((data.<a class="code" href="../../d8/d45/classyoubot_1_1_joint_torque_setpoint.html#aeab9b928859187f005beca2b113cfb3a">torque</a>.value()*this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a>)/this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a3f0093fc51e1459de3a71de9ac450fbf">torqueConstant</a>) * ampere;
+<a name="l00774"></a>00774     this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(currentSetpoint);
+<a name="l00775"></a>00775   <span class="comment">// Bouml preserved body end 000C7071</span>
+<a name="l00776"></a>00776 }
+<a name="l00777"></a>00777 <span class="comment"></span>
+<a name="l00778"></a>00778 <span class="comment">///gets the motor torque of one joint which have been calculated from the current</span>
+<a name="l00779"></a>00779 <span class="comment">///@param data returns the actual motor torque by reference</span>
+<a name="l00780"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae583e3e1ca03bf6da185a128bb4ef0ce">00780</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d7/d5b/classyoubot_1_1_joint_sensed_torque.html" title="This torque of the joint is computed from the actual current.">JointSensedTorque</a>&amp; data) {
+<a name="l00781"></a>00781   <span class="comment">// Bouml preserved body begin 000C70F1</span>
+<a name="l00782"></a>00782   <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l00783"></a>00783       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l00784"></a>00784   }
+<a name="l00785"></a>00785   
+<a name="l00786"></a>00786   <a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html" title="Sensed electric current of the joint.">JointSensedCurrent</a> sensedCurrent;
+<a name="l00787"></a>00787   this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">getData</a>(sensedCurrent);
+<a name="l00788"></a>00788   
+<a name="l00789"></a>00789   <span class="keywordflow">if</span> (this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> == 0) {
+<a name="l00790"></a>00790     <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A Gear Ratio of 0 is not allowed&quot;</span>);
+<a name="l00791"></a>00791   }
+<a name="l00792"></a>00792   data.<a class="code" href="../../d7/d5b/classyoubot_1_1_joint_sensed_torque.html#aeab9b928859187f005beca2b113cfb3a">torque</a> = ((sensedCurrent.<a class="code" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a>.value() * this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a3f0093fc51e1459de3a71de9ac450fbf">torqueConstant</a>) / this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a>) * newton_meter;
+<a name="l00793"></a>00793   <span class="comment">// Bouml preserved body end 000C70F1</span>
+<a name="l00794"></a>00794 }
+<a name="l00795"></a>00795 <span class="comment"></span>
+<a name="l00796"></a>00796 <span class="comment">///gets the target or setpoint position of one joint (only firmware 2.0 or higher)</span>
+<a name="l00797"></a>00797 <span class="comment">///@param data returns the angle by reference</span>
+<a name="l00798"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5e6159adb8859f3ff327508d8eda7eaa">00798</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html" title="Set-point angle / position of the joint.">JointAngleSetpoint</a>&amp; data) {
+<a name="l00799"></a>00799   <span class="comment">// Bouml preserved body begin 00103EF1</span>
+<a name="l00800"></a>00800     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l00801"></a>00801     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l00802"></a>00802       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l00803"></a>00803     }
+<a name="l00804"></a>00804   
+<a name="l00805"></a>00805     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l00806"></a>00806     this-&gt;parseYouBotErrorFlags(messageBuffer);
+<a name="l00807"></a>00807 
+<a name="l00808"></a>00808     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> == 0) {
+<a name="l00809"></a>00809       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A Gear Ratio of zero is not allowed&quot;</span>);
+<a name="l00810"></a>00810     }
+<a name="l00811"></a>00811     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#aa7281cbdb97eb444c0c090ee99d24a0f">encoderTicksPerRound</a> == 0) {
+<a name="l00812"></a>00812       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Zero Encoder Ticks per Round are not allowed&quot;</span>);
+<a name="l00813"></a>00813     }
+<a name="l00814"></a>00814     <span class="comment">//  LOG(trace) &lt;&lt; &quot;enc: &quot; &lt;&lt; messageBuffer.stctInput.actualPosition;</span>
+<a name="l00815"></a>00815     data.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = ((double) messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a74185bd3304d906ee06be5bbb2e19441">targetPosition</a> / storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#aa7281cbdb97eb444c0c090ee99d24a0f">encoderTicksPerRound</a>) * storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> * (2.0 * M_PI) * radian;
+<a name="l00816"></a>00816 
+<a name="l00817"></a>00817     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
+<a name="l00818"></a>00818       data.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = -data.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a>;
+<a name="l00819"></a>00819     }
+<a name="l00820"></a>00820   <span class="comment">// Bouml preserved body end 00103EF1</span>
+<a name="l00821"></a>00821 }
+<a name="l00822"></a>00822 <span class="comment"></span>
+<a name="l00823"></a>00823 <span class="comment">///gets the target or setpoint velocity of one joint (only firmware 2.0 or higher)</span>
+<a name="l00824"></a>00824 <span class="comment">///@param data returns the velocity by reference</span>
+<a name="l00825"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae3ae31da3d4d3a83727ce1ab630a0c13">00825</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html" title="Set-point velocity of the joint.">JointVelocitySetpoint</a>&amp; data) {
+<a name="l00826"></a>00826   <span class="comment">// Bouml preserved body begin 001002F1</span>
+<a name="l00827"></a>00827     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l00828"></a>00828       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l00829"></a>00829     }
+<a name="l00830"></a>00830     
+<a name="l00831"></a>00831     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l00832"></a>00832     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l00833"></a>00833     this-&gt;parseYouBotErrorFlags(messageBuffer);
+<a name="l00834"></a>00834 
+<a name="l00835"></a>00835     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> == 0) {
+<a name="l00836"></a>00836       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A Gear Ratio of 0 is not allowed&quot;</span>);
+<a name="l00837"></a>00837     }
+<a name="l00838"></a>00838     <span class="keywordtype">double</span> motorRPM = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a723748cd770cfebc62918a68e3079652">targetVelocity</a>;
+<a name="l00839"></a>00839     <span class="comment">//convert RPM of the motor to radian per second of the wheel/joint</span>
+<a name="l00840"></a>00840     data.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = ((motorRPM / 60.0) * storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> * 2.0 * M_PI) * radian_per_second;
+<a name="l00841"></a>00841     
+<a name="l00842"></a>00842     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
+<a name="l00843"></a>00843       data.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> *= -1;
+<a name="l00844"></a>00844     }
+<a name="l00845"></a>00845   <span class="comment">// Bouml preserved body end 001002F1</span>
+<a name="l00846"></a>00846 }
+<a name="l00847"></a>00847 <span class="comment"></span>
+<a name="l00848"></a>00848 <span class="comment">///gets the motor current target or setpoint of one joint (only firmware 2.0 or higher)</span>
+<a name="l00849"></a>00849 <span class="comment">///@param data returns the motor current by reference</span>
+<a name="l00850"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8996dbd0df5b014712abf9abefc82fe8">00850</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html" title="Set-point current of the joint.">JointCurrentSetpoint</a>&amp; data) {
+<a name="l00851"></a>00851   <span class="comment">// Bouml preserved body begin 00100371</span>
+<a name="l00852"></a>00852     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l00853"></a>00853       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l00854"></a>00854     }
+<a name="l00855"></a>00855     
+<a name="l00856"></a>00856     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l00857"></a>00857     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l00858"></a>00858     this-&gt;parseYouBotErrorFlags(messageBuffer);
+<a name="l00859"></a>00859     <span class="comment">//convert mili ampere to ampere</span>
+<a name="l00860"></a>00860     <span class="keywordtype">double</span> current = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#ae57fd9e03421b47deab3c4a606637f21">targetCurrent</a>;
+<a name="l00861"></a>00861     data.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> =  current / 1000.0 * ampere;
+<a name="l00862"></a>00862     
+<a name="l00863"></a>00863     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
+<a name="l00864"></a>00864       data.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> *= -1;
+<a name="l00865"></a>00865     }
+<a name="l00866"></a>00866   <span class="comment">// Bouml preserved body end 00100371</span>
+<a name="l00867"></a>00867 }
+<a name="l00868"></a>00868 <span class="comment"></span>
+<a name="l00869"></a>00869 <span class="comment">///gets the ramp generator velocity of one joint (only firmware 2.0 or higher)</span>
+<a name="l00870"></a>00870 <span class="comment">///@param data returns the velocity by reference</span>
+<a name="l00871"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae57989c0608b9223cfe1a35c0f08f2cd">00871</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">YouBotJoint::getData</a>(<a class="code" href="../../d6/d30/classyoubot_1_1_joint_ramp_generator_velocity.html" title="Sensed velocity of the joint.">JointRampGeneratorVelocity</a>&amp; data) {
+<a name="l00872"></a>00872   <span class="comment">// Bouml preserved body begin 001003F1</span>
+<a name="l00873"></a>00873     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l00874"></a>00874       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l00875"></a>00875     }
 <a name="l00876"></a>00876     
-<a name="l00877"></a>00877   <span class="keywordflow">if</span> (!setValueToMotorContoller(message)) {
-<a name="l00878"></a>00878      <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;Unable to set parameter at joint: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
-<a name="l00879"></a>00879    }
-<a name="l00880"></a>00880     this-&gt;parseMailboxStatusFlags(message);
-<a name="l00881"></a>00881   <span class="comment">// Bouml preserved body end 000AD1F1</span>
-<a name="l00882"></a>00882 }
-<a name="l00883"></a>00883 <span class="comment"></span>
-<a name="l00884"></a>00884 <span class="comment">/// Returns the status messages for the motor controller. </span>
-<a name="l00885"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd">00885</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller.">YouBotJoint::getStatus</a>(std::vector&lt;std::string&gt;&amp; statusMessages) {
-<a name="l00886"></a>00886   <span class="comment">// Bouml preserved body begin 000AD271</span>
-<a name="l00887"></a>00887   <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l00888"></a>00888   ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
-<a name="l00889"></a>00889   
-<a name="l00890"></a>00890   
-<a name="l00891"></a>00891   
-<a name="l00892"></a>00892 
-<a name="l00893"></a>00893     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; OVER_CURRENT) {
-<a name="l00894"></a>00894       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got over current&quot;</span>);
-<a name="l00895"></a>00895     }
-<a name="l00896"></a>00896 
-<a name="l00897"></a>00897     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; UNDER_VOLTAGE) {
-<a name="l00898"></a>00898       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got under voltage&quot;</span>);
-<a name="l00899"></a>00899     }
-<a name="l00900"></a>00900 
-<a name="l00901"></a>00901     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; OVER_VOLTAGE) {
-<a name="l00902"></a>00902       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got over voltage&quot;</span>);
-<a name="l00903"></a>00903     }
-<a name="l00904"></a>00904 
-<a name="l00905"></a>00905     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; OVER_TEMPERATURE) {
-<a name="l00906"></a>00906       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got over temperature&quot;</span>);
-<a name="l00907"></a>00907     }
-<a name="l00908"></a>00908 
-<a name="l00909"></a>00909     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; MOTOR_HALTED) {
-<a name="l00910"></a>00910       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; is halted&quot;</span>);
-<a name="l00911"></a>00911     }
-<a name="l00912"></a>00912 
-<a name="l00913"></a>00913     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; HALL_SENSOR_ERROR) {
-<a name="l00914"></a>00914       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got hall sensor problem&quot;</span>);
-<a name="l00915"></a>00915     }
+<a name="l00877"></a>00877     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l00878"></a>00878     ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l00879"></a>00879     this-&gt;parseYouBotErrorFlags(messageBuffer);
+<a name="l00880"></a>00880 
+<a name="l00881"></a>00881     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> == 0) {
+<a name="l00882"></a>00882       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A Gear Ratio of 0 is not allowed&quot;</span>);
+<a name="l00883"></a>00883     }
+<a name="l00884"></a>00884     <span class="keywordtype">double</span> motorRPM = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#af16bc89db2c33d37713be5b95fafbd0e">rampGeneratorVelocity</a>;
+<a name="l00885"></a>00885     <span class="comment">//convert RPM of the motor to radian per second of the wheel/joint</span>
+<a name="l00886"></a>00886     data.<a class="code" href="../../d6/d30/classyoubot_1_1_joint_ramp_generator_velocity.html#a1c682edc27f2f80f174781ef3748d376">angularVelocity</a> = ((motorRPM / 60.0) * storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a1c7f052bd8bc7f3cdf72da82d934e7ef">gearRatio</a> * 2.0 * M_PI) * radian_per_second;
+<a name="l00887"></a>00887     
+<a name="l00888"></a>00888     <span class="keywordflow">if</span> (storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a6a97db7684b6287c118f5e110842a2a6">inverseMovementDirection</a>) {
+<a name="l00889"></a>00889       data.<a class="code" href="../../d6/d30/classyoubot_1_1_joint_ramp_generator_velocity.html#a1c682edc27f2f80f174781ef3748d376">angularVelocity</a> *= -1;
+<a name="l00890"></a>00890     }
+<a name="l00891"></a>00891   <span class="comment">// Bouml preserved body end 001003F1</span>
+<a name="l00892"></a>00892 }
+<a name="l00893"></a>00893 
+<a name="l00894"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae6bb64697e202afe37bfd7285cb7e3db">00894</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae6bb64697e202afe37bfd7285cb7e3db">YouBotJoint::getUserVariable</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <span class="keywordtype">int</span>&amp; data) {
+<a name="l00895"></a>00895   <span class="comment">// Bouml preserved body begin 000AD171</span>
+<a name="l00896"></a>00896   
+<a name="l00897"></a>00897   <span class="keywordflow">if</span>(index == 0 || index &gt; 55){
+<a name="l00898"></a>00898     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;User variable index is out of range use 1-55 at: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
+<a name="l00899"></a>00899   }
+<a name="l00900"></a>00900   <span class="comment">//56 is the last userdata at bank 2</span>
+<a name="l00901"></a>00901     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> message;
+<a name="l00902"></a>00902     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
+<a name="l00903"></a>00903     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = GGP;
+<a name="l00904"></a>00904     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
+<a name="l00905"></a>00905     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
+<a name="l00906"></a>00906     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
+<a name="l00907"></a>00907     
+<a name="l00908"></a>00908    <span class="keywordflow">if</span> (!retrieveValueFromMotorContoller(message)) {
+<a name="l00909"></a>00909      <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;Unable to get parameter from joint: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
+<a name="l00910"></a>00910    }
+<a name="l00911"></a>00911    this-&gt;parseMailboxStatusFlags(message);
+<a name="l00912"></a>00912    
+<a name="l00913"></a>00913    data = message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#ae21b6d107ed3b4e1ef20017909e98179">stctInput</a>.<a class="code" href="../../d8/dff/structyoubot_1_1mailbox_input_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a>;
+<a name="l00914"></a>00914   <span class="comment">// Bouml preserved body end 000AD171</span>
+<a name="l00915"></a>00915 }
 <a name="l00916"></a>00916 
-<a name="l00917"></a>00917 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; ENCODER_ERROR) {</span>
-<a name="l00918"></a>00918 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; got encoder problem&quot;);</span>
-<a name="l00919"></a>00919 <span class="comment">//    }</span>
-<a name="l00920"></a>00920 <span class="comment">//</span>
-<a name="l00921"></a>00921 <span class="comment">//     if (messageBuffer.stctInput.errorFlags &amp; INITIALIZATION_ERROR) {</span>
-<a name="l00922"></a>00922 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; got inizialization problem&quot;);</span>
-<a name="l00923"></a>00923 <span class="comment">//    }</span>
-<a name="l00924"></a>00924 
-<a name="l00925"></a>00925     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; PWM_MODE_ACTIVE) {
-<a name="l00926"></a>00926       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has PWM mode active&quot;</span>);
-<a name="l00927"></a>00927     }
-<a name="l00928"></a>00928 
-<a name="l00929"></a>00929     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; VELOCITY_MODE) {
-<a name="l00930"></a>00930       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has velocity mode active&quot;</span>);
-<a name="l00931"></a>00931     }
-<a name="l00932"></a>00932 
-<a name="l00933"></a>00933     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; POSITION_MODE) {
-<a name="l00934"></a>00934       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has position mode active&quot;</span>);
-<a name="l00935"></a>00935     }
-<a name="l00936"></a>00936 
-<a name="l00937"></a>00937     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; TORQUE_MODE) {
-<a name="l00938"></a>00938       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has torque mode active&quot;</span>);
-<a name="l00939"></a>00939     }
-<a name="l00940"></a>00940 
-<a name="l00941"></a>00941 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; EMERGENCY_STOP) {</span>
-<a name="l00942"></a>00942 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; has emergency stop active&quot;);</span>
-<a name="l00943"></a>00943 <span class="comment">//    }</span>
-<a name="l00944"></a>00944 <span class="comment">//</span>
-<a name="l00945"></a>00945 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; FREERUNNING) {</span>
-<a name="l00946"></a>00946 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; has freerunning active&quot;);</span>
-<a name="l00947"></a>00947 <span class="comment">//    }</span>
-<a name="l00948"></a>00948 
-<a name="l00949"></a>00949     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; POSITION_REACHED) {
-<a name="l00950"></a>00950       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has position reached&quot;</span>);
-<a name="l00951"></a>00951     }
-<a name="l00952"></a>00952 
-<a name="l00953"></a>00953     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; INITIALIZED) {
-<a name="l00954"></a>00954       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; is initialized&quot;</span>);
-<a name="l00955"></a>00955     }
-<a name="l00956"></a>00956 
-<a name="l00957"></a>00957     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; TIMEOUT) {
-<a name="l00958"></a>00958       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has a timeout&quot;</span>);
-<a name="l00959"></a>00959     }
-<a name="l00960"></a>00960 
-<a name="l00961"></a>00961     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; I2T_EXCEEDED) {
-<a name="l00962"></a>00962       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; exceeded I2t&quot;</span>);
-<a name="l00963"></a>00963     }
-<a name="l00964"></a>00964   
-<a name="l00965"></a>00965   
-<a name="l00966"></a>00966   <span class="comment">// Bouml preserved body end 000AD271</span>
-<a name="l00967"></a>00967 }
-<a name="l00968"></a>00968 <span class="comment"></span>
-<a name="l00969"></a>00969 <span class="comment">/// Returns the status messages as status flags for the motor controller. The status flag bits are assigned like this:</span>
-<a name="l00970"></a>00970 <span class="comment">/// 0:  Overcurrent</span>
-<a name="l00971"></a>00971 <span class="comment">/// 1:  Undervoltage</span>
-<a name="l00972"></a>00972 <span class="comment">/// 2:  Overvoltage</span>
-<a name="l00973"></a>00973 <span class="comment">/// 3:  Overtemperature</span>
-<a name="l00974"></a>00974 <span class="comment">/// 4:  Motor halted</span>
-<a name="l00975"></a>00975 <span class="comment">/// 5:  Hall error flag</span>
-<a name="l00976"></a>00976 <span class="comment">/// 6:  ---</span>
-<a name="l00977"></a>00977 <span class="comment">/// 7:  ---</span>
-<a name="l00978"></a>00978 <span class="comment">/// 8:  PWM mode active</span>
-<a name="l00979"></a>00979 <span class="comment">/// 9:  Velocity mode active</span>
-<a name="l00980"></a>00980 <span class="comment">/// 10: Position mode active</span>
-<a name="l00981"></a>00981 <span class="comment">/// 11: Torque mode active</span>
-<a name="l00982"></a>00982 <span class="comment">/// 12: ---</span>
-<a name="l00983"></a>00983 <span class="comment">/// 13: ---</span>
-<a name="l00984"></a>00984 <span class="comment">/// 14: Position end flag</span>
-<a name="l00985"></a>00985 <span class="comment">/// 15: Module initialized</span>
-<a name="l00986"></a>00986 <span class="comment">/// 16: EtherCAT timeout flag</span>
-<a name="l00987"></a>00987 <span class="comment">/// 17: I2t exceeded flag</span>
-<a name="l00988"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8478d5253ea061cca65673c46009b96b">00988</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller.">YouBotJoint::getStatus</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; statusFlags) {
-<a name="l00989"></a>00989   <span class="comment">// Bouml preserved body begin 000AD2F1</span>
-<a name="l00990"></a>00990   <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l00991"></a>00991   ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
-<a name="l00992"></a>00992   
-<a name="l00993"></a>00993   statusFlags = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a>;
-<a name="l00994"></a>00994   <span class="comment">// Bouml preserved body end 000AD2F1</span>
-<a name="l00995"></a>00995 }
-<a name="l00996"></a>00996 <span class="comment"></span>
-<a name="l00997"></a>00997 <span class="comment">/// set the encoder values of the joint to zero. This postion will be the new reference.</span>
-<a name="l00998"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08">00998</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference...">YouBotJoint::setEncoderToZero</a>() {
-<a name="l00999"></a>00999   <span class="comment">// Bouml preserved body begin 000AED71</span>
-<a name="l01000"></a>01000     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l01001"></a>01001       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l01002"></a>01002     }
-<a name="l01003"></a>01003 
-<a name="l01004"></a>01004     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> message;
-<a name="l01005"></a>01005     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = SAP;
-<a name="l01006"></a>01006     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
-<a name="l01007"></a>01007     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = 1; <span class="comment">//actual Position</span>
-<a name="l01008"></a>01008     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
-<a name="l01009"></a>01009 
-<a name="l01010"></a>01010     <span class="keywordflow">if</span> (!setValueToMotorContoller(message)) {
-<a name="l01011"></a>01011       <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;Unable to set the encoders to zero at joint: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
-<a name="l01012"></a>01012     }
-<a name="l01013"></a>01013 
-<a name="l01014"></a>01014     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l01015"></a>01015     <span class="comment">// messageBuffer.stctOutput.controllerMode = SET_POSITION_TO_REFERENCE;</span>
-<a name="l01016"></a>01016     <span class="comment">// messageBuffer.stctOutput.value = 0;</span>
-<a name="l01017"></a>01017 
-<a name="l01018"></a>01018     <span class="comment">//ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.jointNumber);</span>
-<a name="l01019"></a>01019 
-<a name="l01020"></a>01020 
-<a name="l01021"></a>01021   <span class="comment">// Bouml preserved body end 000AED71</span>
-<a name="l01022"></a>01022 }
-<a name="l01023"></a>01023 
-<a name="l01024"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae74a744df590b9d7d23f9cc4c9c5a499">01024</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae74a744df590b9d7d23f9cc4c9c5a499">YouBotJoint::noMoreAction</a>() {
-<a name="l01025"></a>01025   <span class="comment">// Bouml preserved body begin 000664F1</span>
-<a name="l01026"></a>01026     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l01027"></a>01027       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l01028"></a>01028     }
-<a name="l01029"></a>01029     
-<a name="l01030"></a>01030     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l01031"></a>01031     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = NO_MORE_ACTION;
-<a name="l01032"></a>01032     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = 0;
-<a name="l01033"></a>01033 
-<a name="l01034"></a>01034     ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>);
-<a name="l01035"></a>01035   <span class="comment">// Bouml preserved body end 000664F1</span>
-<a name="l01036"></a>01036 }
-<a name="l01037"></a>01037 
-<a name="l01038"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ab4f6a8fb9393bb962ff1b82bbc44a14e">01038</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ab4f6a8fb9393bb962ff1b82bbc44a14e">YouBotJoint::stopJoint</a>() {
-<a name="l01039"></a>01039   <span class="comment">// Bouml preserved body begin 00066471</span>
-<a name="l01040"></a>01040     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
-<a name="l01041"></a>01041       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
-<a name="l01042"></a>01042     }
-<a name="l01043"></a>01043     
-<a name="l01044"></a>01044     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
-<a name="l01045"></a>01045     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = MOTOR_STOP;
-<a name="l01046"></a>01046     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = 0;
-<a name="l01047"></a>01047 
-<a name="l01048"></a>01048     ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>);
-<a name="l01049"></a>01049   <span class="comment">// Bouml preserved body end 00066471</span>
-<a name="l01050"></a>01050 }
-<a name="l01051"></a>01051 
-<a name="l01052"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a662ce50f0905ec92b88a6bb463950162">01052</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a662ce50f0905ec92b88a6bb463950162">YouBotJoint::getJointNumber</a>() {
-<a name="l01053"></a>01053   <span class="comment">// Bouml preserved body begin 000EA2F1</span>
-<a name="l01054"></a>01054   <span class="keywordflow">return</span> this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
-<a name="l01055"></a>01055   <span class="comment">// Bouml preserved body end 000EA2F1</span>
-<a name="l01056"></a>01056 }
-<a name="l01057"></a>01057 <span class="comment"></span>
-<a name="l01058"></a>01058 <span class="comment">/// calculates all trajectory values for the future and sets all the the ethercat master</span>
-<a name="l01059"></a>01059 <span class="comment">/// if the trajectory is still active the the values will be set in the next buffer</span>
-<a name="l01060"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af69f97dd49a00570eff3bed0a2b30cb2">01060</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af69f97dd49a00570eff3bed0a2b30cb2" title="calculates all trajectory values for the future and sets all the the ethercat master...">YouBotJoint::setTrajectory</a>(<span class="keyword">const</span> std::vector&lt; quantity&lt;plane_angle&gt; &gt;&amp; positions, <span class="keyword">const</span> std::vector&lt; quantity&lt;angular_velocity&gt; &gt;&amp; velocities, <span class="keyword">const</span> std::vector&lt; quantity&lt;angular_acceleration&gt; &gt;&amp; accelerations) {
-<a name="l01061"></a>01061   <span class="comment">// Bouml preserved body begin 000E84F1</span>
-<a name="l01062"></a>01062   std::list&lt;int32&gt; targetPositions;
-<a name="l01063"></a>01063   <span class="keywordflow">if</span>(!this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a45dbd9cac47e9d230ffb6c8cefdc6c11">trajectoryController</a>.<a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#aadb9c59dcd7f82f05f970e0f0e82d6c3">isTrajectoryControllerActive</a>()){
-<a name="l01064"></a>01064     <a class="code" href="../../d1/d86/classyoubot_1_1_joint_sensed_angle.html" title="Sensed position / angle of the joint.">JointSensedAngle</a> currentpose;
-<a name="l01065"></a>01065     <a class="code" href="../../dc/ddd/classyoubot_1_1_joint_sensed_velocity.html" title="Sensed velocity of the joint.">JointSensedVelocity</a> currentvel;
-<a name="l01066"></a>01066     this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">getData</a>(currentpose);
-<a name="l01067"></a>01067     this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">getData</a>(currentvel);
-<a name="l01068"></a>01068     lastVelocity = currentvel.<a class="code" href="../../dc/ddd/classyoubot_1_1_joint_sensed_velocity.html#a1c682edc27f2f80f174781ef3748d376">angularVelocity</a>;
-<a name="l01069"></a>01069     lastPosition = currentpose.<a class="code" href="../../d1/d86/classyoubot_1_1_joint_sensed_angle.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a>;
-<a name="l01070"></a>01070   }
-<a name="l01071"></a>01071   
-<a name="l01072"></a>01072   <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i&lt; positions.size(); i++) {
-<a name="l01073"></a>01073     this-&gt;calculatePositions(positions[i], lastPosition, velocities[i], lastVelocity,  accelerations[i], targetPositions);
-<a name="l01074"></a>01074     lastVelocity = velocities[i];
-<a name="l01075"></a>01075     lastPosition = positions[i];
-<a name="l01076"></a>01076   }
-<a name="l01077"></a>01077   
-<a name="l01078"></a>01078   this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a45dbd9cac47e9d230ffb6c8cefdc6c11">trajectoryController</a>.<a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#a0fa074d7bce5bfc3aa12524ae3e4dd35">setTrajectoryPositions</a>(targetPositions);
-<a name="l01079"></a>01079   
-<a name="l01080"></a>01080   <span class="comment">// Bouml preserved body end 000E84F1</span>
-<a name="l01081"></a>01081 }
-<a name="l01082"></a>01082 <span class="comment"></span>
-<a name="l01083"></a>01083 <span class="comment">/// Stops just the trajectory controller but not the joint movement</span>
-<a name="l01084"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a4be04a0484717131f2e0b924e24dfa34">01084</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a4be04a0484717131f2e0b924e24dfa34" title="Stops just the trajectory controller but not the joint movement.">YouBotJoint::cancelTrajectory</a>() {
-<a name="l01085"></a>01085   <span class="comment">// Bouml preserved body begin 000E8571</span>
-<a name="l01086"></a>01086   this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a45dbd9cac47e9d230ffb6c8cefdc6c11">trajectoryController</a>.<a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#af29ae210987316ddbc33068551bb9120">cancelCurrentTrajectory</a>();
-<a name="l01087"></a>01087   <span class="comment">// Bouml preserved body end 000E8571</span>
-<a name="l01088"></a>01088 }
-<a name="l01089"></a>01089 
-<a name="l01090"></a>01090 <span class="keywordtype">void</span> YouBotJoint::calculatePositions(<span class="keyword">const</span> quantity&lt;plane_angle&gt;&amp; position, <span class="keyword">const</span> quantity&lt;plane_angle&gt;&amp; position_current, <span class="keyword">const</span> quantity&lt;angular_velocity&gt;&amp; velocity, <span class="keyword">const</span> quantity&lt;angular_velocity&gt;&amp; velocity_current, <span class="keyword">const</span> quantity&lt;angular_acceleration&gt;&amp; acceleration, std::list&lt;int32&gt;&amp; targetPositions) {
-<a name="l01091"></a>01091   <span class="comment">// Bouml preserved body begin 000EA071</span>
-<a name="l01092"></a>01092   
-<a name="l01093"></a>01093   quantity&lt;plane_angle&gt; targetposition(0 *radian);
-<a name="l01094"></a>01094   quantity&lt;boost::units::si::time&gt; timestep(0*second);
-<a name="l01095"></a>01095   quantity&lt;boost::units::si::time&gt; timestep2(0*second);
-<a name="l01096"></a>01096   quantity&lt;plane_angle&gt; targetpositionAfterAcc(0 *radian);
-<a name="l01097"></a>01097   quantity&lt;plane_angle&gt; positionThreshold = 0.01*radian;
-<a name="l01098"></a>01098   <span class="keywordtype">int</span> u = 0;
-<a name="l01099"></a>01099   <span class="keywordtype">int</span> steps_per_second = 1000;
-<a name="l01100"></a>01100   steps_per_second = this-&gt;<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a45dbd9cac47e9d230ffb6c8cefdc6c11">trajectoryController</a>.<a class="code" href="../../d6/d90/classyoubot_1_1_joint_trajectory_controller.html#ab3d038a793b2787348b1b9b5549518ba">getControllerUpdatesPerSecond</a>();
-<a name="l01101"></a>01101   
-<a name="l01102"></a>01102   quantity&lt;angular_velocity&gt; velocity_calc;
-<a name="l01103"></a>01103   quantity&lt;angular_velocity&gt; zeroVel(0 * radian_per_second);
-<a name="l01104"></a>01104   quantity&lt;angular_acceleration&gt; zeroAcc(0 * radian_per_second/second);
-<a name="l01105"></a>01105   
-<a name="l01106"></a>01106   <span class="keywordflow">if</span>(steps_per_second == 0)
-<a name="l01107"></a>01107      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d80/classyoubot_1_1_joint_error_exception.html" title="Joint error exception.">JointErrorException</a>(<span class="stringliteral">&quot;Invalid controller updates per second&quot;</span>);
-<a name="l01108"></a>01108   
-<a name="l01109"></a>01109   <span class="keywordflow">if</span>(position &lt; position_current &amp;&amp; (velocity &gt;=zeroVel || acceleration &gt;=zeroAcc))
-<a name="l01110"></a>01110      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d80/classyoubot_1_1_joint_error_exception.html" title="Joint error exception.">JointErrorException</a>(<span class="stringliteral">&quot;Invalid trajectory&quot;</span>);
-<a name="l01111"></a>01111   
-<a name="l01112"></a>01112   <span class="keywordflow">if</span>(position &gt; position_current &amp;&amp; (velocity &lt;=zeroVel || acceleration &lt;=zeroAcc))
-<a name="l01113"></a>01113      <span class="keywordflow">throw</span> <a class="code" href="../../d7/d80/classyoubot_1_1_joint_error_exception.html" title="Joint error exception.">JointErrorException</a>(<span class="stringliteral">&quot;Invalid trajectory&quot;</span>);
-<a name="l01114"></a>01114   
-<a name="l01115"></a>01115   
-<a name="l01116"></a>01116   <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i= 1; targetposition &lt;= (position-positionThreshold) || targetposition &gt;= (position+positionThreshold) ;i++){
-<a name="l01117"></a>01117       timestep = ((double)i/steps_per_second)* second;
-<a name="l01118"></a>01118       targetposition = position_current + (velocity_current * timestep) + ((acceleration * timestep * timestep)/2.0);
-<a name="l01119"></a>01119       velocity_calc = (acceleration * timestep) +velocity_current;
-<a name="l01120"></a>01120       
-<a name="l01121"></a>01121       <span class="keywordflow">if</span>(acceleration &gt;= (0 * radian_per_second/second)){
-<a name="l01122"></a>01122         <span class="keywordflow">if</span>(velocity_calc &gt;= velocity){
-<a name="l01123"></a>01123           <span class="keywordflow">if</span>(u == 0){
-<a name="l01124"></a>01124             u = i;
-<a name="l01125"></a>01125             targetpositionAfterAcc = targetposition;
-<a name="l01126"></a>01126           }
-<a name="l01127"></a>01127           
-<a name="l01128"></a>01128           timestep2 = ((double)(i-u)/steps_per_second)* second;
-<a name="l01129"></a>01129           targetposition = targetpositionAfterAcc + (velocity  * timestep2);
-<a name="l01130"></a>01130         }
-<a name="l01131"></a>01131       }<span class="keywordflow">else</span>{
-<a name="l01132"></a>01132         <span class="keywordflow">if</span>(velocity_calc &lt;= velocity){
-<a name="l01133"></a>01133           <span class="keywordflow">if</span>(u == 0){
-<a name="l01134"></a>01134             u = i;
-<a name="l01135"></a>01135             targetpositionAfterAcc = targetposition;
-<a name="l01136"></a>01136           }
-<a name="l01137"></a>01137           
-<a name="l01138"></a>01138           timestep2 = ((double)(i-u)/steps_per_second)* second;
-<a name="l01139"></a>01139           targetposition = targetpositionAfterAcc + (velocity  * timestep2);
-<a name="l01140"></a>01140         }
-<a name="l01141"></a>01141       }
-<a name="l01142"></a>01142 
-<a name="l01143"></a>01143     <span class="comment"></span>
-<a name="l01144"></a>01144 <span class="comment">    //////////////////////////////////////////////////</span>
-<a name="l01145"></a>01145 <span class="comment"></span>    <span class="keywordflow">if</span> (storage.gearRatio == 0) {
-<a name="l01146"></a>01146       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;A Gear Ratio of zero is not allowed&quot;</span>);
-<a name="l01147"></a>01147     }
-<a name="l01148"></a>01148     
-<a name="l01149"></a>01149     <span class="keywordflow">if</span> (storage.encoderTicksPerRound == 0) {
-<a name="l01150"></a>01150       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Zero Encoder Ticks per Round are not allowed&quot;</span>);
-<a name="l01151"></a>01151     }
-<a name="l01152"></a>01152 
-<a name="l01153"></a>01153     <span class="keywordflow">if</span>(storage.areLimitsActive){
+<a name="l00917"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#aa50ab4d9a045bfdac0f99dab006a9bff">00917</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#aa50ab4d9a045bfdac0f99dab006a9bff">YouBotJoint::setUserVariable</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <span class="keyword">const</span> <span class="keywordtype">int</span> data) {
+<a name="l00918"></a>00918   <span class="comment">// Bouml preserved body begin 000AD1F1</span>
+<a name="l00919"></a>00919   
+<a name="l00920"></a>00920   <span class="keywordflow">if</span>(index &lt; 17 || index &gt; 55){
+<a name="l00921"></a>00921     <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;User variable index is out of range use 17-55 at: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
+<a name="l00922"></a>00922   }
+<a name="l00923"></a>00923   <span class="comment">//56 is the last userdata at bank 2</span>
+<a name="l00924"></a>00924     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> message;
+<a name="l00925"></a>00925     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
+<a name="l00926"></a>00926     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = GGP;
+<a name="l00927"></a>00927     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = index;
+<a name="l00928"></a>00928     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#ac845b18c161af90948159c75f58964a8">motorNumber</a> = <a class="code" href="../../d5/d23/_protocol_definitions_8hpp.html#a216da0bec5cc88bc344dae00dbd7a38d">USER_VARIABLE_BANK</a>;
+<a name="l00929"></a>00929     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = data;
+<a name="l00930"></a>00930     
+<a name="l00931"></a>00931   <span class="keywordflow">if</span> (!setValueToMotorContoller(message)) {
+<a name="l00932"></a>00932      <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;Unable to set parameter at joint: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
+<a name="l00933"></a>00933    }
+<a name="l00934"></a>00934     this-&gt;parseMailboxStatusFlags(message);
+<a name="l00935"></a>00935   <span class="comment">// Bouml preserved body end 000AD1F1</span>
+<a name="l00936"></a>00936 }
+<a name="l00937"></a>00937 <span class="comment"></span>
+<a name="l00938"></a>00938 <span class="comment">/// Returns the status messages for the motor controller. </span>
+<a name="l00939"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd">00939</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller.">YouBotJoint::getStatus</a>(std::vector&lt;std::string&gt;&amp; statusMessages) {
+<a name="l00940"></a>00940   <span class="comment">// Bouml preserved body begin 000AD271</span>
+<a name="l00941"></a>00941   <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l00942"></a>00942   ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l00943"></a>00943   
+<a name="l00944"></a>00944   
+<a name="l00945"></a>00945   
+<a name="l00946"></a>00946 
+<a name="l00947"></a>00947     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; OVER_CURRENT) {
+<a name="l00948"></a>00948       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got over current&quot;</span>);
+<a name="l00949"></a>00949     }
+<a name="l00950"></a>00950 
+<a name="l00951"></a>00951     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; UNDER_VOLTAGE) {
+<a name="l00952"></a>00952       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got under voltage&quot;</span>);
+<a name="l00953"></a>00953     }
+<a name="l00954"></a>00954 
+<a name="l00955"></a>00955     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; OVER_VOLTAGE) {
+<a name="l00956"></a>00956       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got over voltage&quot;</span>);
+<a name="l00957"></a>00957     }
+<a name="l00958"></a>00958 
+<a name="l00959"></a>00959     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; OVER_TEMPERATURE) {
+<a name="l00960"></a>00960       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got over temperature&quot;</span>);
+<a name="l00961"></a>00961     }
+<a name="l00962"></a>00962 
+<a name="l00963"></a>00963     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; MOTOR_HALTED) {
+<a name="l00964"></a>00964       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; is halted&quot;</span>);
+<a name="l00965"></a>00965     }
+<a name="l00966"></a>00966 
+<a name="l00967"></a>00967     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; HALL_SENSOR_ERROR) {
+<a name="l00968"></a>00968       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; got hall sensor problem&quot;</span>);
+<a name="l00969"></a>00969     }
+<a name="l00970"></a>00970 
+<a name="l00971"></a>00971 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; ENCODER_ERROR) {</span>
+<a name="l00972"></a>00972 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; got encoder problem&quot;);</span>
+<a name="l00973"></a>00973 <span class="comment">//    }</span>
+<a name="l00974"></a>00974 <span class="comment">//</span>
+<a name="l00975"></a>00975 <span class="comment">//     if (messageBuffer.stctInput.errorFlags &amp; INITIALIZATION_ERROR) {</span>
+<a name="l00976"></a>00976 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; got inizialization problem&quot;);</span>
+<a name="l00977"></a>00977 <span class="comment">//    }</span>
+<a name="l00978"></a>00978 
+<a name="l00979"></a>00979 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; PWM_MODE_ACTIVE) {</span>
+<a name="l00980"></a>00980 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; has PWM mode active&quot;);</span>
+<a name="l00981"></a>00981 <span class="comment">//    }</span>
+<a name="l00982"></a>00982 
+<a name="l00983"></a>00983     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; VELOCITY_MODE) {
+<a name="l00984"></a>00984       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has velocity mode active&quot;</span>);
+<a name="l00985"></a>00985     }
+<a name="l00986"></a>00986 
+<a name="l00987"></a>00987     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; POSITION_MODE) {
+<a name="l00988"></a>00988       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has position mode active&quot;</span>);
+<a name="l00989"></a>00989     }
+<a name="l00990"></a>00990 
+<a name="l00991"></a>00991     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; TORQUE_MODE) {
+<a name="l00992"></a>00992       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has torque mode active&quot;</span>);
+<a name="l00993"></a>00993     }
+<a name="l00994"></a>00994 
+<a name="l00995"></a>00995 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; EMERGENCY_STOP) {</span>
+<a name="l00996"></a>00996 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; has emergency stop active&quot;);</span>
+<a name="l00997"></a>00997 <span class="comment">//    }</span>
+<a name="l00998"></a>00998 <span class="comment">//</span>
+<a name="l00999"></a>00999 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; FREERUNNING) {</span>
+<a name="l01000"></a>01000 <span class="comment">//      statusMessages.push_back(this-&gt;storage.jointName + &quot; has freerunning active&quot;);</span>
+<a name="l01001"></a>01001 <span class="comment">//    }</span>
+<a name="l01002"></a>01002 
+<a name="l01003"></a>01003     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; POSITION_REACHED) {
+<a name="l01004"></a>01004       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has position reached&quot;</span>);
+<a name="l01005"></a>01005     }
+<a name="l01006"></a>01006 
+<a name="l01007"></a>01007     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; INITIALIZED) {
+<a name="l01008"></a>01008       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; is initialized&quot;</span>);
+<a name="l01009"></a>01009     }
+<a name="l01010"></a>01010 
+<a name="l01011"></a>01011     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; TIMEOUT) {
+<a name="l01012"></a>01012       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; has a timeout&quot;</span>);
+<a name="l01013"></a>01013     }
+<a name="l01014"></a>01014 
+<a name="l01015"></a>01015     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; I2T_EXCEEDED) {
+<a name="l01016"></a>01016       statusMessages.push_back(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> + <span class="stringliteral">&quot; exceeded I2t&quot;</span>);
+<a name="l01017"></a>01017     }
+<a name="l01018"></a>01018   
+<a name="l01019"></a>01019   
+<a name="l01020"></a>01020   <span class="comment">// Bouml preserved body end 000AD271</span>
+<a name="l01021"></a>01021 }
+<a name="l01022"></a>01022 <span class="comment"></span>
+<a name="l01023"></a>01023 <span class="comment">/// Returns the status messages as status flags for the motor controller. The status flag bits are assigned like this:</span>
+<a name="l01024"></a>01024 <span class="comment">/// 0:  Overcurrent</span>
+<a name="l01025"></a>01025 <span class="comment">/// 1:  Undervoltage</span>
+<a name="l01026"></a>01026 <span class="comment">/// 2:  Overvoltage</span>
+<a name="l01027"></a>01027 <span class="comment">/// 3:  Overtemperature</span>
+<a name="l01028"></a>01028 <span class="comment">/// 4:  Motor halted</span>
+<a name="l01029"></a>01029 <span class="comment">/// 5:  Hall error flag</span>
+<a name="l01030"></a>01030 <span class="comment">/// 6:  ---</span>
+<a name="l01031"></a>01031 <span class="comment">/// 7:  ---</span>
+<a name="l01032"></a>01032 <span class="comment">/// 8:  PWM mode active</span>
+<a name="l01033"></a>01033 <span class="comment">/// 9:  Velocity mode active</span>
+<a name="l01034"></a>01034 <span class="comment">/// 10: Position mode active</span>
+<a name="l01035"></a>01035 <span class="comment">/// 11: Torque mode active</span>
+<a name="l01036"></a>01036 <span class="comment">/// 12: ---</span>
+<a name="l01037"></a>01037 <span class="comment">/// 13: ---</span>
+<a name="l01038"></a>01038 <span class="comment">/// 14: Position end flag</span>
+<a name="l01039"></a>01039 <span class="comment">/// 15: Module initialized</span>
+<a name="l01040"></a>01040 <span class="comment">/// 16: EtherCAT timeout flag</span>
+<a name="l01041"></a>01041 <span class="comment">/// 17: I2t exceeded flag</span>
+<a name="l01042"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8478d5253ea061cca65673c46009b96b">01042</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a41fff88484f2b6246a2b132ea9503bbd" title="Returns the status messages for the motor controller.">YouBotJoint::getStatus</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&amp; statusFlags) {
+<a name="l01043"></a>01043   <span class="comment">// Bouml preserved body begin 000AD2F1</span>
+<a name="l01044"></a>01044   <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l01045"></a>01045   ethercatMaster-&gt;getMsgBuffer(this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>, messageBuffer);
+<a name="l01046"></a>01046   
+<a name="l01047"></a>01047   statusFlags = messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a>;
+<a name="l01048"></a>01048   <span class="comment">// Bouml preserved body end 000AD2F1</span>
+<a name="l01049"></a>01049 }
+<a name="l01050"></a>01050 <span class="comment"></span>
+<a name="l01051"></a>01051 <span class="comment">/// set the encoder values of the joint to zero. This postion will be the new reference.</span>
+<a name="l01052"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08">01052</a> <span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#acdda6eb5398edb141b7ff040a3f61b08" title="set the encoder values of the joint to zero. This postion will be the new reference...">YouBotJoint::setEncoderToZero</a>() {
+<a name="l01053"></a>01053   <span class="comment">// Bouml preserved body begin 000AED71</span>
+<a name="l01054"></a>01054     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l01055"></a>01055       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l01056"></a>01056     }
+<a name="l01057"></a>01057 
+<a name="l01058"></a>01058     <a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a> message;
+<a name="l01059"></a>01059     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a5760802fee58450d245fed27eccd0898">commandNumber</a> = SAP;
+<a name="l01060"></a>01060     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#adf3c006c84f5bb0c378e208cb31e0e57">moduleAddress</a> = DRIVE;
+<a name="l01061"></a>01061     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = 1; <span class="comment">//actual Position</span>
+<a name="l01062"></a>01062     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = 0;
+<a name="l01063"></a>01063 
+<a name="l01064"></a>01064     <span class="keywordflow">if</span> (!setValueToMotorContoller(message)) {
+<a name="l01065"></a>01065       <span class="keywordflow">throw</span> <a class="code" href="../../d7/df7/classyoubot_1_1_joint_parameter_exception.html" title="Joint parameter exception.">JointParameterException</a>(<span class="stringliteral">&quot;Unable to set the encoders to zero at joint: &quot;</span> + this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a>);
+<a name="l01066"></a>01066     }
+<a name="l01067"></a>01067 
+<a name="l01068"></a>01068     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l01069"></a>01069     <span class="comment">// messageBuffer.stctOutput.controllerMode = SET_POSITION_TO_REFERENCE;</span>
+<a name="l01070"></a>01070     <span class="comment">// messageBuffer.stctOutput.value = 0;</span>
+<a name="l01071"></a>01071 
+<a name="l01072"></a>01072     <span class="comment">//ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.jointNumber);</span>
+<a name="l01073"></a>01073 
+<a name="l01074"></a>01074 
+<a name="l01075"></a>01075   <span class="comment">// Bouml preserved body end 000AED71</span>
+<a name="l01076"></a>01076 }
+<a name="l01077"></a>01077 
+<a name="l01078"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae74a744df590b9d7d23f9cc4c9c5a499">01078</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae74a744df590b9d7d23f9cc4c9c5a499">YouBotJoint::noMoreAction</a>() {
+<a name="l01079"></a>01079   <span class="comment">// Bouml preserved body begin 000664F1</span>
+<a name="l01080"></a>01080     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l01081"></a>01081       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l01082"></a>01082     }
+<a name="l01083"></a>01083     
+<a name="l01084"></a>01084     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l01085"></a>01085     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = NO_MORE_ACTION;
+<a name="l01086"></a>01086     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = 0;
+<a name="l01087"></a>01087 
+<a name="l01088"></a>01088     ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>);
+<a name="l01089"></a>01089   <span class="comment">// Bouml preserved body end 000664F1</span>
+<a name="l01090"></a>01090 }
+<a name="l01091"></a>01091 
+<a name="l01092"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ab4f6a8fb9393bb962ff1b82bbc44a14e">01092</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ab4f6a8fb9393bb962ff1b82bbc44a14e">YouBotJoint::stopJoint</a>() {
+<a name="l01093"></a>01093   <span class="comment">// Bouml preserved body begin 00066471</span>
+<a name="l01094"></a>01094     <span class="keywordflow">if</span>(!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6">isEtherCATConnectionEstablished</a>()){
+<a name="l01095"></a>01095       <span class="keywordflow">throw</span> <a class="code" href="../../d6/d17/classyoubot_1_1_ether_c_a_t_connection_exception.html" title="EtherCAT Connection Error.">EtherCATConnectionException</a>(<span class="stringliteral">&quot;No EtherCAT connection&quot;</span>);
+<a name="l01096"></a>01096     }
+<a name="l01097"></a>01097     
+<a name="l01098"></a>01098     <span class="comment">//YouBotSlaveMsg messageBuffer;</span>
+<a name="l01099"></a>01099     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#a6e40b9abc9f9fc48eff01d623270f59c">controllerMode</a> = MOTOR_STOP;
+<a name="l01100"></a>01100     messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#ac4489f842f825c4fce5c860869545ab4">stctOutput</a>.<a class="code" href="../../df/dc0/structyoubot_1_1_slave_message_output.html#ad5794f4b898186ff82eaee88b98ef483">value</a> = 0;
+<a name="l01101"></a>01101 
+<a name="l01102"></a>01102     ethercatMaster-&gt;setMsgBuffer(messageBuffer, this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>);
+<a name="l01103"></a>01103   <span class="comment">// Bouml preserved body end 00066471</span>
+<a name="l01104"></a>01104 }
+<a name="l01105"></a>01105 
+<a name="l01106"></a><a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a662ce50f0905ec92b88a6bb463950162">01106</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a662ce50f0905ec92b88a6bb463950162">YouBotJoint::getJointNumber</a>() {
+<a name="l01107"></a>01107   <span class="comment">// Bouml preserved body begin 000EA2F1</span>
+<a name="l01108"></a>01108   <span class="keywordflow">return</span> this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#a93b5b3410b7a90a42fbf31069a09b345">jointNumber</a>;
+<a name="l01109"></a>01109   <span class="comment">// Bouml preserved body end 000EA2F1</span>
+<a name="l01110"></a>01110 }
+<a name="l01111"></a>01111 
+<a name="l01112"></a>01112 <span class="keywordtype">void</span> YouBotJoint::parseYouBotErrorFlags(<span class="keyword">const</span> <a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html" title="EtherCat message of the youBot EtherCat slaves.">YouBotSlaveMsg</a>&amp; messageBuffer) {
+<a name="l01113"></a>01113   <span class="comment">// Bouml preserved body begin 00044AF1</span>
+<a name="l01114"></a>01114 
+<a name="l01115"></a>01115     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.<a class="code" href="../../d1/d88/structyoubot_1_1_slave_message_input.html#a946883f42801644c2a9465c7e0b08203">errorFlags</a> &amp; OVER_CURRENT) {
+<a name="l01116"></a>01116       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.<a class="code" href="../../d4/d6e/classyoubot_1_1_you_bot_joint_storage.html#ae2b1a60f4a7c817a72cd9ee42c0147d0">jointName</a> &lt;&lt; <span class="stringliteral">&quot; over current&quot;</span>;
+<a name="l01117"></a>01117       <span class="comment">//    throw JointErrorException(this-&gt;storage.jointName + &quot;got over current&quot;);</span>
+<a name="l01118"></a>01118     }
+<a name="l01119"></a>01119 
+<a name="l01120"></a>01120     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; UNDER_VOLTAGE) {
+<a name="l01121"></a>01121       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; under voltage&quot;</span>;
+<a name="l01122"></a>01122       <span class="comment">//    throw JointErrorException(this-&gt;storage.jointName + &quot;got under voltage&quot;);</span>
+<a name="l01123"></a>01123     }
+<a name="l01124"></a>01124 
+<a name="l01125"></a>01125     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; OVER_VOLTAGE) {
+<a name="l01126"></a>01126       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; over voltage&quot;</span>;
+<a name="l01127"></a>01127       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;got over voltage&quot;);</span>
+<a name="l01128"></a>01128     }
+<a name="l01129"></a>01129 
+<a name="l01130"></a>01130     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; OVER_TEMPERATURE) {
+<a name="l01131"></a>01131       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; over temperature&quot;</span>;
+<a name="l01132"></a>01132       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;got over temperature&quot;);</span>
+<a name="l01133"></a>01133     }
+<a name="l01134"></a>01134 
+<a name="l01135"></a>01135     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; MOTOR_HALTED) {
+<a name="l01136"></a>01136       <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; is halted&quot;;</span>
+<a name="l01137"></a>01137       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;is halted&quot;);</span>
+<a name="l01138"></a>01138     }
+<a name="l01139"></a>01139 
+<a name="l01140"></a>01140     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; HALL_SENSOR_ERROR) {
+<a name="l01141"></a>01141       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; hall sensor problem&quot;</span>;
+<a name="l01142"></a>01142       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;got hall sensor problem&quot;);</span>
+<a name="l01143"></a>01143     }
+<a name="l01144"></a>01144 
+<a name="l01145"></a>01145 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; ENCODER_ERROR) {</span>
+<a name="l01146"></a>01146 <span class="comment">//      LOG(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; encoder problem&quot;;</span>
+<a name="l01147"></a>01147 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;got encoder problem&quot;);</span>
+<a name="l01148"></a>01148 <span class="comment">//    }</span>
+<a name="l01149"></a>01149 <span class="comment">//</span>
+<a name="l01150"></a>01150 <span class="comment">//     if (messageBuffer.stctInput.errorFlags &amp; INITIALIZATION_ERROR) {</span>
+<a name="l01151"></a>01151 <span class="comment">//      LOG(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; initialization problem&quot;;</span>
+<a name="l01152"></a>01152 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;got motor winding problem&quot;);</span>
+<a name="l01153"></a>01153 <span class="comment">//    }</span>
 <a name="l01154"></a>01154 
-<a name="l01155"></a>01155       quantity&lt;plane_angle&gt; lowLimit = ((double) this-&gt;storage.lowerLimit / storage.encoderTicksPerRound) * storage.gearRatio * (2.0 * M_PI) * radian;
-<a name="l01156"></a>01156       quantity&lt;plane_angle&gt; upLimit = ((double) this-&gt;storage.upperLimit / storage.encoderTicksPerRound) * storage.gearRatio * (2.0 * M_PI) * radian;
-<a name="l01157"></a>01157       
-<a name="l01158"></a>01158       <span class="keywordflow">if</span> (storage.inverseMovementDirection) {
-<a name="l01159"></a>01159         upLimit = ((double) -(this-&gt;storage.lowerLimit) / storage.encoderTicksPerRound) * storage.gearRatio * (2.0 * M_PI) * radian;
-<a name="l01160"></a>01160         lowLimit = ((double) -(this-&gt;storage.upperLimit) / storage.encoderTicksPerRound) * storage.gearRatio * (2.0 * M_PI) * radian;
-<a name="l01161"></a>01161       }
-<a name="l01162"></a>01162       
-<a name="l01163"></a>01163 
-<a name="l01164"></a>01164       <span class="keywordflow">if</span> (!((targetposition &lt; upLimit) &amp;&amp; (targetposition &gt; lowLimit))) {
-<a name="l01165"></a>01165         std::stringstream errorMessageStream;
-<a name="l01166"></a>01166         errorMessageStream &lt;&lt; <span class="stringliteral">&quot;The setpoint angle is out of range. The valid range is between &quot;</span> &lt;&lt; lowLimit &lt;&lt; <span class="stringliteral">&quot; and &quot;</span> &lt;&lt; upLimit &lt;&lt; <span class="stringliteral">&quot; and it is: &quot;</span> &lt;&lt; targetposition;
-<a name="l01167"></a>01167         <span class="comment">//    LOG(trace) &lt;&lt; &quot;abs_value: &quot; &lt;&lt; abs(data.angle) &lt;&lt; &quot; abslow &quot; &lt;&lt; abs(lowLimit) &lt;&lt; &quot; absupper &quot; &lt;&lt; abs(upLimit);</span>
-<a name="l01168"></a>01168         <span class="keywordflow">throw</span> std::out_of_range(errorMessageStream.str());
-<a name="l01169"></a>01169       }
-<a name="l01170"></a>01170     }
-<a name="l01171"></a>01171     <a class="code" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a> targetposition_enc;
-<a name="l01172"></a>01172 
-<a name="l01173"></a>01173     targetposition_enc = (<a class="code" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a>) round((targetposition.value() * ((double) storage.encoderTicksPerRound / (2.0 * M_PI))) / storage.gearRatio);
+<a name="l01155"></a>01155 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; PWM_MODE_ACTIVE) {</span>
+<a name="l01156"></a>01156    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has PWM mode active&quot;;</span>
+<a name="l01157"></a>01157       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;the cycle time is violated&quot;);</span>
+<a name="l01158"></a>01158 <span class="comment">//    }</span>
+<a name="l01159"></a>01159 
+<a name="l01160"></a>01160     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; VELOCITY_MODE) {
+<a name="l01161"></a>01161    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has velocity mode active&quot;;</span>
+<a name="l01162"></a>01162       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01163"></a>01163     }
+<a name="l01164"></a>01164 
+<a name="l01165"></a>01165     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; POSITION_MODE) {
+<a name="l01166"></a>01166    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has position mode active&quot;;</span>
+<a name="l01167"></a>01167       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01168"></a>01168     }
+<a name="l01169"></a>01169 
+<a name="l01170"></a>01170     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; TORQUE_MODE) {
+<a name="l01171"></a>01171    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has torque mode active&quot;;</span>
+<a name="l01172"></a>01172       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01173"></a>01173     }
 <a name="l01174"></a>01174 
-<a name="l01175"></a>01175 
-<a name="l01176"></a>01176     <span class="keywordflow">if</span> (storage.inverseMovementDirection) {
-<a name="l01177"></a>01177       targetposition_enc *= -1;
-<a name="l01178"></a>01178     }
-<a name="l01179"></a>01179     
-<a name="l01180"></a>01180     targetPositions.push_back(targetposition_enc); 
-<a name="l01181"></a>01181   }
-<a name="l01182"></a>01182   
-<a name="l01183"></a>01183   <span class="comment">// Bouml preserved body end 000EA071</span>
-<a name="l01184"></a>01184 }
-<a name="l01185"></a>01185 
-<a name="l01186"></a>01186 <span class="keywordtype">void</span> YouBotJoint::parseYouBotErrorFlags(<span class="keyword">const</span> YouBotSlaveMsg&amp; messageBuffer) {
-<a name="l01187"></a>01187   <span class="comment">// Bouml preserved body begin 00044AF1</span>
-<a name="l01188"></a>01188 
-<a name="l01189"></a>01189     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; OVER_CURRENT) {
-<a name="l01190"></a>01190       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; over current&quot;</span>;
-<a name="l01191"></a>01191       <span class="comment">//    throw JointErrorException(this-&gt;storage.jointName + &quot;got over current&quot;);</span>
-<a name="l01192"></a>01192     }
-<a name="l01193"></a>01193 
-<a name="l01194"></a>01194     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; UNDER_VOLTAGE) {
-<a name="l01195"></a>01195       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; under voltage&quot;</span>;
-<a name="l01196"></a>01196       <span class="comment">//    throw JointErrorException(this-&gt;storage.jointName + &quot;got under voltage&quot;);</span>
-<a name="l01197"></a>01197     }
-<a name="l01198"></a>01198 
-<a name="l01199"></a>01199     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; OVER_VOLTAGE) {
-<a name="l01200"></a>01200       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; over voltage&quot;</span>;
-<a name="l01201"></a>01201       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;got over voltage&quot;);</span>
-<a name="l01202"></a>01202     }
-<a name="l01203"></a>01203 
-<a name="l01204"></a>01204     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; OVER_TEMPERATURE) {
-<a name="l01205"></a>01205       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; over temperature&quot;</span>;
-<a name="l01206"></a>01206       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;got over temperature&quot;);</span>
-<a name="l01207"></a>01207     }
-<a name="l01208"></a>01208 
-<a name="l01209"></a>01209     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; MOTOR_HALTED) {
-<a name="l01210"></a>01210       <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot;is halted&quot;;</span>
-<a name="l01211"></a>01211       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;is halted&quot;);</span>
-<a name="l01212"></a>01212     }
-<a name="l01213"></a>01213 
-<a name="l01214"></a>01214     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; HALL_SENSOR_ERROR) {
-<a name="l01215"></a>01215       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; hall sensor problem&quot;</span>;
-<a name="l01216"></a>01216       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;got hall sensor problem&quot;);</span>
-<a name="l01217"></a>01217     }
-<a name="l01218"></a>01218 
-<a name="l01219"></a>01219 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; ENCODER_ERROR) {</span>
-<a name="l01220"></a>01220 <span class="comment">//      LOG(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; encoder problem&quot;;</span>
-<a name="l01221"></a>01221 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;got encoder problem&quot;);</span>
-<a name="l01222"></a>01222 <span class="comment">//    }</span>
-<a name="l01223"></a>01223 <span class="comment">//</span>
-<a name="l01224"></a>01224 <span class="comment">//     if (messageBuffer.stctInput.errorFlags &amp; INITIALIZATION_ERROR) {</span>
-<a name="l01225"></a>01225 <span class="comment">//      LOG(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; initialization problem&quot;;</span>
-<a name="l01226"></a>01226 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;got motor winding problem&quot;);</span>
-<a name="l01227"></a>01227 <span class="comment">//    }</span>
-<a name="l01228"></a>01228 
-<a name="l01229"></a>01229     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; PWM_MODE_ACTIVE) {
-<a name="l01230"></a>01230    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has PWM mode active&quot;;</span>
-<a name="l01231"></a>01231       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;the cycle time is violated&quot;);</span>
-<a name="l01232"></a>01232     }
-<a name="l01233"></a>01233 
-<a name="l01234"></a>01234     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; VELOCITY_MODE) {
-<a name="l01235"></a>01235    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has velocity mode active&quot;;</span>
-<a name="l01236"></a>01236       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01237"></a>01237     }
-<a name="l01238"></a>01238 
-<a name="l01239"></a>01239     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; POSITION_MODE) {
-<a name="l01240"></a>01240    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has position mode active&quot;;</span>
-<a name="l01241"></a>01241       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01242"></a>01242     }
+<a name="l01175"></a>01175 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; EMERGENCY_STOP) {</span>
+<a name="l01176"></a>01176 <span class="comment">//      LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; emergency stop active&quot;;</span>
+<a name="l01177"></a>01177 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01178"></a>01178 <span class="comment">//    }</span>
+<a name="l01179"></a>01179 <span class="comment">//</span>
+<a name="l01180"></a>01180 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; FREERUNNING) {</span>
+<a name="l01181"></a>01181 <span class="comment">//   //   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has freerunning active&quot;;</span>
+<a name="l01182"></a>01182 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01183"></a>01183 <span class="comment">//    }</span>
+<a name="l01184"></a>01184 
+<a name="l01185"></a>01185     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; POSITION_REACHED) {
+<a name="l01186"></a>01186   <span class="comment">//    LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has position reached&quot;;</span>
+<a name="l01187"></a>01187       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01188"></a>01188     }
+<a name="l01189"></a>01189 
+<a name="l01190"></a>01190     <span class="keywordflow">if</span> (!(messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; INITIALIZED)) {
+<a name="l01191"></a>01191    <span class="comment">//   LOG(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; not initialized&quot;;</span>
+<a name="l01192"></a>01192       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01193"></a>01193     }
+<a name="l01194"></a>01194 
+<a name="l01195"></a>01195     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; TIMEOUT) {
+<a name="l01196"></a>01196       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; exceeded timeout&quot;</span>;
+<a name="l01197"></a>01197       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01198"></a>01198     }
+<a name="l01199"></a>01199 
+<a name="l01200"></a>01200     <span class="keywordflow">if</span> (messageBuffer.<a class="code" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html#a66dcf6b0edf8b481feda9a9dc402efc9">stctInput</a>.errorFlags &amp; I2T_EXCEEDED) {
+<a name="l01201"></a>01201       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; exceeded I2t&quot;</span>;
+<a name="l01202"></a>01202       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
+<a name="l01203"></a>01203     }
+<a name="l01204"></a>01204 
+<a name="l01205"></a>01205   <span class="comment">// Bouml preserved body end 00044AF1</span>
+<a name="l01206"></a>01206 }
+<a name="l01207"></a>01207 
+<a name="l01208"></a>01208 <span class="keywordtype">void</span> YouBotJoint::parseMailboxStatusFlags(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; mailboxMsg) {
+<a name="l01209"></a>01209   <span class="comment">// Bouml preserved body begin 00075BF1</span>
+<a name="l01210"></a>01210 
+<a name="l01211"></a>01211     <span class="keywordflow">switch</span>(mailboxMsg.stctInput.status){
+<a name="l01212"></a>01212       <span class="keywordflow">case</span> NO_ERROR:
+<a name="l01213"></a>01213         <span class="keywordflow">break</span>;
+<a name="l01214"></a>01214       <span class="keywordflow">case</span> INVALID_COMMAND:
+<a name="l01215"></a>01215         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot;; Command no: &quot;</span> &lt;&lt; mailboxMsg.stctOutput.commandNumber &lt;&lt; <span class="stringliteral">&quot; is an invalid command!&quot;</span> ;
+<a name="l01216"></a>01216       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;invalid command&quot;);</span>
+<a name="l01217"></a>01217         <span class="keywordflow">break</span>;
+<a name="l01218"></a>01218       <span class="keywordflow">case</span> WRONG_TYPE:
+<a name="l01219"></a>01219         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; has a wrong type!&quot;</span>;
+<a name="l01220"></a>01220       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;wrong type&quot;);</span>
+<a name="l01221"></a>01221         <span class="keywordflow">break</span>;
+<a name="l01222"></a>01222       <span class="keywordflow">case</span> INVALID_VALUE:
+<a name="l01223"></a>01223         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; Value: &quot;</span> &lt;&lt; mailboxMsg.stctOutput.value &lt;&lt; <span class="stringliteral">&quot; is a invalid value!&quot;</span>;
+<a name="l01224"></a>01224       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;invalid value&quot;);</span>
+<a name="l01225"></a>01225         <span class="keywordflow">break</span>;
+<a name="l01226"></a>01226       <span class="keywordflow">case</span> CONFIGURATION_EEPROM_LOCKED:
+<a name="l01227"></a>01227         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; - Configuration EEPROM locked&quot;</span>;
+<a name="l01228"></a>01228       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;configuration EEPROM locked&quot;);</span>
+<a name="l01229"></a>01229         <span class="keywordflow">break</span>;
+<a name="l01230"></a>01230       <span class="keywordflow">case</span> COMMAND_NOT_AVAILABLE:
+<a name="l01231"></a>01231         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; - Command is not available!&quot;</span>;
+<a name="l01232"></a>01232       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;command not available&quot;);</span>
+<a name="l01233"></a>01233         <span class="keywordflow">break</span>;
+<a name="l01234"></a>01234       <span class="keywordflow">case</span> REPLY_WRITE_PROTECTED:
+<a name="l01235"></a>01235         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; - Permissions denied!&quot;</span>;
+<a name="l01236"></a>01236       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;command not available&quot;);</span>
+<a name="l01237"></a>01237         <span class="keywordflow">break</span>;
+<a name="l01238"></a>01238     }
+<a name="l01239"></a>01239    
+<a name="l01240"></a>01240 
+<a name="l01241"></a>01241   <span class="comment">// Bouml preserved body end 00075BF1</span>
+<a name="l01242"></a>01242 }
 <a name="l01243"></a>01243 
-<a name="l01244"></a>01244     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; TORQUE_MODE) {
-<a name="l01245"></a>01245    <span class="comment">//   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has torque mode active&quot;;</span>
-<a name="l01246"></a>01246       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01247"></a>01247     }
-<a name="l01248"></a>01248 
-<a name="l01249"></a>01249 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; EMERGENCY_STOP) {</span>
-<a name="l01250"></a>01250 <span class="comment">//      LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; emergency stop active&quot;;</span>
-<a name="l01251"></a>01251 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01252"></a>01252 <span class="comment">//    }</span>
-<a name="l01253"></a>01253 <span class="comment">//</span>
-<a name="l01254"></a>01254 <span class="comment">//    if (messageBuffer.stctInput.errorFlags &amp; FREERUNNING) {</span>
-<a name="l01255"></a>01255 <span class="comment">//   //   LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has freerunning active&quot;;</span>
-<a name="l01256"></a>01256 <span class="comment">//      //   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01257"></a>01257 <span class="comment">//    }</span>
-<a name="l01258"></a>01258 
-<a name="l01259"></a>01259     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; POSITION_REACHED) {
-<a name="l01260"></a>01260   <span class="comment">//    LOG(info) &lt;&lt; this-&gt;storage.jointName &lt;&lt; &quot; has position reached&quot;;</span>
-<a name="l01261"></a>01261       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01262"></a>01262     }
-<a name="l01263"></a>01263 
-<a name="l01264"></a>01264     <span class="keywordflow">if</span> (!(messageBuffer.stctInput.errorFlags &amp; INITIALIZED)) {
-<a name="l01265"></a>01265       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; initialized&quot;</span>;
-<a name="l01266"></a>01266       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01267"></a>01267     }
-<a name="l01268"></a>01268 
-<a name="l01269"></a>01269     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; TIMEOUT) {
-<a name="l01270"></a>01270       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; exceeded timeout&quot;</span>;
-<a name="l01271"></a>01271       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01272"></a>01272     }
-<a name="l01273"></a>01273 
-<a name="l01274"></a>01274     <span class="keywordflow">if</span> (messageBuffer.stctInput.errorFlags &amp; I2T_EXCEEDED) {
-<a name="l01275"></a>01275       <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot; exceeded I2t&quot;</span>;
-<a name="l01276"></a>01276       <span class="comment">//   throw JointErrorException(this-&gt;storage.jointName + &quot;need to initialize the sinus commutation&quot;);</span>
-<a name="l01277"></a>01277     }
-<a name="l01278"></a>01278 
-<a name="l01279"></a>01279   <span class="comment">// Bouml preserved body end 00044AF1</span>
-<a name="l01280"></a>01280 }
-<a name="l01281"></a>01281 
-<a name="l01282"></a>01282 <span class="keywordtype">void</span> YouBotJoint::parseMailboxStatusFlags(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; mailboxMsg) {
-<a name="l01283"></a>01283   <span class="comment">// Bouml preserved body begin 00075BF1</span>
-<a name="l01284"></a>01284 
-<a name="l01285"></a>01285     <span class="keywordflow">switch</span>(mailboxMsg.stctInput.status){
-<a name="l01286"></a>01286       <span class="keywordflow">case</span> NO_ERROR:
-<a name="l01287"></a>01287         <span class="keywordflow">break</span>;
-<a name="l01288"></a>01288       <span class="keywordflow">case</span> INVALID_COMMAND:
-<a name="l01289"></a>01289         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot;; Command no: &quot;</span> &lt;&lt; mailboxMsg.stctOutput.commandNumber &lt;&lt; <span class="stringliteral">&quot; is an invalid command!&quot;</span> ;
-<a name="l01290"></a>01290       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;invalid command&quot;);</span>
-<a name="l01291"></a>01291         <span class="keywordflow">break</span>;
-<a name="l01292"></a>01292       <span class="keywordflow">case</span> WRONG_TYPE:
-<a name="l01293"></a>01293         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; has a wrong type!&quot;</span>;
-<a name="l01294"></a>01294       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;wrong type&quot;);</span>
-<a name="l01295"></a>01295         <span class="keywordflow">break</span>;
-<a name="l01296"></a>01296       <span class="keywordflow">case</span> INVALID_VALUE:
-<a name="l01297"></a>01297         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; Value: &quot;</span> &lt;&lt; mailboxMsg.stctOutput.value &lt;&lt; <span class="stringliteral">&quot; is a invalid value!&quot;</span>;
-<a name="l01298"></a>01298       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;invalid value&quot;);</span>
-<a name="l01299"></a>01299         <span class="keywordflow">break</span>;
-<a name="l01300"></a>01300       <span class="keywordflow">case</span> CONFIGURATION_EEPROM_LOCKED:
-<a name="l01301"></a>01301         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; - Configuration EEPROM locked&quot;</span>;
-<a name="l01302"></a>01302       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;configuration EEPROM locked&quot;);</span>
-<a name="l01303"></a>01303         <span class="keywordflow">break</span>;
-<a name="l01304"></a>01304       <span class="keywordflow">case</span> COMMAND_NOT_AVAILABLE:
-<a name="l01305"></a>01305         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; - Command is not available!&quot;</span>;
-<a name="l01306"></a>01306       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;command not available&quot;);</span>
-<a name="l01307"></a>01307         <span class="keywordflow">break</span>;
-<a name="l01308"></a>01308       <span class="keywordflow">case</span> REPLY_WRITE_PROTECTED:
-<a name="l01309"></a>01309         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(error) &lt;&lt; this-&gt;storage.jointName &lt;&lt; <span class="stringliteral">&quot;Parameter name: &quot;</span> &lt;&lt; mailboxMsg.parameterName &lt;&lt; <span class="stringliteral">&quot; - Permissions denied!&quot;</span>;
-<a name="l01310"></a>01310       <span class="comment">//    throw JointParameterException(this-&gt;storage.jointName + &quot;command not available&quot;);</span>
-<a name="l01311"></a>01311         <span class="keywordflow">break</span>;
-<a name="l01312"></a>01312     }
-<a name="l01313"></a>01313    
-<a name="l01314"></a>01314 
-<a name="l01315"></a>01315   <span class="comment">// Bouml preserved body end 00075BF1</span>
-<a name="l01316"></a>01316 }
+<a name="l01244"></a>01244 <span class="keywordtype">bool</span> YouBotJoint::retrieveValueFromMotorContoller(YouBotSlaveMailboxMsg&amp; message) {
+<a name="l01245"></a>01245   <span class="comment">// Bouml preserved body begin 0005BD71</span>
+<a name="l01246"></a>01246 
+<a name="l01247"></a>01247     <span class="keywordtype">bool</span> unvalid = <span class="keyword">true</span>;
+<a name="l01248"></a>01248     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> retry = 0;
+<a name="l01249"></a>01249 
+<a name="l01250"></a>01250     ethercatMaster-&gt;setMailboxMsgBuffer(message, this-&gt;storage.jointNumber);
+<a name="l01251"></a>01251 
+<a name="l01252"></a>01252     <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
+<a name="l01253"></a>01253 
+<a name="l01254"></a>01254     <span class="keywordflow">do</span> {
+<a name="l01255"></a>01255       ethercatMaster-&gt;getMailboxMsgBuffer(message, this-&gt;storage.jointNumber);
+<a name="l01256"></a>01256     <span class="comment">/*     LOG(trace) &lt;&lt; &quot;CommandNumber &quot; &lt;&lt; (int) message.stctInput.commandNumber</span>
+<a name="l01257"></a>01257 <span class="comment">                 &lt;&lt; &quot; moduleAddress &quot; &lt;&lt; (int) message.stctInput.moduleAddress</span>
+<a name="l01258"></a>01258 <span class="comment">                 &lt;&lt; &quot; replyAddress &quot; &lt;&lt; (int) message.stctInput.replyAddress</span>
+<a name="l01259"></a>01259 <span class="comment">                 &lt;&lt; &quot; status &quot; &lt;&lt; (int) message.stctInput.status</span>
+<a name="l01260"></a>01260 <span class="comment">                 &lt;&lt; &quot; value &quot; &lt;&lt; message.stctInput.value; */</span>
+<a name="l01261"></a>01261        
+<a name="l01262"></a>01262       <span class="keywordflow">if</span> (message.stctOutput.commandNumber == message.stctInput.commandNumber &amp;&amp;
+<a name="l01263"></a>01263               message.stctInput.status == NO_ERROR) {
+<a name="l01264"></a>01264         unvalid = <span class="keyword">false</span>;
+<a name="l01265"></a>01265       } <span class="keywordflow">else</span> {
+<a name="l01266"></a>01266         <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
+<a name="l01267"></a>01267         retry++;
+<a name="l01268"></a>01268       }
+<a name="l01269"></a>01269     } <span class="keywordflow">while</span> (retry &lt; mailboxMsgRetries &amp;&amp; unvalid);
+<a name="l01270"></a>01270 
+<a name="l01271"></a>01271     <span class="keywordflow">if</span> (unvalid) {
+<a name="l01272"></a>01272       this-&gt;parseMailboxStatusFlags(message);
+<a name="l01273"></a>01273       <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l01274"></a>01274     } <span class="keywordflow">else</span> {
+<a name="l01275"></a>01275       <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l01276"></a>01276     }
+<a name="l01277"></a>01277 
+<a name="l01278"></a>01278   <span class="comment">// Bouml preserved body end 0005BD71</span>
+<a name="l01279"></a>01279 }
+<a name="l01280"></a>01280 
+<a name="l01281"></a>01281 <span class="keywordtype">bool</span> YouBotJoint::setValueToMotorContoller(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; mailboxMsg) {
+<a name="l01282"></a>01282   <span class="comment">// Bouml preserved body begin 00054AF1</span>
+<a name="l01283"></a>01283 
+<a name="l01284"></a>01284     YouBotSlaveMailboxMsg mailboxMsgBuffer;
+<a name="l01285"></a>01285     mailboxMsgBuffer = mailboxMsg;
+<a name="l01286"></a>01286     <span class="keywordtype">bool</span> unvalid = <span class="keyword">true</span>;
+<a name="l01287"></a>01287     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> retry = 0;
+<a name="l01288"></a>01288 
+<a name="l01289"></a>01289     ethercatMaster-&gt;setMailboxMsgBuffer(mailboxMsgBuffer, this-&gt;storage.jointNumber);
+<a name="l01290"></a>01290 
+<a name="l01291"></a>01291     <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
+<a name="l01292"></a>01292 
+<a name="l01293"></a>01293     <span class="keywordflow">do</span> {
+<a name="l01294"></a>01294       ethercatMaster-&gt;getMailboxMsgBuffer(mailboxMsgBuffer, this-&gt;storage.jointNumber);
+<a name="l01295"></a>01295       <span class="comment">/*    LOG(trace) &lt;&lt; &quot;CommandNumber &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.commandNumber</span>
+<a name="l01296"></a>01296 <span class="comment">                  &lt;&lt; &quot; moduleAddress &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.moduleAddress</span>
+<a name="l01297"></a>01297 <span class="comment">                  &lt;&lt; &quot; replyAddress &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.replyAddress</span>
+<a name="l01298"></a>01298 <span class="comment">                  &lt;&lt; &quot; status &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.status</span>
+<a name="l01299"></a>01299 <span class="comment">                  &lt;&lt; &quot; value &quot; &lt;&lt; mailboxMsgBuffer.stctInput.value;</span>
+<a name="l01300"></a>01300 <span class="comment">       */</span>
+<a name="l01301"></a>01301       <span class="keywordflow">if</span> (mailboxMsgBuffer.stctOutput.commandNumber == mailboxMsgBuffer.stctInput.commandNumber &amp;&amp;
+<a name="l01302"></a>01302               mailboxMsgBuffer.stctOutput.value == mailboxMsgBuffer.stctInput.value &amp;&amp;
+<a name="l01303"></a>01303               mailboxMsgBuffer.stctInput.status == NO_ERROR) {
+<a name="l01304"></a>01304         unvalid = <span class="keyword">false</span>;
+<a name="l01305"></a>01305       } <span class="keywordflow">else</span> {
+<a name="l01306"></a>01306         <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
+<a name="l01307"></a>01307         retry++;
+<a name="l01308"></a>01308       }
+<a name="l01309"></a>01309     } <span class="keywordflow">while</span> (retry &lt; mailboxMsgRetries &amp;&amp; unvalid);
+<a name="l01310"></a>01310 
+<a name="l01311"></a>01311     <span class="keywordflow">if</span> (unvalid) {
+<a name="l01312"></a>01312       this-&gt;parseMailboxStatusFlags(mailboxMsgBuffer);
+<a name="l01313"></a>01313       <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l01314"></a>01314     } <span class="keywordflow">else</span> {
+<a name="l01315"></a>01315       <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l01316"></a>01316     }
 <a name="l01317"></a>01317 
-<a name="l01318"></a>01318 <span class="keywordtype">bool</span> YouBotJoint::retrieveValueFromMotorContoller(YouBotSlaveMailboxMsg&amp; message) {
-<a name="l01319"></a>01319   <span class="comment">// Bouml preserved body begin 0005BD71</span>
+<a name="l01318"></a>01318   <span class="comment">// Bouml preserved body end 00054AF1</span>
+<a name="l01319"></a>01319 }
 <a name="l01320"></a>01320 
-<a name="l01321"></a>01321     <span class="keywordtype">bool</span> unvalid = <span class="keyword">true</span>;
-<a name="l01322"></a>01322     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> retry = 0;
-<a name="l01323"></a>01323 
-<a name="l01324"></a>01324     ethercatMaster-&gt;setMailboxMsgBuffer(message, this-&gt;storage.jointNumber);
-<a name="l01325"></a>01325 
-<a name="l01326"></a>01326     <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
-<a name="l01327"></a>01327 
-<a name="l01328"></a>01328     <span class="keywordflow">do</span> {
-<a name="l01329"></a>01329       ethercatMaster-&gt;getMailboxMsgBuffer(message, this-&gt;storage.jointNumber);
-<a name="l01330"></a>01330     <span class="comment">/*     LOG(trace) &lt;&lt; &quot;CommandNumber &quot; &lt;&lt; (int) message.stctInput.commandNumber</span>
-<a name="l01331"></a>01331 <span class="comment">                 &lt;&lt; &quot; moduleAddress &quot; &lt;&lt; (int) message.stctInput.moduleAddress</span>
-<a name="l01332"></a>01332 <span class="comment">                 &lt;&lt; &quot; replyAddress &quot; &lt;&lt; (int) message.stctInput.replyAddress</span>
-<a name="l01333"></a>01333 <span class="comment">                 &lt;&lt; &quot; status &quot; &lt;&lt; (int) message.stctInput.status</span>
-<a name="l01334"></a>01334 <span class="comment">                 &lt;&lt; &quot; value &quot; &lt;&lt; message.stctInput.value; */</span>
-<a name="l01335"></a>01335        
-<a name="l01336"></a>01336       <span class="keywordflow">if</span> (message.stctOutput.commandNumber == message.stctInput.commandNumber &amp;&amp;
-<a name="l01337"></a>01337               message.stctInput.status == NO_ERROR) {
-<a name="l01338"></a>01338         unvalid = <span class="keyword">false</span>;
-<a name="l01339"></a>01339       } <span class="keywordflow">else</span> {
-<a name="l01340"></a>01340         <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
-<a name="l01341"></a>01341         retry++;
-<a name="l01342"></a>01342       }
-<a name="l01343"></a>01343     } <span class="keywordflow">while</span> (retry &lt; mailboxMsgRetries &amp;&amp; unvalid);
-<a name="l01344"></a>01344 
-<a name="l01345"></a>01345     <span class="keywordflow">if</span> (unvalid) {
-<a name="l01346"></a>01346       this-&gt;parseMailboxStatusFlags(message);
-<a name="l01347"></a>01347       <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l01348"></a>01348     } <span class="keywordflow">else</span> {
-<a name="l01349"></a>01349       <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l01350"></a>01350     }
-<a name="l01351"></a>01351 
-<a name="l01352"></a>01352   <span class="comment">// Bouml preserved body end 0005BD71</span>
-<a name="l01353"></a>01353 }
-<a name="l01354"></a>01354 
-<a name="l01355"></a>01355 <span class="keywordtype">bool</span> YouBotJoint::setValueToMotorContoller(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; mailboxMsg) {
-<a name="l01356"></a>01356   <span class="comment">// Bouml preserved body begin 00054AF1</span>
-<a name="l01357"></a>01357 
-<a name="l01358"></a>01358     YouBotSlaveMailboxMsg mailboxMsgBuffer;
-<a name="l01359"></a>01359     mailboxMsgBuffer = mailboxMsg;
-<a name="l01360"></a>01360     <span class="keywordtype">bool</span> unvalid = <span class="keyword">true</span>;
-<a name="l01361"></a>01361     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> retry = 0;
-<a name="l01362"></a>01362 
-<a name="l01363"></a>01363     ethercatMaster-&gt;setMailboxMsgBuffer(mailboxMsgBuffer, this-&gt;storage.jointNumber);
-<a name="l01364"></a>01364 
-<a name="l01365"></a>01365     <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
-<a name="l01366"></a>01366 
-<a name="l01367"></a>01367     <span class="keywordflow">do</span> {
-<a name="l01368"></a>01368       ethercatMaster-&gt;getMailboxMsgBuffer(mailboxMsgBuffer, this-&gt;storage.jointNumber);
-<a name="l01369"></a>01369       <span class="comment">/*    LOG(trace) &lt;&lt; &quot;CommandNumber &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.commandNumber</span>
-<a name="l01370"></a>01370 <span class="comment">                  &lt;&lt; &quot; moduleAddress &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.moduleAddress</span>
-<a name="l01371"></a>01371 <span class="comment">                  &lt;&lt; &quot; replyAddress &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.replyAddress</span>
-<a name="l01372"></a>01372 <span class="comment">                  &lt;&lt; &quot; status &quot; &lt;&lt; (int) mailboxMsgBuffer.stctInput.status</span>
-<a name="l01373"></a>01373 <span class="comment">                  &lt;&lt; &quot; value &quot; &lt;&lt; mailboxMsgBuffer.stctInput.value;</span>
-<a name="l01374"></a>01374 <span class="comment">       */</span>
-<a name="l01375"></a>01375       <span class="keywordflow">if</span> (mailboxMsgBuffer.stctOutput.commandNumber == mailboxMsgBuffer.stctInput.commandNumber &amp;&amp;
-<a name="l01376"></a>01376               mailboxMsgBuffer.stctOutput.value == mailboxMsgBuffer.stctInput.value &amp;&amp;
-<a name="l01377"></a>01377               mailboxMsgBuffer.stctInput.status == NO_ERROR) {
-<a name="l01378"></a>01378         unvalid = <span class="keyword">false</span>;
-<a name="l01379"></a>01379       } <span class="keywordflow">else</span> {
-<a name="l01380"></a>01380         <a class="code" href="../../d8/d3a/_time_8hpp.html#a44cc0026ac6b473ff071e2b9fd600b7b">SLEEP_MILLISEC</a>(timeTillNextMailboxUpdate);
-<a name="l01381"></a>01381         retry++;
-<a name="l01382"></a>01382       }
-<a name="l01383"></a>01383     } <span class="keywordflow">while</span> (retry &lt; mailboxMsgRetries &amp;&amp; unvalid);
-<a name="l01384"></a>01384 
-<a name="l01385"></a>01385     <span class="keywordflow">if</span> (unvalid) {
-<a name="l01386"></a>01386       this-&gt;parseMailboxStatusFlags(mailboxMsgBuffer);
-<a name="l01387"></a>01387       <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l01388"></a>01388     } <span class="keywordflow">else</span> {
-<a name="l01389"></a>01389       <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l01390"></a>01390     }
-<a name="l01391"></a>01391 
-<a name="l01392"></a>01392   <span class="comment">// Bouml preserved body end 00054AF1</span>
-<a name="l01393"></a>01393 }
-<a name="l01394"></a>01394 
-<a name="l01395"></a>01395 
-<a name="l01396"></a>01396 } <span class="comment">// namespace youbot</span>
+<a name="l01321"></a>01321 
+<a name="l01322"></a>01322 } <span class="comment">// namespace youbot</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

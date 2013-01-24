@@ -182,45 +182,45 @@ window.onload = initDynSections;
 <a name="l00111"></a>00111 }
 <a name="l00112"></a>00112 
 <a name="l00113"></a><a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#a328b78f89747c95dc432084ad5cbaa76">00113</a> <a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#a328b78f89747c95dc432084ad5cbaa76">GripperBarName::GripperBarName</a>() {
-<a name="l00114"></a>00114   <span class="comment">// Bouml preserved body begin 00108A71</span>
+<a name="l00114"></a>00114   <span class="comment">// Bouml preserved body begin 00109D71</span>
 <a name="l00115"></a>00115     this-&gt;name = <span class="stringliteral">&quot;GripperBarName&quot;</span>;
 <a name="l00116"></a>00116     this-&gt;parameterType = API_PARAMETER;
-<a name="l00117"></a>00117   <span class="comment">// Bouml preserved body end 00108A71</span>
+<a name="l00117"></a>00117   <span class="comment">// Bouml preserved body end 00109D71</span>
 <a name="l00118"></a>00118 }
 <a name="l00119"></a>00119 
 <a name="l00120"></a><a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#a5ef541fdcd29a998f64928f71cbd8d85">00120</a> <a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#a5ef541fdcd29a998f64928f71cbd8d85">GripperBarName::~GripperBarName</a>() {
-<a name="l00121"></a>00121   <span class="comment">// Bouml preserved body begin 00108AF1</span>
-<a name="l00122"></a>00122   <span class="comment">// Bouml preserved body end 00108AF1</span>
+<a name="l00121"></a>00121   <span class="comment">// Bouml preserved body begin 00109DF1</span>
+<a name="l00122"></a>00122   <span class="comment">// Bouml preserved body end 00109DF1</span>
 <a name="l00123"></a>00123 }
 <a name="l00124"></a>00124 
 <a name="l00125"></a><a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#ae54ad1f82fcbdafaf742a5295be6e705">00125</a> <span class="keywordtype">void</span> <a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#ae54ad1f82fcbdafaf742a5295be6e705">GripperBarName::getParameter</a>(std::string&amp; parameter)<span class="keyword"> const </span>{
-<a name="l00126"></a>00126   <span class="comment">// Bouml preserved body begin 00108B71</span>
+<a name="l00126"></a>00126   <span class="comment">// Bouml preserved body begin 00109E71</span>
 <a name="l00127"></a>00127     parameter = this-&gt;value;
-<a name="l00128"></a>00128   <span class="comment">// Bouml preserved body end 00108B71</span>
+<a name="l00128"></a>00128   <span class="comment">// Bouml preserved body end 00109E71</span>
 <a name="l00129"></a>00129 }
 <a name="l00130"></a>00130 
 <a name="l00131"></a><a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#ada4f2789b3b2170fbe47d83693ad2b60">00131</a> <span class="keywordtype">void</span> <a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#ada4f2789b3b2170fbe47d83693ad2b60">GripperBarName::setParameter</a>(<span class="keyword">const</span> std::string parameter) {
-<a name="l00132"></a>00132   <span class="comment">// Bouml preserved body begin 00108BF1</span>
+<a name="l00132"></a>00132   <span class="comment">// Bouml preserved body begin 00109EF1</span>
 <a name="l00133"></a>00133     this-&gt;value = parameter;
-<a name="l00134"></a>00134   <span class="comment">// Bouml preserved body end 00108BF1</span>
+<a name="l00134"></a>00134   <span class="comment">// Bouml preserved body end 00109EF1</span>
 <a name="l00135"></a>00135 }
 <a name="l00136"></a>00136 
 <a name="l00137"></a><a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#ac2f76bd0b7cbef5facace27a6a161600">00137</a> <span class="keywordtype">void</span> <a class="code" href="../../dc/d11/classyoubot_1_1_gripper_bar_name.html#ac2f76bd0b7cbef5facace27a6a161600">GripperBarName::toString</a>(std::string&amp; value)<span class="keyword"> const </span>{
-<a name="l00138"></a>00138   <span class="comment">// Bouml preserved body begin 00108C71</span>
+<a name="l00138"></a>00138   <span class="comment">// Bouml preserved body begin 00109F71</span>
 <a name="l00139"></a>00139   std::stringstream ss;
 <a name="l00140"></a>00140   ss &lt;&lt; this-&gt;name &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; this-&gt;value;
 <a name="l00141"></a>00141   value  = ss.str();
-<a name="l00142"></a>00142   <span class="comment">// Bouml preserved body end 00108C71</span>
+<a name="l00142"></a>00142   <span class="comment">// Bouml preserved body end 00109F71</span>
 <a name="l00143"></a>00143 }
 <a name="l00144"></a>00144 
 <a name="l00145"></a>00145 <span class="keywordtype">void</span> GripperBarName::getYouBotMailboxMsg(<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a>&amp; message)<span class="keyword"> const </span>{
-<a name="l00146"></a>00146   <span class="comment">// Bouml preserved body begin 00108CF1</span>
-<a name="l00147"></a>00147   <span class="comment">// Bouml preserved body end 00108CF1</span>
+<a name="l00146"></a>00146   <span class="comment">// Bouml preserved body begin 00109FF1</span>
+<a name="l00147"></a>00147   <span class="comment">// Bouml preserved body end 00109FF1</span>
 <a name="l00148"></a>00148 }
 <a name="l00149"></a>00149 
 <a name="l00150"></a>00150 <span class="keywordtype">void</span> GripperBarName::setYouBotMailboxMsg(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; message) {
-<a name="l00151"></a>00151   <span class="comment">// Bouml preserved body begin 00108D71</span>
-<a name="l00152"></a>00152   <span class="comment">// Bouml preserved body end 00108D71</span>
+<a name="l00151"></a>00151   <span class="comment">// Bouml preserved body begin 0010A071</span>
+<a name="l00152"></a>00152   <span class="comment">// Bouml preserved body end 0010A071</span>
 <a name="l00153"></a>00153 }
 <a name="l00154"></a>00154 
 <a name="l00155"></a><a class="code" href="../../de/df1/classyoubot_1_1_calibrate_gripper.html#ac1809336bd1d9d2bdd35fb7b388cc570">00155</a> <a class="code" href="../../de/df1/classyoubot_1_1_calibrate_gripper.html#ac1809336bd1d9d2bdd35fb7b388cc570">CalibrateGripper::CalibrateGripper</a>() {
@@ -887,27 +887,27 @@ window.onload = initDynSections;
 <a name="l00816"></a>00816 }
 <a name="l00817"></a>00817 
 <a name="l00818"></a><a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#a7b50a6eae0fde227c880d7a90f14f354">00818</a> <a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#a7b50a6eae0fde227c880d7a90f14f354">ChopperHysteresisStart::ChopperHysteresisStart</a>() {
-<a name="l00819"></a>00819   <span class="comment">// Bouml preserved body begin 00106871</span>
+<a name="l00819"></a>00819   <span class="comment">// Bouml preserved body begin 00107271</span>
 <a name="l00820"></a>00820     this-&gt;name = <span class="stringliteral">&quot;ChopperHysteresisStart&quot;</span>;
 <a name="l00821"></a>00821     this-&gt;lowerLimit = 0;
 <a name="l00822"></a>00822     this-&gt;upperLimit = 8;
 <a name="l00823"></a>00823     this-&gt;parameterType = MOTOR_CONTOLLER_PARAMETER;
-<a name="l00824"></a>00824   <span class="comment">// Bouml preserved body end 00106871</span>
+<a name="l00824"></a>00824   <span class="comment">// Bouml preserved body end 00107271</span>
 <a name="l00825"></a>00825 }
 <a name="l00826"></a>00826 
 <a name="l00827"></a><a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#ad35558b5fe3ba463b40e55925a31da80">00827</a> <a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#ad35558b5fe3ba463b40e55925a31da80">ChopperHysteresisStart::~ChopperHysteresisStart</a>() {
-<a name="l00828"></a>00828   <span class="comment">// Bouml preserved body begin 001068F1</span>
-<a name="l00829"></a>00829   <span class="comment">// Bouml preserved body end 001068F1</span>
+<a name="l00828"></a>00828   <span class="comment">// Bouml preserved body begin 001072F1</span>
+<a name="l00829"></a>00829   <span class="comment">// Bouml preserved body end 001072F1</span>
 <a name="l00830"></a>00830 }
 <a name="l00831"></a>00831 
 <a name="l00832"></a><a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#a317c4a08f830fa0a1d8411b9c970a364">00832</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#a317c4a08f830fa0a1d8411b9c970a364">ChopperHysteresisStart::getParameter</a>(<span class="keywordtype">int</span>&amp; parameter)<span class="keyword"> const </span>{
-<a name="l00833"></a>00833   <span class="comment">// Bouml preserved body begin 00106971</span>
+<a name="l00833"></a>00833   <span class="comment">// Bouml preserved body begin 00107371</span>
 <a name="l00834"></a>00834     parameter = this-&gt;value;
-<a name="l00835"></a>00835   <span class="comment">// Bouml preserved body end 00106971</span>
+<a name="l00835"></a>00835   <span class="comment">// Bouml preserved body end 00107371</span>
 <a name="l00836"></a>00836 }
 <a name="l00837"></a>00837 
 <a name="l00838"></a><a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#af87e503b31fec6239a10a9c481aaf38a">00838</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#af87e503b31fec6239a10a9c481aaf38a">ChopperHysteresisStart::setParameter</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> parameter) {
-<a name="l00839"></a>00839   <span class="comment">// Bouml preserved body begin 001069F1</span>
+<a name="l00839"></a>00839   <span class="comment">// Bouml preserved body begin 001073F1</span>
 <a name="l00840"></a>00840     <span class="keywordflow">if</span> (this-&gt;lowerLimit &gt; parameter) {
 <a name="l00841"></a>00841       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The parameter exceeds the lower limit&quot;</span>);
 <a name="l00842"></a>00842     }
@@ -916,28 +916,28 @@ window.onload = initDynSections;
 <a name="l00845"></a>00845     }
 <a name="l00846"></a>00846 
 <a name="l00847"></a>00847     this-&gt;value = parameter;
-<a name="l00848"></a>00848   <span class="comment">// Bouml preserved body end 001069F1</span>
+<a name="l00848"></a>00848   <span class="comment">// Bouml preserved body end 001073F1</span>
 <a name="l00849"></a>00849 }
 <a name="l00850"></a>00850 
 <a name="l00851"></a><a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#ac2f76bd0b7cbef5facace27a6a161600">00851</a> <span class="keywordtype">void</span> <a class="code" href="../../d6/d11/classyoubot_1_1_chopper_hysteresis_start.html#ac2f76bd0b7cbef5facace27a6a161600">ChopperHysteresisStart::toString</a>(std::string&amp; value)<span class="keyword"> const </span>{
-<a name="l00852"></a>00852   <span class="comment">// Bouml preserved body begin 00106A71</span>
+<a name="l00852"></a>00852   <span class="comment">// Bouml preserved body begin 00107471</span>
 <a name="l00853"></a>00853   std::stringstream ss;
 <a name="l00854"></a>00854   ss &lt;&lt; this-&gt;name &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; this-&gt;value;
 <a name="l00855"></a>00855   value  = ss.str();
-<a name="l00856"></a>00856   <span class="comment">// Bouml preserved body end 00106A71</span>
+<a name="l00856"></a>00856   <span class="comment">// Bouml preserved body end 00107471</span>
 <a name="l00857"></a>00857 }
 <a name="l00858"></a>00858 
 <a name="l00859"></a>00859 <span class="keywordtype">void</span> ChopperHysteresisStart::getYouBotMailboxMsg(<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a>&amp; message)<span class="keyword"> const </span>{
-<a name="l00860"></a>00860   <span class="comment">// Bouml preserved body begin 00106AF1</span>
+<a name="l00860"></a>00860   <span class="comment">// Bouml preserved body begin 001074F1</span>
 <a name="l00861"></a>00861     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = 166;  <span class="comment">//ChopperHysteresisStart</span>
 <a name="l00862"></a>00862     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = value;
-<a name="l00863"></a>00863   <span class="comment">// Bouml preserved body end 00106AF1</span>
+<a name="l00863"></a>00863   <span class="comment">// Bouml preserved body end 001074F1</span>
 <a name="l00864"></a>00864 }
 <a name="l00865"></a>00865 
 <a name="l00866"></a>00866 <span class="keywordtype">void</span> ChopperHysteresisStart::setYouBotMailboxMsg(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; message) {
-<a name="l00867"></a>00867   <span class="comment">// Bouml preserved body begin 00106B71</span>
+<a name="l00867"></a>00867   <span class="comment">// Bouml preserved body begin 00107571</span>
 <a name="l00868"></a>00868     this-&gt;value = (<a class="code" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a>)message.stctInput.value;
-<a name="l00869"></a>00869   <span class="comment">// Bouml preserved body end 00106B71</span>
+<a name="l00869"></a>00869   <span class="comment">// Bouml preserved body end 00107571</span>
 <a name="l00870"></a>00870 }
 <a name="l00871"></a>00871 
 <a name="l00872"></a><a class="code" href="../../d3/d67/classyoubot_1_1_chopper_mode.html#a3ca6f1d7090ee3333394178bbc2eae6d">00872</a> <a class="code" href="../../d3/d67/classyoubot_1_1_chopper_mode.html#a3ca6f1d7090ee3333394178bbc2eae6d">ChopperMode::ChopperMode</a>() {
@@ -2565,68 +2565,68 @@ window.onload = initDynSections;
 <a name="l02494"></a>02494 }
 <a name="l02495"></a>02495 
 <a name="l02496"></a><a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#a3b03bc3a0156174aa498bb93eb72038d">02496</a> <a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#a3b03bc3a0156174aa498bb93eb72038d">ActualAcceleration::ActualAcceleration</a>() {
-<a name="l02497"></a>02497   <span class="comment">// Bouml preserved body begin 00105F71</span>
+<a name="l02497"></a>02497   <span class="comment">// Bouml preserved body begin 0010BBF1</span>
 <a name="l02498"></a>02498     this-&gt;name = <span class="stringliteral">&quot;ActualAcceleration&quot;</span>;
 <a name="l02499"></a>02499     this-&gt;lowerLimit = 0;
 <a name="l02500"></a>02500     this-&gt;upperLimit = 2047;
 <a name="l02501"></a>02501     this-&gt;parameterType = MOTOR_CONTOLLER_PARAMETER;
-<a name="l02502"></a>02502   <span class="comment">// Bouml preserved body end 00105F71</span>
+<a name="l02502"></a>02502   <span class="comment">// Bouml preserved body end 0010BBF1</span>
 <a name="l02503"></a>02503 }
 <a name="l02504"></a>02504 
 <a name="l02505"></a><a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#a495e2b1bc3e20ebe307ca5e2fd364da6">02505</a> <a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#a495e2b1bc3e20ebe307ca5e2fd364da6">ActualAcceleration::~ActualAcceleration</a>() {
-<a name="l02506"></a>02506   <span class="comment">// Bouml preserved body begin 00105FF1</span>
-<a name="l02507"></a>02507   <span class="comment">// Bouml preserved body end 00105FF1</span>
+<a name="l02506"></a>02506   <span class="comment">// Bouml preserved body begin 0010BC71</span>
+<a name="l02507"></a>02507   <span class="comment">// Bouml preserved body end 0010BC71</span>
 <a name="l02508"></a>02508 }
 <a name="l02509"></a>02509 
 <a name="l02510"></a><a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#a317c4a08f830fa0a1d8411b9c970a364">02510</a> <span class="keywordtype">void</span> <a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#a317c4a08f830fa0a1d8411b9c970a364">ActualAcceleration::getParameter</a>(<span class="keywordtype">int</span>&amp; parameter)<span class="keyword"> const </span>{
-<a name="l02511"></a>02511   <span class="comment">// Bouml preserved body begin 00106071</span>
+<a name="l02511"></a>02511   <span class="comment">// Bouml preserved body begin 0010BCF1</span>
 <a name="l02512"></a>02512     parameter = this-&gt;value;
-<a name="l02513"></a>02513   <span class="comment">// Bouml preserved body end 00106071</span>
+<a name="l02513"></a>02513   <span class="comment">// Bouml preserved body end 0010BCF1</span>
 <a name="l02514"></a>02514 }
 <a name="l02515"></a>02515 
 <a name="l02516"></a><a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#ac2f76bd0b7cbef5facace27a6a161600">02516</a> <span class="keywordtype">void</span> <a class="code" href="../../d8/d32/classyoubot_1_1_actual_acceleration.html#ac2f76bd0b7cbef5facace27a6a161600">ActualAcceleration::toString</a>(std::string&amp; value)<span class="keyword"> const </span>{
-<a name="l02517"></a>02517   <span class="comment">// Bouml preserved body begin 00106171</span>
+<a name="l02517"></a>02517   <span class="comment">// Bouml preserved body begin 0010BD71</span>
 <a name="l02518"></a>02518   std::stringstream ss;
 <a name="l02519"></a>02519   ss &lt;&lt; this-&gt;name &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; this-&gt;value;
 <a name="l02520"></a>02520   value  = ss.str();
-<a name="l02521"></a>02521   <span class="comment">// Bouml preserved body end 00106171</span>
+<a name="l02521"></a>02521   <span class="comment">// Bouml preserved body end 0010BD71</span>
 <a name="l02522"></a>02522 }
 <a name="l02523"></a>02523 
 <a name="l02524"></a>02524 <span class="keywordtype">void</span> ActualAcceleration::getYouBotMailboxMsg(<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a>&amp; message)<span class="keyword"> const </span>{
-<a name="l02525"></a>02525   <span class="comment">// Bouml preserved body begin 001061F1</span>
+<a name="l02525"></a>02525   <span class="comment">// Bouml preserved body begin 0010BDF1</span>
 <a name="l02526"></a>02526     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = 135;  <span class="comment">//ActualAcceleration</span>
 <a name="l02527"></a>02527     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = value;
-<a name="l02528"></a>02528   <span class="comment">// Bouml preserved body end 001061F1</span>
+<a name="l02528"></a>02528   <span class="comment">// Bouml preserved body end 0010BDF1</span>
 <a name="l02529"></a>02529 }
 <a name="l02530"></a>02530 
 <a name="l02531"></a>02531 <span class="keywordtype">void</span> ActualAcceleration::setYouBotMailboxMsg(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; message) {
-<a name="l02532"></a>02532   <span class="comment">// Bouml preserved body begin 00106271</span>
+<a name="l02532"></a>02532   <span class="comment">// Bouml preserved body begin 0010BE71</span>
 <a name="l02533"></a>02533     this-&gt;value = message.stctInput.value;
-<a name="l02534"></a>02534   <span class="comment">// Bouml preserved body end 00106271</span>
+<a name="l02534"></a>02534   <span class="comment">// Bouml preserved body end 0010BE71</span>
 <a name="l02535"></a>02535 }
 <a name="l02536"></a>02536 
 <a name="l02537"></a><a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#a90f4e9cde466a5b196533a0e772b8df9">02537</a> <a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#a90f4e9cde466a5b196533a0e772b8df9">MinimumSpeed::MinimumSpeed</a>() {
-<a name="l02538"></a>02538   <span class="comment">// Bouml preserved body begin 001063F1</span>
+<a name="l02538"></a>02538   <span class="comment">// Bouml preserved body begin 00107B71</span>
 <a name="l02539"></a>02539     this-&gt;name = <span class="stringliteral">&quot;MinimumSpeed&quot;</span>;
 <a name="l02540"></a>02540     this-&gt;lowerLimit = 0;
 <a name="l02541"></a>02541     this-&gt;upperLimit = 2047;
 <a name="l02542"></a>02542     this-&gt;parameterType = MOTOR_CONTOLLER_PARAMETER;
-<a name="l02543"></a>02543   <span class="comment">// Bouml preserved body end 001063F1</span>
+<a name="l02543"></a>02543   <span class="comment">// Bouml preserved body end 00107B71</span>
 <a name="l02544"></a>02544 }
 <a name="l02545"></a>02545 
 <a name="l02546"></a><a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#a79ed54c210d9705eaadc884cc6c6d76e">02546</a> <a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#a79ed54c210d9705eaadc884cc6c6d76e">MinimumSpeed::~MinimumSpeed</a>() {
-<a name="l02547"></a>02547   <span class="comment">// Bouml preserved body begin 00106471</span>
-<a name="l02548"></a>02548   <span class="comment">// Bouml preserved body end 00106471</span>
+<a name="l02547"></a>02547   <span class="comment">// Bouml preserved body begin 00107BF1</span>
+<a name="l02548"></a>02548   <span class="comment">// Bouml preserved body end 00107BF1</span>
 <a name="l02549"></a>02549 }
 <a name="l02550"></a>02550 
 <a name="l02551"></a><a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#a317c4a08f830fa0a1d8411b9c970a364">02551</a> <span class="keywordtype">void</span> <a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#a317c4a08f830fa0a1d8411b9c970a364">MinimumSpeed::getParameter</a>(<span class="keywordtype">int</span>&amp; parameter)<span class="keyword"> const </span>{
-<a name="l02552"></a>02552   <span class="comment">// Bouml preserved body begin 001064F1</span>
+<a name="l02552"></a>02552   <span class="comment">// Bouml preserved body begin 00107C71</span>
 <a name="l02553"></a>02553     parameter = this-&gt;value;
-<a name="l02554"></a>02554   <span class="comment">// Bouml preserved body end 001064F1</span>
+<a name="l02554"></a>02554   <span class="comment">// Bouml preserved body end 00107C71</span>
 <a name="l02555"></a>02555 }
 <a name="l02556"></a>02556 
 <a name="l02557"></a><a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#af87e503b31fec6239a10a9c481aaf38a">02557</a> <span class="keywordtype">void</span> <a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#af87e503b31fec6239a10a9c481aaf38a">MinimumSpeed::setParameter</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> parameter) {
-<a name="l02558"></a>02558   <span class="comment">// Bouml preserved body begin 00106571</span>
+<a name="l02558"></a>02558   <span class="comment">// Bouml preserved body begin 00107CF1</span>
 <a name="l02559"></a>02559     <span class="keywordflow">if</span> (this-&gt;lowerLimit &gt; parameter) {
 <a name="l02560"></a>02560       <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;The parameter exceeds the lower limit&quot;</span>);
 <a name="l02561"></a>02561     }
@@ -2635,29 +2635,29 @@ window.onload = initDynSections;
 <a name="l02564"></a>02564     }
 <a name="l02565"></a>02565 
 <a name="l02566"></a>02566     this-&gt;value = parameter;
-<a name="l02567"></a>02567   <span class="comment">// Bouml preserved body end 00106571</span>
+<a name="l02567"></a>02567   <span class="comment">// Bouml preserved body end 00107CF1</span>
 <a name="l02568"></a>02568 }
 <a name="l02569"></a>02569 
 <a name="l02570"></a><a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#ac2f76bd0b7cbef5facace27a6a161600">02570</a> <span class="keywordtype">void</span> <a class="code" href="../../df/dd7/classyoubot_1_1_minimum_speed.html#ac2f76bd0b7cbef5facace27a6a161600">MinimumSpeed::toString</a>(std::string&amp; value)<span class="keyword"> const </span>{
-<a name="l02571"></a>02571   <span class="comment">// Bouml preserved body begin 001065F1</span>
+<a name="l02571"></a>02571   <span class="comment">// Bouml preserved body begin 00107D71</span>
 <a name="l02572"></a>02572   std::stringstream ss;
 <a name="l02573"></a>02573   ss &lt;&lt; this-&gt;name &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; this-&gt;value;
 <a name="l02574"></a>02574   value  = ss.str();
-<a name="l02575"></a>02575   <span class="comment">// Bouml preserved body end 001065F1</span>
+<a name="l02575"></a>02575   <span class="comment">// Bouml preserved body end 00107D71</span>
 <a name="l02576"></a>02576 }
 <a name="l02577"></a>02577 
 <a name="l02578"></a>02578 <span class="keywordtype">void</span> MinimumSpeed::getYouBotMailboxMsg(<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html" title="EtherCAT mailbox message of the youBot slaves.">YouBotSlaveMailboxMsg</a>&amp; message)<span class="keyword"> const </span>{
-<a name="l02579"></a>02579   <span class="comment">// Bouml preserved body begin 00106671</span>
+<a name="l02579"></a>02579   <span class="comment">// Bouml preserved body begin 00107DF1</span>
 <a name="l02580"></a>02580     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a9912dcafd476c4386c085f06a3423ec2">typeNumber</a> = 130;  <span class="comment">//MinimumSpeed</span>
 <a name="l02581"></a>02581     message.<a class="code" href="../../de/dd3/classyoubot_1_1_you_bot_slave_mailbox_msg.html#a53eee454ed382fcf7b2fc1547843e6f2">stctOutput</a>.<a class="code" href="../../d5/dcd/structyoubot_1_1mailbox_output_buffer.html#a825a6aa3f85d5b289f6e1a3b3a2beb83">value</a> = (<a class="code" href="../../d2/dbb/ethercattype_8h.html#a1134b580f8da4de94ca6b1de4d37975e">uint32</a>)value;
 <a name="l02582"></a>02582 
-<a name="l02583"></a>02583   <span class="comment">// Bouml preserved body end 00106671</span>
+<a name="l02583"></a>02583   <span class="comment">// Bouml preserved body end 00107DF1</span>
 <a name="l02584"></a>02584 }
 <a name="l02585"></a>02585 
 <a name="l02586"></a>02586 <span class="keywordtype">void</span> MinimumSpeed::setYouBotMailboxMsg(<span class="keyword">const</span> YouBotSlaveMailboxMsg&amp; message) {
-<a name="l02587"></a>02587   <span class="comment">// Bouml preserved body begin 001066F1</span>
+<a name="l02587"></a>02587   <span class="comment">// Bouml preserved body begin 00107E71</span>
 <a name="l02588"></a>02588     this-&gt;value = (<a class="code" href="../../d2/dbb/ethercattype_8h.html#a43d43196463bde49cb067f5c20ab8481">int32</a>)message.stctInput.value;
-<a name="l02589"></a>02589   <span class="comment">// Bouml preserved body end 001066F1</span>
+<a name="l02589"></a>02589   <span class="comment">// Bouml preserved body end 00107E71</span>
 <a name="l02590"></a>02590 }
 <a name="l02591"></a>02591 
 <a name="l02592"></a>02592 

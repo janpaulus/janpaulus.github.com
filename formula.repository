@@ -1,0 +1,7 @@
+\form#0:$command = -p_{term} - i_{term} - d_{term} $
+\form#1:$ p_{term} = p_{gain} * p_{error} $
+\form#2:$ i_{term} = i_{gain} * i_{error} $
+\form#3:$ d_{term} = d_{gain} * d_{error} $
+\form#4:$ i_{error} = i_{error} + p_{error} * dt $
+\form#5:$ d_{error} = (p_{error} - p_{error last}) / dt $
+\form#6:$ p_{error} = p_{state} - p_{target} $
