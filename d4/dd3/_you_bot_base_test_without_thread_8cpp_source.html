@@ -140,7 +140,7 @@ window.onload = initDynSections;
 <a name="l00069"></a>00069       setAngle.<a class="code" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html#a04fcdd16ee9354653ef72ef22a52678c">angle</a> = 0 * radian;
 <a name="l00070"></a>00070     }
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(setAngle);
+<a name="l00072"></a>00072     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2bd10cfc08ed6948cbe60507b0c5e1a9">setData</a>(setAngle);
 <a name="l00073"></a>00073     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
 <a name="l00074"></a>00074       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
 <a name="l00075"></a>00075       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
@@ -186,7 +186,7 @@ window.onload = initDynSections;
 <a name="l00115"></a>00115       setVel.<a class="code" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html#a92bb2f1df8de29685f80e488b24792c0">angularVelocity</a> = 0 * radian_per_second;
 <a name="l00116"></a>00116     }
 <a name="l00117"></a>00117 
-<a name="l00118"></a>00118     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(setVel);
+<a name="l00118"></a>00118     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2bd10cfc08ed6948cbe60507b0c5e1a9">setData</a>(setVel);
 <a name="l00119"></a>00119     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
 <a name="l00120"></a>00120       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
 <a name="l00121"></a>00121       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();
@@ -232,7 +232,7 @@ window.onload = initDynSections;
 <a name="l00161"></a>00161       currentSetpoint.<a class="code" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html#a1545cb88cc5c6e94d687b301f0f5b284">current</a> = 0 * ampere;
 <a name="l00162"></a>00162     }
 <a name="l00163"></a>00163 
-<a name="l00164"></a>00164     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a>(currentSetpoint);
+<a name="l00164"></a>00164     myBase.<a class="code" href="../../d2/d41/classyoubot_1_1_you_bot_base.html#ae0746a6350ace075ecc8dff2ba6c6786" title="return a joint form the base">getBaseJoint</a>(jointNO).<a class="code" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2bd10cfc08ed6948cbe60507b0c5e1a9">setData</a>(currentSetpoint);
 <a name="l00165"></a>00165     <span class="keywordflow">if</span> (!ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a00d0898e5f44bbca8277b92d1325f8e5">isThreadActive</a>()) {
 <a name="l00166"></a>00166       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a5c7a36c1de9ae8e54b77f284346ae485" title="sends ethercat messages to the motor controllers returns a true if everything it...">sendProcessData</a>();
 <a name="l00167"></a>00167       ethercatMaster-&gt;<a class="code" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a72a2029ef96d8c1eabfe135f200de6c5" title="receives ethercat messages from the motor controllers returns a true if everything...">receiveProcessData</a>();

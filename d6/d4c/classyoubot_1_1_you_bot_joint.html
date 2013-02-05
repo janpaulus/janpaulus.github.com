@@ -115,32 +115,32 @@ Inheritance diagram for YouBotJoint:</div>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">stores the joint parameter permanent in the EEPROM of the motor contoller Attentions: The EEPROM has only a finite number of program-erase cycles  <a href="#a55094996417c9ac2227f7203fd322c64"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a73e5e0592773a80e574301a65f1a7806">restoreConfigurationParameter</a> (<a class="el" href="../../d3/d1d/classyoubot_1_1_you_bot_joint_parameter.html">YouBotJointParameter</a> &amp;parameter)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Restores the joint parameter from the EEPROM.  <a href="#a73e5e0592773a80e574301a65f1a7806"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a4970188d22bec5016137d9d6d99bcb9f">setData</a> (const <a class="el" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html">JointAngleSetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a position or angle to one joint  <a href="#a4970188d22bec5016137d9d6d99bcb9f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af78df7a0a9efafe91de3a1fd9202127b">setData</a> (const <a class="el" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html">JointEncoderSetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a encoder value (position) to one joint  <a href="#af78df7a0a9efafe91de3a1fd9202127b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ab27d7b55b593009e31bbc5f1ae0ddc46">setData</a> (const <a class="el" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html">JointAngleSetpoint</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a position or angle to one joint  <a href="#ab27d7b55b593009e31bbc5f1ae0ddc46"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#aacccd8313a10a7a660cbe9eab59038d4">setData</a> (const <a class="el" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html">JointEncoderSetpoint</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a encoder value (position) to one joint  <a href="#aacccd8313a10a7a660cbe9eab59038d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a1cfedacb30f38d70c4ba489d337887a3">getData</a> (<a class="el" href="../../d1/d86/classyoubot_1_1_joint_sensed_angle.html">JointSensedAngle</a> &amp;data)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the position or angle of one joint which have been calculated from the actual encoder value  <a href="#a1cfedacb30f38d70c4ba489d337887a3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a514edf42ac98906e023cd07480176f72">setData</a> (const <a class="el" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html">JointVelocitySetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a velocity to one joint  <a href="#a514edf42ac98906e023cd07480176f72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a77fdca9d1f94c49c6b10c5f37b821243">setData</a> (const <a class="el" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html">JointVelocitySetpoint</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a velocity to one joint  <a href="#a77fdca9d1f94c49c6b10c5f37b821243"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a598aacbb2e4bf65375aeade1f20c600d">getData</a> (<a class="el" href="../../dc/ddd/classyoubot_1_1_joint_sensed_velocity.html">JointSensedVelocity</a> &amp;data)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the velocity of one joint  <a href="#a598aacbb2e4bf65375aeade1f20c600d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af5669a17b45d84bf976abd9da43c9f9d">getData</a> (<a class="el" href="../../d0/d26/classyoubot_1_1_joint_sensed_rounds_per_minute.html">JointSensedRoundsPerMinute</a> &amp;data)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the velocity in round per minute of one joint  <a href="#af5669a17b45d84bf976abd9da43c9f9d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a1cff2447c709fc07a5f4bdab8b5543d4">setData</a> (const <a class="el" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html">JointRoundsPerMinuteSetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets the velocity in round per minute to one joint  <a href="#a1cff2447c709fc07a5f4bdab8b5543d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#aff54258c675d53c563e5103638d430d6">setData</a> (const <a class="el" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html">JointRoundsPerMinuteSetpoint</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets the velocity in round per minute to one joint  <a href="#aff54258c675d53c563e5103638d430d6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ad831da23ecd935f3b7217f463ecb8e14">getData</a> (<a class="el" href="../../dd/de0/classyoubot_1_1_joint_sensed_current.html">JointSensedCurrent</a> &amp;data)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the motor current of one joint which have been measured by a hal sensor  <a href="#ad831da23ecd935f3b7217f463ecb8e14"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ad6d0f97e2f1860fe551899f208c3ed17">setData</a> (const <a class="el" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html">JointCurrentSetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a current to one joint  <a href="#ad6d0f97e2f1860fe551899f208c3ed17"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a1c5867d35f7eb6e2f231f262a8d0aae6">setData</a> (const <a class="el" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html">JointCurrentSetpoint</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a current to one joint  <a href="#a1c5867d35f7eb6e2f231f262a8d0aae6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a3d6170d18e7ad7492466b7330661ed28">getData</a> (<a class="el" href="../../d3/dec/classyoubot_1_1_joint_sensed_encoder_ticks.html">JointSensedEncoderTicks</a> &amp;data)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the encoder ticks of one joint  <a href="#a3d6170d18e7ad7492466b7330661ed28"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5ac1be4ba9da1a8f42a95d1b736836f1">setData</a> (const <a class="el" href="../../df/dc0/structyoubot_1_1_slave_message_output.html">SlaveMessageOutput</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets the output part of a EtherCAT slave message this methode should be only used if you know what you are doing  <a href="#a5ac1be4ba9da1a8f42a95d1b736836f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2cd76fbc1a4b8ee252076c8270a35f76">setData</a> (const <a class="el" href="../../df/dc0/structyoubot_1_1_slave_message_output.html">SlaveMessageOutput</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sets the output part of a EtherCAT slave message this methode should be only used if you know what you are doing  <a href="#a2cd76fbc1a4b8ee252076c8270a35f76"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a60cb7794f5e62cfb866cd4084a11a510">getData</a> (<a class="el" href="../../df/dde/classyoubot_1_1_you_bot_slave_msg.html">YouBotSlaveMsg</a> &amp;data)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the input and ouput part of a EtherCAT slave message this methode should be only used if you know what you are doing  <a href="#a60cb7794f5e62cfb866cd4084a11a510"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5dbd851f29adb94e66ca07a554419921">setData</a> (const <a class="el" href="../../d8/d45/classyoubot_1_1_joint_torque_setpoint.html">JointTorqueSetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a torque to one joint  <a href="#a5dbd851f29adb94e66ca07a554419921"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2191c35ebfe1da09711932eaef3213bf">setData</a> (const <a class="el" href="../../d8/d45/classyoubot_1_1_joint_torque_setpoint.html">JointTorqueSetpoint</a> &amp;data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">commands a torque to one joint  <a href="#a2191c35ebfe1da09711932eaef3213bf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#ae583e3e1ca03bf6da185a128bb4ef0ce">getData</a> (<a class="el" href="../../d7/d5b/classyoubot_1_1_joint_sensed_torque.html">JointSensedTorque</a> &amp;data)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gets the motor torque of one joint which have been calculated from the current  <a href="#ae583e3e1ca03bf6da185a128bb4ef0ce"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5e6159adb8859f3ff327508d8eda7eaa">getData</a> (<a class="el" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html">JointAngleSetpoint</a> &amp;data)</td></tr>
@@ -167,7 +167,7 @@ Inheritance diagram for YouBotJoint:</div>
 <tr><td colspan="2"><h2>Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#adebf485d9ace9463db470a7dc14bfcee">setConfigurationParameter</a> (const <a class="el" href="../../db/d10/classyoubot_1_1_joint_parameter.html">JointParameter</a> &amp;parameter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a4779a68ba8116bb36922ceab60e4b0c0">getConfigurationParameter</a> (<a class="el" href="../../db/d10/classyoubot_1_1_joint_parameter.html">JointParameter</a> &amp;parameter)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb">setData</a> (const <a class="el" href="../../de/d09/classyoubot_1_1_joint_data_setpoint.html">JointDataSetpoint</a> &amp;data, SyncMode communicationMode=NON_BLOCKING)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2bd10cfc08ed6948cbe60507b0c5e1a9">setData</a> (const <a class="el" href="../../de/d09/classyoubot_1_1_joint_data_setpoint.html">JointDataSetpoint</a> &amp;data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a8b84b61d5a0f4ac8e393d269e4d78f6f">getData</a> (<a class="el" href="../../d2/d91/classyoubot_1_1_joint_data.html">JointData</a> &amp;data)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
@@ -250,7 +250,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00372">372</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00377">377</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -281,7 +281,7 @@ Here is the call graph for this function:</div>
 
 <p>this method should be only used if you know what you are doing </p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00363">363</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00368">368</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -592,7 +592,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00871">871</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00869">869</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -629,7 +629,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00850">850</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00848">848</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -666,7 +666,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00825">825</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00823">823</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -703,7 +703,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00798">798</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00796">796</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -740,7 +740,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00780">780</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00778">778</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -777,7 +777,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00744">744</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00743">743</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -851,7 +851,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00657">657</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00658">658</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -888,7 +888,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00613">613</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00615">615</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -925,7 +925,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00588">588</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00590">590</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -962,7 +962,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00532">532</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00535">535</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -993,7 +993,7 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="../../d6/d56/classyoubot_1_1_joint.html#ac2a7fa1fd10ed5ee2248b31b5fb6949b">Joint</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00429">429</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00434">434</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1021,7 +1021,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01106">1106</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01104">1104</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1044,7 @@ Here is the caller graph for this function:</div>
 <p>Returns the status messages as status flags for the motor controller. </p>
 <p>The status flag bits are assigned like this: 0: Overcurrent 1: Undervoltage 2: Overvoltage 3: Overtemperature 4: Motor halted 5: Hall error flag 6: --- 7: --- 8: PWM mode active 9: Velocity mode active 10: Position mode active 11: Torque mode active 12: --- 13: --- 14: Position end flag 15: Module initialized 16: EtherCAT timeout flag 17: I2t exceeded flag </p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01042">1042</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01040">1040</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -1066,7 +1066,7 @@ Here is the caller graph for this function:</div>
 
 <p>Returns the status messages for the motor controller. </p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00939">939</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00937">937</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -1095,7 +1095,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00894">894</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00892">892</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -1114,7 +1114,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01078">1078</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01076">1076</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1145,7 +1145,7 @@ Here is the call graph for this function:</div>
 
 <p>Restores the joint parameter from the EEPROM. </p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00405">405</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00410">410</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1174,7 +1174,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00378">378</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00383">383</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1205,7 +1205,7 @@ Here is the call graph for this function:</div>
 
 <p>this method should be only used if you know what you are doing </p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00354">354</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00359">359</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -1429,7 +1429,7 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a5dbd851f29adb94e66ca07a554419921"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a5dbd851f29adb94e66ca07a554419921" args="(const JointTorqueSetpoint &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="a2191c35ebfe1da09711932eaef3213bf"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a2191c35ebfe1da09711932eaef3213bf" args="(const JointTorqueSetpoint &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1437,18 +1437,9 @@ Here is the caller graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d8/d45/classyoubot_1_1_joint_torque_setpoint.html">JointTorqueSetpoint</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1458,25 +1449,24 @@ Here is the caller graph for this function:</div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the to command torque </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>communicationMode</em>&nbsp;</td><td>at the moment only non blocking communication is implemented </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00761">761</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00759">759</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a5dbd851f29adb94e66ca07a554419921_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a5dbd851f29adb94e66ca07a554419921_cgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a5dbd851f29adb94e66ca07a554419921_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a5dbd851f29adb94e66ca07a554419921_cgraph">
-<area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/><area shape="rect" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#af20dcbd721982e2742c5ee1d0227e8eb" title="setData" alt="" coords="293,59,360,88"/></map>
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a2191c35ebfe1da09711932eaef3213bf_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a2191c35ebfe1da09711932eaef3213bf_cgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a2191c35ebfe1da09711932eaef3213bf_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a2191c35ebfe1da09711932eaef3213bf_cgraph">
+<area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/><area shape="rect" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2bd10cfc08ed6948cbe60507b0c5e1a9" title="setData" alt="" coords="293,59,360,88"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a5ac1be4ba9da1a8f42a95d1b736836f1"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a5ac1be4ba9da1a8f42a95d1b736836f1" args="(const SlaveMessageOutput &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="a2cd76fbc1a4b8ee252076c8270a35f76"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a2cd76fbc1a4b8ee252076c8270a35f76" args="(const SlaveMessageOutput &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1484,18 +1474,9 @@ Here is the call graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../df/dc0/structyoubot_1_1_slave_message_output.html">SlaveMessageOutput</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1505,25 +1486,24 @@ Here is the call graph for this function:</div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>output part of a EtherCAT slave message </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>communicationMode</em>&nbsp;</td><td>at the moment only non blocking communication is implemented </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00725">725</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00724">724</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a5ac1be4ba9da1a8f42a95d1b736836f1_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a5ac1be4ba9da1a8f42a95d1b736836f1_cgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a5ac1be4ba9da1a8f42a95d1b736836f1_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a5ac1be4ba9da1a8f42a95d1b736836f1_cgraph">
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a2cd76fbc1a4b8ee252076c8270a35f76_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a2cd76fbc1a4b8ee252076c8270a35f76_cgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a2cd76fbc1a4b8ee252076c8270a35f76_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a2cd76fbc1a4b8ee252076c8270a35f76_cgraph">
 <area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ad6d0f97e2f1860fe551899f208c3ed17"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="ad6d0f97e2f1860fe551899f208c3ed17" args="(const JointCurrentSetpoint &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="a1c5867d35f7eb6e2f231f262a8d0aae6"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a1c5867d35f7eb6e2f231f262a8d0aae6" args="(const JointCurrentSetpoint &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1531,18 +1511,9 @@ Here is the call graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d7/d55/classyoubot_1_1_joint_current_setpoint.html">JointCurrentSetpoint</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1552,7 +1523,6 @@ Here is the call graph for this function:</div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the to command current </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>communicationMode</em>&nbsp;</td><td>at the moment only non blocking communication is implemented </td></tr>
   </table>
   </dd>
 </dl>
@@ -1562,15 +1532,15 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_ad6d0f97e2f1860fe551899f208c3ed17_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_ad6d0f97e2f1860fe551899f208c3ed17_cgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_ad6d0f97e2f1860fe551899f208c3ed17_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_ad6d0f97e2f1860fe551899f208c3ed17_cgraph">
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a1c5867d35f7eb6e2f231f262a8d0aae6_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a1c5867d35f7eb6e2f231f262a8d0aae6_cgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a1c5867d35f7eb6e2f231f262a8d0aae6_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a1c5867d35f7eb6e2f231f262a8d0aae6_cgraph">
 <area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a1cff2447c709fc07a5f4bdab8b5543d4"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a1cff2447c709fc07a5f4bdab8b5543d4" args="(const JointRoundsPerMinuteSetpoint &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="aff54258c675d53c563e5103638d430d6"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="aff54258c675d53c563e5103638d430d6" args="(const JointRoundsPerMinuteSetpoint &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1578,18 +1548,9 @@ Here is the call graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d6/d5b/classyoubot_1_1_joint_rounds_per_minute_setpoint.html">JointRoundsPerMinuteSetpoint</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1599,25 +1560,24 @@ Here is the call graph for this function:</div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the setpoint velocity </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>communicationMode</em>&nbsp;</td><td>at the moment only non blocking communication is implemented </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00634">634</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00635">635</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a1cff2447c709fc07a5f4bdab8b5543d4_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a1cff2447c709fc07a5f4bdab8b5543d4_cgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a1cff2447c709fc07a5f4bdab8b5543d4_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a1cff2447c709fc07a5f4bdab8b5543d4_cgraph">
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_aff54258c675d53c563e5103638d430d6_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_aff54258c675d53c563e5103638d430d6_cgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_aff54258c675d53c563e5103638d430d6_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_aff54258c675d53c563e5103638d430d6_cgraph">
 <area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a514edf42ac98906e023cd07480176f72"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a514edf42ac98906e023cd07480176f72" args="(const JointVelocitySetpoint &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="a77fdca9d1f94c49c6b10c5f37b821243"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a77fdca9d1f94c49c6b10c5f37b821243" args="(const JointVelocitySetpoint &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1625,18 +1585,9 @@ Here is the call graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d3/d6c/classyoubot_1_1_joint_velocity_setpoint.html">JointVelocitySetpoint</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1646,25 +1597,24 @@ Here is the call graph for this function:</div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the to command velocity </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>communicationMode</em>&nbsp;</td><td>at the moment only non blocking communication is implemented </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00560">560</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00562">562</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a514edf42ac98906e023cd07480176f72_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a514edf42ac98906e023cd07480176f72_cgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a514edf42ac98906e023cd07480176f72_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a514edf42ac98906e023cd07480176f72_cgraph">
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a77fdca9d1f94c49c6b10c5f37b821243_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a77fdca9d1f94c49c6b10c5f37b821243_cgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a77fdca9d1f94c49c6b10c5f37b821243_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a77fdca9d1f94c49c6b10c5f37b821243_cgraph">
 <area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="af78df7a0a9efafe91de3a1fd9202127b"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="af78df7a0a9efafe91de3a1fd9202127b" args="(const JointEncoderSetpoint &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="aacccd8313a10a7a660cbe9eab59038d4"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="aacccd8313a10a7a660cbe9eab59038d4" args="(const JointEncoderSetpoint &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1672,18 +1622,9 @@ Here is the call graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d3/d68/classyoubot_1_1_joint_encoder_setpoint.html">JointEncoderSetpoint</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1693,25 +1634,24 @@ Here is the call graph for this function:</div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the to command encoder value </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>communicationMode</em>&nbsp;</td><td>at the moment only non blocking communication is implemented </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00494">494</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00497">497</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_af78df7a0a9efafe91de3a1fd9202127b_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_af78df7a0a9efafe91de3a1fd9202127b_cgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_af78df7a0a9efafe91de3a1fd9202127b_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_af78df7a0a9efafe91de3a1fd9202127b_cgraph">
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_aacccd8313a10a7a660cbe9eab59038d4_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_aacccd8313a10a7a660cbe9eab59038d4_cgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_aacccd8313a10a7a660cbe9eab59038d4_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_aacccd8313a10a7a660cbe9eab59038d4_cgraph">
 <area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a4970188d22bec5016137d9d6d99bcb9f"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a4970188d22bec5016137d9d6d99bcb9f" args="(const JointAngleSetpoint &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="ab27d7b55b593009e31bbc5f1ae0ddc46"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="ab27d7b55b593009e31bbc5f1ae0ddc46" args="(const JointAngleSetpoint &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1719,18 +1659,9 @@ Here is the call graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d2/d5d/classyoubot_1_1_joint_angle_setpoint.html">JointAngleSetpoint</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
@@ -1740,25 +1671,24 @@ Here is the call graph for this function:</div>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the to command position </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>communicationMode</em>&nbsp;</td><td>at the moment only non blocking communication is implemented </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00438">438</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00442">442</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a4970188d22bec5016137d9d6d99bcb9f_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a4970188d22bec5016137d9d6d99bcb9f_cgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a4970188d22bec5016137d9d6d99bcb9f_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a4970188d22bec5016137d9d6d99bcb9f_cgraph">
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_ab27d7b55b593009e31bbc5f1ae0ddc46_cgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_ab27d7b55b593009e31bbc5f1ae0ddc46_cgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_ab27d7b55b593009e31bbc5f1ae0ddc46_cgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_ab27d7b55b593009e31bbc5f1ae0ddc46_cgraph">
 <area shape="rect" href="../../df/d9a/classyoubot_1_1_ethercat_master_interface.html#a776f68c61ccca067395c78ce00431fd6" title="youbot::EthercatMasterInterface::isEtherCATConnectionEstablished" alt="" coords="120,5,533,35"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="af20dcbd721982e2742c5ee1d0227e8eb"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="af20dcbd721982e2742c5ee1d0227e8eb" args="(const JointDataSetpoint &amp;data, SyncMode communicationMode=NON_BLOCKING)" -->
+<a class="anchor" id="a2bd10cfc08ed6948cbe60507b0c5e1a9"></a><!-- doxytag: member="youbot::YouBotJoint::setData" ref="a2bd10cfc08ed6948cbe60507b0c5e1a9" args="(const JointDataSetpoint &amp;data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1766,33 +1696,24 @@ Here is the call graph for this function:</div>
           <td class="memname">void setData </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../de/d09/classyoubot_1_1_joint_data_setpoint.html">JointDataSetpoint</a> &amp;&nbsp;</td>
-          <td class="paramname"> <em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SyncMode&nbsp;</td>
-          <td class="paramname"> <em>communicationMode</em> = <code>NON_BLOCKING</code></td><td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td><td><code> [protected, virtual]</code></td>
+          <td class="paramname"> <em>data</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Implements <a class="el" href="../../d6/d56/classyoubot_1_1_joint.html#af152ffe6cc3ec46209a5440130da868b">Joint</a>.</p>
+<p>Implements <a class="el" href="../../d6/d56/classyoubot_1_1_joint.html#a768e0a2e9761b3f20bd76481993142e2">Joint</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00423">423</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00428">428</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dynsection">
-<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_af20dcbd721982e2742c5ee1d0227e8eb_icgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_af20dcbd721982e2742c5ee1d0227e8eb_icgraph_map" alt=""></div>
-<map name="d6/d4c/classyoubot_1_1_you_bot_joint_af20dcbd721982e2742c5ee1d0227e8eb_icgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_af20dcbd721982e2742c5ee1d0227e8eb_icgraph">
-<area shape="rect" href="../../d7/d01/create___data_trace_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="335,5,383,35"/><area shape="rect" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a5dbd851f29adb94e66ca07a554419921" title="commands a torque to one joint" alt="" coords="325,59,392,88"/><area shape="rect" href="../../dc/db5/class_you_bot_base_test.html#ab3bc2fbe7f394ae4d0f7749c0da587ad" title="YouBotBaseTest::youBotBaseTest_CurrentMode" alt="" coords="207,112,511,141"/><area shape="rect" href="../../dc/db5/class_you_bot_base_test.html#a1599345f0f76a9e47afd1de9521f1d51" title="YouBotBaseTest::youBotBaseTest_PositionMode" alt="" coords="205,165,512,195"/><area shape="rect" href="../../dc/db5/class_you_bot_base_test.html#a11294863248ea091047105309267f2a6" title="YouBotBaseTest::youBotBaseTest_VelocityMode" alt="" coords="205,219,512,248"/><area shape="rect" href="../../db/dcc/class_you_bot_base_test_without_thread.html#ac4c0ff1ab487499c9d0ba08c63228110" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_CurrentMode" alt="" coords="123,272,595,301"/><area shape="rect" href="../../db/dcc/class_you_bot_base_test_without_thread.html#af71a406f8d79ef4431eb5a16949afcdd" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_PositionMode" alt="" coords="121,325,596,355"/><area shape="rect" href="../../db/dcc/class_you_bot_base_test_without_thread.html#a22e98f25973fc3d9233da162806aeabb" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_VelocityMode" alt="" coords="121,379,596,408"/></map>
+<div class="center"><img src="../../d6/d4c/classyoubot_1_1_you_bot_joint_a2bd10cfc08ed6948cbe60507b0c5e1a9_icgraph.png" border="0" usemap="#d6/d4c/classyoubot_1_1_you_bot_joint_a2bd10cfc08ed6948cbe60507b0c5e1a9_icgraph_map" alt=""></div>
+<map name="d6/d4c/classyoubot_1_1_you_bot_joint_a2bd10cfc08ed6948cbe60507b0c5e1a9_icgraph_map" id="d6/d4c/classyoubot_1_1_you_bot_joint_a2bd10cfc08ed6948cbe60507b0c5e1a9_icgraph">
+<area shape="rect" href="../../d7/d01/create___data_trace_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="335,5,383,35"/><area shape="rect" href="../../d6/d4c/classyoubot_1_1_you_bot_joint.html#a2191c35ebfe1da09711932eaef3213bf" title="commands a torque to one joint" alt="" coords="325,59,392,88"/><area shape="rect" href="../../dc/db5/class_you_bot_base_test.html#ab3bc2fbe7f394ae4d0f7749c0da587ad" title="YouBotBaseTest::youBotBaseTest_CurrentMode" alt="" coords="207,112,511,141"/><area shape="rect" href="../../dc/db5/class_you_bot_base_test.html#a1599345f0f76a9e47afd1de9521f1d51" title="YouBotBaseTest::youBotBaseTest_PositionMode" alt="" coords="205,165,512,195"/><area shape="rect" href="../../dc/db5/class_you_bot_base_test.html#a11294863248ea091047105309267f2a6" title="YouBotBaseTest::youBotBaseTest_VelocityMode" alt="" coords="205,219,512,248"/><area shape="rect" href="../../db/dcc/class_you_bot_base_test_without_thread.html#ac4c0ff1ab487499c9d0ba08c63228110" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_CurrentMode" alt="" coords="123,272,595,301"/><area shape="rect" href="../../db/dcc/class_you_bot_base_test_without_thread.html#af71a406f8d79ef4431eb5a16949afcdd" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_PositionMode" alt="" coords="121,325,596,355"/><area shape="rect" href="../../db/dcc/class_you_bot_base_test_without_thread.html#a22e98f25973fc3d9233da162806aeabb" title="YouBotBaseTestWithoutThread::YouBotBaseTestWithoutThread_VelocityMode" alt="" coords="121,379,596,408"/></map>
 </div>
 </p>
 
@@ -1815,7 +1736,7 @@ Here is the caller graph for this function:</div>
 
 <p>set the encoder values of the joint to zero. This postion will be the new reference. </p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01052">1052</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01050">1050</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1862,7 +1783,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00917">917</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00915">915</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 </div>
 </div>
@@ -1881,7 +1802,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01092">1092</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l01090">1090</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1912,7 +1833,7 @@ Here is the call graph for this function:</div>
 
 <p>stores the joint parameter permanent in the EEPROM of the motor contoller Attentions: The EEPROM has only a finite number of program-erase cycles </p>
 
-<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00386">386</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html#l00391">391</a> of file <a class="el" href="../../d7/d5f/_you_bot_joint_8cpp_source.html">YouBotJoint.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1937,7 +1858,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d2/d24/_you_bot_joint_8hpp_source.html#l00294">294</a> of file <a class="el" href="../../d2/d24/_you_bot_joint_8hpp_source.html">YouBotJoint.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d24/_you_bot_joint_8hpp_source.html#l00287">287</a> of file <a class="el" href="../../d2/d24/_you_bot_joint_8hpp_source.html">YouBotJoint.hpp</a>.</p>
 
 </div>
 </div>

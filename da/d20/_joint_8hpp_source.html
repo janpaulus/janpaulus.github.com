@@ -128,28 +128,24 @@ window.onload = initDynSections;
 <a name="l00057"></a>00057 <span class="preprocessor">#include &quot;<a class="code" href="../../d3/d61/_joint_parameter_8hpp.html">generic-joint/JointParameter.hpp</a>&quot;</span>
 <a name="l00058"></a>00058 
 <a name="l00059"></a>00059 <span class="keyword">namespace </span>youbot {
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="keyword">enum</span> SyncMode {
-<a name="l00062"></a>00062   NON_BLOCKING
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064 };<span class="comment"></span>
-<a name="l00065"></a>00065 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00066"></a>00066 <span class="comment">/// abstract joint</span>
-<a name="l00067"></a>00067 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
-<a name="l00068"></a><a class="code" href="../../d6/d56/classyoubot_1_1_joint.html">00068</a> <span class="comment"></span><span class="keyword">class </span><a class="code" href="../../d6/d56/classyoubot_1_1_joint.html" title="abstract joint">Joint</a> {
-<a name="l00069"></a>00069   <span class="keyword">public</span>:
-<a name="l00070"></a>00070     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#af152ffe6cc3ec46209a5440130da868b">setData</a>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classyoubot_1_1_joint_data_setpoint.html" title="abstract data class for commanded joint data">JointDataSetpoint</a>&amp; data, SyncMode communicationMode) = 0;
+<a name="l00060"></a>00060 <span class="comment"></span>
+<a name="l00061"></a>00061 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00062"></a>00062 <span class="comment">/// abstract joint</span>
+<a name="l00063"></a>00063 <span class="comment">///////////////////////////////////////////////////////////////////////////////</span>
+<a name="l00064"></a><a class="code" href="../../d6/d56/classyoubot_1_1_joint.html">00064</a> <span class="comment"></span><span class="keyword">class </span><a class="code" href="../../d6/d56/classyoubot_1_1_joint.html" title="abstract joint">Joint</a> {
+<a name="l00065"></a>00065   <span class="keyword">public</span>:
+<a name="l00066"></a>00066     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#a768e0a2e9761b3f20bd76481993142e2">setData</a>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classyoubot_1_1_joint_data_setpoint.html" title="abstract data class for commanded joint data">JointDataSetpoint</a>&amp; data) = 0;
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#ac2a7fa1fd10ed5ee2248b31b5fb6949b">getData</a>(<a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>&amp; data) = 0;
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#a49b4fc969e3e35c66004ded35b7fdf6c">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../db/d10/classyoubot_1_1_joint_parameter.html" title="abstract joint parameter">JointParameter</a>&amp; parameter) = 0;
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#ac2a7fa1fd10ed5ee2248b31b5fb6949b">getData</a>(<a class="code" href="../../d2/d91/classyoubot_1_1_joint_data.html" title="abstract data class for joints">JointData</a>&amp; data) = 0;
+<a name="l00072"></a>00072     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#ae445a9df58eb1ab66f177430723c71e6">getConfigurationParameter</a>(<a class="code" href="../../db/d10/classyoubot_1_1_joint_parameter.html" title="abstract joint parameter">JointParameter</a>&amp; parameter) = 0;
 <a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#a49b4fc969e3e35c66004ded35b7fdf6c">setConfigurationParameter</a>(<span class="keyword">const</span> <a class="code" href="../../db/d10/classyoubot_1_1_joint_parameter.html" title="abstract joint parameter">JointParameter</a>&amp; parameter) = 0;
+<a name="l00074"></a>00074 };
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076     <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d56/classyoubot_1_1_joint.html#ae445a9df58eb1ab66f177430723c71e6">getConfigurationParameter</a>(<a class="code" href="../../db/d10/classyoubot_1_1_joint_parameter.html" title="abstract joint parameter">JointParameter</a>&amp; parameter) = 0;
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 };
-<a name="l00079"></a>00079 
-<a name="l00080"></a>00080 } <span class="comment">// namespace youbot</span>
-<a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
+<a name="l00076"></a>00076 } <span class="comment">// namespace youbot</span>
+<a name="l00077"></a>00077 <span class="preprocessor">#endif</span>
 </pre></div></div>
 <hr class="footer"/><address style="text-align: right;"><small>Generated by&nbsp;
 <a href="http://www.doxygen.org/index.html">

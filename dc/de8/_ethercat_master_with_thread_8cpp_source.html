@@ -370,7 +370,7 @@ window.onload = initDynSections;
 <a name="l00299"></a>00299       <span class="comment">/* find and auto-config slaves */</span>
 <a name="l00300"></a>00300       <span class="keywordflow">if</span> (<a class="code" href="../../d2/d04/ethercatconfig_8c.html#a502e65cce3b0b5f8dbcabf6f25dab351" title="Enumerate / map and init all slaves.">ec_config</a>(<a class="code" href="../../d2/dbb/ethercattype_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>, &amp;IOmap_) &gt; 0) {
 <a name="l00301"></a>00301 
-<a name="l00302"></a>00302         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <a class="code" href="../../d3/d6b/ethercatmain_8c.html#aa9c784abc9a4ede41d3d8d688b4a7dc5" title="number of slaves found on the network">ec_slavecount</a> &lt;&lt; <span class="stringliteral">&quot; slaves found and configured.&quot;</span>;
+<a name="l00302"></a>00302         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <a class="code" href="../../d3/d6b/ethercatmain_8c.html#aa9c784abc9a4ede41d3d8d688b4a7dc5" title="number of slaves found on the network">ec_slavecount</a> &lt;&lt; <span class="stringliteral">&quot; EtherCAT slaves found and configured.&quot;</span>;
 <a name="l00303"></a>00303 
 <a name="l00304"></a>00304         <span class="comment">/* wait for all slaves to reach Pre OP state */</span>
 <a name="l00305"></a>00305         <span class="comment">/*ec_statecheck(0, EC_STATE_PRE_OP,  EC_TIMEOUTSTATE);</span>
@@ -405,7 +405,7 @@ window.onload = initDynSections;
 <a name="l00334"></a>00334         <span class="comment">/* wait for all slaves to reach SAFE_OP state */</span>
 <a name="l00335"></a>00335         <a class="code" href="../../d3/d6b/ethercatmain_8c.html#a8f77918c0a6a32be1079a11119171901" title="Check actual slave state.">ec_statecheck</a>(0, <a class="code" href="../../d2/dbb/ethercattype_8h.html#ac93847b4c4f8ff2d123e3717d55358c1acc09f39d0638c3b71e56b3614170810d" title="Safe-operational.">EC_STATE_SAFE_OP</a>, <a class="code" href="../../d2/dbb/ethercattype_8h.html#ad62eda81b3771cefb501543b184d64ad" title="timeout value in us for check statechange">EC_TIMEOUTSTATE</a>);
 <a name="l00336"></a>00336         <span class="keywordflow">if</span> (<a class="code" href="../../d3/d6b/ethercatmain_8c.html#aecfdb60a1628926de0f3cfed483e37fb" title="Main slave data array.">ec_slave</a>[0].state != <a class="code" href="../../d2/dbb/ethercattype_8h.html#ac93847b4c4f8ff2d123e3717d55358c1acc09f39d0638c3b71e56b3614170810d" title="Safe-operational.">EC_STATE_SAFE_OP</a>) {
-<a name="l00337"></a>00337           <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; <span class="stringliteral">&quot;Not all slaves reached safe operational state.&quot;</span>;
+<a name="l00337"></a>00337           <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(warning) &lt;&lt; <span class="stringliteral">&quot;Not all EtherCAT slaves reached safe operational state.&quot;</span>;
 <a name="l00338"></a>00338           <a class="code" href="../../d3/d6b/ethercatmain_8c.html#a585d9cd831f1d43f1bbaf7a50ee9759c" title="Read all slave states in ec_slave.">ec_readstate</a>();
 <a name="l00339"></a>00339           <span class="comment">//If not all slaves operational find out which one</span>
 <a name="l00340"></a>00340           <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= <a class="code" href="../../d3/d6b/ethercatmain_8c.html#aa9c784abc9a4ede41d3d8d688b4a7dc5" title="number of slaves found on the network">ec_slavecount</a>; i++) {
@@ -420,7 +420,7 @@ window.onload = initDynSections;
 <a name="l00349"></a>00349         <span class="comment">//Read the state of all slaves</span>
 <a name="l00350"></a>00350         <span class="comment">//ec_readstate();</span>
 <a name="l00351"></a>00351 
-<a name="l00352"></a>00352         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <span class="stringliteral">&quot;Request operational state for all slaves&quot;</span>;
+<a name="l00352"></a>00352         <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <span class="stringliteral">&quot;Request operational state for all EtherCAT slaves&quot;</span>;
 <a name="l00353"></a>00353 
 <a name="l00354"></a>00354         <a class="code" href="../../d3/d6b/ethercatmain_8c.html#aecfdb60a1628926de0f3cfed483e37fb" title="Main slave data array.">ec_slave</a>[0].<a class="code" href="../../da/dff/structec__slavet.html#a0012a170532a3c10ab464d0c8a7245ec" title="state of slave">state</a> = <a class="code" href="../../d2/dbb/ethercattype_8h.html#ac93847b4c4f8ff2d123e3717d55358c1a53b0bd865c4b3b88652d26e67d66b1cb" title="Operational.">EC_STATE_OPERATIONAL</a>;
 <a name="l00355"></a>00355         <span class="comment">// request OP state for all slaves</span>
@@ -433,14 +433,14 @@ window.onload = initDynSections;
 <a name="l00362"></a>00362 
 <a name="l00363"></a>00363         <a class="code" href="../../d3/d6b/ethercatmain_8c.html#a8f77918c0a6a32be1079a11119171901" title="Check actual slave state.">ec_statecheck</a>(0, <a class="code" href="../../d2/dbb/ethercattype_8h.html#ac93847b4c4f8ff2d123e3717d55358c1a53b0bd865c4b3b88652d26e67d66b1cb" title="Operational.">EC_STATE_OPERATIONAL</a>, <a class="code" href="../../d2/dbb/ethercattype_8h.html#ad62eda81b3771cefb501543b184d64ad" title="timeout value in us for check statechange">EC_TIMEOUTSTATE</a>);
 <a name="l00364"></a>00364         <span class="keywordflow">if</span> (<a class="code" href="../../d3/d6b/ethercatmain_8c.html#aecfdb60a1628926de0f3cfed483e37fb" title="Main slave data array.">ec_slave</a>[0].state == <a class="code" href="../../d2/dbb/ethercattype_8h.html#ac93847b4c4f8ff2d123e3717d55358c1a53b0bd865c4b3b88652d26e67d66b1cb" title="Operational.">EC_STATE_OPERATIONAL</a>) {
-<a name="l00365"></a>00365           <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <span class="stringliteral">&quot;Operational state reached for all slaves.&quot;</span>;
+<a name="l00365"></a>00365           <a class="code" href="../../d3/de3/_logger_8hpp.html#aba7b09d6e8fbe414c23705ad24dde6ff">LOG</a>(trace) &lt;&lt; <span class="stringliteral">&quot;Operational state reached for all EtherCAT slaves.&quot;</span>;
 <a name="l00366"></a>00366         } <span class="keywordflow">else</span> {
-<a name="l00367"></a>00367           <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Not all slaves reached operational state.&quot;</span>);
+<a name="l00367"></a>00367           <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Not all EtherCAT slaves reached operational state.&quot;</span>);
 <a name="l00368"></a>00368 
 <a name="l00369"></a>00369         }
 <a name="l00370"></a>00370 
 <a name="l00371"></a>00371       } <span class="keywordflow">else</span> {
-<a name="l00372"></a>00372         <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;No slaves found!&quot;</span>);
+<a name="l00372"></a>00372         <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;No EtherCAT slaves found!&quot;</span>);
 <a name="l00373"></a>00373       }
 <a name="l00374"></a>00374 
 <a name="l00375"></a>00375     } <span class="keywordflow">else</span> {
